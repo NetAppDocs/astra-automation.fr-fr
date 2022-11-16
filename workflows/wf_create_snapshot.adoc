@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_create_snapshot.html 
+keywords:  
+summary: Vous pouvez créer un instantané pour une application spécifique. 
+---
+= Créer un instantané pour une application
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez créer un instantané pour une application spécifique.
+
+
+
+=== Avant de commencer
+
+Vous devez avoir l'ID de l'application pour laquelle vous souhaitez créer un snapshot. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_man_apps.html["Répertorier les applications"] pour localiser l'application.
+
+
+
+=== 1. Créer un snapshot
+
+Effectuez l'appel de l'API REST suivant.
+
+[cols="25,75"]
+|===
+| Méthode HTTP | Chemin 
+
+
+| POST | /Accounts/{account_ID}/k8s/v1/apps/{app_ID}/appSnaps 
+|===
+
+
+===== Paramètres d'entrée supplémentaires
+
+Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
+
+[cols="25,10,10,55"]
+|===
+| Paramètre | Type | Obligatoire | Description 
+
+
+| id de l'application | Chemin | Oui. | Identifie l'application gérée où le snapshot sera créé. 
+
+
+| JSON | Corps | Oui. | Fournit les paramètres de l'instantané. Voir l'exemple ci-dessous. 
+|===
+
+
+===== Exemple d'entrée JSON
+
+[source, json]
+----
+{
+  "type": "application/astra-appSnap",
+  "version": "1.1",
+  "name": "snapshot-david-1"
+}
+----
+
+
+===== Exemple de curl : créez un snapshot pour l'application
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Content-Type: application/astra-appSnap+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

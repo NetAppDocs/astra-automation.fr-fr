@@ -1,0 +1,188 @@
+---
+sidebar: sidebar 
+permalink: endpoints/resources.html 
+keywords: resources, endpoints, core, managed application, topology, openapi, openmetrics 
+summary: 'Vous pouvez accéder aux ressources fournies par l"API REST Astra Control pour automatiser le déploiement d"Astra. Chaque ressource est disponible via un ou plusieurs terminaux. Nous vous trouverez sur cette page une présentation des ressources REST que vous pouvez utiliser dans le cadre d"un déploiement d"automatisation.' 
+---
+= Ressources et terminaux
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez accéder aux ressources fournies par l'API REST Astra Control pour automatiser le déploiement d'Astra. Chaque ressource est disponible via un ou plusieurs terminaux. Vous trouverez ci-dessous une présentation des ressources REST que vous pouvez utiliser dans le cadre d'un déploiement d'automatisation.
+
+
+NOTE: Le format du chemin et de l'URL complète utilisés pour accéder aux ressources de contrôle Astra est basé sur plusieurs valeurs. Voir link:../rest-core/url_format.html["Format d'URL"] pour en savoir plus. Voir aussi link:../reference/api_reference.html["Référence API"] Pour en savoir plus sur l'utilisation des ressources et des terminaux Astra,
+
+
+
+== Résumé des ressources REST d'Astra Control
+
+Les principaux terminaux de ressources de l'API REST Astra Control sont organisés en trois catégories. Chaque ressource est accessible avec l'ensemble complet des opérations CRUD (création, lecture, mise à jour, suppression) sauf mention contraire.
+
+La colonne *version* indique la version d'Astra lorsque la ressource a été introduite pour la première fois. Ce champ est en gras pour les ressources récemment ajoutées avec la version actuelle.
+
+
+
+=== Ressources centrales
+
+Les terminaux de ressources de base fournissent les services de base nécessaires pour établir et maintenir l'environnement d'exécution Astra.
+
+[cols="20,10,70"]
+|===
+| Ressource | Relâchez | Description 
+
+
+| Compte | 21.12 | Les ressources de compte vous permettent de gérer les locataires isolés dans l'environnement de déploiement Astra Control mutualisé. 
+
+
+| ASUP | 21.08 | Les ressources ASUP représentent les packs AutoSupport transférés au support NetApp. 
+
+
+| Certificat | *22.08* | Les ressources de certificat représentent les certificats installés utilisés pour une authentification forte pour les connexions sortantes. 
+
+
+| Informations d'identification | 21.04 | Les ressources de identifiants NetApp contiennent des informations relatives à la sécurité qui peuvent être utilisées avec les utilisateurs Astra, les clusters, les compartiments et les systèmes back-end de stockage. 
+
+
+| Droits | 21.08 | Les ressources d'abonnement représentent les fonctions et capacités disponibles pour un compte en fonction des licences et des abonnements actifs. 
+
+
+| Événement | 21.04 | Les ressources d'événements représentent tous les événements se produisant dans le système, y compris le sous-ensemble classé comme notifications. 
+
+
+| Crochet d'exécution | 21.12 | Les ressources de hook d'exécution représentent des scripts personnalisés que vous pouvez exécuter avant ou après l'exécution d'un snapshot d'une application gérée. 
+
+
+| Fonction | 21.08 | Les ressources de fonctionnalités représentent les fonctions Astra sélectionnées que vous pouvez interroger pour déterminer si elles sont activées ou désactivées dans le système. L'accès est limité en lecture seule. 
+
+
+| Groupe | *22.08* | Les ressources du groupe représentent les groupes Astra et les ressources associées. Seuls les groupes LDAP sont pris en charge dans la version actuelle. 
+
+
+| Source du crochet | 21.12 | Les ressources de la source de hook représentent le code source réel utilisé avec un crochet d'exécution. La séparation du code source et du contrôle d'exécution présente plusieurs avantages, tels que la possibilité de partager les scripts. 
+
+
+| Licence | 21.08 | Les ressources de licence représentent les licences disponibles pour un compte Astra. 
+
+
+| Notification | 21.04 | Les ressources de notification représentent les événements Astra qui ont une destination de notification. L'accès est fourni par utilisateur. 
+
+
+| Création de package | 22.04 | Les ressources du package fournissent l'enregistrement et l'accès aux définitions de package. Les logiciels sont constitués de divers composants, notamment des fichiers, des images et d'autres artefacts. 
+
+
+| Liaison de rôles | 21.04 | Les ressources liées au rôle représentent les relations entre des paires spécifiques d'utilisateurs et de comptes. En plus du lien entre les deux, un ensemble d'autorisations est spécifié pour chaque à l'aide d'un rôle spécifique. 
+
+
+| Réglage | 21.08 | Les ressources de définition représentent un ensemble de paires de clé-valeur qui décrivent une fonction pour un compte Astra spécifique. 
+
+
+| Abonnement | 21.08 | Les ressources d'abonnement représentent les abonnements actifs pour un compte Astra. 
+
+
+| Jeton | 21.04 | Les ressources de token représentent les jetons disponibles pour accéder par programmation à l'API REST Astra Control. 
+
+
+| Notification non lue | 21.04 | Les ressources de notification non lues représentent les notifications affectées à un utilisateur spécifique, mais pas encore lues. 
+
+
+| Mise à niveau | 22.04 | Les ressources de mise à niveau permettent d'accéder aux composants logiciels et de lancer des mises à niveau. 
+
+
+| Utilisateur | 21.04 | Les ressources utilisateur représentent les utilisateurs d'Astra qui ont accès au système en fonction de leur rôle défini. 
+|===
+
+
+=== Ressources applicatives gérées
+
+Les terminaux de ressources d'application gérée permettent d'accéder aux applications Kubernetes gérées.
+
+[cols="20,10,70"]
+|===
+| Ressource | Relâchez | Description 
+
+
+| Ressources applicatives | 21.04 | Les ressources d'application représentent les ensembles internes d'informations d'état nécessaires à la gestion des applications Astra. 
+
+
+| Sauvegarde des applications | 21.04 | Les ressources de sauvegarde de l'application représentent les sauvegardes des applications gérées. 
+
+
+| Snapshot de l'application | 21.04 | Les ressources de snapshot de l'application représentent les snapshots des applications gérées. 
+
+
+| Remplacement du crochet d'exécution | 21.12 | Les ressources de remplacement du crochet d'exécution vous permettent de désactiver les crochets d'exécution NetApp par défaut préchargés pour des applications spécifiques, selon vos besoins. 
+
+
+| Planification | 21.04 | Les ressources de planification correspondent aux opérations de protection des données planifiées pour les applications gérées dans le cadre d'une stratégie de protection des données. 
+|===
+
+
+=== Ressources de topologie
+
+Les points de terminaison de ressource de topologie fournissent un accès aux applications non gérées et aux ressources de stockage.
+
+[cols="20,10,70"]
+|===
+| Ressource | Relâchez | Description 
+
+
+| Appli | 21.04 | Les ressources d'application représentent toutes les applications Kubernetes, y compris celles qui ne sont pas gérées par Astra. 
+
+
+| AppMirror | *22.08* | Les ressources AppMirror représentent les ressources AppMirror pour la gestion des relations de mise en miroir des applications. 
+
+
+| Godet | 21.08 | Les ressources de compartiment représentent les compartiments cloud S3 utilisés pour stocker les sauvegardes des applications gérées par Astra. 
+
+
+| Le cloud | 21.08 | Les ressources cloud sont des clouds avec lesquels les clients Astra peuvent se connecter pour gérer les clusters et les applications. 
+
+
+| Cluster | 21.08 | Les ressources en cluster représentent les clusters Kubernetes qui ne sont pas gérés par Kubernetes. 
+
+
+| Nœud de cluster | 21.12 | Les ressources des nœuds de cluster apportent une résolution supplémentaire en vous permettant d'accéder aux nœuds individuels dans un cluster Kubernetes. 
+
+
+| Cluster géré | 21.08 | Les ressources du cluster géré représentent les clusters Kubernetes actuellement gérés par Kubernetes. 
+
+
+| Stockage back-end géré | 21.12 | Les ressources du système de stockage back-end géré vous permettent d'accéder aux représentations extraites des fournisseurs de stockage back-end. Ces systèmes de stockage back-end peuvent être utilisés par les clusters et les applications gérés. 
+
+
+| Espace de noms | 21.12 | Les ressources d'espace de noms permettent d'accéder aux espaces de noms utilisés dans un cluster Kubernetes. 
+
+
+| Système back-end | 21.08 | Les ressources de stockage back-end représentent des fournisseurs de services de stockage utilisables par les clusters et les applications gérés Astra. 
+
+
+| Classe de stockage | 21.08 | Les ressources de classe de stockage représentent différents types ou classes de stockage détectés et disponibles pour un cluster géré spécifique. 
+
+
+| Dispositif de stockage | 21.12 | Les ressources associées au dispositif de stockage permettent d'accéder aux disques associés à un nœud de stockage spécifique pour les systèmes back-end de stockage de type Astra Data Store (ADS). Un système back-end ADS est déployé en tant que clusters Kubernetes. 
+
+
+| Nœud de stockage | 21.12 | Les ressources du nœud de stockage représentent les nœuds qui font partie d'un cluster ADS. 
+
+
+| Volumétrie | 21.04 | Les ressources de volume représentent les volumes de stockage Kubernetes associés aux applications gérées. 
+|===
+
+
+== Ressources supplémentaires et terminaux
+
+Vous pouvez utiliser plusieurs ressources et terminaux supplémentaires pour prendre en charge un déploiement Astra,
+
+
+NOTE: Ces ressources et ces terminaux ne sont pas inclus dans la documentation de référence de l'API REST Astra Control.
+
+OpenAPI:: Les noeuds finaux OpenAPI donnent accès au document JSON OpenAPI actuel et à d'autres ressources associées.
+OpenMetrics:: Les noeuds finaux OpenMetrics fournissent un accès aux mesures du compte via la ressource OpenMetrics. Il est proposé avec le modèle de déploiement d'Astra Control Center.
+

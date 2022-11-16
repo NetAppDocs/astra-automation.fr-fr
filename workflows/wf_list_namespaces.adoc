@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_namespaces.html 
+keywords:  
+summary: Vous pouvez lister les espaces de noms disponibles. 
+---
+= Lister les espaces de noms
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez lister les espaces de noms disponibles.
+
+
+
+=== 1. Dressez la liste des espaces de noms
+
+Exécutez l'appel d'API REST suivant pour afficher la liste des namespaces.
+
+[cols="1,6"]
+|===
+| Méthode HTTP | Chemin 
+
+
+| OBTENEZ | /account/{account_id}/topologique/v1/namespaces 
+|===
+
+
+===== Exemple Curl : renvoie toutes les données de tous les espaces de noms
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/namespaces' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Exemple Curl : nom, état et ID de cluster pour tous les namespaces
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/namespaces?include=name,namespaceState,clusterID' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Exemple de sortie JSON
+
+[source, json]
+----
+{
+    "items": [
+        [
+            "default",
+            "discovered",
+            "922f924a-a476-4a79-97f6-472571698154"
+        ],
+        [
+            "kube-node-lease",
+            "discovered",
+            "922f924a-a476-4a79-97f6-472571698154"
+        ],
+        [
+            "kube-public",
+            "discovered",
+            "922f924a-a476-4a79-97f6-472571698154"
+        ],
+        [
+            "kube-system",
+            "discovered",
+            "922f924a-a476-4a79-97f6-472571698154"
+        ],
+        [
+            "mysql",
+            "discovered",
+            "922f924a-a476-4a79-97f6-472571698154"
+        ],
+        [
+            "mysql-clone1",
+            "discovered",
+            "922f924a-a476-4a79-97f6-472571698154"
+        ],
+        [
+            "netapp-acc-operator",
+            "discovered",
+            "922f924a-a476-4a79-97f6-472571698154"
+        ],
+        [
+            "openshift",
+            "discovered",
+            "922f924a-a476-4a79-97f6-472571698154"
+        ],
+        [
+            "trident",
+            "discovered",
+            "922f924a-a476-4a79-97f6-472571698154"
+        ]
+    ],
+    "metadata": {}
+}
+----

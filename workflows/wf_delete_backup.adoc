@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_delete_backup.html 
+keywords:  
+summary: Vous pouvez supprimer une sauvegarde associée à une application. 
+---
+= Supprimer une sauvegarde
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez supprimer une sauvegarde associée à une application.
+
+
+
+=== Avant de commencer
+
+Vous devez disposer des éléments suivants :
+
+* ID de l'application propriétaire de la sauvegarde. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_man_apps.html["Répertorier les applications"] pour localiser l'application.
+* ID de la sauvegarde à supprimer. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_backups.html["Répertoriez les sauvegardes"] pour localiser l'instantané.
+
+
+
+
+=== 1. Supprimez la sauvegarde
+
+Effectuez l'appel de l'API REST suivant.
+
+
+NOTE: Vous pouvez forcer la suppression d'une sauvegarde ayant échoué à l'aide de l'en-tête de demande facultatif comme décrit ci-dessous.
+
+[cols="25,75"]
+|===
+| Méthode HTTP | Chemin 
+
+
+| SUPPRIMER | /Accounts/{account_ID}/k8s/v1/apps/{app_ID}/appBackups/{appBackup_ID} 
+|===
+
+
+===== Paramètres d'entrée supplémentaires
+
+Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
+
+[cols="25,10,10,55"]
+|===
+| Paramètre | Type | Obligatoire | Description 
+
+
+| id de l'application | Chemin | Oui. | Identifie l'application gérée propriétaire de la sauvegarde. 
+
+
+| id de sauvegarde | Chemin | Oui. | Identifie la sauvegarde à supprimer. 
+
+
+| forcer la suppression | En-tête | Non | Utilisé pour forcer la suppression d'une sauvegarde ayant échoué. 
+|===
+
+
+===== Exemple de curl : supprimez une sauvegarde unique pour l'application
+
+[source, curl]
+----
+curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups/<BACKUP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Exemple de curl : supprimez une sauvegarde unique pour l'application avec l'option forcer
+
+[source, curl]
+----
+curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups/<BACKUP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --header 'Force-Delete: true'
+----

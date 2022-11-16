@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: get-started/get_api_token.html 
+keywords: token, obtain token 
+summary: 'Vous devez obtenir un jeton API Astra pour utiliser l"API REST Astra Control.' 
+---
+= Obtenir un jeton API
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous devez obtenir un jeton API Astra pour utiliser l'API REST Astra Control.
+
+
+
+== Introduction
+
+Un jeton API identifie l'appelant auprès d'Astra et doit être inclus avec chaque appel d'API REST.
+
+* Vous pouvez générer un jeton API à l'aide de l'interface utilisateur Web Astra.
+* L'identité de l'utilisateur portée avec le token est déterminée par l'utilisateur qui crée le token.
+* Le jeton doit être inclus dans le `Authorization` En-tête de requête HTTP.
+* Un jeton n'expire jamais après sa création.
+* Vous pouvez révoquer un jeton dans l'interface utilisateur Web Astra.
+
+
+.Informations associées
+* link:../additional/revoke_token.html["Révoquer un jeton API"]
+
+
+
+
+== Créez un jeton API Astra
+
+Les étapes suivantes décrivent comment créer un jeton API Astra.
+
+Vous avez besoin d'informations d'identification pour un compte Astra.
+
+Cette tâche génère un jeton API sur l'interface Web Astra. Vous devez également récupérer l'ID de compte qui est également nécessaire lors de la réalisation d'appels API.
+
+.Étapes
+. Connectez-vous à Astra à l'aide de vos identifiants de compte.
++
+Accédez au site suivant pour le service Astra Control : https://astra.netapp.io/["https://astra.netapp.io"^]
+
+. Cliquez sur l'icône figure en haut à droite de la page et sélectionnez *API Access*.
+. Cliquez sur *Generate API token* sur la page et, dans la fenêtre contextuelle, cliquez sur *Generate API token*.
+. Cliquez sur l'icône pour copier la chaîne de token dans le presse-papiers et l'enregistrer dans votre éditeur.
+. Copiez et enregistrez l'ID de compte disponible sur la même page.
+
+
+Lorsque vous accédez à l'API REST Astra Control via Curl ou un langage de programmation, vous devez inclure le jeton de support d'API dans le protocole HTTP `Authorization` en-tête de demande.

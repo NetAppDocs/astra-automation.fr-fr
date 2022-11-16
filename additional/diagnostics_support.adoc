@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: additional/diagnostics_support.html 
+keywords: diagnostics, support, debugging 
+summary: 'Il existe plusieurs fonctions de prise en charge disponibles avec l"API REST Astra Control qui peuvent être utilisées pour le diagnostic et le débogage.' 
+---
+= Diagnostics et support
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il existe plusieurs fonctions de prise en charge disponibles avec l'API REST Astra Control qui peuvent être utilisées pour le diagnostic et le débogage.
+
+
+
+== Ressources API
+
+Plusieurs fonctions Astra sont exposées via des ressources API qui fournissent des informations de diagnostic et une assistance.
+
+[cols="20,80"]
+|===
+| Type | Description 
+
+
+| Événement | Les activités du système enregistrées dans le cadre du traitement Astra. 
+
+
+| Notification | Sous-ensemble des événements jugés suffisamment importants pour être présenté à l'utilisateur. 
+
+
+| Notification non lue | Les notifications qui n'ont pas encore été lues ou récupérées par l'utilisateur. 
+|===

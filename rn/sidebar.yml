@@ -1,0 +1,10 @@
+---
+section: rn
+title: Notes de mise à jour
+entries:
+- title: À propos de cette version
+  url: "/rn/about.html"
+- title: Quoi de neuf
+  url: "/rn/whats_new.html"
+- title: Problèmes connus
+  url: "/rn/known_issues.html"

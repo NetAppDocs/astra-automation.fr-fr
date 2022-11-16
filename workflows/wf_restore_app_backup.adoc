@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_restore_app_backup.html 
+keywords:  
+summary: 'Vous pouvez restaurer une application en créant une nouvelle application à partir d"une sauvegarde.' 
+---
+= Restaurez une application à partir d'une sauvegarde
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez restaurer une application en créant une nouvelle application à partir d'une sauvegarde.
+
+
+
+=== 1. Sélectionnez l'application à restaurer
+
+Exécutez le flux de travail link:wf_list_man_apps.html["Répertorier les applications"] et sélectionnez l'application à cloner. Plusieurs des valeurs de ressources sont nécessaires pour l'appel DE REPOS utilisé pour restaurer l'application.
+
+
+
+=== 2. Sélectionnez la sauvegarde à utiliser
+
+Exécutez le flux de travail link:wf_list_backups.html["Répertoriez les sauvegardes"] et sélectionnez la sauvegarde que vous souhaitez utiliser.
+
+
+
+=== 3. Restaurez l'application
+
+Effectuez l'appel de l'API REST suivant. Vous devez fournir l'ID d'une sauvegarde (comme indiqué ci-dessous) ou d'un instantané.
+
+[cols="25,75"]
+|===
+| Méthode HTTP | Chemin 
+
+
+| EN | /account/{account_id}/k8s/v2/apps/{app_id} 
+|===
+
+
+===== Paramètres d'entrée supplémentaires
+
+Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
+
+[cols="25,10,10,55"]
+|===
+| Paramètre | Type | Obligatoire | Description 
+
+
+| JSON | Corps | Oui. | Fournit les paramètres de l'application clonée. Voir l'exemple ci-dessous. 
+|===
+
+
+===== Exemple d'entrée JSON
+
+[source, json]
+----
+{
+  "type": "application/astra-app",
+  "version": "2.0",
+  "backupID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
+}
+----
+
+
+===== Exemple Curl : restaurez une application à partir d'une sauvegarde
+
+[source, curl]
+----
+curl --location -i --request PUT 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps/<APP_ID>' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'ForceUpdate: true' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

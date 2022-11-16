@@ -1,0 +1,166 @@
+---
+sidebar: sidebar 
+permalink: rest-core/http_details.html 
+keywords: http, http details, uri, json 
+summary: 'L"API REST Astra Control utilise HTTP et les paramètres associés pour agir sur les instances et les collections de ressources.' 
+---
+= Détails HTTP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'API REST Astra Control utilise HTTP et les paramètres associés pour agir sur les instances et les collections de ressources. Les détails de l'implémentation HTTP sont présentés ci-dessous.
+
+
+
+== Transactions API et modèle CRUD
+
+L'API REST d'Astra Control met en œuvre un modèle transactionnel avec des opérations et des transitions d'état clairement définies.
+
+Chaque appel d'API REST est exécuté sous forme de requête HTTP auprès du service Astra. Chaque requête génère une réponse associée au client. Cette paire demande-réponse peut être considérée comme une transaction API.
+
+Chaque instance et collection de ressources disponibles via l'API REST Astra Control est accessible en fonction du modèle *CRUD*. Il existe quatre opérations, chacune étant mappée à une seule méthode HTTP. Ses opérations sont les suivantes :
+
+* Création
+* Lecture
+* Mise à jour
+* Supprimer
+
+
+Pour certaines ressources Astra, seul un sous-ensemble de ces opérations est pris en charge. Vous devez consulter le link:../reference/api_reference.html["Référence API"] Pour plus d'informations sur un appel d'API spécifique.
+
+
+
+== Méthodes HTTP
+
+Les méthodes HTTP ou verbes pris en charge par l'API sont présentées dans le tableau ci-dessous.
+
+[cols="15,15,70"]
+|===
+| Méthode | CRUD | Description 
+
+
+| OBTENEZ | Lecture | Récupère les propriétés d'un objet pour une instance ou une collection de ressources. Cette opération est considérée comme une opération *list* lorsqu'elle est utilisée avec une collection. 
+
+
+| POST | Création | Crée une nouvelle instance de ressource basée sur les paramètres d'entrée. L'URL à long terme est renvoyée dans un `Location` en-tête de réponse. 
+
+
+| EN | Mise à jour | Met à jour une instance de ressource entière avec le corps de demande JSON fourni. Les valeurs clés qui ne sont pas modifiables par l'utilisateur sont conservées. 
+
+
+| SUPPRIMER | Supprimer | Supprime une instance de ressource existante. 
+|===
+
+
+== En-têtes de demande et de réponse
+
+Le tableau suivant résume les en-têtes HTTP utilisés avec l'API REST Astra Control.
+
+
+NOTE: Voir https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232"^] et https://www.rfc-editor.org/rfc/rfc7233.txt["RFC 7233"^] pour en savoir plus.
+
+[cols="30,15,55"]
+|===
+| En-tête | Type | Remarques sur l'utilisation 
+
+
+| Accepter | Demande | Si la valeur est "*/*" ou n'est pas fournie, `application/json` Est renvoyé dans l'en-tête de réponse Content-Type. Si la valeur est définie sur le type de support de ressource Astra, le même type de support est renvoyé dans l'en-tête Type de contenu. 
+
+
+| Autorisation | Demande | Jeton porteur avec la clé API pour l'utilisateur. 
+
+
+| Type de contenu | Réponse | Renvoyé en fonction du `Accept` en-tête de demande. 
+
+
+| ETAG | Réponse | Inclus avec un succès tel que défini dans RFC 7232. La valeur est une représentation hexadécimale de la valeur MD5 pour l'ensemble de la ressource JSON. 
+
+
+| IF-match | Demande | En-tête de demande préalable mise en œuvre comme décrit à la section 3.1 RFC 7232 et prise en charge des requêtes *PUT*. 
+
+
+| Si-modifié-depuis | Demande | En-tête de demande préalable mise en œuvre comme décrit à la section 3.4 RFC 7232 et prise en charge des requêtes *PUT*. 
+
+
+| Si-non modifié-depuis | Demande | En-tête de demande préalable mise en œuvre comme décrit à la section 3.4 RFC 7232 et prise en charge des requêtes *PUT*. 
+
+
+| Emplacement | Réponse | Contient l'URL complète de la nouvelle ressource créée. 
+|===
+
+
+== Paramètres de requête
+
+Les paramètres de requête suivants peuvent être utilisés avec les collections de ressources. Voir link:../additional/working_with_collections.html["Utilisation des collections"] pour en savoir plus.
+
+[cols="20,80"]
+|===
+| Paramètre de requête | Description 
+
+
+| inclure | Contient les champs à retourner lors de la lecture d'une collection. 
+
+
+| filtre | Indique les champs devant correspondre pour qu'une ressource soit renvoyée lors de la lecture d'une collection. 
+
+
+| Orderby | Détermine l'ordre de tri des ressources renvoyées lors de la lecture d'une collection. 
+
+
+| limite | Limite le nombre maximal de ressources renvoyées lors de la lecture d'une collection. 
+
+
+| ignorer | Définit le nombre de ressources à passer et ignorer lors de la lecture d'une collection. 
+
+
+| nombre | Indique si le nombre total de ressources doit être renvoyé dans l'objet métadonnées. 
+|===
+
+
+== Codes d'état HTTP
+
+Les codes d'état HTTP utilisés par l'API REST Astra Control sont décrits ci-dessous.
+
+
+NOTE: L'API REST Astra Control utilise également la norme *Détails du problème pour les API HTTP*. Voir link:diagnostics_support.html["Diagnostics et support"] pour en savoir plus.
+
+[cols="15,20,65"]
+|===
+| Code | Signification | Description 
+
+
+| 200 | OK | Indique la réussite des appels qui ne créent pas une nouvelle instance de ressource. 
+
+
+| 201 | Créé | Un objet est créé avec succès et l'en-tête de réponse d'emplacement inclut l'identifiant unique de l'objet. 
+
+
+| 204 | Aucun contenu | La demande a réussi bien qu'aucun contenu n'ait été renvoyé. 
+
+
+| 400 | Demande incorrecte | L'entrée de la demande n'est pas reconnue ou est inappropriée. 
+
+
+| 401 | Non autorisé | L'utilisateur n'est pas autorisé et doit être autorisé. 
+
+
+| 403 | Interdit | L'accès est refusé en raison d'une erreur d'autorisation. 
+
+
+| 404 | Introuvable | La ressource mentionnée dans la demande n'existe pas. 
+
+
+| 409 | Conflit | La tentative de création d'un objet a échoué car celui-ci existe déjà. 
+
+
+| 500 | Erreur interne | Une erreur interne générale s'est produite sur le serveur. 
+
+
+| 503 | Service indisponible | Le service n'est pas prêt à traiter la demande pour une raison quelconque. 
+|===

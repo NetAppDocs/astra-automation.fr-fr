@@ -1,0 +1,12 @@
+---
+section: rest-core
+title: Implémentation DE l'APPLICATION REST de cœur
+entries:
+- title: Services web REST
+  url: "/rest-core/rest_web_services.html"
+- title: Ressources et collections
+  url: "/rest-core/resources_collections.html"
+- title: Détails HTTP
+  url: "/rest-core/http_details.html"
+- title: Format d'URL
+  url: "/rest-core/url_format.html"

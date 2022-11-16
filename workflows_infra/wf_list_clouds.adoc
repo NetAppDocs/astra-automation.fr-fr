@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_clouds.html 
+keywords:  
+summary: Vous pouvez répertorier les nuages définis et disponibles un compte Astra spécifique. 
+---
+= Lister les clouds
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez répertorier les nuages définis et disponibles un compte Astra spécifique.
+
+
+
+=== 1. Dresser la liste des clouds
+
+Effectuez l'appel d'API REST suivant pour répertorier les clouds.
+
+[cols="25,75"]
+|===
+| Méthode HTTP | Chemin 
+
+
+| OBTENEZ | /account/{account_id}/topologique/v1/clouds 
+|===
+
+
+===== Exemple de curl : retournez toutes les données de tous les clouds
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----

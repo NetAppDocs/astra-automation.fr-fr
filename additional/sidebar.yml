@@ -1,0 +1,12 @@
+---
+section: additional
+title: Autres considérations d'utilisation
+entries:
+- title: Sécurité RBAC
+  url: "/additional/rbac.html"
+- title: Travailler avec les collections
+  url: "/additional/work_with_collections.html"
+- title: Diagnostics
+  url: "/additional/diagnostics_support.html"
+- title: Révoquer un jeton API
+  url: "/additional/revoke_token.html"

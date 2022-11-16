@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: workflows/workflows_before.html 
+keywords: workflows, management workflows, preparation 
+summary: 'Vous pouvez utiliser ces flux de travail dans le cadre de l"administration des applications dans un cluster géré Astra.' 
+---
+= Avant de commencer
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez utiliser ces flux de travail dans le cadre de l'administration des applications dans un cluster géré Astra.
+
+
+NOTE: Il est possible de développer et d'améliorer ces flux de travail par NetApp à tout moment, et nous vous recommandons de les consulter régulièrement.
+
+
+
+== Préparation générale
+
+Avant d'utiliser l'un des flux de travail Astra, veillez à le lire link:../get-started/prepare_to_use_workflows.html["Préparez l'utilisation des workflows"].
+
+
+
+== Catégories de flux de travail
+
+Les flux de travail de gestion sont organisés en différentes catégories, afin de localiser plus facilement celui que vous souhaitez.
+
+[cols="25,75"]
+|===
+| Catégorie | Description 
+
+
+| Contrôle des applications | Ces flux de production vous permettent de contrôler les applications gérées et non gérées. Vous pouvez afficher la liste des applications ainsi que créer et supprimer une application gérée. 
+
+
+| Protection des applications | Ces flux de travail vous permettent de protéger vos applications gérées par le biais des snapshots et des sauvegardes. 
+
+
+| Clonage et restauration des applications | Décrit le clonage et la restauration des applications gérées dans ce workflow. 
+
+
+| Assistance | Plusieurs workflows sont disponibles pour débogage et prise en charge de vos applications, ainsi que pour l'environnement Kubernetes général. 
+|===
+
+
+== Autres considérations
+
+L'utilisation des flux de travail de gestion peut prendre en compte plusieurs considérations supplémentaires.
+
+
+
+=== Clonage d'une application
+
+Vous devez tenir compte de plusieurs facteurs lors du clonage d'une application. Les paramètres décrits ci-dessous font partie de l'entrée JSON.
+
+Identificateur de cluster source:: La valeur de `sourceClusterID` identifie toujours le cluster sur lequel l'application d'origine est installée.
+Identificateur de cluster:: La valeur de `clusterID` identifie le cluster sur lequel la nouvelle application sera installée.
++
+--
+* Lors du clonage au sein d'un même cluster, `clusterID` et `sourceClusterID` avoir la même valeur.
+* Lors du clonage entre clusters, les deux valeurs sont différentes et `clusterID` Doit être l'ID du cluster cible.
+
+
+--
+Espaces de noms:: Le `namespace` la valeur doit être différente de celle de l'application source d'origine. De plus, le namespace du clone ne peut pas exister et Astra va le créer.
+Sauvegardes et snapshots:: Vous pouvez également cloner une application à partir d'une sauvegarde ou d'un snapshot existant à l'aide de `backupID` ou `snapshotID` paramètres. Si vous ne fournissez pas de sauvegarde ou de snapshot, Astra crée d'abord une sauvegarde de l'application, puis clone à partir de la sauvegarde.
+
+
+
+
+==== Restauration d'une application
+
+Voici quelques points à prendre en compte lors de la restauration d'une application.
+
+* La restauration d'une application est très similaire à l'opération de clonage.
+* Lors de la restauration d'une application, vous devez fournir une sauvegarde ou un instantané.
+

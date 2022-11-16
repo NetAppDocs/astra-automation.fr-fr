@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: additional/work_with_collections.html 
+keywords: collections, filtering, pagination, count 
+summary: 'L"API REST Astra Control offre plusieurs façons d"accéder aux collections de ressources via les paramètres de requête définis.' 
+---
+= Travailler avec les collections
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'API REST Astra Control offre plusieurs façons d'accéder aux collections de ressources via les paramètres de requête définis.
+
+Vous pouvez spécifier les paires clé-valeur qui doivent être renvoyées pour chaque instance de ressource à l'aide de l' `include` paramètre. Toutes les instances sont renvoyées dans le corps de réponse.
+
+Le filtrage des ressources de collection permet à un utilisateur API de spécifier des conditions qui déterminent si une ressource est renvoyée dans le corps de réponse. Le `filter` le paramètre est utilisé pour indiquer la condition de filtrage.
+
+Le tri des ressources de collection permet à un utilisateur d'API de spécifier l'ordre dans lequel les ressources sont renvoyées dans le corps de réponse. Le `orderBy` le paramètre est utilisé pour indiquer la condition de filtrage.
+
+Vous pouvez appliquer la pagination en limitant le nombre d'instances de ressources renvoyées sur une demande à l'aide de l' `limit` paramètre.
+
+Si vous incluez le paramètre booléen `count` réglez sur `true`, le nombre de ressources du tableau renvoyé pour une réponse donnée est indiqué dans la section métadonnées.

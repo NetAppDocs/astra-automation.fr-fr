@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: additional/rbac.html 
+keywords: rbac, roles, namespace granularity 
+summary: 'L"API REST Astra prend en charge le contrôle d"accès basé sur des rôles (RBAC) pour accorder et restreindre l"accès aux fonctions du système.' 
+---
+= Sécurité RBAC
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'API REST Astra prend en charge le contrôle d'accès basé sur des rôles (RBAC) pour accorder et restreindre l'accès aux fonctions du système.
+
+
+
+== Rôles d'Astra
+
+Chaque utilisateur Astra est affecté à un seul rôle qui détermine les actions qui peuvent être exécutées. Les rôles sont classés dans une hiérarchie comme décrit dans le tableau ci-dessous.
+
+[cols="15,85"]
+|===
+| Rôle | Description 
+
+
+| Propriétaire | Dispose de toutes les autorisations du rôle d'administrateur et peut également supprimer des comptes Astra. 
+
+
+| Admin | Dispose de toutes les autorisations du rôle membre et peut également inviter des utilisateurs à rejoindre un compte. 
+
+
+| Membre | Peut gérer entièrement l'application Astra et les ressources de calcul. 
+
+
+| Visualiseur | Limité à l'affichage des ressources uniquement. 
+|===
+
+
+== RBAC amélioré avec granularité de l'espace de noms
+
+
+NOTE: Cette fonctionnalité a été introduite avec la version 22.04 de l'API REST d'Astra.
+
+Lorsqu'une liaison de rôle est établie pour un utilisateur spécifique, une contrainte peut être appliquée pour limiter les espaces de noms à lesquels l'utilisateur a accès. Il existe plusieurs façons de définir cette contrainte comme décrit dans le tableau ci-dessous. Voir le paramètre `roleContraints` Dans l'API de liaison de rôles pour plus d'informations.
+
+[cols="20,80"]
+|===
+| Espaces de noms | Description 
+
+
+| Tout | L'utilisateur peut accéder à tous les espaces de noms via le paramètre générique "*". Il s'agit de la valeur par défaut pour maintenir la compatibilité descendante. 
+
+
+| Aucune | La liste des contraintes est spécifiée, bien qu'elle soit vide. Cela indique que l'utilisateur ne peut accéder à aucun espace de noms. 
+
+
+| Liste d'espace de noms | L'UUID d'un namespace est inclus dans ce document qui limite l'utilisateur à un seul namespace. Une liste séparée par des virgules peut également être utilisée pour permettre l'accès à plusieurs espaces de noms. 
+
+
+| Étiquette | Une étiquette est spécifiée et l'accès à tous les espaces de noms correspondants est autorisé. 
+|===

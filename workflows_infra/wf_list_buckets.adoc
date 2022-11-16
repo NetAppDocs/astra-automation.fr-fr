@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_buckets.html 
+keywords:  
+summary: Vous pouvez afficher la liste des compartiments S3 définis pour un compte Astra spécifique. 
+---
+= Répertorier les rubriques
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez afficher la liste des compartiments S3 définis pour un compte Astra spécifique.
+
+
+
+=== 1. Dressez la liste des compartiments
+
+Effectuez l'appel suivant de l'API REST pour afficher la liste des compartiments.
+
+[cols="25,75"]
+|===
+| Méthode HTTP | Chemin 
+
+
+| OBTENEZ | /account/{account_id}/topologique/v1/seaux 
+|===
+
+
+===== Exemple de gondolage : renvoie toutes les données de tous les compartiments
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/buckets' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----

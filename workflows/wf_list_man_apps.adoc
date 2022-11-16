@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_man_apps.html 
+keywords:  
+summary: 'Vous pouvez lister les applications actuellement gérées par Astra. Pour rechercher des snapshots ou des sauvegardes d"une application spécifique, vous pouvez effectuer cette opération.' 
+---
+= Répertorier les applications
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez lister les applications actuellement gérées par Astra. Pour rechercher des snapshots ou des sauvegardes d'une application spécifique, vous pouvez effectuer cette opération.
+
+
+
+=== 1. Dressez la liste des applications
+
+Effectuez l'appel de l'API REST suivant.
+
+[cols="25,75"]
+|===
+| Méthode HTTP | Chemin 
+
+
+| OBTENEZ | /account/{account_id}/k8s/v2/apps 
+|===
+
+
+===== Paramètres d'entrée supplémentaires
+
+Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
+
+[cols="25,10,10,55"]
+|===
+| Paramètre | Type | Obligatoire | Description 
+
+
+| inclure | Requête | Non | Sélectionner éventuellement les valeurs que vous souhaitez renvoyer dans la réponse. 
+|===
+
+
+===== Exemple de curl : renvoie toutes les données de toutes les applications
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Exemple de curl : renvoie le nom, l'ID et l'état de toutes les applications
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps?include=name,id,state' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Exemple de sortie JSON
+
+[source, json]
+----
+{
+    "items": [
+        [
+            "mysql",
+            "4ee2b8fa-3696-4f32-8879-399792f477c3",
+            "ready"
+        ],
+        [
+            "postgresql",
+            "3b984474-e5c9-4b64-97ee-cdeb9bcd212e",
+            "ready"
+        ],
+    ],
+    "metadata": {}
+}
+----

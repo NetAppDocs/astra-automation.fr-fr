@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: rest-core/url_format.html 
+keywords: url, url format, endpoint, version 
+summary: 'La structure générale de l"URL utilisée pour accéder à une instance de ressource ou à une collection via l"API REST est composée de plusieurs valeurs. Cette structure reflète le modèle d"objet sous-jacent et la conception du système.' 
+---
+= Format d'URL
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La structure générale de l'URL utilisée pour accéder à une instance de ressource ou à une collection via l'API REST est composée de plusieurs valeurs. Cette structure reflète le modèle d'objet sous-jacent et la conception du système.
+
+Le compte Astra est la racine du chemin de ressource vers chaque point final REST. Ainsi, tous les chemins d'accès de l'URL commencent par `/account/{account_id}` où `account_id` Est la valeur UUIDv4 unique du compte. Structure interne cette conception reflète une conception où tout accès aux ressources est basé sur un compte spécifique.
+
+Les terminaux de ressources d'Astra se répartissent en trois catégories :
+
+* Cœur (`/core`)
+* Application gérée (`/k8s`)
+* Topologie (`/topology`)
+
+
+Voir link:../endpoints/resources.html["Ressources"] pour en savoir plus.
+
+Chacune des trois catégories de ressources possède une version globale qui contrôle la version des ressources consultées. Par convention et définition, passage à une nouvelle version majeure d'une catégorie de ressources (par exemple, de `/v1` à `/v2`) Introduira des changements de rupture dans l'API.
+
+Une combinaison de types de ressources et d'identificateurs peut être utilisée dans le chemin, selon qu'une instance de ressource ou une collection est accédée.
+
+.Exemple
+* Chemin de ressource
++
+En fonction de la structure présentée ci-dessus, un chemin type vers un noeud final est : `/accounts/{account_id}/core/v1/users`.
+
+* URL complète
++
+L'URL complète du noeud final correspondant est : `https://astra.netapp.io/accounts/{account_id}/core/v1/users`.
+
+

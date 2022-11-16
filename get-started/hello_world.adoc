@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: get-started/hello_world.html 
+keywords: get started, simple example 
+summary: 'Vous pouvez lancer une commande curl simple sur la CLI de votre station de travail pour commencer à utiliser l"API REST Astra Control et confirmer sa disponibilité.' 
+---
+= Bonjour tout le monde
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez lancer une commande curl simple sur la CLI de votre station de travail pour commencer à utiliser l'API REST Astra Control et confirmer sa disponibilité.
+
+L'utilitaire Curl doit être disponible sur votre poste de travail local. Vous devez également disposer d'un jeton API et de l'identifiant de compte associé. Voir link:get_api_token.html["Obtenir un jeton API"] pour en savoir plus.
+
+La commande Curl suivante récupère la liste des utilisateurs Astra. Fournissez les <ACCOUNT_ID> et <API_TOKEN> appropriés comme indiqué.
+
+[source, curl]
+----
+curl --location --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/json' --header 'Authorization: Bearer <API_TOKEN>'
+----
+.Exemple de sortie JSON
+[source, json]
+----
+{
+  "items": [
+    [
+    "David",
+    "Anderson",
+    "844ec6234-11e0-49ea-8434-a992a6270ec1"
+    ],
+    [
+      "Jane",
+      "Cohen",
+      "2a3e227c-fda7-4145-a86c-ed9aa0183a6c"
+    ]
+  ],
+  "metadata": {}
+}
+----

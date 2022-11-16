@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_notifications.html 
+keywords:  
+summary:  
+---
+= Dressez la liste des notifications
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez lister les notifications d'un compte Astra spécifique. Vous pouvez le faire dans le cadre de la surveillance de l'activité du système ou du débogage d'un problème.
+
+
+
+=== 1. Dressez la liste des notifications
+
+Effectuez l'appel de l'API REST suivant.
+
+[cols="25,75"]
+|===
+| Méthode HTTP | Chemin 
+
+
+| OBTENEZ | /account/{account_id}/core/v1/notifications 
+|===
+
+
+===== Paramètres d'entrée supplémentaires
+
+Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
+
+[cols="25,10,10,55"]
+|===
+| Paramètre | Type | Obligatoire | Description 
+
+
+| filtre | Requête | Non | Vous pouvez éventuellement filtrer les notifications que vous souhaitez renvoyer dans la réponse. 
+
+
+| inclure | Requête | Non | Sélectionner éventuellement les valeurs que vous souhaitez renvoyer dans la réponse. 
+|===
+
+
+===== Exemple de boucle : renvoie toutes les notifications
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/notifications' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Exemple Curl : renvoie la description des notifications avec gravité d'avertissement
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/notifications?filter=severity%20eq%20'warning'&include=description' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Exemple de sortie JSON
+
+[source, json]
+----
+{
+  "items": [
+    [
+      "Trident on cluster david-ie-00 has failed or timed out; installation of the Trident operator failed or is not yet complete; operator failed to reach an installed state within 300.00 seconds; container trident-operator not found in operator deployment"
+    ],
+    [
+      "Trident on cluster david-ie-00 has failed or timed out; installation of the Trident operator failed or is not yet complete; operator failed to reach an installed state within 300.00 seconds; container trident-operator not found in operator deployment"
+    ]
+  ],
+  "metadata": {}
+}
+----
