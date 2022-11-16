@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>astra-automation | NetApp Documentation</title>
+    <atom:link href="https://docs.netapp.com/fr-fr/astra-automation/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://docs.netapp.com/fr-fr/astra-automation</link>
+    <description>The latest updates from NetApp Documentation</description>
+    <language>fr-fr</language>
+    <ttl>60</ttl>
+    <pubDate>Wed, 16 Nov 2022 18:26:47 +0000</pubDate>
+    <lastBuildDate>Wed, 16 Nov 2022 18:26:47 +0000</lastBuildDate>
+    
+    
+    
+    <item>
+      <title>Nouveautés de l&amp;#8217;API REST Astra Control (16 Nov 2022)</title>
+      <pubDate>Wed, 16 Nov 2022 18:23:18 +0000</pubDate>
+      <link>https://docs.netapp.com/fr-fr/astra-automation/rn/whats_new.html?time=1668622998</link>
+      <guid isPermaLink="false">Wed, 16 Nov 2022 18:23:18 +0000</guid>
+      <description><![CDATA[ NetApp met régulièrement à jour l&quot;API REST Astra Control pour vous apporter de nouvelles fonctionnalités, des améliorations et des correctifs. ]]></description>
+    </item>
+    
+    
+  </channel>
+</rss>
