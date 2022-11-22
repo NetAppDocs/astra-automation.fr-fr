@@ -520,6 +520,8 @@
           
 
 
+
+
         </li>
       </ul>
     
@@ -574,6 +576,10 @@
             Clusters
           </a>
           
+
+
+
+
 
 
 
@@ -734,6 +740,8 @@
             Protection des applications
           </a>
           
+
+
 
 
 
@@ -1010,11 +1018,11 @@
         Obtenir un jeton API
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Bonjour tout le monde"
+      data-pdf-filename="Votre premier appel API"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-automation/get-started/hello_world.html">
-        Bonjour tout le monde
+    ><a class="na-navbar-padding" href="/fr-fr/astra-automation/get-started/first_call.html">
+        Votre premier appel API
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Préparez l'utilisation des workflows"
@@ -1142,6 +1150,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-automation/workflows_infra/wf_list_users.html">
         Répertorier les utilisateurs
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Créer un utilisateur"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-automation/workflows_infra/wf_create_user.html">
+        Créer un utilisateur
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Configuration LDAP"
@@ -1197,11 +1212,25 @@
         Lister les clusters
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Ajouter un cluster"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-automation/workflows_infra/wf_add_cluster.html">
+        Ajouter un cluster
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Répertorier les clusters gérés"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-automation/workflows_infra/wf_list_man_clusters.html">
         Répertorier les clusters gérés
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérer un cluster"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-automation/workflows_infra/wf_man_cluster.html">
+        Gérer un cluster
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Cloud"
@@ -1361,6 +1390,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-automation/workflows/wf_delete_backup.html">
         Supprimer la sauvegarde
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Création d'une règle de protection"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-automation/workflows/wf_create_protection.html">
+        Création d'une règle de protection
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Clonage et restauration d'une application"
@@ -1571,7 +1607,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-16 18:23:18 +0000">11/16/2022</time>
+    <time datetime="2022-11-22 17:14:28 +0000">11/22/2022</time>
     
   
 
@@ -1640,7 +1676,7 @@ Le format du chemin et de l&#8217;URL complète utilisés pour accéder aux ress
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Certificat</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>22.08</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22.08</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources de certificat représentent les certificats installés utilisés pour une authentification forte pour les connexions sortantes.</p></td>
 </tr>
 <tr>
@@ -1670,13 +1706,23 @@ Le format du chemin et de l&#8217;URL complète utilisés pour accéder aux ress
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Groupe</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>22.08</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22.08</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources du groupe représentent les groupes Astra et les ressources associées. Seuls les groupes LDAP sont pris en charge dans la version actuelle.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source du crochet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">21.12</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources de la source de hook représentent le code source réel utilisé avec un crochet d&#8217;exécution. La séparation du code source et du contrôle d&#8217;exécution présente plusieurs avantages, tels que la possibilité de partager les scripts.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Groupe LDAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>22.11</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vous pouvez lister les groupes au sein du serveur LDAP configuré. L&#8217;accès aux groupes LDAP est en lecture seule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Utilisateur LDAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>22.11</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vous pouvez lister les utilisateurs au sein du serveur LDAP configuré. L&#8217;accès aux utilisateurs LDAP est en lecture seule.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Licence</p></td>
@@ -1707,6 +1753,11 @@ Le format du chemin et de l&#8217;URL complète utilisés pour accéder aux ress
 <td class="tableblock halign-left valign-top"><p class="tableblock">Abonnement</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">21.08</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources d&#8217;abonnement représentent les abonnements actifs pour un compte Astra.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tâche</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>22.11</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources de tâche fournissent un accès en lecture seule à la tâche gérée et peuvent être utilisées pour afficher l&#8217;état des tâches internes longues.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Jeton</p></td>
@@ -1798,13 +1849,18 @@ Le format du chemin et de l&#8217;URL complète utilisés pour accéder aux ress
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ressource API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>22.11</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Les terminaux de ressource API fournissent un accès en lecture seule aux ressources Kubernetes dans un cluster géré spécifique.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Appli</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">21.04</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources d&#8217;application représentent toutes les applications Kubernetes, y compris celles qui ne sont pas gérées par Astra.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AppMirror</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>22.08</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22.08</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources AppMirror représentent les ressources AppMirror pour la gestion des relations de mise en miroir des applications.</p></td>
 </tr>
 <tr>
@@ -1833,11 +1889,6 @@ Le format du chemin et de l&#8217;URL complète utilisés pour accéder aux ress
 <td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources du cluster géré représentent les clusters Kubernetes actuellement gérés par Kubernetes.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Stockage back-end géré</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">21.12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources du système de stockage back-end géré vous permettent d&#8217;accéder aux représentations extraites des fournisseurs de stockage back-end. Ces systèmes de stockage back-end peuvent être utilisés par les clusters et les applications gérés.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Espace de noms</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">21.12</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources d&#8217;espace de noms permettent d&#8217;accéder aux espaces de noms utilisés dans un cluster Kubernetes.</p></td>
@@ -1851,16 +1902,6 @@ Le format du chemin et de l&#8217;URL complète utilisés pour accéder aux ress
 <td class="tableblock halign-left valign-top"><p class="tableblock">Classe de stockage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">21.08</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources de classe de stockage représentent différents types ou classes de stockage détectés et disponibles pour un cluster géré spécifique.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dispositif de stockage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">21.12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources associées au dispositif de stockage permettent d&#8217;accéder aux disques associés à un nœud de stockage spécifique pour les systèmes back-end de stockage de type Astra Data Store (ADS). Un système back-end ADS est déployé en tant que clusters Kubernetes.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nœud de stockage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">21.12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Les ressources du nœud de stockage représentent les nœuds qui font partie d&#8217;un cluster ADS.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Volumétrie</p></td>

@@ -15,21 +15,21 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/aa-earlier-versions.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/rn/about.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/information/additional_resources.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
@@ -62,14 +62,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/fr-fr/astra-automation/get-started/get_api_token.html</loc>
+      <loc>https://docs.netapp.com/fr-fr/astra-automation/get-started/first_call.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/fr-fr/astra-automation/get-started/hello_world.html</loc>
+      <loc>https://docs.netapp.com/fr-fr/astra-automation/get-started/get_api_token.html</loc>
       
       <lastmod>2022-11-16T18:23:18+00:00</lastmod>
       
@@ -106,7 +106,7 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/ldap_prepare.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
@@ -155,7 +155,7 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/endpoints/resources.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
@@ -183,7 +183,7 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation//search.html</loc>
       
-      <lastmod>2022-11-16T18:23:33+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:40+00:00</lastmod>
       
     </url>
   
@@ -195,23 +195,30 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_add_cluster.html</loc>
+      
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows/wf_clone_app.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows/wf_clone_app_backup.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows/wf_clone_app_snapshot.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
@@ -223,9 +230,23 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows/wf_create_protection.html</loc>
+      
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows/wf_create_snapshot.html</loc>
       
       <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_create_user.html</loc>
+      
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
@@ -239,7 +260,7 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows/wf_delete_failed_app.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
@@ -260,21 +281,21 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_ldap_add_entries.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_ldap_configure_server.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_ldap_disable_reset.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
@@ -288,21 +309,21 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_list_buckets.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_list_clouds.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_list_clusters.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
@@ -316,21 +337,21 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_list_man_clusters.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows/wf_list_namespaces.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows/wf_list_notifications.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
@@ -344,28 +365,35 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_list_storage_backends.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_list_storage_classes.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_list_users.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows_infra/wf_man_cluster.html</loc>
+      
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows/wf_manage_app.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
@@ -379,14 +407,14 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/workflows/wf_unmanage_app.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/astra-automation/rn/whats_new.html</loc>
       
-      <lastmod>2022-11-16T18:23:18+00:00</lastmod>
+      <lastmod>2022-11-22T17:14:28+00:00</lastmod>
       
     </url>
   
