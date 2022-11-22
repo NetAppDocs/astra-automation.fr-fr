@@ -46,6 +46,12 @@ Un support a été ajouté pour les applications, couvrant plusieurs espaces de 
 
 Des abonnements à plusieurs comptes peuvent désormais être ajoutés pour chacun des fournisseurs cloud.
 
+
+
+=== Flux de travail supplémentaires
+
+Des workflows supplémentaires illustrant l'API REST Astra Control ont été ajoutés. Voir link:../workflows_infra/workflows_infra_before.html["Workflows d'infrastructure"] et link:../workflows/workflows_before.html["Flux de travail de gestion"] pour en savoir plus.
+
 .Informations associées
 * https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center : les nouveautés"^]
 

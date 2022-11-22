@@ -17,16 +17,10 @@ summary: 'Il est recommandé de passer en revue tous les problèmes connus relat
 Il est recommandé de passer en revue tous les problèmes connus relatifs à la version actuelle de l'API REST Astra Control. Les problèmes connus identifient les problèmes susceptibles de vous empêcher d'utiliser le produit avec succès.
 
 
-NOTE: Il n'y a pas de nouveaux problèmes connus avec la version 22.08 de l'API REST Astra Control. Les problèmes décrits ci-dessous ont été découverts dans les versions précédentes et sont toujours applicables avec la version actuelle.
+NOTE: Il n'y a pas de nouveaux problèmes connus avec la version 22.11 de l'API REST Astra Control. Les problèmes décrits ci-dessous ont été découverts dans les versions précédentes et sont toujours applicables avec la version actuelle.
 
 
 
 == Tous les périphériques de stockage d'un nœud de stockage interne ne sont pas détectés
 
 Lors de l'émission d'un appel d'API REST pour récupérer les périphériques de stockage définis dans un nœud de stockage, seuls les périphériques de stockage de données Astra sont découverts. Tous les périphériques ne sont pas renvoyés.
-
-
-
-== Le stockage back-end d'Astra dans un état inconnu
-
-Le système backend de stockage des magasins de données d'Astra `Unknown` État après émission d'un appel API pour récupérer le back-end de stockage. Dans cet état, le système back-end est toujours disponible et peut être communiqué avec. Toutefois, un composant du système de stockage back-end est probable qu'il soit défectueux et doit être ramené à un état sain pour que le système back-end puisse afficher le `Available`.
