@@ -11,9 +11,6 @@
   <block id="ef22ff17624b3faeed227ce5c717eb5f" category="inline-link">Documentation relative au service après-vente Astra Control</block>
   <block id="a3fb339c1c586b61a4747f75e3e18873" category="list-text"><block ref="a3fb339c1c586b61a4747f75e3e18873" category="inline-link-rx"></block></block>
   <block id="9533b0dcff191d66f9ea3fe447bffddc" category="paragraph">Documentation relative à la version actuelle du logiciel Astra Control Service disponible dans le Cloud public.</block>
-  <block id="be1c3d3113c4023e29e8dd947523c711" category="inline-link">Documentation Astra Data Store</block>
-  <block id="c1f6a45da7b5911a5f35093ae72bfc7a" category="list-text"><block ref="c1f6a45da7b5911a5f35093ae72bfc7a" category="inline-link-rx"></block></block>
-  <block id="f1078b605bb76543a5137c04c286382d" category="paragraph">Documentation relative à la version actuelle du logiciel Astra Data Store déployé sur le site du client.</block>
   <block id="14d9b10c6196045941347a9e85704b50" category="inline-link">Documentation Astra Trident</block>
   <block id="b886ef3e400bd69f357f6981475b14e1" category="list-text"><block ref="b886ef3e400bd69f357f6981475b14e1" category="inline-link-rx"></block></block>
   <block id="5b9e0257ebcdde10e1d11e75a9a03336" category="paragraph">Documentation relative à la version actuelle du logiciel Astra Trident, un orchestrateur de stockage open source géré par NetApp.</block>
@@ -21,8 +18,6 @@
   <block id="d718eacc67f8b74e62fa7298041adf60" category="list-text"><block ref="d718eacc67f8b74e62fa7298041adf60" category="inline-link-rx"></block></block>
   <block id="2c3489a3234e45e6f5946c26c4cb7d5e" category="paragraph">Un emplacement central permettant d'accéder à toute la documentation d'Astra tant pour les déploiements sur site que dans le cloud public.</block>
   <block id="58bf8b302985815533fd451d770a1b0a" category="section-title">Ressources cloud NetApp</block>
-  <block id="1eeb05c97eb6a268a15e00eff890e07f" category="inline-link">Solutions cloud NetApp</block>
-  <block id="548968c32bccd14a9476be7490cfc41a" category="list-text"><block ref="548968c32bccd14a9476be7490cfc41a" category="inline-link-rx"></block></block>
   <block id="4049649408c78f285cb012e2651847f4" category="paragraph">Site central des solutions clouds NetApp.</block>
   <block id="654f92d3e3cad866eb53b8787cc67444" category="inline-link">Console NetApp Cloud Central</block>
   <block id="1f45f670e1231774c60ec8b4cae95f3a" category="list-text"><block ref="1f45f670e1231774c60ec8b4cae95f3a" category="inline-link-rx"></block></block>
@@ -55,7 +50,6 @@
   <block id="3ded167f4ad4afb85c6ace5862e27ba0" category="cell">Méthode HTTP</block>
   <block id="ac70412e939d72a9234cdebb1af5867b" category="cell">Chemin</block>
   <block id="a02439ec229d8be0e74b0c1602392310" category="cell">POST</block>
-  <block id="25f12a573132de043b7448f6ef78dbbe" category="cell">/account/{account_id}/core/v1/users</block>
   <block id="0577bbabd0439eea401a8ec18491d1a6" category="section-title">Exemple d'entrée JSON</block>
   <block id="ecfba265de37f13d6cf0121430a4909e" category="paragraph">Notez les informations suivantes concernant les paramètres d'entrée :</block>
   <block id="181e7c57490e9fb900c9322a2192473b" category="list-text">Les paramètres suivants sont requis :</block>
@@ -69,14 +63,12 @@
   <block id="d6c64252b8ce71696a41d941f4cab6e6" category="section-title">Exemple de réponse JSON</block>
   <block id="73ae336a1bcf7abf02f83c9d961066d2" category="section-title">2. Ajoutez une liaison de rôle pour l'utilisateur</block>
   <block id="f82c041e2677cb63989e7061882203bc" category="paragraph">Effectuez l'appel de l'API REST suivant pour lier l'utilisateur à un rôle spécifique. Vous devez créer l'UUID de l'utilisateur à l'étape précédente.</block>
-  <block id="3798adb6ae243fda3b502c1a26ac7f38" category="cell">/Account/{account_ID}/core/v1/roleliaisons</block>
   <block id="afeef4481e8f77ed56c4383e82369e67" category="list-text">Valeur utilisée ci-dessus pour<block ref="4fe22a948503c3fe556cc6f6831342a9" prefix=" " category="inline-code"></block> Est la seule option disponible pour la version actuelle d'Astra. Il indique que l'utilisateur n'est pas limité à un ensemble limité d'espaces de noms et peut y accéder tous.</block>
   <block id="0622cb2fb15cd9db10328e2ba1d3e821" category="paragraph">Noter les éléments suivants concernant les paramètres de réponse :</block>
   <block id="ac7d66f43ecf3e035bc9139997762243" category="list-text">La valeur<block ref="ee11cbb19052e40b07aac0ca060c23ee" prefix=" " category="inline-code"></block> pour le<block ref="463fafd3510d11b15f43ef6174576d16" prefix=" " category="inline-code"></block> champ indique que la liaison du rôle a été ajoutée pour un utilisateur (et non pour un groupe).</block>
   <block id="1cce2e3f66074da3b3746e8ff32e3fa7" category="paragraph">Vous pouvez affecter un rôle à un groupe Astra qui est utilisé après l'authentification LDAP. Ceci est approprié lorsqu'il y a un grand nombre d'utilisateurs et que chacun peut avoir des caractéristiques administratives similaires.</block>
   <block id="92c4973d42b7f8c2b77e4ecde1fb1110" category="section-title">1. Ajoutez un groupe</block>
   <block id="c0ad03b2572c4c7580edf10837ea5620" category="paragraph">Effectuez l'appel d'API REST suivant pour ajouter un groupe à Astra et indiquer que LDAP est le fournisseur d'authentification.</block>
-  <block id="53e67e3e5364a93faa473947d3e71330" category="cell">/account/{account_id}/core/v1/groupes</block>
   <block id="d951c83a74c1539e200b4b2a6abc7a9d" category="section-title">2. Ajoutez une liaison de rôle pour le groupe</block>
   <block id="a5a9025a2565e62426d0d6fa46ca4e54" category="paragraph">Effectuez l'appel d'API REST suivant pour lier le groupe à un rôle spécifique. Vous devez créer l'UUID du groupe à l'étape précédente. Les utilisateurs qui sont membres du groupe pourront se connecter à Astra une fois que LDAP aura effectué l'authentification.</block>
   <block id="3f78918ffaed6aa648fbf481030b078e" category="list-text">Valeur utilisée ci-dessus pour<block ref="4fe22a948503c3fe556cc6f6831342a9" prefix=" " category="inline-code"></block> Est la seule option disponible pour la version actuelle d'Astra. Il indique que l'utilisateur n'est pas limité à certains espaces de noms et peut y accéder tous.</block>
@@ -103,31 +95,26 @@
   <block id="aef02d026fec2eb688571bfa2422be3a" category="doc">Lister les clouds</block>
   <block id="1b6ac21e78d44a219b6937e90879165d" category="section-title">1. Dresser la liste des clouds</block>
   <block id="095599abd98771dd2c043675b15cd910" category="paragraph">Effectuez l'appel d'API REST suivant pour répertorier les clouds.</block>
-  <block id="d5141cbc6eb85bf48e94e7d96fbd6a95" category="cell">/account/{account_id}/topologique/v1/clouds</block>
   <block id="e660247893e67f2eed38a94a3b63cd22" category="section-title">Exemple de curl : retournez toutes les données de tous les clouds</block>
   <block id="5eb4ace08e506648d2ccc5e95a6d5d96" category="doc">Configurez Astra pour qu'il utilise un serveur LDAP</block>
   <block id="a4cce93638d786143ceaec53646fcbd0" category="paragraph">Vous devez sélectionner un serveur LDAP et configurer Astra pour qu'il utilise le serveur en tant que fournisseur d'authentification. La tâche de configuration comprend les étapes décrites ci-dessous. Chaque étape inclut un appel d'API REST unique.</block>
   <block id="b05f354eda3398ade96e9055b0305ee6" category="section-title">1. Ajoutez un certificat CA</block>
   <block id="468c35b0a371a6568ff7d068ff72eeea" category="paragraph">Effectuez l'appel d'API REST suivant pour ajouter un certificat d'autorité de certification à Astra.</block>
   <block id="073d8b65fb7ecf85a06f38d463b9fdd1" category="admonition">Cette étape est facultative et requise uniquement si vous voulez qu'Astra et le LDAP communiquent via un canal sécurisé à l'aide de LDAPS.</block>
-  <block id="13b11308d2e55c74d3dd35f8e9035cf4" category="cell">/account/{account_id}/core/v1/certificats</block>
   <block id="7557b2b9d5bb2e98944494352545b875" category="list-text"><block ref="b6ba9fa6ea18201bf39ea635ecca9f13" prefix="" category="inline-code"></block> Est une chaîne JSON contenant un certificat au format PKCS-11 codé en base64 (codé PEM).</block>
   <block id="6387f0ce5ee860358d87cf0c10e51883" category="list-text"><block ref="90cfc6da5652d21260206e3e7b812234" prefix="" category="inline-code"></block> doit être réglé sur<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> si le certificat est auto-signé. La valeur par défaut est<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>.</block>
   <block id="d18a6eed5380b79bc54e2eb6e4de5506" category="section-title">2. Ajoutez les informations d'identification de liaison</block>
   <block id="9beb1432cc918de4d5a2f634c78b257d" category="paragraph">Effectuez l'appel d'API REST suivant pour ajouter les informations d'identification de liaison.</block>
-  <block id="b8044c82f34d859cca6a593e7b24a79d" category="cell">/account/{account_id}/core/v1/credentials</block>
   <block id="ae15f0c9912e2e37b3523e7e2e9f84ee" category="list-text"><block ref="e28922e50817cf44dfc07d9869ad3c81" prefix="" category="inline-code"></block> et<block ref="5f4dcc3b5aa765d61d8327deb882cf99" prefix=" " category="inline-code"></block> Sont les informations d'identification de liaison codées en base64 de l'utilisateur admin LDAP qui peut se connecter et rechercher dans le répertoire LDAP.<block ref="e28922e50817cf44dfc07d9869ad3c81" prefix=" " category="inline-code"></block> Est l'adresse e-mail de l'utilisateur LDAP.</block>
   <block id="bc1e18d5941e02ad1eb5530ea712bf97" category="paragraph">Noter les paramètres de réponse suivants :</block>
   <block id="7650c05d04a1e9ff8418e0b2c4d3117a" category="list-text">Le<block ref="b80bb7740288fda1f201890375a60c8f" prefix=" " category="inline-code"></block> des informations d'identification sont utilisées dans les étapes suivantes du flux de travail.</block>
   <block id="be0de023c657d3318fab7db4965e926d" category="section-title">3. Récupérez l'UUID du paramètre LDAP</block>
   <block id="bdf56457fecf48ce12cedd63e4baec6a" category="paragraph">Exécutez l'appel de l'API REST suivant pour récupérer l'UUID du<block ref="3940413bb3049c60c5e6b30073232b82" prefix=" " category="inline-code"></block> Réglage inclus avec le centre de contrôle Astra.</block>
   <block id="9a7c85ed5d7349bb01adfea8e76844c3" category="admonition">L'exemple curl ci-dessous utilise un paramètre de requête pour filtrer la collection de paramètres. Vous pouvez à la place supprimer le filtre pour obtenir tous les paramètres, puis rechercher<block ref="3940413bb3049c60c5e6b30073232b82" prefix=" " category="inline-code"></block>.</block>
-  <block id="29a6dc5ec66799293d0f657ef700f728" category="cell">/account/{account_id}/core/v1/settings</block>
   <block id="a04f6fc98905b19569e98c821652785c" category="section-title">4. Mettez à jour le paramètre LDAP</block>
   <block id="c74075f7ca4f004176562adafe18dc7f" category="paragraph">Effectuez l'appel d'API REST suivant pour mettre à jour le paramètre LDAP et terminer la configuration. Utilisez le<block ref="b80bb7740288fda1f201890375a60c8f" prefix=" " category="inline-code"></block> Valeur de l'appel API précédent pour le<block ref="7ea6634ba39c1f0d96a6fb712db84dee" prefix=" " category="inline-code"></block> Valeur dans le chemin d'accès à l'URL ci-dessous.</block>
   <block id="0634ea9e84d965a9b2b7b53435251582" category="admonition">Vous pouvez d'abord lancer une demande GET pour le paramètre spécifique afin de voir le schéma de configuration. Ceci fournira plus d'informations sur les champs requis dans la configuration.</block>
   <block id="3e75383a5992a6d15fb81e872e46e256" category="cell">EN</block>
-  <block id="815d5f652b66fa7fa04278a0dc9e7f06" category="cell">/account/{account_id}/core/v1/settings/{setting_id}</block>
   <block id="ca58d7a87892784f449108b5713d3d80" category="list-text"><block ref="d97a94e6c10d324fbb3c5f3a1c4a12d5" prefix="" category="inline-code"></block> doit être réglé sur<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> ou une erreur peut se produire.</block>
   <block id="51d0b9cf69c2739ca15a60cff099889f" category="list-text"><block ref="833182351578d6a0a4fc4fcb7c9ee80f" prefix="" category="inline-code"></block> est l'id des informations d'identification de liaison créées précédemment.</block>
   <block id="91977da3ac4942f4a1225522ce4a5c8d" category="list-text"><block ref="2596a2b64637696b3703150219e9b695" prefix="" category="inline-code"></block> doit être réglé sur<block ref="2363dee608bcd9f6ce7f980bfdad5789" prefix=" " category="inline-code"></block> ou<block ref="298fcfb5d2eed57aee2342417e0ee046" prefix=" " category="inline-code"></block> en fonction de votre configuration à l'étape précédente.</block>
@@ -147,7 +134,6 @@
   <block id="69e44482660be2fd1013a46b8f354ef2" category="doc">Répertorier les rubriques</block>
   <block id="9117feaebfa26145178f03156c040dec" category="section-title">1. Dressez la liste des compartiments</block>
   <block id="4609424b2fcb4eca19af08e562b2f818" category="paragraph">Effectuez l'appel suivant de l'API REST pour afficher la liste des compartiments.</block>
-  <block id="9fb6a7e4842bd1acf9b57b499b8036b0" category="cell">/account/{account_id}/topologique/v1/seaux</block>
   <block id="cfafa44c04121f529847f5cd8be51756" category="section-title">Exemple de gondolage : renvoie toutes les données de tous les compartiments</block>
   <block id="9b419681cf780fc8739ee91b14338a6d" category="summary">Vous pouvez afficher la liste des classes de stockage disponibles.</block>
   <block id="a2e45d2c4126abee2b89f161a0a3a50f" category="doc">Répertorier les classes de stockage</block>
@@ -158,13 +144,11 @@
   <block id="4c52978a3e6a86d17e5ea3080d73c1d4" category="paragraph">Exécutez le flux de travail <block ref="23d58ac86c4531c319d79804ab05ca2c" category="inline-link-macro-rx"></block> et sélectionnez le cluster.</block>
   <block id="0555a951c447a0cbe3807de815a06d5d" category="section-title">3. Énumérez les classes de stockage d'un cluster spécifique</block>
   <block id="646ae38688e5af41b737db05fd5a5cdb" category="paragraph">Effectuez l'appel d'API REST suivant pour répertorier les classes de stockage d'un cluster et d'un cloud spécifiques.</block>
-  <block id="bed512ae2e247eeb98fdd4cd3feb1f36" category="cell">/Account/{account_ID}/topologique/v1/nuages/&lt;CLOUD_ID&gt;/clusters/&lt;CLUSTER_ID&gt;/storageclasses</block>
   <block id="55d1071fe1b5a920cb319a5cdd834452" category="section-title">Exemple Curl : renvoie toutes les données de toutes les classes de stockage</block>
   <block id="a70539afac49ca03ebbf1219df791a81" category="paragraph">Vous pouvez afficher la liste des clusters disponibles dans un cloud spécifique.</block>
   <block id="6e7a5e444e17b81da2d35e5e7b5fb7ea" category="paragraph">Exécutez le flux de travail <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> et sélectionnez le cloud contenant les clusters.</block>
   <block id="4a8c29c133faeda5a63e72796ed312c8" category="section-title">2. Dressez la liste des clusters</block>
   <block id="279e904c662f9babe50ce81e0df24ea5" category="paragraph">Effectuez l'appel d'API REST suivant pour répertorier les clusters dans un cloud spécifique.</block>
-  <block id="ea62700eaf9c7c85e33b80518f121429" category="cell">/account/{account_id}/topologique/v1/nuages/{cloud_id}/clusters</block>
   <block id="6ff447fbf69dd4070e63e99da1dde7b0" category="section-title">Exemple Curl : renvoie toutes les données de tous les clusters</block>
   <block id="bec9f16b8e469e038cb36941a7f49a27" category="summary">Vous pouvez utiliser ces workflows pour créer et entretenir l'infrastructure utilisée avec un déploiement d'Astra Control Center. Dans de nombreux cas, les flux de travail peuvent également être utilisés avec le service Astra Control.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="doc">Avant de commencer</block>
@@ -204,7 +188,6 @@
   <block id="449f06d287054d92195f8d12380492a2" category="list-text">Exécutez le flux de travail approprié dans <block ref="fa99eeb7a6945e9d3646f3be23581902" category="inline-link-macro-rx"></block> Identifier les utilisateurs à authentifier à l'aide de LDAP.</block>
   <block id="3ff570634537eaff0815860b69ce8091" category="paragraph">Nous vous recommandons de consulter les éléments essentiels de configuration Astra présentés ci-dessous, y compris les limites et les options de configuration, avant de configurer Astra pour utiliser LDAP pour l'authentification.</block>
   <block id="c36e6b423c38bf8ef0ea8072377038ba" category="paragraph">La plateforme Astra Control propose deux modèles de déploiement. L'authentification LDAP est prise en charge uniquement avec les déploiements d'Astra Control Center.</block>
-  <block id="7fef125dab1669f0bd061ee06a5d6f99" category="paragraph">La version actuelle d'Astra Control Center prend uniquement en charge la configuration de l'authentification LDAP à l'aide de l'API REST Astra Control. Un aspect important de cette limitation est que les utilisateurs LDAP ne sont pas affichés dans l'onglet utilisateurs de l'interface Web Astra. Ils sont disponibles via l'API REST au niveau du terminal<block ref="866daca8068a293350bba7e05821c446" prefix=" " category="inline-code"></block>.</block>
   <block id="18164a8c6c2e5e2bcefd983d32500f4b" category="paragraph">Vous devez disposer d'un serveur LDAP pour accepter et traiter les demandes d'authentification Astra. Microsoft Active Directory est pris en charge avec la version actuelle d'Astra Control Center.</block>
   <block id="200a1d5a87da368403e19065f0bdc581" category="paragraph">Lors de la configuration du serveur LDAP dans Astra, vous pouvez éventuellement définir une connexion sécurisée. Dans ce cas, un certificat est nécessaire pour le protocole LDAPS.</block>
   <block id="9977ea9eb2d078e2d962856f8263451f" category="paragraph">Vous devez sélectionner les utilisateurs à authentifier à l'aide de LDAP. Pour ce faire, vous pouvez identifier les utilisateurs individuels ou un groupe d'utilisateurs. Les comptes doivent être définis au niveau du serveur LDAP. Elles doivent également être identifiées dans Astra (type LDAP) qui permet de transférer les demandes d'authentification vers LDAP.</block>
@@ -241,12 +224,10 @@
   <block id="99a4fd4c49fccb599a3b4d33e4b37909" category="doc">Liste des systèmes back-end</block>
   <block id="c3a6f95958616037be5bc621e7f71032" category="paragraph">Vous pouvez lister les systèmes back-end disponibles.</block>
   <block id="be1dcc1afbc1a43cd23e6374cd48ad18" category="section-title">1. Dressez la liste des systèmes back-end</block>
-  <block id="61bf96d95cf34f1d59a77975db5785f3" category="cell">/Account/{account_ID}/topologique/v1/storageBackends</block>
   <block id="97d6ce33b116e0cdc883be2e518a550e" category="section-title">Exemple de curl : renvoie toutes les données pour tous les systèmes back-end</block>
   <block id="49d7482cad2dac48b0f0e77473d3a249" category="doc">Répertorier les clusters gérés</block>
   <block id="1b382a88a3817dcba16a81ec9e5cf1c5" category="paragraph">Vous pouvez lister les clusters Kubernetes actuellement gérés par Astra.</block>
   <block id="fa52d266bf5c95bd5d51a11ed63c7fa3" category="section-title">1. Dressez la liste des clusters gérés</block>
-  <block id="10b14b5f4283ee7f1b6186e8ca9a4bb1" category="cell">/Account/{account_ID}/topologique/v1/managedclusters</block>
   <block id="4086ad8bc58a79384e2abed3e4c7b4f1" category="summary">Plusieurs concepts Kubernetes sont pertinents pour l'utilisation de l'API REST d'Astra.</block>
   <block id="35e431c9f5b342b3021d74196ba6d0ca" category="doc">Concepts de base de Kubernetes</block>
   <block id="c8308b1eba7ba926a61b8fd802194386" category="section-title">Objets</block>
@@ -329,7 +310,6 @@
   <block id="0c59027cf761af16d5101de509ed5ef7" category="paragraph">Assurez-vous de passer en revue <block ref="533ba43849291e761802432633424684" category="inline-link-macro-rx"></block> Pour plus d'informations sur les concepts DE REPOS et les détails concernant la conception de l'API REST Astra Control.</block>
   <block id="1975d27c17bd745494bde5176f3687d2" category="paragraph">Vous devez connaître les ressources d'information supplémentaires, comme le suggère le <block ref="d9232e9ba333ee728d29f8228e038c57" category="inline-link-macro-rx"></block>.</block>
   <block id="2d388ce46646f517f31092dee87e1af6" category="summary">Vous pouvez lancer une commande curl simple sur la CLI de votre station de travail pour commencer à utiliser l'API REST Astra Control et confirmer sa disponibilité.</block>
-  <block id="3e25960a79dbc69b674cd4ec67a72c62" category="doc">Bonjour tout le monde</block>
   <block id="9b355d9a0df5a5e777f4cd881f971a4e" category="paragraph">L'utilitaire Curl doit être disponible sur votre poste de travail local. Vous devez également disposer d'un jeton API et de l'identifiant de compte associé. Voir <block ref="67af9ad396391bc7ade4b472f0b4f030" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
   <block id="cbd2fd368381db0d8cdbdead253cf132" category="paragraph">La commande Curl suivante récupère la liste des utilisateurs Astra. Fournissez les &lt;ACCOUNT_ID&gt; et &lt;API_TOKEN&gt; appropriés comme indiqué.</block>
   <block id="e14d216616a4529ca008fe30d48b4bda" category="summary">Astra Control Center et Astra Control Service fournissent une API REST commune que vous pouvez accéder directement via un langage de programmation ou un utilitaire tel que Curl. L'API présente plusieurs avantages et points forts majeurs.</block>
@@ -364,7 +344,6 @@
   <block id="8ff5110ebae476ca35aeb20b14a75693" category="cell">21.08</block>
   <block id="c42aa22ce7e41e552d950420b7f9261a" category="cell">Les ressources ASUP représentent les packs AutoSupport transférés au support NetApp.</block>
   <block id="eb0f48a107df1a0f343d4cd513b555e6" category="cell">Certificat</block>
-  <block id="c966687cd1c8354905372f920eb2a23b" category="cell">*22.08*</block>
   <block id="3fe0021542d501c59073fddce2d62709" category="cell">Les ressources de certificat représentent les certificats installés utilisés pour une authentification forte pour les connexions sortantes.</block>
   <block id="03bc142e6422dbb9b288ad2cabee08c7" category="cell">Informations d'identification</block>
   <block id="af08b45fa44807ac1852671e6fc59d44" category="cell">21.04</block>
@@ -430,18 +409,12 @@
   <block id="46f255d802b6381149870692736dad56" category="cell">Les ressources des nœuds de cluster apportent une résolution supplémentaire en vous permettant d'accéder aux nœuds individuels dans un cluster Kubernetes.</block>
   <block id="f8ae2befc6a1cee31f421d5496ea6aeb" category="cell">Cluster géré</block>
   <block id="9cfbb01459b058e1710e14a0720bc3a3" category="cell">Les ressources du cluster géré représentent les clusters Kubernetes actuellement gérés par Kubernetes.</block>
-  <block id="129be99fc591453941e189ee076a0290" category="cell">Stockage back-end géré</block>
-  <block id="3e96a7fa7d0e1d88d70912b8a5d80908" category="cell">Les ressources du système de stockage back-end géré vous permettent d'accéder aux représentations extraites des fournisseurs de stockage back-end. Ces systèmes de stockage back-end peuvent être utilisés par les clusters et les applications gérés.</block>
   <block id="b3ba0fe968ce39dcfc6fe8cc0f1b02da" category="cell">Espace de noms</block>
   <block id="08dafbbeceed7e340c9625fd30927d83" category="cell">Les ressources d'espace de noms permettent d'accéder aux espaces de noms utilisés dans un cluster Kubernetes.</block>
   <block id="6c5e678cf147ef415c2e584ba561bce7" category="cell">Système back-end</block>
   <block id="4c5c5ddf14933aa945693ada812ede98" category="cell">Les ressources de stockage back-end représentent des fournisseurs de services de stockage utilisables par les clusters et les applications gérés Astra.</block>
   <block id="dd8c5eff0fd4dd0b3760e41db59bfb3a" category="cell">Classe de stockage</block>
   <block id="8fb50be09f59469582a9c05b97f8517c" category="cell">Les ressources de classe de stockage représentent différents types ou classes de stockage détectés et disponibles pour un cluster géré spécifique.</block>
-  <block id="ec0f2a3052ae80ccfcad8020e8680088" category="cell">Dispositif de stockage</block>
-  <block id="5482e18b728d9af600694261c0650975" category="cell">Les ressources associées au dispositif de stockage permettent d'accéder aux disques associés à un nœud de stockage spécifique pour les systèmes back-end de stockage de type Astra Data Store (ADS). Un système back-end ADS est déployé en tant que clusters Kubernetes.</block>
-  <block id="fe171fe0421ac266ac1285e64b1311d2" category="cell">Nœud de stockage</block>
-  <block id="2c0709150edcf4371b39572b109c04c3" category="cell">Les ressources du nœud de stockage représentent les nœuds qui font partie d'un cluster ADS.</block>
   <block id="bd7a9717d29c5ddcab1bc175eda1e298" category="cell">Volumétrie</block>
   <block id="d0600f0c4c9b294b53d39320b3945b84" category="cell">Les ressources de volume représentent les volumes de stockage Kubernetes associés aux applications gérées.</block>
   <block id="a3033e8e82a579c4e34115e2186d13ad" category="section-title">Ressources supplémentaires et terminaux</block>
@@ -557,7 +530,6 @@
   <block id="8aa0f7001085d2ffdad3efbc0e9de159" category="inline-link-macro">Répertoriez les sauvegardes</block>
   <block id="d40d66b0e6d970d00db3de547260af68" category="paragraph">Exécutez le flux de travail <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block> et sélectionnez la sauvegarde que vous souhaitez utiliser.</block>
   <block id="a2e167678135121b44df9d3e6c7a8d2d" category="section-title">3. Clonez l'application</block>
-  <block id="f3e3d6adafd239930134d426b02920c1" category="cell">/account/{account_id}/k8s/v2/qpps</block>
   <block id="b8622ecf971d21371a3ba9d07a233300" category="section-title">Exemple Curl : cloner une application à partir d'une sauvegarde</block>
   <block id="ecf41bcdc089c3b619f5975173077430" category="summary">Vous pouvez afficher la liste des sauvegardes créées pour une application spécifique.</block>
   <block id="dbd2251516ab8d7e1775469c5c1508a3" category="paragraph">Vous devez disposer de l'ID de l'application pour laquelle vous souhaitez répertorier les sauvegardes. Si nécessaire, vous pouvez utiliser le workflow <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> pour localiser l'application.</block>
@@ -645,12 +617,10 @@
   <block id="7a217d2f25d9076086e8f01a3a0e198d" category="paragraph">Exécutez le flux de travail <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> et sélectionnez l'application à cloner. Plusieurs des valeurs de ressources sont nécessaires pour l'appel DE REPOS utilisé pour restaurer l'application.</block>
   <block id="dac907b900763815cd0dab3692a0ccb9" category="section-title">3. Restaurez l'application</block>
   <block id="08d7f360c94a906d3639173599184943" category="paragraph">Effectuez l'appel de l'API REST suivant. Vous devez fournir l'ID d'une sauvegarde (comme indiqué ci-dessous) ou d'un instantané.</block>
-  <block id="46690c7c33008cbcef94d31765deede2" category="cell">/account/{account_id}/k8s/v2/apps/{app_id}</block>
   <block id="a477f086784d869d73c5ae084b145ca8" category="section-title">Exemple Curl : restaurez une application à partir d'une sauvegarde</block>
   <block id="a6fe5f717c07a456c15f8f2af8c1c7b7" category="doc">Dressez la liste des notifications</block>
   <block id="28e5da4816b7e4821438045e6ed86d2b" category="paragraph">Vous pouvez lister les notifications d'un compte Astra spécifique. Vous pouvez le faire dans le cadre de la surveillance de l'activité du système ou du débogage d'un problème.</block>
   <block id="9d9ee088d3dd8f7e21041745a8cf259f" category="section-title">1. Dressez la liste des notifications</block>
-  <block id="66faf58201d5b76b037701451b9a3234" category="cell">/account/{account_id}/core/v1/notifications</block>
   <block id="b2c97ae425dd751b0e48a3acae79cf4a" category="cell">filtre</block>
   <block id="0aaaa617845874504df6c76a750325da" category="cell">Vous pouvez éventuellement filtrer les notifications que vous souhaitez renvoyer dans la réponse.</block>
   <block id="f921030431759c9c846d8a3fd7d84ca2" category="section-title">Exemple de boucle : renvoie toutes les notifications</block>
@@ -675,7 +645,6 @@
   <block id="c9ed41c2c3fbdd3ab2809e8a19fa57ee" category="summary">Vous pouvez lister les espaces de noms disponibles.</block>
   <block id="2a983bbf122e057a73bf1870cf2ea2db" category="section-title">1. Dressez la liste des espaces de noms</block>
   <block id="c42968dfccb26ee2ef5912aaf9ee50ed" category="paragraph">Exécutez l'appel d'API REST suivant pour afficher la liste des namespaces.</block>
-  <block id="11ccdd095a2f5d49045fb5bc39eaae3e" category="cell">/account/{account_id}/topologique/v1/namespaces</block>
   <block id="55b85a82f8838ea89842d9ebe5cbe0d6" category="section-title">Exemple Curl : renvoie toutes les données de tous les espaces de noms</block>
   <block id="f06023f42f86a62fda5cde9e1ca56143" category="section-title">Exemple Curl : nom, état et ID de cluster pour tous les namespaces</block>
   <block id="78ceba6718263592394adb03dc11471c" category="summary">Il est recommandé de passer en revue tous les problèmes connus relatifs à la version actuelle de l'API REST Astra Control. Les problèmes connus identifient les problèmes susceptibles de vous empêcher d'utiliser le produit avec succès.</block>
@@ -703,8 +672,6 @@
   <block id="ecdbe161d2c7428016e927963a859b5c" category="paragraph">Vous pouvez désormais répliquer les données et les changements d'applications entre les clusters à l'aide de la technologie NetApp SnapMirror. Cette amélioration peut être utilisée pour améliorer la continuité de l'activité et les capacités de restauration.</block>
   <block id="b7fbb6594679af1b038dd55956fa1042" category="inline-link">Astra Control Center : les nouveautés</block>
   <block id="971f691a78e3ee1f19fb4b8c587dce95" category="list-text"><block ref="971f691a78e3ee1f19fb4b8c587dce95" category="inline-link-rx"></block></block>
-  <block id="efb9cca3b55227a8ebbaffd837df76fe" category="inline-link">Astra Control Service : les nouveautés</block>
-  <block id="77f722ff3432ad425822aea915cbea34" category="list-text"><block ref="77f722ff3432ad425822aea915cbea34" category="inline-link-rx"></block></block>
   <block id="638191aa40b01d59e16da3223262a2ae" category="section-title">26 avril 2022 (22.04)</block>
   <block id="4bde032aca792c950934ec7109889309" category="paragraph">Deux nouveaux types de ressources ont été ajoutés : *Package* et *Upgrade*. De plus, les versions de plusieurs ressources existantes ont été mises à niveau.</block>
   <block id="ce130d685ca26589024445539bb4a112" category="paragraph">Lors de la liaison d'un rôle à un utilisateur associé, vous pouvez limiter les espaces de noms auxquels l'utilisateur a accès. Voir la référence *role Binding API* et <block ref="7771c01373e5c08e3b1e2d74687ada1b" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
@@ -751,16 +718,11 @@
   <block id="39fc3040b9fe64cf202ce4de80bf7f69" category="list-text">Il existe un ensemble riche de paramètres de requête qui peuvent être utilisés pour accéder aux collections de ressources. Certaines opérations prises en charge incluent le filtrage, le tri et la pagination.</block>
   <block id="a941511c207017106c6b7b09e9dec884" category="summary">La documentation de ce site décrit l'API REST Astra Control et les technologies d'automatisation associées disponibles avec Astra Control.</block>
   <block id="d71331c5ce470b093ebf6c996f4ed88a" category="doc">À propos de cette version</block>
-  <block id="8b4ec359317fe3f9d108f39c57680e63" category="paragraph">La documentation de ce site décrit l'API REST Astra Control et les technologies d'automatisation connexes, disponibles avec la version d'Astra Control du 2022 août 22.08. En particulier, cette version de l'API REST est incluse avec les 22.08 versions correspondantes du centre de contrôle Astra et du service de contrôle Astra.</block>
   <block id="ea68f7ff6b79a550f669d752f15bd5da" category="paragraph">Consultez les pages et sites suivants pour plus d'informations sur cette version ainsi que sur les versions précédentes :</block>
   <block id="89d597c4d411409065b7e48fe97b7327" category="inline-link-macro">Nouveautés de l'API REST Astra Control</block>
   <block id="55d1aec576bc2fa5929c487a67f4f1fe" category="list-text"><block ref="55d1aec576bc2fa5929c487a67f4f1fe" category="inline-link-macro-rx"></block></block>
   <block id="c4fabb35d8b386aaa673c94aee7e69f2" category="inline-link-macro">Ressources REST et terminaux</block>
   <block id="d8c5d8ee32fcd828c5197ddcb0a431b2" category="list-text"><block ref="d8c5d8ee32fcd828c5197ddcb0a431b2" category="inline-link-macro-rx"></block></block>
-  <block id="432b09f47d1f21c47c9c27c092f6475a" category="inline-link">Documentation Astra Control Center 22.08</block>
-  <block id="9177c91a006b716e5c7a48a3d2949f6f" category="list-text"><block ref="9177c91a006b716e5c7a48a3d2949f6f" category="inline-link-rx"></block></block>
-  <block id="8f54ea65f0b6d079dd66703c0e3d7fbd" category="inline-link">Documentation relative à Astra Control Service 22.08</block>
-  <block id="3d951227fdf405841826a71ed6c30234" category="list-text"><block ref="3d951227fdf405841826a71ed6c30234" category="inline-link-rx"></block></block>
   <block id="fdd081f1598a50889ba0720484271938" category="inline-link-macro">Versions antérieures de la documentation d'Astra Automation</block>
   <block id="0cc206202c15e68cf39519791ed593a1" category="list-text"><block ref="0cc206202c15e68cf39519791ed593a1" category="inline-link-macro-rx"></block></block>
   <block id="3f4fc4220755866f399810fee47c7884" category="inline-link-macro">Contributeur GitHub</block>
@@ -1034,4 +996,112 @@
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Quoi de neuf</block>
   <block id="365c8dec8255a8a164436c71a2611920" category="sidebar">À l'aide de Python</block>
   <block id="35bcd8d33247c44923eb71df2f2f0a2d" category="sidebar">Python natif</block>
+  <block id="1273c8a63109161e6fd1f18d6998523f" category="inline-link">NetApp BlueXP</block>
+  <block id="a3235da3acacf344734cc119c20ba900" category="list-text"><block ref="a3235da3acacf344734cc119c20ba900" category="inline-link-rx"></block></block>
+  <block id="06146decfb17ed58c6f7a0bb23eea2a6" category="summary">Après avoir configuré LDAP en tant que fournisseur d'authentification pour Astra Control Center, vous pouvez sélectionner les utilisateurs LDAP qu'Astra authentifie à l'aide des informations d'identification LDAP.</block>
+  <block id="12662cf5431171146c880e7742535780" category="cell">/accounts/{account_id}/core/v1/users</block>
+  <block id="df1b95e51c579994a391aca64bff2062" category="cell">/Accounts/{account_ID}/core/v1/roleBindings</block>
+  <block id="bbef9cdc428921bc094d4e8eb4f67852" category="cell">/accounts/{account_id}/core/v1/groupes</block>
+  <block id="d300c143bcf19edd33215193d09dde78" category="doc">Dressez la liste des utilisateurs</block>
+  <block id="56bfeb16726f4551417cc98e43b97b43" category="cell">/accounts/{account_id}/topologique/v1/clouds</block>
+  <block id="d4b519107715681619ac9ac9f0e7c2e8" category="summary">Vous devez sélectionner un serveur LDAP et configurer Astra pour qu'il utilise le serveur en tant que fournisseur d'authentification.</block>
+  <block id="a5db48aa11044013c988ffcf3b8ad0de" category="cell">/accounts/{account_id}/core/v1/certificats</block>
+  <block id="2b6846c3506af3b4e3ea2d784f2b82f0" category="cell">/accounts/{account_id}/core/v1/credentials</block>
+  <block id="4d9116db5ddde7c7ed296b365fba6639" category="cell">/accounts/{account_id}/core/v1/settings</block>
+  <block id="65c0a361e2806ea6ef418d2456417faa" category="cell">/accounts/{account_id}/core/v1/settings/{setting_id}</block>
+  <block id="bf4b4c35219181bf2cbc48772ecf228d" category="cell">/accounts/{account_id}/topologique/v1/seaux</block>
+  <block id="c23ee749361bcb35c4bb9425ae5cd602" category="cell">/Accounts/{account_ID}/topologique/v1/nuages/&lt;CLOUD_ID&gt;/clusters/&lt;CLUSTER_ID&gt;/storageclasses</block>
+  <block id="38a0f81608bad4301a7bd0c62937c7a0" category="summary">Vous pouvez ajouter un cluster pour qu'il soit géré par Astra.</block>
+  <block id="617a1e32f2d409a9c77e56b76a744edc" category="doc">Ajouter un cluster à l'aide des informations d'identification</block>
+  <block id="1596fe22178cdca2d275cff48aad4af1" category="paragraph">Vous pouvez ajouter un cluster pour qu'il soit géré par Astra. À partir de l'Astra 22.11, vous pouvez ajouter un groupe d'instruments avec le centre de contrôle Astra ou le service de contrôle Astra.</block>
+  <block id="ec1064b7d3d701d90bcd843f62de2199" category="admonition">L'ajout d'un cluster n'est pas nécessaire lors de l'utilisation d'un service Kubernetes depuis l'un des principaux fournisseurs cloud (AKS, EKS, GKE).</block>
+  <block id="9a7df7f9a0a709d54e5600f10282be3c" category="section-title">1. Procurez-vous le fichier kubeconfig</block>
+  <block id="0f9d366662bdbaac5e7e94b497107f97" category="paragraph">Vous devez obtenir une copie du fichier *kubconfig* auprès de votre administrateur ou service Kubernetes.</block>
+  <block id="4213c71e0f3bf4e29d847ed32a86c256" category="section-title">2. Préparez le fichier kubeconfig</block>
+  <block id="2f01fc21d4fc91a63d214e05b58d1ae3" category="paragraph">Avant d'utiliser le fichier *kubeconfig*, vous devez effectuer les opérations suivantes :</block>
+  <block id="4439d3db8fedf30a9f782857c3ba84c1" category="paragraph">Si vous recevez le fichier kubeconfig formaté en YAML, vous devez le convertir au format JSON.</block>
+  <block id="112883e671fe422a61b0c873364ccc63" category="paragraph">Vous devez coder le fichier JSON en base64. Par exemple :</block>
+  <block id="9413bfba8f719cfbad604b6dc31a25c7" category="paragraph"><block ref="c4fe76de412e2e8e625be88a4c8c0409" prefix="" category="inline-code"></block></block>
+  <block id="179dae9c1238082df51d848f55149f2b" category="section-title">3. Sélectionnez le Cloud</block>
+  <block id="a334c61bdbeeba71f0e5b3f6261056cf" category="paragraph">Exécutez le flux de travail <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> et sélectionnez le cloud dans lequel le cluster sera ajouté.</block>
+  <block id="adaaed5dfdf88205bfc2a19f52977915" category="admonition">Le seul cloud que vous pouvez sélectionner est le *cloud privé*.</block>
+  <block id="0da20235e02091f71130fe02f554db86" category="section-title">4. Créez une information d'identification</block>
+  <block id="9309ae9888680ed2a9bdac6c4088fda7" category="paragraph">Effectuez l'appel de l'API REST suivant pour créer des informations d'identification à l'aide du fichier kubeconfig.</block>
+  <block id="eeb0a36c0a2afb32d05402176c5257dc" category="section-title">5. Ajoutez le cluster</block>
+  <block id="6cfceed1b9ea5b28883e844012ce6f31" category="paragraph">Effectuez l'appel d'API REST suivant pour ajouter le cluster au cloud. La valeur du<block ref="5f2852e58e87847c0c9324d5a8954ae2" prefix=" " category="inline-code"></block> Le champ de saisie est obtenu à partir de l'appel d'API REST à l'étape précédente.</block>
+  <block id="dd8bce8e0fdc7bda8fad7990aa89d570" category="cell">/accounts/{account_id}/topologique/v1/nuages/{cloud_id}/clusters</block>
+  <block id="96e8b262ac53bb3f01457c0c38ed44d1" category="summary">Vous pouvez gérer un cluster Kubernetes afin d'effectuer des opérations de protection des données.</block>
+  <block id="b07c44c21401db918cbbe0f16f65f02d" category="doc">Gérer un cluster</block>
+  <block id="46443fe8f8a5e981e03dc9c27f667bba" category="paragraph">Vous pouvez gérer un cluster Kubernetes afin d'assurer la protection des données.</block>
+  <block id="7f8edbfa07fdddc2b36b6ef33b38eb6d" category="section-title">1. Sélectionnez le cluster à gérer</block>
+  <block id="c34eca2cd66003553184da76495d4c73" category="paragraph">Exécutez le flux de travail <block ref="43eeb3a6199b799839a97c97fac67885" category="inline-link-macro-rx"></block> et sélectionnez le cluster souhaité. La propriété<block ref="1454762565548055b90a7701d83300db" prefix=" " category="inline-code"></block> du cluster doit être<block ref="a4078d5d3c7b4099b0e6e6cc3ac7d2cd" prefix=" " category="inline-code"></block>.</block>
+  <block id="57c02db141949f6cd9bc959185c1549c" category="section-title">2. Sélectionnez éventuellement la classe de stockage</block>
+  <block id="ce44453b1a2349be569ca70117dc0084" category="paragraph">Éventuellement, exécutez le flux de travail <block ref="884c867cca3f28784b93799b7c1af829" category="inline-link-macro-rx"></block> et sélectionnez la classe de stockage souhaitée.</block>
+  <block id="4b5051ec9f46833b1124a6c78b91ce7c" category="admonition">Si vous ne fournissez pas de classe de stockage à l'appel pour gérer le cluster, votre classe de stockage par défaut sera utilisée.</block>
+  <block id="51c65ac5f91c0fe025d2538bb5501fea" category="section-title">3. Gérez le cluster</block>
+  <block id="34d1129bcb3e6d80617b667f0ab676ac" category="paragraph">Effectuez l'appel d'API REST suivant pour gérer le cluster.</block>
+  <block id="e58ad16d27f6c2bc0d209139b5397dce" category="cell">/Accounts/{account_ID}/topologique/v1/managedclusters</block>
+  <block id="440c9ff0e7eba386ee5e844a6dc1d5c3" category="paragraph">La version actuelle d'Astra Control Center prend en charge la configuration de l'authentification LDAP à l'aide de l'API REST Astra Control et de l'interface utilisateur Web Astra.</block>
+  <block id="1c66273c79676c96af07f60339276e5e" category="cell">/Accounts/{account_ID}/topologique/v1/storageBackends</block>
+  <block id="10a1bf46a85da0a993b0bdc9671634b9" category="summary">Vous pouvez créer un utilisateur avec des informations d'identification spécifiques et un rôle prédéfini. Vous pouvez également restreindre l'accès de l'utilisateur à des espaces de noms spécifiques.</block>
+  <block id="5fed933898706fd78ac043eef2dcc541" category="doc">Créer un utilisateur</block>
+  <block id="e4349772cddf8d27148f14bb1c090bc5" category="section-title">1. Sélectionnez un nom d'utilisateur</block>
+  <block id="bf579e87389753dc6d0b880128602f3e" category="paragraph">Exécutez le flux de travail <block ref="803a43b46c084c148a870ad78dfe7497" category="inline-link-macro-rx"></block> et sélectionnez un nom disponible qui n'est pas actuellement utilisé.</block>
+  <block id="7656639cc81b8de453d75419028ba7bb" category="section-title">2. Créez l'utilisateur</block>
+  <block id="35586540b5807703d873e9f863008b67" category="paragraph">Effectuez l'appel de l'API REST suivant pour créer un utilisateur. Une fois l'appel terminé, le nouvel utilisateur ne sera pas encore utilisable.</block>
+  <block id="f8bd80db3c02397ae8e40a4e6de0b758" category="section-title">3. Sélectionner éventuellement les espaces de noms autorisés</block>
+  <block id="21e83956b83b77c2e3a07a7483b69661" category="paragraph">Exécutez le flux de travail <block ref="d14574597a65756c248d691b26627131" category="inline-link-macro-rx"></block> et sélectionnez les espaces de noms auxquels vous souhaitez limiter l'accès.</block>
+  <block id="cadba72d8e514fc5b8a0e60e624ac9a9" category="section-title">4. Lier l'utilisateur à un rôle</block>
+  <block id="d792a9c3d9a5eeca78d6128f5cc15afd" category="paragraph">Exécutez l'appel d'API REST suivant pour lier l'utilisateur à un rôle. L'exemple ci-dessous n'impose aucune restriction sur l'accès à l'espace de noms. Voir <block ref="d5f96da881f3bbb1f2ce5df565a9eaea" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
+  <block id="abfd7bd655e908837e751c0d0f89aebf" category="section-title">5. Créez une information d'identification</block>
+  <block id="b8f71e8040a8090368e4c50131b50bb5" category="paragraph">Effectuez l'appel de l'API REST suivant pour créer un identifiant et l'associer à l'utilisateur. Dans cet exemple, un mot de passe est fourni sous la forme d'une valeur base64. Le<block ref="b068931cc450442b63f5b3d276ea4297" prefix=" " category="inline-code"></block> La propriété doit contenir l'ID de l'utilisateur renvoyé à l'étape précédente. La propriété d'entrée<block ref="eb399bcaca686f8609137153307eecf1" prefix=" " category="inline-code"></block> doit également être encodé en base64 et déterminer si l'utilisateur doit modifier son mot de passe lors de la première connexion <block ref="b326b5062b2f0e69046810717534cb09" prefix="(" category="inline-code"></block> ou<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>).</block>
+  <block id="b5c7506e2454fbc7d8931d71087f0f8c" category="admonition">Cette étape est uniquement requise avec les déploiements Astra Control Center utilisant l'authentification locale. Il n'est pas nécessaire de déployer Astra Control Center avec LDAP ou avec Astra Control Service.</block>
+  <block id="88e25761f6eadcead9ced5f76a00e95c" category="doc">Votre premier appel API</block>
+  <block id="9d5b1c42f951723db7dbb51b14e6251a" category="cell">22.08</block>
+  <block id="f156c7862a93e81ca10ba4bc4349824d" category="cell">Groupe LDAP</block>
+  <block id="dc488877c36bb584e674e32f8b4e1de4" category="cell">*22.11*</block>
+  <block id="8a958fceac1f74e78832d8498767ce1f" category="cell">Vous pouvez lister les groupes au sein du serveur LDAP configuré. L'accès aux groupes LDAP est en lecture seule.</block>
+  <block id="30b31a74662fc368bd562efd0f43adc2" category="cell">Utilisateur LDAP</block>
+  <block id="0d0a6d61fee1311a1ba8a542e2bb5623" category="cell">Vous pouvez lister les utilisateurs au sein du serveur LDAP configuré. L'accès aux utilisateurs LDAP est en lecture seule.</block>
+  <block id="eaeb30f9f18e0c50b178676f3eaef45f" category="cell">Tâche</block>
+  <block id="84268dabdb01cddab9ea60b2f9acdbf3" category="cell">Les ressources de tâche fournissent un accès en lecture seule à la tâche gérée et peuvent être utilisées pour afficher l'état des tâches internes longues.</block>
+  <block id="0719b5ff43e464ec0bd72e395c7e19f5" category="cell">Ressource API</block>
+  <block id="5fe3f274f4d0554c8f2f5f2bb017e1a6" category="cell">Les terminaux de ressource API fournissent un accès en lecture seule aux ressources Kubernetes dans un cluster géré spécifique.</block>
+  <block id="2f5ce90d175d947756af57ecef4d8e84" category="cell">/accounts/{account_id}/k8s/v2/apps</block>
+  <block id="5c34a50da5f12aa3bc1f055d0736ae80" category="cell">/accounts/{account_id}/k8s/v2/qpps</block>
+  <block id="e13362bfbdde066993001bf62101c347" category="summary">Il se peut que vous ne puissiez pas supprimer une application gérée si elle a une sauvegarde ou un snapshot en état d'échec. Dans ce cas, vous pouvez supprimer manuellement l'application.</block>
+  <block id="36698dfb0401a82ae4a38d7a89d2f6ac" category="summary">Vous pouvez créer une règle de protection des données basée sur une ou plusieurs planifications.</block>
+  <block id="37a344179b5428c5bfd29a3e5ebc4386" category="doc">Création d'une règle de protection des données</block>
+  <block id="d60248c3a037c50b4fab1b40e42d382b" category="section-title">1. Sélectionnez l'application</block>
+  <block id="3617b7e17906ff769522250249891768" category="paragraph">Exécutez le flux de travail <block ref="c7a76b5950dd1b7839ca89fdcde3242a" category="inline-link-macro-rx"></block> et sélectionnez l'application souhaitée.</block>
+  <block id="6e1fa1e618821080db74d32c83305ac0" category="section-title">2. Créer la protection</block>
+  <block id="984ccae8e91a0f8522083819554ac899" category="paragraph">Effectuez l'appel d'API REST suivant pour créer une stratégie de protection pour une application spécifique.</block>
+  <block id="84fe78ce214ed629070f9fc2c47da727" category="cell">/accounts/{account_id}/k8s/v1/apps/{app_id}/programmations</block>
+  <block id="2d548fd4304c3df5c7e5211c43482750" category="cell">/accounts/{account_id}/core/v1/notifications</block>
+  <block id="4f68859db9edc2924f9e6968c7236f3c" category="cell">/accounts/{account_id}/topologique/v1/namespaces</block>
+  <block id="15a49e5e6108a59bc58f9d168370a19c" category="section-title">22 novembre 2022 (22.11)</block>
+  <block id="b112e3f1b397445fd5281d9bc6e09d81" category="paragraph">Cette version inclut une extension et une mise à jour de l'API REST ainsi qu'une meilleure prise en charge de l'espace de noms et du protocole LDAP.</block>
+  <block id="362493a327267b53126ff3dc516912f1" category="paragraph">Quatre nouveaux types de ressources ont été ajoutés : *apiResource*, *ldapGroup*, *LDAPUser* et *Task*. En outre, plusieurs ressources et points de terminaison existants ont été améliorés.</block>
+  <block id="ce5c5948d95c8c0472c3d2c6db6c64e6" category="section-title">Suivi de la prise en charge des tâches à long terme</block>
+  <block id="cfd316fdb1b0f0dd74ee9e58b9a1ae05" category="paragraph">Les nouveaux noeuds finaux de tâche permettent d'accéder aux ressources de tâches gérées et peuvent être utilisés pour afficher l'état des tâches internes longues.</block>
+  <block id="f88c78ad03f7bf32e58a6534422c4cea" category="section-title">Scénarios d'utilisation améliorés de l'espace de noms</block>
+  <block id="e35b7828f5b71b8b6d16647255e840dd" category="paragraph">Un support a été ajouté pour les applications, couvrant plusieurs espaces de noms ainsi que les ressources de cluster associées à des ressources qualifiées par espace de noms.</block>
+  <block id="60243a7b387f61994d5b2632eb94cf9d" category="section-title">Des abonnements cloud étendus</block>
+  <block id="c729dff676f642454774aef7f9101d2d" category="paragraph">Des abonnements à plusieurs comptes peuvent désormais être ajoutés pour chacun des fournisseurs cloud.</block>
+  <block id="98f2103877bfa21a7f924a8deb517cde" category="inline-link">Astra Control Center 22.08 : les nouveautés</block>
+  <block id="5f8305474bdca7e099ecf7bf3faee385" category="list-text"><block ref="5f8305474bdca7e099ecf7bf3faee385" category="inline-link-rx"></block></block>
+  <block id="3da4bc9c8aee9c6659e8c9b4fd3e11b1" category="inline-link">Astra Control Center 22.04 : les nouveautés</block>
+  <block id="8a79fee76756d9bc87c413d7f92be004" category="list-text"><block ref="8a79fee76756d9bc87c413d7f92be004" category="inline-link-rx"></block></block>
+  <block id="153e30187d5d5a99d5aa26612af43f78" category="inline-link">Astra Control Center 21.12 : les nouveautés</block>
+  <block id="012c01c016d35f3bdc2e34a079b6cf0e" category="list-text"><block ref="012c01c016d35f3bdc2e34a079b6cf0e" category="inline-link-rx"></block></block>
+  <block id="099195e2a0ecbb5b0569da7e9c28fbc0" category="inline-link">Astra Control Center 21.08 : les nouveautés</block>
+  <block id="70679aeca94d2b828ca1dc6cda2ac994" category="list-text"><block ref="70679aeca94d2b828ca1dc6cda2ac994" category="inline-link-rx"></block></block>
+  <block id="9f4dd3879adfbe7a60dc7c6745d67158" category="paragraph">La documentation de ce site décrit l'API REST Astra Control et les technologies d'automatisation connexes, disponibles avec la version 2022 novembre 22.11 d'Astra Control. En particulier, cette version de l'API REST est incluse avec les 22.11 versions correspondantes du centre de contrôle Astra et du service de contrôle Astra.</block>
+  <block id="070b3d3a153094a5ee57ed5e75530780" category="inline-link">Documentation Astra Control Center 22.11</block>
+  <block id="bee8b0efee9e08520e8e0cb30b730adf" category="list-text"><block ref="bee8b0efee9e08520e8e0cb30b730adf" category="inline-link-rx"></block></block>
+  <block id="165fa9bdd003d8079831262d0360efc1" category="inline-link">Documentation Astra Control Automation 22.08</block>
+  <block id="94ed7ec7b9510cd1e4664fbfe8a08329" category="list-text"><block ref="94ed7ec7b9510cd1e4664fbfe8a08329" category="inline-link-rx"></block></block>
+  <block id="547abae9d6ca9df339ec4543e220ab8e" category="sidebar">Premier appel d'API</block>
+  <block id="013a127f643228c21ab6c9baf558cef5" category="sidebar">Ajouter un cluster</block>
+  <block id="826f785c760529ceb6e978afdab2a9a7" category="sidebar">Création d'une règle de protection</block>
 </blocks>

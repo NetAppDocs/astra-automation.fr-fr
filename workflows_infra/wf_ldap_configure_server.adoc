@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_configure_server.html 
 keywords:  
-summary:  
+summary: 'Vous devez sélectionner un serveur LDAP et configurer Astra pour qu"il utilise le serveur en tant que fournisseur d"authentification.' 
 ---
 = Configurez Astra pour qu'il utilise un serveur LDAP
 :hardbreaks:
@@ -30,7 +30,7 @@ NOTE: Cette étape est facultative et requise uniquement si vous voulez qu'Astra
 | Méthode HTTP | Chemin 
 
 
-| POST | /account/{account_id}/core/v1/certificats 
+| POST | /accounts/{account_id}/core/v1/certificats 
 |===
 
 
@@ -121,7 +121,7 @@ Effectuez l'appel d'API REST suivant pour ajouter les informations d'identificat
 | Méthode HTTP | Chemin 
 
 
-| POST | /account/{account_id}/core/v1/credentials 
+| POST | /accounts/{account_id}/core/v1/credentials 
 |===
 
 
@@ -189,7 +189,7 @@ NOTE: L'exemple curl ci-dessous utilise un paramètre de requête pour filtrer l
 | Méthode HTTP | Chemin 
 
 
-| OBTENEZ | /account/{account_id}/core/v1/settings 
+| OBTENEZ | /accounts/{account_id}/core/v1/settings 
 |===
 
 
@@ -228,7 +228,7 @@ NOTE: Vous pouvez d'abord lancer une demande GET pour le paramètre spécifique 
 | Méthode HTTP | Chemin 
 
 
-| EN | /account/{account_id}/core/v1/settings/{setting_id} 
+| EN | /accounts/{account_id}/core/v1/settings/{setting_id} 
 |===
 
 
@@ -281,7 +281,7 @@ Vous pouvez éventuellement effectuer l'appel d'API REST suivant pour récupére
 | Méthode HTTP | Chemin 
 
 
-| OBTENEZ | /account/{account_id}/core/v1/settings/{setting_id} 
+| OBTENEZ | /accounts/{account_id}/core/v1/settings/{setting_id} 
 |===
 
 

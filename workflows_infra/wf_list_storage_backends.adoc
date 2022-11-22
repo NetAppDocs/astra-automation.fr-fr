@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_list_storage_backends.html 
 keywords:  
-summary:  
+summary: Vous pouvez lister les systèmes back-end disponibles. 
 ---
 = Liste des systèmes back-end
 :hardbreaks:
@@ -27,7 +27,7 @@ Effectuez l'appel de l'API REST suivant.
 | Méthode HTTP | Chemin 
 
 
-| OBTENEZ | /Account/{account_ID}/topologique/v1/storageBackends 
+| OBTENEZ | /Accounts/{account_ID}/topologique/v1/storageBackends 
 |===
 
 

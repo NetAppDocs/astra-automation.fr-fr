@@ -28,6 +28,8 @@ entries:
     url: "/workflows/wf_delete_snapshot.html"
   - title: Supprimer la sauvegarde
     url: "/workflows/wf_delete_backup.html"
+  - title: Création d'une règle de protection
+    url: "/workflows/wf_create_protection.html"
 - title: Clonage et restauration d'une application
   entries:
   - title: Cloner une application

@@ -27,7 +27,7 @@ Exécutez l'appel d'API REST suivant pour afficher la liste des namespaces.
 | Méthode HTTP | Chemin 
 
 
-| OBTENEZ | /account/{account_id}/topologique/v1/namespaces 
+| OBTENEZ | /accounts/{account_id}/topologique/v1/namespaces 
 |===
 
 

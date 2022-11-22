@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_list_clusters.html 
 keywords:  
-summary:  
+summary: Vous pouvez afficher la liste des clusters disponibles dans un cloud spécifique. 
 ---
 = Lister les clusters
 :hardbreaks:
@@ -33,7 +33,7 @@ Effectuez l'appel d'API REST suivant pour répertorier les clusters dans un clou
 | Méthode HTTP | Chemin 
 
 
-| OBTENEZ | /account/{account_id}/topologique/v1/nuages/{cloud_id}/clusters 
+| OBTENEZ | /accounts/{account_id}/topologique/v1/nuages/{cloud_id}/clusters 
 |===
 
 

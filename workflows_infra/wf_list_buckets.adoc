@@ -27,7 +27,7 @@ Effectuez l'appel suivant de l'API REST pour afficher la liste des compartiments
 | Méthode HTTP | Chemin 
 
 
-| OBTENEZ | /account/{account_id}/topologique/v1/seaux 
+| OBTENEZ | /accounts/{account_id}/topologique/v1/seaux 
 |===
 
 

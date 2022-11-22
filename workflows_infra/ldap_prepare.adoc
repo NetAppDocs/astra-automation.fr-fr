@@ -45,7 +45,7 @@ Nous vous recommandons de consulter les éléments essentiels de configuration A
 
 La plateforme Astra Control propose deux modèles de déploiement. L'authentification LDAP est prise en charge uniquement avec les déploiements d'Astra Control Center.
 
-La version actuelle d'Astra Control Center prend uniquement en charge la configuration de l'authentification LDAP à l'aide de l'API REST Astra Control. Un aspect important de cette limitation est que les utilisateurs LDAP ne sont pas affichés dans l'onglet utilisateurs de l'interface Web Astra. Ils sont disponibles via l'API REST au niveau du terminal `../core/v1/users`.
+La version actuelle d'Astra Control Center prend en charge la configuration de l'authentification LDAP à l'aide de l'API REST Astra Control et de l'interface utilisateur Web Astra.
 
 Vous devez disposer d'un serveur LDAP pour accepter et traiter les demandes d'authentification Astra. Microsoft Active Directory est pris en charge avec la version actuelle d'Astra Control Center.
 

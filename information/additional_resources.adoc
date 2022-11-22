@@ -28,10 +28,6 @@ Documentation relative à la version actuelle du logiciel Astra Control Center d
 +
 Documentation relative à la version actuelle du logiciel Astra Control Service disponible dans le Cloud public.
 
-* https://docs.netapp.com/us-en/astra-data-store/["Documentation Astra Data Store"^]
-+
-Documentation relative à la version actuelle du logiciel Astra Data Store déployé sur le site du client.
-
 * https://docs.netapp.com/us-en/trident/["Documentation Astra Trident"^]
 +
 Documentation relative à la version actuelle du logiciel Astra Trident, un orchestrateur de stockage open source géré par NetApp.
@@ -46,7 +42,7 @@ Un emplacement central permettant d'accéder à toute la documentation d'Astra t
 
 == Ressources cloud NetApp
 
-* https://cloud.netapp.com/["Solutions cloud NetApp"^]
+* https://bluexp.netapp.com/["NetApp BlueXP"^]
 +
 Site central des solutions clouds NetApp.
 

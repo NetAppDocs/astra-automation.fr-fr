@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_delete_failed_app.html 
 keywords:  
-summary:  
+summary: 'Il se peut que vous ne puissiez pas supprimer une application gérée si elle a une sauvegarde ou un snapshot en état d"échec. Dans ce cas, vous pouvez supprimer manuellement l"application.' 
 ---
 = Supprimer une application ayant échoué
 :hardbreaks:

@@ -18,6 +18,40 @@ NetApp met régulièrement à jour l'API REST Astra Control pour vous apporter d
 
 
 
+== 22 novembre 2022 (22.11)
+
+Cette version inclut une extension et une mise à jour de l'API REST ainsi qu'une meilleure prise en charge de l'espace de noms et du protocole LDAP.
+
+
+
+=== Nouvelles ressources Astra
+
+Quatre nouveaux types de ressources ont été ajoutés : *apiResource*, *ldapGroup*, *LDAPUser* et *Task*. En outre, plusieurs ressources et points de terminaison existants ont été améliorés.
+
+
+
+=== Suivi de la prise en charge des tâches à long terme
+
+Les nouveaux noeuds finaux de tâche permettent d'accéder aux ressources de tâches gérées et peuvent être utilisés pour afficher l'état des tâches internes longues.
+
+
+
+=== Scénarios d'utilisation améliorés de l'espace de noms
+
+Un support a été ajouté pour les applications, couvrant plusieurs espaces de noms ainsi que les ressources de cluster associées à des ressources qualifiées par espace de noms.
+
+
+
+=== Des abonnements cloud étendus
+
+Des abonnements à plusieurs comptes peuvent désormais être ajoutés pour chacun des fournisseurs cloud.
+
+.Informations associées
+* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center : les nouveautés"^]
+
+
+
+
 == 10 août 2022 (22.08)
 
 Cette version inclut une extension et une mise à jour de l'API REST, ainsi que des fonctions de sécurité et d'administration améliorées.
@@ -54,8 +88,7 @@ Astra Control permet désormais d'utiliser le même script pour plusieurs croche
 Vous pouvez désormais répliquer les données et les changements d'applications entre les clusters à l'aide de la technologie NetApp SnapMirror. Cette amélioration peut être utilisée pour améliorer la continuité de l'activité et les capacités de restauration.
 
 .Informations associées
-* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center : les nouveautés"^]
-* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service : les nouveautés"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/whats-new.html["Astra Control Center 22.08 : les nouveautés"^]
 
 
 
@@ -103,8 +136,7 @@ Plusieurs améliorations supplémentaires ont été apportées aux deux versions
 Consultez la page *Nouveautés* des sites de documentation Astra Control Center et Astra Control Service.
 
 .Informations associées
-* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center : les nouveautés"^]
-* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service : les nouveautés"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/whats-new.html["Astra Control Center 22.04 : les nouveautés"^]
 
 
 
@@ -130,6 +162,10 @@ Le nombre de types de ressources REST a continué de s'étendre, en mettant l'ac
 === Kit de développement logiciel NetApp Astra Control Python
 
 Le kit de développement logiciel NetApp Astra Control Python est un pack open source qui facilite le développement du code d'automatisation pour votre environnement Astra Control. Au cœur du jeu de développement Astra, qui comprend un ensemble de classes pour extraire la complexité des appels de l'API REST. Il existe également un script de boîte à outils pour exécuter des tâches administratives spécifiques en enveloppant et en retirant les classes Python. Voir link:../python/astra_toolkits.html["Kit de développement logiciel NetApp Astra Control Python"] pour en savoir plus.
+
+.Informations associées
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/whats-new.html["Astra Control Center 21.12 : les nouveautés"^]
+
 
 
 
@@ -157,6 +193,10 @@ Outre les ressources REST étendues, plusieurs autres terminaux d'API sont dispo
 
 Prise en charge d'OpenAPI:: Les noeuds finaux OpenAPI donnent accès au document JSON OpenAPI actuel et à d'autres ressources associées.
 Prise en charge d'OpenMetrics:: Les noeuds finaux OpenMetrics fournissent un accès aux mesures du compte via la ressource OpenMetrics.
+
+
+.Informations associées
+* https://docs.netapp.com/us-en/astra-control-center-2108/release-notes/whats-new.html["Astra Control Center 21.08 : les nouveautés"^]
 
 
 

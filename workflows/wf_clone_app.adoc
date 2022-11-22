@@ -47,7 +47,7 @@ Effectuez l'appel suivant de l'API REST pour cloner l'application.
 | Méthode HTTP | Chemin 
 
 
-| POST | /account/{account_id}/k8s/v2/apps 
+| POST | /accounts/{account_id}/k8s/v2/apps 
 |===
 
 

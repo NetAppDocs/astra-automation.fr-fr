@@ -27,7 +27,7 @@ Effectuez l'appel d'API REST suivant pour répertorier les clouds.
 | Méthode HTTP | Chemin 
 
 
-| OBTENEZ | /account/{account_id}/topologique/v1/clouds 
+| OBTENEZ | /accounts/{account_id}/topologique/v1/clouds 
 |===
 
 

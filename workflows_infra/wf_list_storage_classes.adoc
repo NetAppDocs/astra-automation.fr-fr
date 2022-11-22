@@ -39,7 +39,7 @@ Effectuez l'appel d'API REST suivant pour répertorier les classes de stockage d
 | Méthode HTTP | Chemin 
 
 
-| OBTENEZ | /Account/{account_ID}/topologique/v1/nuages/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageclasses 
+| OBTENEZ | /Accounts/{account_ID}/topologique/v1/nuages/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageclasses 
 |===
 
 

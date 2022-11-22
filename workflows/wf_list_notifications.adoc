@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_list_notifications.html 
 keywords:  
-summary:  
+summary: 'Vous pouvez lister les notifications d"un compte Astra spécifique. Vous pouvez le faire dans le cadre de la surveillance de l"activité du système ou du débogage d"un problème.' 
 ---
 = Dressez la liste des notifications
 :hardbreaks:
@@ -27,7 +27,7 @@ Effectuez l'appel de l'API REST suivant.
 | Méthode HTTP | Chemin 
 
 
-| OBTENEZ | /account/{account_id}/core/v1/notifications 
+| OBTENEZ | /accounts/{account_id}/core/v1/notifications 
 |===
 
 

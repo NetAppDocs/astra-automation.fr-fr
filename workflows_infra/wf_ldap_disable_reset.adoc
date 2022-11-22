@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_disable_reset.html 
 keywords:  
-summary:  
+summary: 'Il existe deux tâches administratives facultatives, bien que liées, que vous pouvez effectuer selon vos besoins pour un déploiement de centre de contrôle Astra. Vous pouvez désactiver globalement l"authentification LDAP et réinitialiser la configuration LDAP.' 
 ---
 = Désactivez et réinitialisez LDAP
 :hardbreaks:
@@ -33,7 +33,7 @@ Vous pouvez effectuer l'appel d'API REST suivant pour désactiver globalement l'
 | Méthode HTTP | Chemin 
 
 
-| EN | /account/{account_id}/core/v1/settings/{setting_id} 
+| EN | /accounts/{account_id}/core/v1/settings/{setting_id} 
 |===
 
 
@@ -79,7 +79,7 @@ CAUTION: Il s'agit d'une opération perturbatrice et vous devez procéder avec p
 | Méthode HTTP | Chemin 
 
 
-| EN | /account/{account_id}/core/v1/settings/{setting_id} 
+| EN | /accounts/{account_id}/core/v1/settings/{setting_id} 
 |===
 
 

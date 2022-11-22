@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_list_users.html 
 keywords:  
-summary:  
+summary: Vous pouvez lister les utilisateurs définis pour un compte Astra spécifique. 
 ---
-= Répertorier les utilisateurs
+= Dressez la liste des utilisateurs
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -27,7 +27,7 @@ Effectuez l'appel de l'API REST suivant.
 | Méthode HTTP | Chemin 
 
 
-| OBTENEZ | /account/{account_id}/core/v1/users 
+| OBTENEZ | /accounts/{account_id}/core/v1/users 
 |===
 
 
@@ -62,7 +62,7 @@ curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/
 
 ===== Exemple de sortie JSON
 
-[source, json]
+[source, curl]
 ----
 {
   "items": [

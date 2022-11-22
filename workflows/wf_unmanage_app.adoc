@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_unmanage_app.html 
 keywords:  
-summary:  
+summary: 'Vous pouvez supprimer une application gérée lorsqu"elle n"est plus nécessaire. La suppression d"une application gérée supprime également les planifications associées.' 
 ---
 = Annuler la gestion d'une application
 :hardbreaks:

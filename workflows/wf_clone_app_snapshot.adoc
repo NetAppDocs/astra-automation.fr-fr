@@ -52,7 +52,7 @@ Effectuez l'appel de l'API REST suivant.
 | Méthode HTTP | Chemin 
 
 
-| POST | /account/{account_id}/k8s/v2/apps 
+| POST | /accounts/{account_id}/k8s/v2/apps 
 |===
 
 

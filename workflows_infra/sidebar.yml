@@ -8,6 +8,8 @@ entries:
   entries:
   - title: Répertorier les utilisateurs
     url: "/workflows_infra/wf_list_users.html"
+  - title: Créer un utilisateur
+    url: "/workflows_infra/wf_create_user.html"
 - title: Configuration LDAP
   entries:
   - title: Préparation à la configuration LDAP
@@ -22,8 +24,12 @@ entries:
   entries:
   - title: Lister les clusters
     url: "/workflows_infra/wf_list_clusters.html"
+  - title: Ajouter un cluster
+    url: "/workflows_infra/wf_add_cluster.html"
   - title: Répertorier les clusters gérés
     url: "/workflows_infra/wf_list_man_clusters.html"
+  - title: Gérer un cluster
+    url: "/workflows_infra/wf_man_cluster.html"
 - title: Cloud
   entries:
   - title: Liste des clouds

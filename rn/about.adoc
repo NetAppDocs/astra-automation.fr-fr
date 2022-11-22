@@ -14,14 +14,14 @@ summary: 'La documentation de ce site décrit l"API REST Astra Control et les te
 
 
 [role="lead"]
-La documentation de ce site décrit l'API REST Astra Control et les technologies d'automatisation connexes, disponibles avec la version d'Astra Control du 2022 août 22.08. En particulier, cette version de l'API REST est incluse avec les 22.08 versions correspondantes du centre de contrôle Astra et du service de contrôle Astra.
+La documentation de ce site décrit l'API REST Astra Control et les technologies d'automatisation connexes, disponibles avec la version 2022 novembre 22.11 d'Astra Control. En particulier, cette version de l'API REST est incluse avec les 22.11 versions correspondantes du centre de contrôle Astra et du service de contrôle Astra.
 
 Consultez les pages et sites suivants pour plus d'informations sur cette version ainsi que sur les versions précédentes :
 
 * link:../rn/whats_new.html["Nouveautés de l'API REST Astra Control"]
 * link:../endpoints/resources.html["Ressources REST et terminaux"]
-* https://docs.netapp.com/us-en/astra-control-center/["Documentation Astra Control Center 22.08"^]
-* https://docs.netapp.com/us-en/astra-control-service/["Documentation relative à Astra Control Service 22.08"^]
+* https://docs.netapp.com/us-en/astra-control-center/["Documentation Astra Control Center 22.11"^]
+* https://docs.netapp.com/us-en/astra-control-service/["Documentation relative au service après-vente Astra Control"^]
 * link:../aa-earlier-versions.html["Versions antérieures de la documentation d'Astra Automation"]
 
 

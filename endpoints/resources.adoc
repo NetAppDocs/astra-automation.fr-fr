@@ -44,7 +44,7 @@ Les terminaux de ressources de base fournissent les services de base nécessaire
 | ASUP | 21.08 | Les ressources ASUP représentent les packs AutoSupport transférés au support NetApp. 
 
 
-| Certificat | *22.08* | Les ressources de certificat représentent les certificats installés utilisés pour une authentification forte pour les connexions sortantes. 
+| Certificat | 22.08 | Les ressources de certificat représentent les certificats installés utilisés pour une authentification forte pour les connexions sortantes. 
 
 
 | Informations d'identification | 21.04 | Les ressources de identifiants NetApp contiennent des informations relatives à la sécurité qui peuvent être utilisées avec les utilisateurs Astra, les clusters, les compartiments et les systèmes back-end de stockage. 
@@ -62,10 +62,16 @@ Les terminaux de ressources de base fournissent les services de base nécessaire
 | Fonction | 21.08 | Les ressources de fonctionnalités représentent les fonctions Astra sélectionnées que vous pouvez interroger pour déterminer si elles sont activées ou désactivées dans le système. L'accès est limité en lecture seule. 
 
 
-| Groupe | *22.08* | Les ressources du groupe représentent les groupes Astra et les ressources associées. Seuls les groupes LDAP sont pris en charge dans la version actuelle. 
+| Groupe | 22.08 | Les ressources du groupe représentent les groupes Astra et les ressources associées. Seuls les groupes LDAP sont pris en charge dans la version actuelle. 
 
 
 | Source du crochet | 21.12 | Les ressources de la source de hook représentent le code source réel utilisé avec un crochet d'exécution. La séparation du code source et du contrôle d'exécution présente plusieurs avantages, tels que la possibilité de partager les scripts. 
+
+
+| Groupe LDAP | *22.11* | Vous pouvez lister les groupes au sein du serveur LDAP configuré. L'accès aux groupes LDAP est en lecture seule. 
+
+
+| Utilisateur LDAP | *22.11* | Vous pouvez lister les utilisateurs au sein du serveur LDAP configuré. L'accès aux utilisateurs LDAP est en lecture seule. 
 
 
 | Licence | 21.08 | Les ressources de licence représentent les licences disponibles pour un compte Astra. 
@@ -84,6 +90,9 @@ Les terminaux de ressources de base fournissent les services de base nécessaire
 
 
 | Abonnement | 21.08 | Les ressources d'abonnement représentent les abonnements actifs pour un compte Astra. 
+
+
+| Tâche | *22.11* | Les ressources de tâche fournissent un accès en lecture seule à la tâche gérée et peuvent être utilisées pour afficher l'état des tâches internes longues. 
 
 
 | Jeton | 21.04 | Les ressources de token représentent les jetons disponibles pour accéder par programmation à l'API REST Astra Control. 
@@ -133,10 +142,13 @@ Les points de terminaison de ressource de topologie fournissent un accès aux ap
 | Ressource | Relâchez | Description 
 
 
+| Ressource API | *22.11* | Les terminaux de ressource API fournissent un accès en lecture seule aux ressources Kubernetes dans un cluster géré spécifique. 
+
+
 | Appli | 21.04 | Les ressources d'application représentent toutes les applications Kubernetes, y compris celles qui ne sont pas gérées par Astra. 
 
 
-| AppMirror | *22.08* | Les ressources AppMirror représentent les ressources AppMirror pour la gestion des relations de mise en miroir des applications. 
+| AppMirror | 22.08 | Les ressources AppMirror représentent les ressources AppMirror pour la gestion des relations de mise en miroir des applications. 
 
 
 | Godet | 21.08 | Les ressources de compartiment représentent les compartiments cloud S3 utilisés pour stocker les sauvegardes des applications gérées par Astra. 
@@ -154,9 +166,6 @@ Les points de terminaison de ressource de topologie fournissent un accès aux ap
 | Cluster géré | 21.08 | Les ressources du cluster géré représentent les clusters Kubernetes actuellement gérés par Kubernetes. 
 
 
-| Stockage back-end géré | 21.12 | Les ressources du système de stockage back-end géré vous permettent d'accéder aux représentations extraites des fournisseurs de stockage back-end. Ces systèmes de stockage back-end peuvent être utilisés par les clusters et les applications gérés. 
-
-
 | Espace de noms | 21.12 | Les ressources d'espace de noms permettent d'accéder aux espaces de noms utilisés dans un cluster Kubernetes. 
 
 
@@ -164,12 +173,6 @@ Les points de terminaison de ressource de topologie fournissent un accès aux ap
 
 
 | Classe de stockage | 21.08 | Les ressources de classe de stockage représentent différents types ou classes de stockage détectés et disponibles pour un cluster géré spécifique. 
-
-
-| Dispositif de stockage | 21.12 | Les ressources associées au dispositif de stockage permettent d'accéder aux disques associés à un nœud de stockage spécifique pour les systèmes back-end de stockage de type Astra Data Store (ADS). Un système back-end ADS est déployé en tant que clusters Kubernetes. 
-
-
-| Nœud de stockage | 21.12 | Les ressources du nœud de stockage représentent les nœuds qui font partie d'un cluster ADS. 
 
 
 | Volumétrie | 21.04 | Les ressources de volume représentent les volumes de stockage Kubernetes associés aux applications gérées. 
