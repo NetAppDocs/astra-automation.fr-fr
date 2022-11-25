@@ -19,8 +19,4 @@ Il est recommandé de passer en revue tous les problèmes connus relatifs à la 
 
 NOTE: Il n'y a pas de nouveaux problèmes connus avec la version 22.11 de l'API REST Astra Control. Les problèmes décrits ci-dessous ont été découverts dans les versions précédentes et sont toujours applicables avec la version actuelle.
 
-
-
-== Tous les périphériques de stockage d'un nœud de stockage interne ne sont pas détectés
-
-Lors de l'émission d'un appel d'API REST pour récupérer les périphériques de stockage définis dans un nœud de stockage, seuls les périphériques de stockage de données Astra sont découverts. Tous les périphériques ne sont pas renvoyés.
+Voir https://docs.netapp.com/us-en/astra-control-center/release-notes/known-issues.html["Problèmes connus du centre de contrôle Astra"^] pour en savoir plus.
