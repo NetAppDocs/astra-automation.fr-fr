@@ -22,8 +22,10 @@ L'API REST Astra Control utilise HTTP et les paramètres associés pour agir sur
 
 L'API REST d'Astra Control met en œuvre un modèle transactionnel avec des opérations et des transitions d'état clairement définies.
 
+.Transaction d'API de demande et de réponse
 Chaque appel d'API REST est exécuté sous forme de requête HTTP auprès du service Astra. Chaque requête génère une réponse associée au client. Cette paire demande-réponse peut être considérée comme une transaction API.
 
+.Prise en charge du modèle opérationnel CRUD
 Chaque instance et collection de ressources disponibles via l'API REST Astra Control est accessible en fonction du modèle *CRUD*. Il existe quatre opérations, chacune étant mappée à une seule méthode HTTP. Ses opérations sont les suivantes :
 
 * Création

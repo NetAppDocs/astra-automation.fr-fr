@@ -19,6 +19,7 @@ Vous pouvez accéder aux détails des appels de l'API REST Astra Control, y comp
 
 NOTE: La documentation de référence de l'API REST est actuellement fournie avec Astra Control et est disponible en ligne.
 
+.Avant de commencer
 Vous avez besoin d'un compte pour Astra Control Center ou Astra Control Service.
 
 .Étapes

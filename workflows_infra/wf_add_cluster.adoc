@@ -31,8 +31,10 @@ Vous devez obtenir une copie du fichier *kubconfig* auprès de votre administrat
 
 Avant d'utiliser le fichier *kubeconfig*, vous devez effectuer les opérations suivantes :
 
+.Convertir le fichier du format YAML au format JSON
 Si vous recevez le fichier kubeconfig formaté en YAML, vous devez le convertir au format JSON.
 
+.Codage JSON en base64
 Vous devez coder le fichier JSON en base64. Par exemple :
 
 `yq -o=json ~/.kube/config | base64`

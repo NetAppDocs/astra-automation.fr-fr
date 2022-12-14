@@ -39,8 +39,10 @@ Un jeton API identifie l'appelant auprès d'Astra et doit être inclus avec chaq
 
 Les étapes suivantes décrivent comment créer un jeton API Astra.
 
+.Avant de commencer
 Vous avez besoin d'informations d'identification pour un compte Astra.
 
+.Description de la tâche
 Cette tâche génère un jeton API sur l'interface Web Astra. Vous devez également récupérer l'ID de compte qui est également nécessaire lors de la réalisation d'appels API.
 
 .Étapes
@@ -54,4 +56,5 @@ Accédez au site suivant pour le service Astra Control : https://astra.netapp.io
 . Copiez et enregistrez l'ID de compte disponible sur la même page.
 
 
+.Une fois que vous avez terminé
 Lorsque vous accédez à l'API REST Astra Control via Curl ou un langage de programmation, vous devez inclure le jeton de support d'API dans le protocole HTTP `Authorization` en-tête de demande.

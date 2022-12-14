@@ -25,6 +25,7 @@ NOTE: Sur le plan conceptuel, une ressource REST * est similaire à un *objet* t
 
 L'API REST Astra Control est conforme aux principes de conception RESTful. Chaque instance de ressource Astra est créée en fonction d'un type de ressource bien défini. Un ensemble d'instances de ressource du même type est appelé *collection*. Les appels de l'API agissent sur des ressources individuelles ou des collections de ressources.
 
+.Types de ressource
 Les types de ressource inclus avec l'API REST Astra Control présentent les caractéristiques suivantes :
 
 * Chaque type de ressource est défini à l'aide d'un schéma (généralement au format JSON).
@@ -32,6 +33,7 @@ Les types de ressource inclus avec l'API REST Astra Control présentent les cara
 * Les types de ressources sont globalement uniques
 
 
+.Instances de ressources
 Les instances de ressources disponibles via l'API REST Astra Control présentent les caractéristiques suivantes :
 
 * Les instances de ressources sont créées en fonction d'un type de ressource unique
@@ -41,12 +43,14 @@ Les instances de ressources disponibles via l'API REST Astra Control présentent
 * Dans les cas où une instance de ressource peut avoir plusieurs représentations, différents types de support peuvent être utilisés pour demander la représentation souhaitée
 
 
+.Collections de ressources
 Les collections de ressources disponibles via l'API REST Astra Control présentent les caractéristiques suivantes :
 
 * L'ensemble des instances de ressource d'un type de ressource unique est appelé collection
 * Les collections de ressources ont une URL unique et de longue durée
 
 
+.Identifiants d'instances
 Un identifiant est attribué à chaque instance de ressource lors de sa création. Cet identifiant est une valeur UUIDv4 128 bits. Les valeurs UUIDv4 attribuées sont globalement uniques et immuables. Après l'émission d'un appel API qui crée une nouvelle instance, une URL avec l'ID associé est renvoyée à l'appelant dans un `Location` En-tête de la réponse HTTP. Vous pouvez extraire l'identificateur et l'utiliser sur les appels suivants lorsque vous faites référence à l'instance de ressource.
 
 
@@ -58,6 +62,7 @@ NOTE: L'identifiant de ressource est la clé principale utilisée pour les colle
 
 Chaque ressource Astra Control est définie à l'aide d'une structure commune.
 
+.Les données communes
 Chaque ressource Astra contient les valeurs-clés indiquées dans le tableau suivant.
 
 [cols="15,85"]
@@ -76,6 +81,7 @@ Chaque ressource Astra contient les valeurs-clés indiquées dans le tableau sui
 
 | les métadonnées | Objet JSON contenant diverses informations, y compris les étiquettes de l'utilisateur et du système. 
 |===
+.Objet de métadonnées
 L'objet de métadonnées JSON inclus avec chaque ressource Astra contient les valeurs de clé indiquées dans le tableau suivant.
 
 [cols="15,85"]
@@ -94,4 +100,5 @@ L'objet de métadonnées JSON inclus avec chaque ressource Astra contient les va
 
 | CreatedBy | Chaîne JSON contenant l'identifiant UUIDv4 de l'ID utilisateur qui a créé la ressource. Si la ressource a été créée par un composant système interne et qu'aucun UUID n'est associé à l'entité de création, l'UUID *null* est utilisé. 
 |===
+.État de la ressource
 Ressources sélectionnées a `state` valeur utilisée pour orchestrer les transitions de cycle de vie et contrôler l'accès.

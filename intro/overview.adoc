@@ -19,20 +19,29 @@ Astra Control Center et Astra Control Service fournissent une API REST commune q
 
 NOTE: Pour accéder à l'API REST, vous devez d'abord vous connecter à l'interface utilisateur Web Astra et générer un jeton API. Vous devez inclure le token à chaque requête d'API.
 
+.Basée sur la technologie REST
 L'API de contrôle d'Astra a été créée à l'aide de la technologie REST et des bonnes pratiques actuelles. La technologie centrale inclut HTTP, JSON et RBAC.
 
+.Prise en charge des deux modèles de déploiement Astra Control
 Astra Control Service est utilisé dans l'environnement de cloud public, tandis qu'Astra Control Center est conçu pour vos déploiements sur site. Une API REST prend en charge ces deux modèles de déploiement.
 
+.Effacez le mappage entre les ressources du terminal REST et le modèle d'objet
 Les terminaux REST externes utilisés pour accéder au mappage des ressources vers un modèle d'objet cohérent géré en interne par le service Astra. Le modèle d'objet est conçu à l'aide de la modélisation de relation d'entité (ER) qui permet de définir clairement les actions et les réponses de l'API.
 
+.Ensemble complet de paramètres de requête
 L'API REST fournit un ensemble complet de paramètres de requête que vous pouvez utiliser pour accéder aux collections de ressources. Certaines opérations prises en charge incluent le filtrage, le tri et la pagination.
 
+.Alignement avec l'interface utilisateur Web Astra Control
 La conception de l'interface utilisateur Web Astra est alignée avec l'API REST, ce qui garantit la cohérence entre les deux chemins d'accès et l'expérience utilisateur.
 
+.Données robustes de débogage et de détermination des problèmes
 L'API REST Astra Control offre une fonctionnalité de débogage et de détermination des problèmes robuste, y compris les événements système et les notifications utilisateur.
 
+.Processus de flux de travail
 Un ensemble de workflows est fourni pour vous aider au développement de votre code d'automatisation. Les workflows sont organisés en deux catégories principales : infrastructure et gestion.
 
+.Socle des technologies d'automatisation avancées
 Vous pouvez non seulement accéder directement à l'API REST, mais aussi utiliser d'autres technologies d'automatisation basées sur l'API REST.
 
+.Fait partie de la documentation de la gamme Astra
 La documentation relative à l'automatisation du contrôle Astra fait partie de la documentation de la gamme Astra la plus vaste. Voir https://docs.netapp.com/us-en/astra-family/["Documentation Astra"^] pour en savoir plus.

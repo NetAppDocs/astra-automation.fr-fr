@@ -16,8 +16,10 @@ summary: 'La structure générale de l"URL utilisée pour accéder à une instan
 [role="lead"]
 La structure générale de l'URL utilisée pour accéder à une instance de ressource ou à une collection via l'API REST est composée de plusieurs valeurs. Cette structure reflète le modèle d'objet sous-jacent et la conception du système.
 
+.En tant que racine
 Le compte Astra est la racine du chemin de ressource vers chaque point final REST. Ainsi, tous les chemins d'accès de l'URL commencent par `/account/{account_id}` où `account_id` Est la valeur UUIDv4 unique du compte. Structure interne cette conception reflète une conception où tout accès aux ressources est basé sur un compte spécifique.
 
+.Catégorie de ressource de point final
 Les terminaux de ressources d'Astra se répartissent en trois catégories :
 
 * Cœur (`/core`)
@@ -27,8 +29,10 @@ Les terminaux de ressources d'Astra se répartissent en trois catégories :
 
 Voir link:../endpoints/resources.html["Ressources"] pour en savoir plus.
 
+.Version de catégorie
 Chacune des trois catégories de ressources possède une version globale qui contrôle la version des ressources consultées. Par convention et définition, passage à une nouvelle version majeure d'une catégorie de ressources (par exemple, de `/v1` à `/v2`) Introduira des changements de rupture dans l'API.
 
+.Instance ou collection de ressources
 Une combinaison de types de ressources et d'identificateurs peut être utilisée dans le chemin, selon qu'une instance de ressource ou une collection est accédée.
 
 .Exemple

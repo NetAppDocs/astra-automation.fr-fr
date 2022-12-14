@@ -25,12 +25,16 @@ NOTE: En plus d'accéder directement à l'API REST Astra Control avec Python, Ne
 
 Les exigences de configuration de base pour exécuter les scripts Python sont décrites ci-dessous.
 
+.Python 3
 La dernière version de Python 3 doit être installée.
 
+.Bibliothèques supplémentaires
 Les bibliothèques *requêtes* et *urllib3* doivent être installées. Vous pouvez utiliser pip ou un autre outil de gestion Python, selon les besoins de votre environnement.
 
+.Accès réseau
 Le poste de travail sur lequel les scripts s'exécutent doit disposer d'un accès réseau et pouvoir accéder à Astra Control. Lorsque vous utilisez le service Astra Control, vous devez être connecté à Internet et être en mesure de vous connecter au service à `https://astra.netapp.io`.
 
+.Informations d'identité
 Vous avez besoin d'un compte Astra valide avec l'identifiant de compte et le jeton API. Voir link:../get-started/get_api_token.html["Obtenir un jeton API"] pour en savoir plus.
 
 
@@ -42,6 +46,7 @@ Les scripts Python s'appuient sur les informations de configuration contenues da
 
 NOTE: Vous devez mettre à jour les échantillons en fonction de votre environnement.
 
+.Informations d'identité
 Le fichier suivant contient le jeton API et le compte Astra. Vous devez transmettre ce fichier aux scripts Python à l'aide de `-i` (ou `--identity`) Paramètre CLI.
 
 [source, json]
