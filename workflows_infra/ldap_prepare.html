@@ -1607,7 +1607,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-22 17:14:28 +0000">11/22/2022</time>
+    <time datetime="2022-12-14 18:16:18 +0000">12/14/2022</time>
     
   
 
@@ -1681,33 +1681,43 @@ Bien que les étapes présentées ci-dessous se trouvent dans une séquence, vou
 <p>Nous vous recommandons de consulter les éléments essentiels de configuration Astra présentés ci-dessous, y compris les limites et les options de configuration, avant de configurer Astra pour utiliser LDAP pour l&#8217;authentification.</p>
 </div>
 <div class="paragraph">
+<div class="title">Uniquement pris en charge avec Astra Control Center</div>
 <p>La plateforme Astra Control propose deux modèles de déploiement. L&#8217;authentification LDAP est prise en charge uniquement avec les déploiements d&#8217;Astra Control Center.</p>
 </div>
 <div class="paragraph">
+<div class="title">Configuration via l&#8217;API REST ou l&#8217;interface utilisateur Web</div>
 <p>La version actuelle d&#8217;Astra Control Center prend en charge la configuration de l&#8217;authentification LDAP à l&#8217;aide de l&#8217;API REST Astra Control et de l&#8217;interface utilisateur Web Astra.</p>
 </div>
 <div class="paragraph">
+<div class="title">Serveur LDAP requis</div>
 <p>Vous devez disposer d&#8217;un serveur LDAP pour accepter et traiter les demandes d&#8217;authentification Astra. Microsoft Active Directory est pris en charge avec la version actuelle d&#8217;Astra Control Center.</p>
 </div>
 <div class="paragraph">
+<div class="title">Connexion sécurisée au serveur LDAP</div>
 <p>Lors de la configuration du serveur LDAP dans Astra, vous pouvez éventuellement définir une connexion sécurisée. Dans ce cas, un certificat est nécessaire pour le protocole LDAPS.</p>
 </div>
 <div class="paragraph">
+<div class="title">Configurer des utilisateurs ou des groupes</div>
 <p>Vous devez sélectionner les utilisateurs à authentifier à l&#8217;aide de LDAP. Pour ce faire, vous pouvez identifier les utilisateurs individuels ou un groupe d&#8217;utilisateurs. Les comptes doivent être définis au niveau du serveur LDAP. Elles doivent également être identifiées dans Astra (type LDAP) qui permet de transférer les demandes d&#8217;authentification vers LDAP.</p>
 </div>
 <div class="paragraph">
+<div class="title">Contrainte de rôle lors de la liaison d&#8217;un utilisateur ou d&#8217;un groupe</div>
 <p>Avec la version actuelle d&#8217;Astra Control Center, la seule valeur prise en charge pour <code>roleConstraint</code> est "*". Cela indique que l&#8217;utilisateur n&#8217;est pas limité à un ensemble limité d&#8217;espaces de noms et qu&#8217;il peut y accéder tous. Voir <a href="../workflows_infra/wf_ldap_add_entries.html">"Ajoutez des entrées LDAP à Astra"</a> pour en savoir plus.</p>
 </div>
 <div class="paragraph">
+<div class="title">Informations d&#8217;identification LDAP</div>
 <p>Les informations d&#8217;identification utilisées par LDAP incluent le nom d&#8217;utilisateur (adresse e-mail) et le mot de passe associé.</p>
 </div>
 <div class="paragraph">
+<div class="title">Adresses e-mail uniques</div>
 <p>Toutes les adresses e-mail agissant comme noms d&#8217;utilisateur dans un déploiement Astra Control Center doivent être uniques. Vous ne pouvez pas ajouter un utilisateur LDAP avec une adresse e-mail déjà définie pour Astra. Si un e-mail en double existe, vous devez d&#8217;abord le supprimer d&#8217;Astra. Voir <a href="https://docs.netapp.com/us-en/astra-control-center/use/manage-users.html#remove-users" target="_blank" rel="noopener">"Supprimer des utilisateurs"</a> Sur le site de documentation Astra Control Center pour plus d&#8217;informations.</p>
 </div>
 <div class="paragraph">
+<div class="title">Vous pouvez éventuellement définir d&#8217;abord les utilisateurs et les groupes LDAP</div>
 <p>Vous pouvez ajouter les utilisateurs et groupes LDAP au Centre de contrôle Astra même s&#8217;ils n&#8217;existent pas encore dans LDAP ou si le serveur LDAP n&#8217;est pas configuré. Cela vous permet de préconfigurer les utilisateurs et les groupes avant de configurer le serveur LDAP.</p>
 </div>
 <div class="paragraph">
+<div class="title">Utilisateur défini dans plusieurs groupes LDAP</div>
 <p>Si un utilisateur LDAP appartient à plusieurs groupes LDAP et que des rôles différents ont été attribués aux groupes dans Astra, le rôle effectif de l&#8217;utilisateur lors de l&#8217;authentification sera le plus privilégié. Par exemple, si un utilisateur est affecté à l' <code>viewer</code> rôle avec groupe1 mais a le <code>member</code> rôle dans le groupe 2, le rôle de l&#8217;utilisateur serait <code>member</code>. Ceci est basé sur la hiérarchie utilisée par Astra (la plus haute à la plus basse) :</p>
 </div>
 <div class="ulist">
@@ -1727,12 +1737,15 @@ Bien que les étapes présentées ci-dessous se trouvent dans une séquence, vou
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Synchronisation périodique du compte</div>
 <p>Astra synchronise ses utilisateurs et groupes avec le serveur LDAP environ toutes les 60 secondes. Par conséquent, si un utilisateur ou un groupe est ajouté à LDAP ou supprimé, il peut prendre jusqu&#8217;à une minute avant qu&#8217;il soit disponible dans Astra.</p>
 </div>
 <div class="paragraph">
+<div class="title">Désactivation et réinitialisation de la configuration LDAP</div>
 <p>Avant de tenter de réinitialiser la configuration LDAP, vous devez d&#8217;abord désactiver l&#8217;authentification LDAP. De même, pour modifier le serveur LDAP (<code>connectionHost</code>), vous devez effectuer les deux opérations. Voir <a href="../workflows_infra/wf_ldap_disable_reset.html">"Désactivez et réinitialisez LDAP"</a> pour en savoir plus.</p>
 </div>
 <div class="paragraph">
+<div class="title">Paramètres de l&#8217;API REST</div>
 <p>Les workflows de configuration LDAP appellent l&#8217;API REST pour accomplir des tâches spécifiques. Chaque appel API peut inclure des paramètres d&#8217;entrée comme indiqué dans les échantillons fournis. Voir <a href="../reference/api_reference.html">"Référence API"</a> pour plus d&#8217;informations sur la localisation de la documentation de référence.</p>
 </div>
 </div>

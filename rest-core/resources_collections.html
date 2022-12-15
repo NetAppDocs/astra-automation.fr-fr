@@ -1607,7 +1607,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-16 18:23:18 +0000">11/16/2022</time>
+    <time datetime="2022-12-14 18:16:18 +0000">12/14/2022</time>
     
   
 
@@ -1643,6 +1643,7 @@ Sur le plan conceptuel, une ressource REST * est similaire à un <strong>objet</
 <p>L&#8217;API REST Astra Control est conforme aux principes de conception RESTful. Chaque instance de ressource Astra est créée en fonction d&#8217;un type de ressource bien défini. Un ensemble d&#8217;instances de ressource du même type est appelé <strong>collection</strong>. Les appels de l&#8217;API agissent sur des ressources individuelles ou des collections de ressources.</p>
 </div>
 <div class="paragraph">
+<div class="title">Types de ressource</div>
 <p>Les types de ressource inclus avec l&#8217;API REST Astra Control présentent les caractéristiques suivantes :</p>
 </div>
 <div class="ulist">
@@ -1659,6 +1660,7 @@ Sur le plan conceptuel, une ressource REST * est similaire à un <strong>objet</
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Instances de ressources</div>
 <p>Les instances de ressources disponibles via l&#8217;API REST Astra Control présentent les caractéristiques suivantes :</p>
 </div>
 <div class="ulist">
@@ -1681,6 +1683,7 @@ Sur le plan conceptuel, une ressource REST * est similaire à un <strong>objet</
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Collections de ressources</div>
 <p>Les collections de ressources disponibles via l&#8217;API REST Astra Control présentent les caractéristiques suivantes :</p>
 </div>
 <div class="ulist">
@@ -1694,6 +1697,7 @@ Sur le plan conceptuel, une ressource REST * est similaire à un <strong>objet</
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Identifiants d&#8217;instances</div>
 <p>Un identifiant est attribué à chaque instance de ressource lors de sa création. Cet identifiant est une valeur UUIDv4 128 bits. Les valeurs UUIDv4 attribuées sont globalement uniques et immuables. Après l&#8217;émission d&#8217;un appel API qui crée une nouvelle instance, une URL avec l&#8217;ID associé est renvoyée à l&#8217;appelant dans un <code>Location</code> En-tête de la réponse HTTP. Vous pouvez extraire l&#8217;identificateur et l&#8217;utiliser sur les appels suivants lorsque vous faites référence à l&#8217;instance de ressource.</p>
 </div>
 <div class="admonitionblock note">
@@ -1717,6 +1721,7 @@ L&#8217;identifiant de ressource est la clé principale utilisée pour les colle
 <p>Chaque ressource Astra Control est définie à l&#8217;aide d&#8217;une structure commune.</p>
 </div>
 <div class="paragraph">
+<div class="title">Les données communes</div>
 <p>Chaque ressource Astra contient les valeurs-clés indiquées dans le tableau suivant.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1750,6 +1755,7 @@ L&#8217;identifiant de ressource est la clé principale utilisée pour les colle
 </tbody>
 </table>
 <div class="paragraph">
+<div class="title">Objet de métadonnées</div>
 <p>L&#8217;objet de métadonnées JSON inclus avec chaque ressource Astra contient les valeurs de clé indiquées dans le tableau suivant.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1783,6 +1789,7 @@ L&#8217;identifiant de ressource est la clé principale utilisée pour les colle
 </tbody>
 </table>
 <div class="paragraph">
+<div class="title">État de la ressource</div>
 <p>Ressources sélectionnées a <code>state</code> valeur utilisée pour orchestrer les transitions de cycle de vie et contrôler l&#8217;accès.</p>
 </div>
 </div>

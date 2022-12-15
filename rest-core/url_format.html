@@ -1607,7 +1607,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-16 18:23:18 +0000">11/16/2022</time>
+    <time datetime="2022-12-14 18:16:18 +0000">12/14/2022</time>
     
   
 
@@ -1621,9 +1621,11 @@
 <p>La structure générale de l&#8217;URL utilisée pour accéder à une instance de ressource ou à une collection via l&#8217;API REST est composée de plusieurs valeurs. Cette structure reflète le modèle d&#8217;objet sous-jacent et la conception du système.</p>
 </div>
 <div class="paragraph">
+<div class="title">En tant que racine</div>
 <p>Le compte Astra est la racine du chemin de ressource vers chaque point final REST. Ainsi, tous les chemins d&#8217;accès de l&#8217;URL commencent par <code>/account/{account_id}</code> où <code>account_id</code> Est la valeur UUIDv4 unique du compte. Structure interne cette conception reflète une conception où tout accès aux ressources est basé sur un compte spécifique.</p>
 </div>
 <div class="paragraph">
+<div class="title">Catégorie de ressource de point final</div>
 <p>Les terminaux de ressources d&#8217;Astra se répartissent en trois catégories :</p>
 </div>
 <div class="ulist">
@@ -1643,9 +1645,11 @@
 <p>Voir <a href="../endpoints/resources.html">"Ressources"</a> pour en savoir plus.</p>
 </div>
 <div class="paragraph">
+<div class="title">Version de catégorie</div>
 <p>Chacune des trois catégories de ressources possède une version globale qui contrôle la version des ressources consultées. Par convention et définition, passage à une nouvelle version majeure d&#8217;une catégorie de ressources (par exemple, de <code>/v1</code> à <code>/v2</code>) Introduira des changements de rupture dans l&#8217;API.</p>
 </div>
 <div class="paragraph">
+<div class="title">Instance ou collection de ressources</div>
 <p>Une combinaison de types de ressources et d&#8217;identificateurs peut être utilisée dans le chemin, selon qu&#8217;une instance de ressource ou une collection est accédée.</p>
 </div>
 <div class="ulist">

@@ -1607,7 +1607,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-16 18:23:18 +0000">11/16/2022</time>
+    <time datetime="2022-12-14 18:16:18 +0000">12/14/2022</time>
     
   
 
@@ -1643,15 +1643,19 @@ En plus d&#8217;accéder directement à l&#8217;API REST Astra Control avec Pyth
 <p>Les exigences de configuration de base pour exécuter les scripts Python sont décrites ci-dessous.</p>
 </div>
 <div class="paragraph">
+<div class="title">Python 3</div>
 <p>La dernière version de Python 3 doit être installée.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bibliothèques supplémentaires</div>
 <p>Les bibliothèques <strong>requêtes</strong> et <strong>urllib3</strong> doivent être installées. Vous pouvez utiliser pip ou un autre outil de gestion Python, selon les besoins de votre environnement.</p>
 </div>
 <div class="paragraph">
+<div class="title">Accès réseau</div>
 <p>Le poste de travail sur lequel les scripts s&#8217;exécutent doit disposer d&#8217;un accès réseau et pouvoir accéder à Astra Control. Lorsque vous utilisez le service Astra Control, vous devez être connecté à Internet et être en mesure de vous connecter au service à <code><a href="https://astra.netapp.io" class="bare">https://astra.netapp.io</a></code>.</p>
 </div>
 <div class="paragraph">
+<div class="title">Informations d&#8217;identité</div>
 <p>Vous avez besoin d&#8217;un compte Astra valide avec l&#8217;identifiant de compte et le jeton API. Voir <a href="../get-started/get_api_token.html">"Obtenir un jeton API"</a> pour en savoir plus.</p>
 </div>
 </div>
@@ -1675,6 +1679,7 @@ Vous devez mettre à jour les échantillons en fonction de votre environnement.
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Informations d&#8217;identité</div>
 <p>Le fichier suivant contient le jeton API et le compte Astra. Vous devez transmettre ce fichier aux scripts Python à l&#8217;aide de <code>-i</code> (ou <code>--identity</code>) Paramètre CLI.</p>
 </div>
 <div class="listingblock">
