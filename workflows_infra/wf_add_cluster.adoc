@@ -14,7 +14,7 @@ summary: 'Vous pouvez ajouter un cluster pour qu"il soit géré par Astra.'
 
 
 [role="lead"]
-Vous pouvez ajouter un cluster pour qu'il soit géré par Astra. À partir de l'Astra 22.11, vous pouvez ajouter un groupe d'instruments avec le centre de contrôle Astra ou le service de contrôle Astra.
+Vous pouvez ajouter un cluster pour qu'il soit géré par Astra. À compter de la version 22.11 de l'Astra, vous pouvez ajouter un groupe d'instruments avec le centre de contrôle Astra et le service de contrôle Astra.
 
 
 NOTE: L'ajout d'un cluster n'est pas nécessaire lors de l'utilisation d'un service Kubernetes depuis l'un des principaux fournisseurs cloud (AKS, EKS, GKE).

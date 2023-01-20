@@ -17,6 +17,10 @@ summary: 'Il est recommandé de passer en revue tous les problèmes connus relat
 Il est recommandé de passer en revue tous les problèmes connus relatifs à la version actuelle de l'API REST Astra Control. Les problèmes connus identifient les problèmes susceptibles de vous empêcher d'utiliser le produit avec succès.
 
 
-NOTE: Il n'y a pas de nouveaux problèmes connus avec la version 22.11 de l'API REST Astra Control. Les problèmes décrits ci-dessous ont été découverts dans les versions précédentes et sont toujours applicables avec la version actuelle.
+NOTE: Il n'y a pas de nouveaux problèmes connus avec la version 23.01 de l'API REST Astra Control. Tout problème décrit ci-dessous a été découvert dans les versions précédentes et s'applique toujours à la version actuelle.
 
-Voir https://docs.netapp.com/us-en/astra-control-center/release-notes/known-issues.html["Problèmes connus du centre de contrôle Astra"^] pour en savoir plus.
+Consultez l'une des pages suivantes en fonction de votre modèle de déploiement.
+
+* https://docs.netapp.com/us-en/astra-control-service/release-notes/known-issues.html["Problèmes connus concernant le service de contrôle Astra"^]
+* https://docs.netapp.com/us-en/astra-control-center/release-notes/known-issues.html["Problèmes connus du centre de contrôle Astra"^]
+

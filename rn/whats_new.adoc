@@ -18,6 +18,18 @@ NetApp met régulièrement à jour l'API REST Astra Control pour vous apporter d
 
 
 
+== 17 janvier 2023 (23.01)
+
+Cette version inclut une mise à jour mineure de l'API REST.
+
+
+
+=== Fonctionnalité améliorée de crochets d'exécution avec filtres
+
+Lorsque vous utilisez des crochets d'exécution, vous pouvez désormais ajouter des filtres pour contrôler les conteneurs auxquels un crochet va correspondre. Si vous créez plusieurs filtres pour un seul crochet d'exécution, ils sont combinés avec un opérateur ET logique. Vous pouvez définir jusqu'à 10 filtres actifs par crochet d'exécution.
+
+
+
 == 22 novembre 2022 (22.11)
 
 Cette version inclut une extension et une mise à jour de l'API REST ainsi qu'une meilleure prise en charge de l'espace de noms et du protocole LDAP.

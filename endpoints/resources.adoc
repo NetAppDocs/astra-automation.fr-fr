@@ -25,7 +25,7 @@ NOTE: Le format du chemin et de l'URL complète utilisés pour accéder aux ress
 
 Les principaux terminaux de ressources de l'API REST Astra Control sont organisés en trois catégories. Chaque ressource est accessible avec l'ensemble complet des opérations CRUD (création, lecture, mise à jour, suppression) sauf mention contraire.
 
-La colonne *version* indique la version d'Astra lorsque la ressource a été introduite pour la première fois. Ce champ est en gras pour les ressources récemment ajoutées avec la version actuelle.
+La colonne *version* indique la version d'Astra lorsque la ressource a été introduite pour la première fois. Ce champ est en gras pour les ressources les plus récemment ajoutées à l'API REST.
 
 
 
