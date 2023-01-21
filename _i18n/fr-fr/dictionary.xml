@@ -1165,22 +1165,23 @@
   <block id="eb6a5d80177fc44f1a834a5fac76b612" category="inline-link">Problèmes connus concernant le service de contrôle Astra</block>
   <block id="1a8244f3a147b8df7de50e9d16df07ac" category="list-text"><block ref="1a8244f3a147b8df7de50e9d16df07ac" category="inline-link-rx"></block></block>
   <block id="750f48353ffad2f2dc8aaad3df0d9144" category="list-text"><block ref="750f48353ffad2f2dc8aaad3df0d9144" category="inline-link-rx"></block></block>
-  <block id="48d4b62231f750392dd784d9182c8dc5" category="paragraph">Ce site décrit l'API REST d'Astra Control et les technologies d'automatisation associées, incluses dans la dernière version des deux modèles de déploiement d'Astra.</block>
   <block id="b23a60ebc7020fe310d80180653261b7" category="paragraph-title">Cadence de sortie</block>
-  <block id="aecf6ebbe0aba381087ff4427d1692b7" category="paragraph">En général, les mises à jour pour le service Astra Control et le centre de contrôle Astra sont publiées en même temps. Cependant, Astra Control Service utilise une cadence de sortie accélérée qui peut entraîner une ou plusieurs mises à jour incrémentielles au-delà de la dernière version d'Astra Control Center.</block>
-  <block id="0e4bd344e2cee7644ad300cdfc0d63d1" category="paragraph">Ce site présentant l'API REST pour les deux modèles de déploiement, il se peut que certaines fonctionnalités ou modifications ne s'appliquent qu'à la version la plus récente d'Astra Control Service. Les différences entre les deux sont notées sur ce site, au besoin.</block>
   <block id="ce2f654fe20c0aa5fa4ece0648021275" category="paragraph-title">Les déploiements d'Astra Control</block>
-  <block id="a6614c977e9c818d6355f9b59c74764f" category="paragraph">La documentation de ce site s'applique aux modèles de déploiement Astra, comme indiqué ci-dessous.</block>
   <block id="d92324a56dde3645b2b0ebf9145c93b8" category="list-text">Service de contrôle Astra 23.01</block>
   <block id="910e94624b00c7abc1675a19e1165204" category="list-text">Astra Control Center 22.11</block>
   <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="paragraph-title">Plus d'informations</block>
-  <block id="06e642707bb2ed358193d9d175786f6d" category="paragraph">Pour plus d'informations sur les versions actuelles et antérieures d'Astra Control, y compris l'API REST, reportez-vous à la section suivante.</block>
   <block id="57568765d51dbdfa0a0799807a13dfc5" category="inline-link">Documentation relative à Astra Control Service 23.01</block>
   <block id="9905934fe9c85f338f46074487afd222" category="list-text"><block ref="9905934fe9c85f338f46074487afd222" category="inline-link-rx"></block></block>
-  <block id="8372692ac95eb7fc27fe8f964e134d59" category="paragraph-title">Soyez impliqué</block>
-  <block id="5596f30fbf5a63b7848467c492bb0781" category="paragraph">Suivez-nous sur Twitter *@NetAppDoc*. Vous pouvez également envoyer des commentaires sur la documentation en devenant un <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> ou envoyez un e-mail à _doccomments@netapp.com_.</block>
   <block id="14f03db07d2c880fafbf7c4fdb9955bd" category="section-title">17 janvier 2023 (23.01)</block>
   <block id="055a27c4d72ac10e8bf363a70b1218a0" category="paragraph">Cette version inclut une mise à jour mineure de l'API REST.</block>
   <block id="fd681e19859abac8a0d1df0703c54996" category="section-title">Fonctionnalité améliorée de crochets d'exécution avec filtres</block>
   <block id="03612c2b7f26bb15fe2a8f56732f28ad" category="paragraph">Lorsque vous utilisez des crochets d'exécution, vous pouvez désormais ajouter des filtres pour contrôler les conteneurs auxquels un crochet va correspondre. Si vous créez plusieurs filtres pour un seul crochet d'exécution, ils sont combinés avec un opérateur ET logique. Vous pouvez définir jusqu'à 10 filtres actifs par crochet d'exécution.</block>
+  <block id="3c59b55f9bf059f6664a2ad8c3b5ff06" category="paragraph">La documentation de ce site décrit l'API REST d'Astra Control et les technologies d'automatisation connexes, incluses dans les versions les plus récentes des deux modèles de déploiement d'Astra Control.</block>
+  <block id="49bc96321f81e28a39f08ecee5252838" category="admonition">Un numéro de version du formulaire *YY.MM* est attribué à chaque version Astra. Cette valeur permet d'identifier la version basée sur l'année (_YY_) et le mois (_MM_) qu'elle est devenue disponible. Par exemple, Astra Control Service 23.01 a été lancé en janvier 2023.</block>
+  <block id="41aa8f23ab61278bcb0f5ac2fb49d28d" category="paragraph">En général, des mises à jour du service Astra Control et du centre de contrôle Astra sont effectuées en même temps. Cependant, Astra Control Service a une cadence de sortie accélérée qui peut entraîner une ou plusieurs mises à jour incrémentielles au-delà de la dernière version d'Astra Control Center.</block>
+  <block id="ce3f3db7878407d89bb9f3e42409287c" category="paragraph">Comme ce site documente l'API REST pour les deux modèles de déploiement, certaines fonctionnalités peuvent être disponibles uniquement avec la version la plus récente d'Astra Control Service. Les différences entre les deux modèles de déploiement sont notées selon les besoins.</block>
+  <block id="fdd9fe55f1a01a1ad085e5d6ce35c93b" category="paragraph">La documentation de ce site s'applique aux versions suivantes d'Astra Control :</block>
+  <block id="06661ae837df4aebc82db4f943f32dd7" category="paragraph">Consultez les pages et sites suivants pour obtenir de plus amples renseignements sur les versions actuelles et précédentes d'Astra Control.</block>
+  <block id="6dbfc88df6a1c21e55d3430850d3bd1c" category="paragraph-title">Aidez-nous à améliorer la documentation</block>
+  <block id="d2d35c8cbc7027976910df89e09c7b5a" category="paragraph">Suivez-nous sur Twitter *@NetAppDoc* pour recevoir des notifications sur la documentation NetApp. Vous pouvez également nous faire part de vos commentaires en devenant un <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> ou en envoyant un e-mail à _doccomments@netapp.com_.</block>
 </blocks>
