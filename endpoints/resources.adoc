@@ -17,7 +17,7 @@ summary: 'Vous pouvez accéder aux ressources fournies par l"API REST Astra Cont
 Vous pouvez accéder aux ressources fournies par l'API REST Astra Control pour automatiser le déploiement d'Astra. Chaque ressource est disponible via un ou plusieurs terminaux. Vous trouverez ci-dessous une présentation des ressources REST que vous pouvez utiliser dans le cadre d'un déploiement d'automatisation.
 
 
-NOTE: Le format du chemin et de l'URL complète utilisés pour accéder aux ressources de contrôle Astra est basé sur plusieurs valeurs. Voir link:../rest-core/url_format.html["Format d'URL"] pour en savoir plus. Voir aussi link:../reference/api_reference.html["Référence API"] Pour en savoir plus sur l'utilisation des ressources et des terminaux Astra,
+NOTE: Le format du chemin et de l'URL complète utilisés pour accéder aux ressources de contrôle Astra est basé sur plusieurs valeurs. Voir link:../rest-core/url_format.html["Format d'URL"] pour en savoir plus. Voir aussi link:../get-started/online_api_ref.html["Référence d'API en ligne"] Pour en savoir plus sur l'utilisation des ressources et des terminaux Astra,
 
 
 

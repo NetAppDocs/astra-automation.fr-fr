@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: reference/api_reference.html 
+permalink: get-started/online_api_ref.html 
 keywords: reference, api reference 
 summary: 'Vous pouvez accéder aux détails des appels de l"API REST Astra Control, y compris les méthodes HTTP, les paramètres d"entrée et les réponses. Cette référence complète est utile lors du développement d"applications d"automatisation à l"aide de l"API REST.' 
 ---
-= Référence API
+= Référence d'API en ligne
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -86,4 +86,4 @@ Astra synchronise ses utilisateurs et groupes avec le serveur LDAP environ toute
 Avant de tenter de réinitialiser la configuration LDAP, vous devez d'abord désactiver l'authentification LDAP. De même, pour modifier le serveur LDAP (`connectionHost`), vous devez effectuer les deux opérations. Voir link:../workflows_infra/wf_ldap_disable_reset.html["Désactivez et réinitialisez LDAP"] pour en savoir plus.
 
 .Paramètres de l'API REST
-Les workflows de configuration LDAP appellent l'API REST pour accomplir des tâches spécifiques. Chaque appel API peut inclure des paramètres d'entrée comme indiqué dans les échantillons fournis. Voir link:../reference/api_reference.html["Référence API"] pour plus d'informations sur la localisation de la documentation de référence.
+Les workflows de configuration LDAP appellent l'API REST pour accomplir des tâches spécifiques. Chaque appel API peut inclure des paramètres d'entrée comme indiqué dans les échantillons fournis. Voir link:../get-started/online_api_ref.html["Référence d'API en ligne"] pour plus d'informations sur la localisation de la documentation de référence.
