@@ -9,7 +9,7 @@ settings:
     harmony_enabled: false
     api_enabled: true
   rss_page: rn/whats_new.html
-  langs: fr-fr,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de
+  langs: fr-fr,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es
 sidebar:
   entries:
   - title: Documentation sur l'automatisation du contrôle Astra
