@@ -42,6 +42,6 @@ En fonction de la structure présentée ci-dessus, un chemin type vers un noeud 
 
 * URL complète
 +
-L'URL complète du noeud final correspondant est : `https://astra.netapp.io/accounts/{account_id}/core/v1/users`.
+L'URL complète du noeud final correspondant est : `\https://astra.netapp.io/accounts/{account_id}/core/v1/users`.
 
 
