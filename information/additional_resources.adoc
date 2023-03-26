@@ -36,6 +36,10 @@ Documentation relative à la version actuelle du logiciel Astra Trident, un orch
 +
 Un emplacement central permettant d'accéder à toute la documentation d'Astra tant pour les déploiements sur site que dans le cloud public.
 
+* https://discord.gg/NetApp["Déroulez"^]
++
+Support communautaire pour Astra Control et d'autres produits NetApp.
+
 
 
 
