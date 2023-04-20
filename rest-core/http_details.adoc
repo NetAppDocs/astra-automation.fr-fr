@@ -99,7 +99,7 @@ NOTE: Voir https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232"^] et https://ww
 
 == Paramètres de requête
 
-Les paramètres de requête suivants peuvent être utilisés avec les collections de ressources. Voir link:../additional/working_with_collections.html["Utilisation des collections"] pour en savoir plus.
+Les paramètres de requête suivants peuvent être utilisés avec les collections de ressources. Voir link:../additional/work_with_collections.html["Travailler avec les collections"] pour en savoir plus.
 
 [cols="20,80"]
 |===
@@ -130,7 +130,7 @@ Les paramètres de requête suivants peuvent être utilisés avec les collection
 Les codes d'état HTTP utilisés par l'API REST Astra Control sont décrits ci-dessous.
 
 
-NOTE: L'API REST Astra Control utilise également la norme *Détails du problème pour les API HTTP*. Voir link:diagnostics_support.html["Diagnostics et support"] pour en savoir plus.
+NOTE: L'API REST Astra Control utilise également la norme *Détails du problème pour les API HTTP*. Voir link:../additional/diagnostics_support.html["Diagnostics et support"] pour en savoir plus.
 
 [cols="15,20,65"]
 |===
