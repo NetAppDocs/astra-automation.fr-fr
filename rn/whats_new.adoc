@@ -18,6 +18,24 @@ NetApp met régulièrement à jour l'API REST Astra Control pour vous apporter d
 
 
 
+== 25 avril 2023 (23.04)
+
+Cette version inclut des mises à jour sélectives de l'API REST.
+
+
+
+=== Opérations de restauration sélective
+
+Vous pouvez inclure ou exclure de manière sélective des ressources d'application pendant les opérations de restauration. Pour ce faire, utilisez une règle de filtre basée sur un espace de noms, un nom, un libellé ou une valeur GroupVersionKind spécifique.
+
+
+
+=== Prise en charge des applications données uniquement
+
+La prise en charge de la gestion des applications a été étendue aux applications de données uniquement.
+
+
+
 == 17 janvier 2023 (23.01)
 
 Cette version inclut une mise à jour mineure de l'API REST.
