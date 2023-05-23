@@ -25,7 +25,7 @@ settings:
   - name: Automatisation Astra
     url: https://docs.netapp.com/us-en/astra-automation-2112/
     version-number: '21.12'
-  langs: fr-fr,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es
+  langs: fr-fr,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es,it-it
 sidebar:
   entries:
   - title: Documentation sur l'automatisation du contrôle Astra
