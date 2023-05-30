@@ -280,8 +280,6 @@
   <block id="ead63516b6f8d40a5195059120a34741" category="paragraph">Vous pouvez utiliser ces flux de travail une fois que vous avez un cluster géré. Les workflows sont axés sur la protection des applications, ainsi que sur les opérations de prise en charge, comme la sauvegarde, la restauration et le clonage d'une application.</block>
   <block id="f2082cbd04c532123c4a60b265595268" category="summary">Vous devez obtenir un jeton API Astra pour utiliser l'API REST Astra Control.</block>
   <block id="e18812059a8d09f0f17ebcad797930df" category="paragraph">Un jeton API identifie l'appelant auprès d'Astra et doit être inclus avec chaque appel d'API REST.</block>
-  <block id="0e2c9374186101782c17c706d964b6ab" category="list-text">Vous pouvez générer un jeton API à l'aide de l'interface utilisateur Web Astra.</block>
-  <block id="dd1c8bab333b87721ef3d1780c9d2744" category="list-text">L'identité de l'utilisateur portée avec le token est déterminée par l'utilisateur qui crée le token.</block>
   <block id="80c4d1da0ffc63fa594010f5c5541b4b" category="list-text">Le jeton doit être inclus dans le<block ref="9cd8a2455b1839ff98ef70c05b9b5983" prefix=" " category="inline-code"></block> En-tête de requête HTTP.</block>
   <block id="261bfb4842abd90ac7080375e1e3a342" category="list-text">Un jeton n'expire jamais après sa création.</block>
   <block id="7d3bb36b2de41ab91073fa12ad3242f6" category="list-text">Vous pouvez révoquer un jeton dans l'interface utilisateur Web Astra.</block>
@@ -296,10 +294,8 @@
   <block id="c3cd4b6e8352817aeaab7114fc20ee4d" category="inline-link"><block ref="c3cd4b6e8352817aeaab7114fc20ee4d" category="inline-link-rx"></block></block>
   <block id="6f38ef059f4b592ce26b99012c9d756d" category="paragraph">Accédez au site suivant pour le service Astra Control :<block ref="0045c0d6f22ad59c53fc1e6d3b91c771" category="inline-link-rx"></block></block>
   <block id="7d88293618d45c51062ebb23f7a5777d" category="list-text">Cliquez sur l'icône figure en haut à droite de la page et sélectionnez *API Access*.</block>
-  <block id="b329e0b224bc672c7032902e91459644" category="list-text">Cliquez sur *Generate API token* sur la page et, dans la fenêtre contextuelle, cliquez sur *Generate API token*.</block>
   <block id="3040c02566f3d35a3b86a6ca9472dadd" category="list-text">Cliquez sur l'icône pour copier la chaîne de token dans le presse-papiers et l'enregistrer dans votre éditeur.</block>
   <block id="df98c0b39730eeb3f14749ea1c0684c2" category="list-text">Copiez et enregistrez l'ID de compte disponible sur la même page.</block>
-  <block id="38ed0da570fd8c0b212e0f8dc6cdb8fc" category="paragraph">Lorsque vous accédez à l'API REST Astra Control via Curl ou un langage de programmation, vous devez inclure le jeton de support d'API dans le protocole HTTP<block ref="9cd8a2455b1839ff98ef70c05b9b5983" prefix=" " category="inline-code"></block> en-tête de demande.</block>
   <block id="3c7367ab4ec3900042f765d5f3b81ee6" category="summary">Vous pouvez vous préparer rapidement à commencer avec l'API REST Astra Control.</block>
   <block id="ff187555434d269d1d36dedf48955cdb" category="paragraph">Vous pouvez vous préparer rapidement à vous lancer avec l'API REST Astra Control en passant en revue les étapes ci-dessous.</block>
   <block id="2f4e21e17441a71f2d731b0fdb15fc17" category="paragraph">Vous aurez besoin d'informations d'identification Astra pour vous connecter à l'interface utilisateur Web Astra et générer un jeton API. Avec Astra Control Center, vous gérez ces informations d'identification localement. Avec le service de contrôle Astra, les informations d'identification du compte sont accessibles via le service *Auth0*.</block>
@@ -421,11 +417,7 @@
   <block id="4f48af1c326e720124a79cc1f9216ecb" category="list-text">OpenMetrics</block>
   <block id="27ee1c661b70f7b369179a81dd12721d" category="list-text">Les noeuds finaux OpenMetrics fournissent un accès aux mesures du compte via la ressource OpenMetrics. Il est proposé avec le modèle de déploiement d'Astra Control Center.</block>
   <block id="7a161061772a428a5823e2adbe01f5f4" category="summary">Vous pouvez accéder aux détails des appels de l'API REST Astra Control, y compris les méthodes HTTP, les paramètres d'entrée et les réponses. Cette référence complète est utile lors du développement d'applications d'automatisation à l'aide de l'API REST.</block>
-  <block id="2aedb1bdf28ee2f3357b9859cfa547c3" category="admonition">La documentation de référence de l'API REST est actuellement fournie avec Astra Control et est disponible en ligne.</block>
-  <block id="18bfd97c33ffd64bcd077be2ff48cd45" category="paragraph">Vous avez besoin d'un compte pour Astra Control Center ou Astra Control Service.</block>
-  <block id="1fb6c6816575c47391caa2d4408774f5" category="paragraph">Accédez au site suivant pour le service Astra Control : <block ref="a7c1946d9e83ca7cb364e2283d9c1bfa" category="inline-link-macro-rx"></block></block>
   <block id="a242cf3d90ad638fe0e23d9477b74175" category="list-text">En haut de la page, cliquez sur l'URL affichée sous *Documentation API*.</block>
-  <block id="1cafd580155ad918d6c525c18cc8e5e6" category="list-text">Indiquez à nouveau les informations d'identification de votre compte si vous y êtes invité.</block>
   <block id="c09d3feeeeb00d4c76b65e91bde7c0ac" category="summary">L'API REST Astra prend en charge le contrôle d'accès basé sur des rôles (RBAC) pour accorder et restreindre l'accès aux fonctions du système.</block>
   <block id="2496b3f288a81c8c923f8c9c19fe6ed4" category="doc">Sécurité RBAC</block>
   <block id="93f59591ef6394ec20a0c8c92e574665" category="section-title">Rôles d'Astra</block>
@@ -1184,12 +1176,9 @@
   <block id="52eabae058b28c969498b7a857c6879d" category="list-text"><block ref="52eabae058b28c969498b7a857c6879d" category="inline-link-rx"></block></block>
   <block id="8f84a5e65a3efc01a0b185016179b60b" category="admonition">Un numéro de version du formulaire *YY.MM* est attribué à chaque version d'Astra Control. Cette valeur permet d'identifier la version basée sur l'année (_YY_) et le mois (_MM_) qu'elle est devenue disponible. Par exemple, Astra Control Center 23.04 a été publiée en avril 2023.</block>
   <block id="c41bf5dc0ae334cb95d5c9af7e04effd" category="paragraph">En général, des mises à jour du service Astra Control et du centre de contrôle Astra sont effectuées en même temps. Cependant, le rythme accéléré des versions d'Astra Control Service peut entraîner l'installation d'une ou de plusieurs mises à jour incrémentielles au-delà de la version la plus récente d'Astra Control Center.</block>
-  <block id="010fb6f5627b64ba23d67bf240d888f1" category="list-text">ASTRA Control Service 23.04</block>
   <block id="20a97065ffc33c9c3dbdd1435b0a9fef" category="list-text">ASTRA Control Center 23.04</block>
   <block id="e2345475f657a83bdb89f0d758173706" category="inline-link">Documentation d'Astra Control Center 23.04</block>
   <block id="806930774cd41dac9f96fae2a8f4bdd3" category="list-text"><block ref="806930774cd41dac9f96fae2a8f4bdd3" category="inline-link-rx"></block></block>
-  <block id="40e101808c19a51478d8108eed888560" category="inline-link">Documentation d'Astra Control Service 23.04</block>
-  <block id="aff8f153110395d7fa2dad02e6fef700" category="list-text"><block ref="aff8f153110395d7fa2dad02e6fef700" category="inline-link-rx"></block></block>
   <block id="cdfde9b3972928d07d0aa9787e6589c3" category="section-title">25 avril 2023 (23.04)</block>
   <block id="05b8695ac535480ad4f4cf9e5bd4ecd2" category="paragraph">Cette version inclut des mises à jour sélectives de l'API REST.</block>
   <block id="a1dba4846637919a02bf180b636f6229" category="section-title">Opérations de restauration sélective</block>
@@ -1197,4 +1186,47 @@
   <block id="fc39be20ea823e1b9e3d3a96c1cc1c4d" category="section-title">Prise en charge des applications données uniquement</block>
   <block id="060c77065349f3e6f9b971248729bf60" category="paragraph">La prise en charge de la gestion des applications a été étendue aux applications de données uniquement.</block>
   <block id="b844ee2db8fd78557f753d0c04015c4a" category="summary">Astra Control est un logiciel NetApp qui permet de gérer le cycle de vie des données pour vos applications Kubernetes. Deux modèles de déploiement sont disponibles selon votre environnement. ASTRA Control Center et Astra Control Service partagent la même API REST selon la version. Vous pouvez utiliser l'API REST et d'autres technologies d'automatisation associées pour gérer vos déploiements d'Astra Control.</block>
+  <block id="e347b2f3a025e39e9b9b45d49ad72dab" category="summary">Vous pouvez émettre un appel d'API REST Astra Control à partir de la page de documentation de référence de l'API.</block>
+  <block id="d2d3bbdb180fea4732023aa385c2bcad" category="doc">Émettez un appel d'API REST Astra</block>
+  <block id="53b4dbb805da489969e32d5e207f43af" category="inline-link-macro">Accédez à la documentation de référence d'Astra API</block>
+  <block id="ebe7080a642d0936cad4e377fe9b8401" category="paragraph">Vous devez vous connecter à Astra et accéder à la page de référence de l'API. Voir <block ref="010c4a1892f0ae334c914939807b2734" category="inline-link-macro-rx"></block> pour en savoir plus. Vous avez également besoin d'un jeton pour utiliser l'API REST. Voir <block ref="949977ec887dbf77cf703083221524dc" category="inline-link-macro-rx"></block> Pour plus d'informations sur la génération d'un jeton d'API.</block>
+  <block id="cbed555cdf913285d9275ccd1866519f" category="list-text">En haut de la page de référence de l'API, cliquez sur *Autoriser*.</block>
+  <block id="f1fca9fdba2865f1e5e68171f8e501c8" category="list-text">Copiez et collez votre valeur de jeton d'API dans le champ de la fenêtre contextuelle, cliquez sur *Autoriser*, puis cliquez sur *Fermer*.</block>
+  <block id="d77956bf312c489126fb210ac26e1560" category="list-text">Faites défiler la page vers le bas et ouvrez l'appel d'API souhaité.</block>
+  <block id="640c9068a50bdac21a3ada93c538c020" category="list-text">Cliquez avec le bouton droit de la souris sur *essayez-le*.</block>
+  <block id="faa896405f051eeeb846ead40d365dcf" category="list-text">Faites défiler vers le bas dans le même appel d'API et cliquez sur *Execute*.</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Résultat</block>
+  <block id="5a698356ed60cc238c0048ecf6f15037" category="paragraph">L'appel API est exécuté et le code d'état HTTP s'affiche.</block>
+  <block id="e90840c9e835dabec4f6627d0ccddef2" category="paragraph">Vous avez besoin de identifiants pour vous connecter à l'interface utilisateur web d'Astra pour votre déploiement. La procédure d'accès à la documentation de référence est la même pour Astra Control Service et Astra Control Center. Seule l'URL est différente. Un jeton API n'est pas nécessaire pour accéder au document de référence et l'afficher</block>
+  <block id="c961cf856b145ed8b86b895597c0d1b6" category="list-text">Connectez-vous à Astra en utilisant les identifiants de votre compte comme suit :</block>
+  <block id="ffda91bc16561c140aa3a3293cb3373d" category="list-text">ASTRA Control Service : <block ref="a7c1946d9e83ca7cb364e2283d9c1bfa" category="inline-link-macro-rx"></block></block>
+  <block id="b95e7570a853619e504ccb1e42b41457" category="list-text">ASTRA Control Center : utilisez l'URL de votre environnement local tel qu'établi lors de l'installation</block>
+  <block id="93a04a12da3b73c104f76110d28e439f" category="paragraph">La page swagger est lancée dans une nouvelle fenêtre ou un nouvel onglet. Notez que l'URL inclut l'ID de compte du compte avec lequel vous vous êtes connecté.</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">Et la suite ?</block>
+  <block id="2e72d917f5fd43aa4a556d9db54a8b23" category="paragraph">Vous pouvez éventuellement exécuter un appel d'API à partir de la page swagger. Voir <block ref="d791a02ae369ca3bfa55295caf72fedd" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
+  <block id="7652ed5ca976b004d92eaaa78c376c9d" category="list-text">Vous devez générer un jeton d'API à l'aide de l'interface utilisateur web d'Astra.</block>
+  <block id="3c8afa648b8d63ba3e2f942bec9ab73e" category="list-text">La procédure de génération d'un jeton est la même pour les deux modèles de déploiement Astra. Seule l'URL utilisée pour accéder à Astra est différente.</block>
+  <block id="19f3e619111d8d4c522de7221584fc6c" category="list-text">L'identité de l'utilisateur avec le token et les autorisations associées sont déterminées par l'utilisateur qui a créé le token.</block>
+  <block id="69c0346ff6510c5ad7f7659ec6fd66be" category="list-text">Cliquez sur *générer jeton API* sur la page, puis cliquez sur *générer jeton API* dans la fenêtre contextuelle.</block>
+  <block id="e720ccabcfbd213be97f4476ff0c5601" category="paragraph">Lorsque vous accédez à l'API REST d'Astra Control via curl ou un langage de programmation, vous devez inclure le jeton de support d'API dans le protocole HTTP<block ref="9cd8a2455b1839ff98ef70c05b9b5983" prefix=" " category="inline-code"></block> en-tête de demande.</block>
+  <block id="9aba329f6bcfe3b8f1b0df8dd4c1e1fa" category="summary">Lors de la sauvegarde d'une application gérée dans un cluster privé sur site doté d'un système back-end de stockage ANF, vous devez activer la fonctionnalité de pools ANF dynamiques. Pour ce faire, il faut fournir un ID d'abonnement à utiliser lors de l'extension et de la réduction des pools de capacité.</block>
+  <block id="2d895ac3837ac459cbcdcd76339d84cd" category="doc">Activez des pools ANF dynamiques pour les clusters autogérés</block>
+  <block id="5eb0c12811f3c807e7fa3fce6fb5b38d" category="inline-link">Sauvegardes d'applications Azure</block>
+  <block id="d2f8ee1082b8b805ab4862d852412403" category="admonition">Les pools ANF dynamiques sont une fonctionnalité des applications gérées par Astra qui utilisent un système back-end de stockage Azure NetApp Files (ANF). Lors de la sauvegarde de ces applications, Astra multiplie et réduit automatiquement les pools de capacité auxquels les volumes persistants appartiennent par 1.5. Cela permet de s'assurer que l'espace disponible pour la sauvegarde est suffisant sans frais permanents supplémentaires. Voir<block ref="e77f243482d8cab01f119049bce61a15" category="inline-link-rx"></block> pour en savoir plus.</block>
+  <block id="7d1e075c0879d28eb6f2e0dc2ca0c95d" category="section-title">1. Ajoutez l'identifiant d'abonnement Azure</block>
+  <block id="842df53ed4115db6639f801f88098d30" category="admonition">Vous devez mettre à jour l'exemple d'entrée JSON en fonction de votre environnement, y compris l'ID d'abonnement et la valeur base64 du principal de service.</block>
+  <block id="e740ac68beb1aec839dcd6ebdf75bf51" category="section-title">2. Ajouter un seau si nécessaire</block>
+  <block id="efdbcac27db1bf42436b1e2e15d5d0e5" category="paragraph">Si nécessaire, vous devez ajouter un compartiment à l'application gérée.</block>
+  <block id="31858496f01db3c4c122cda1f4614893" category="section-title">3. Sauvegardez l'application gérée</block>
+  <block id="25e18fd10fb78e25d46577d809123272" category="paragraph">Exécutez le flux de travail <block ref="531c5c815f0a3a3ceb921ff9baf4d1b9" category="inline-link-macro-rx"></block>. Le pool de capacité sur lequel se trouve le volume persistant d'origine se développe et diminue automatiquement.</block>
+  <block id="96422ff09af7e6fad796f820c7b0e17c" category="section-title">4. Consultez le journal des événements</block>
+  <block id="5212b6690e36338eb93a0191226877d7" category="paragraph">Les événements d'activité sont consignés pendant la sauvegarde. Exécutez le flux de travail <block ref="0828f7558c056f6ee4409551e28d3465" category="inline-link-macro-rx"></block> pour afficher les messages.</block>
+  <block id="2aeee044c45621f3427b4056855a973c" category="list-text">ASTRA Control Service 23.05</block>
+  <block id="a1a82e7175905cefa5377393fc5e0e4b" category="inline-link">Documentation d'Astra Control Service 23.05</block>
+  <block id="87baaf02b03cc0785a4a9e2b89d4cdc4" category="list-text"><block ref="87baaf02b03cc0785a4a9e2b89d4cdc4" category="inline-link-rx"></block></block>
+  <block id="162c594ec970f3cd4eb2f6d6d2311381" category="section-title">30 mai 2023 (23.05)</block>
+  <block id="3ecf6cf3aaad58d22b055973cbbae0d4" category="paragraph">Vous pouvez sélectionner la classe de stockage de destination pendant les opérations de restauration ou de clonage.</block>
+  <block id="5917ef890e9d60f9bf3cc41a2723766a" category="inline-link-macro">Activez des pools ANF dynamiques</block>
+  <block id="10331a659c4281dea77fa4165e988593" category="paragraph">Lors de la sauvegarde d'une application gérée dans un cluster privé sur site doté d'un système back-end de stockage ANF, vous pouvez désormais activer la fonctionnalité de pools ANF dynamiques en fournissant un ID d'abonnement. Voir <block ref="0d6a3e3d7740d3989d225fce5dc1ad21" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
+  <block id="157ecd713825d83c3595df6b4c0c11af" category="sidebar">Accédez au document de référence</block>
 </blocks>

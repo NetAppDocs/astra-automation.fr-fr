@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: get-started/online_api_call.html 
+keywords: reference, api reference, execute call 
+summary: 'Vous pouvez émettre un appel d"API REST Astra Control à partir de la page de documentation de référence de l"API.' 
+---
+= Émettez un appel d'API REST Astra
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez émettre un appel d'API REST Astra Control à partir de la page de documentation de référence de l'API.
+
+.Avant de commencer
+Vous devez vous connecter à Astra et accéder à la page de référence de l'API. Voir link:../get-started/online_api_ref.html["Accédez à la documentation de référence d'Astra API"] pour en savoir plus. Vous avez également besoin d'un jeton pour utiliser l'API REST. Voir link:../get-started/get_api_token.html["Obtenir un jeton API"] Pour plus d'informations sur la génération d'un jeton d'API.
+
+.Étapes
+. En haut de la page de référence de l'API, cliquez sur *Autoriser*.
+. Copiez et collez votre valeur de jeton d'API dans le champ de la fenêtre contextuelle, cliquez sur *Autoriser*, puis cliquez sur *Fermer*.
+. Faites défiler la page vers le bas et ouvrez l'appel d'API souhaité.
+. Cliquez avec le bouton droit de la souris sur *essayez-le*.
+. Faites défiler vers le bas dans le même appel d'API et cliquez sur *Execute*.
+
+
+.Résultat
+L'appel API est exécuté et le code d'état HTTP s'affiche.

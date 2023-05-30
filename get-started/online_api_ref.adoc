@@ -4,7 +4,7 @@ permalink: get-started/online_api_ref.html
 keywords: reference, api reference 
 summary: 'Vous pouvez accéder aux détails des appels de l"API REST Astra Control, y compris les méthodes HTTP, les paramètres d"entrée et les réponses. Cette référence complète est utile lors du développement d"applications d"automatisation à l"aide de l"API REST.' 
 ---
-= Référence d'API en ligne
+= Accédez à la documentation de référence d'Astra API
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,18 +16,22 @@ summary: 'Vous pouvez accéder aux détails des appels de l"API REST Astra Contr
 [role="lead"]
 Vous pouvez accéder aux détails des appels de l'API REST Astra Control, y compris les méthodes HTTP, les paramètres d'entrée et les réponses. Cette référence complète est utile lors du développement d'applications d'automatisation à l'aide de l'API REST.
 
-
-NOTE: La documentation de référence de l'API REST est actuellement fournie avec Astra Control et est disponible en ligne.
-
 .Avant de commencer
-Vous avez besoin d'un compte pour Astra Control Center ou Astra Control Service.
+Vous avez besoin de identifiants pour vous connecter à l'interface utilisateur web d'Astra pour votre déploiement. La procédure d'accès à la documentation de référence est la même pour Astra Control Service et Astra Control Center. Seule l'URL est différente. Un jeton API n'est pas nécessaire pour accéder au document de référence et l'afficher
 
 .Étapes
-. Connectez-vous à Astra à l'aide de vos identifiants de compte.
+. Connectez-vous à Astra en utilisant les identifiants de votre compte comme suit :
 +
-Accédez au site suivant pour le service Astra Control : link:https://astra.netapp.io["https://astra.netapp.io"^]
+** ASTRA Control Service : link:https://astra.netapp.io["https://astra.netapp.io"^]
+** ASTRA Control Center : utilisez l'URL de votre environnement local tel qu'établi lors de l'installation
+
 
 . Cliquez sur l'icône figure en haut à droite de la page et sélectionnez *API Access*.
 . En haut de la page, cliquez sur l'URL affichée sous *Documentation API*.
-. Indiquez à nouveau les informations d'identification de votre compte si vous y êtes invité.
 
+
+.Résultat
+La page swagger est lancée dans une nouvelle fenêtre ou un nouvel onglet. Notez que l'URL inclut l'ID de compte du compte avec lequel vous vous êtes connecté.
+
+.Et la suite ?
+Vous pouvez éventuellement exécuter un appel d'API à partir de la page swagger. Voir link:../get-started/online_api_call.html["Émettez un appel d'API REST Astra"] pour en savoir plus.

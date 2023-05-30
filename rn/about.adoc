@@ -27,7 +27,7 @@ Comme ce site documente l'API REST pour les deux modèles de déploiement, certa
 .Les déploiements d'Astra Control
 La documentation de ce site s'applique aux versions suivantes d'Astra Control :
 
-* ASTRA Control Service 23.04
+* ASTRA Control Service 23.05
 * ASTRA Control Center 23.04
 
 
@@ -37,7 +37,7 @@ Consultez les pages et sites suivants pour obtenir de plus amples renseignements
 * link:../rn/whats_new.html["Nouveautés de l'API REST Astra Control"]
 * link:../endpoints/resources.html["Ressources REST et terminaux"]
 * https://docs.netapp.com/us-en/astra-control-center/["Documentation d'Astra Control Center 23.04"^]
-* https://docs.netapp.com/us-en/astra-control-service/["Documentation d'Astra Control Service 23.04"^]
+* https://docs.netapp.com/us-en/astra-control-service/["Documentation d'Astra Control Service 23.05"^]
 * link:../aa-earlier-versions.html["Versions antérieures de la documentation d'Astra Automation"]
 
 
