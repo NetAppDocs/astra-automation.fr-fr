@@ -1141,7 +1141,6 @@
   <block id="ec23c88fbeb1dbd6e4036cbd90351825" category="paragraph">Vous pouvez ajouter un cluster pour qu'il soit géré par Astra. À compter de la version 22.11 de l'Astra, vous pouvez ajouter un groupe d'instruments avec le centre de contrôle Astra et le service de contrôle Astra.</block>
   <block id="9f8189b17fcf187cb4416d8f8ee93490" category="cell">Ces workflows permettent d'accéder aux clouds disponibles via l'API REST d'Astra Control.</block>
   <block id="80bcbd8aa7db0b3dfcedfd4388c73c17" category="paragraph">La colonne *version* indique la version d'Astra lorsque la ressource a été introduite pour la première fois. Ce champ est en gras pour les ressources les plus récemment ajoutées à l'API REST.</block>
-  <block id="34d23ad383fb9597324019dc1045fabb" category="admonition">Il n'y a pas de nouveaux problèmes connus avec la version 23.01 de l'API REST Astra Control. Tout problème décrit ci-dessous a été découvert dans les versions précédentes et s'applique toujours à la version actuelle.</block>
   <block id="73e9416791f56a93d23840b6c27ae436" category="paragraph">Consultez l'une des pages suivantes en fonction de votre modèle de déploiement.</block>
   <block id="eb6a5d80177fc44f1a834a5fac76b612" category="inline-link">Problèmes connus concernant le service de contrôle Astra</block>
   <block id="1a8244f3a147b8df7de50e9d16df07ac" category="list-text"><block ref="1a8244f3a147b8df7de50e9d16df07ac" category="inline-link-rx"></block></block>
@@ -1221,12 +1220,19 @@
   <block id="25e18fd10fb78e25d46577d809123272" category="paragraph">Exécutez le flux de travail <block ref="531c5c815f0a3a3ceb921ff9baf4d1b9" category="inline-link-macro-rx"></block>. Le pool de capacité sur lequel se trouve le volume persistant d'origine se développe et diminue automatiquement.</block>
   <block id="96422ff09af7e6fad796f820c7b0e17c" category="section-title">4. Consultez le journal des événements</block>
   <block id="5212b6690e36338eb93a0191226877d7" category="paragraph">Les événements d'activité sont consignés pendant la sauvegarde. Exécutez le flux de travail <block ref="0828f7558c056f6ee4409551e28d3465" category="inline-link-macro-rx"></block> pour afficher les messages.</block>
-  <block id="2aeee044c45621f3427b4056855a973c" category="list-text">ASTRA Control Service 23.05</block>
-  <block id="a1a82e7175905cefa5377393fc5e0e4b" category="inline-link">Documentation d'Astra Control Service 23.05</block>
-  <block id="87baaf02b03cc0785a4a9e2b89d4cdc4" category="list-text"><block ref="87baaf02b03cc0785a4a9e2b89d4cdc4" category="inline-link-rx"></block></block>
   <block id="162c594ec970f3cd4eb2f6d6d2311381" category="section-title">30 mai 2023 (23.05)</block>
   <block id="3ecf6cf3aaad58d22b055973cbbae0d4" category="paragraph">Vous pouvez sélectionner la classe de stockage de destination pendant les opérations de restauration ou de clonage.</block>
   <block id="5917ef890e9d60f9bf3cc41a2723766a" category="inline-link-macro">Activez des pools ANF dynamiques</block>
   <block id="10331a659c4281dea77fa4165e988593" category="paragraph">Lors de la sauvegarde d'une application gérée dans un cluster privé sur site doté d'un système back-end de stockage ANF, vous pouvez désormais activer la fonctionnalité de pools ANF dynamiques en fournissant un ID d'abonnement. Voir <block ref="0d6a3e3d7740d3989d225fce5dc1ad21" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
   <block id="157ecd713825d83c3595df6b4c0c11af" category="sidebar">Accédez au document de référence</block>
+  <block id="33bb807546f543c0b9c58cf7b7e62a4c" category="section-title">27 juin 2023 (23.06)</block>
+  <block id="21e74b3c28d006317f38a2bc8eb1da3b" category="section-title">Azure Marketplace</block>
+  <block id="31553f2d81caf3af40330c67fcb7b3d6" category="inline-link">Configurez la facturation</block>
+  <block id="58e46bdad56d44447c43649a3b5b4f7b" category="paragraph">Les abonnements Azure Marketplace sont désormais facturés à l'heure et non à la minute. Voir aussi<block ref="633dc17422f08a9c882e1f52f9a90b82" category="inline-link-rx"></block>.</block>
+  <block id="8e926a216f6adb19574523270dec9729" category="section-title">Optimisation Restic</block>
+  <block id="a73241b184629bdaef0ee68446abeb15" category="paragraph">Vous pouvez activer l'optimisation des performances pour les sauvegardes réstatiques à l'aide de l'indicateur<block ref="6fb6e873ef6d6ac86ac763f089d95fa1" prefix=" " category="inline-code"></block> dans le nouveau<block ref="4e513e9fe169e7733cdfe334575b2dec" prefix=" " category="inline-code"></block> Paramètres ressource API. Lorsqu'il est réglé sur<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, le nombre de<block ref="47964ec30dfb028cc802262834e3577b" prefix=" " category="inline-code"></block> Ces utilisations rétiques sont accrues lors de la sauvegarde de volumes volumineux vers un conteneur Azure. Pour les volumes de 1 To à 4 To, 128 connexions sont utilisées. Pour les volumes de plus de 4 To, 512 connexions back-end sont utilisées.</block>
+  <block id="60bc44a6f8b10e394c8d7a408e94fecc" category="list-text">ASTRA Control Service 23.06</block>
+  <block id="3987948e759f27889fb63521255c084f" category="inline-link">Documentation d'Astra Control Service 23.06</block>
+  <block id="8de8be2639041c77c0c0e3c2870c7446" category="list-text"><block ref="8de8be2639041c77c0c0e3c2870c7446" category="inline-link-rx"></block></block>
+  <block id="529552afdc21e1a01b8e807df92fe719" category="admonition">Il n'y a pas de nouveaux problèmes connus avec la version 23.06 de l'API REST d'Astra Control. Tout problème décrit ci-dessous a été découvert dans les versions précédentes et s'applique toujours à la version actuelle.</block>
 </blocks>
