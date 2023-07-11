@@ -24,7 +24,7 @@ Vous devez vous connecter à Astra et accéder à la page de référence de l'AP
 . Copiez et collez votre valeur de jeton d'API dans le champ de la fenêtre contextuelle, cliquez sur *Autoriser*, puis cliquez sur *Fermer*.
 . Faites défiler la page vers le bas et ouvrez l'appel d'API souhaité.
 . Cliquez avec le bouton droit de la souris sur *essayez-le*.
-. Faites défiler vers le bas dans le même appel d'API et cliquez sur *Execute*.
+. Faites défiler vers le bas dans le même appel d'API. Indiquez les valeurs de paramètres requises et cliquez sur *Execute* pour émettre l'appel.
 
 
 .Résultat

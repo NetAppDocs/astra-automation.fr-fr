@@ -1193,7 +1193,6 @@
   <block id="f1fca9fdba2865f1e5e68171f8e501c8" category="list-text">Copiez et collez votre valeur de jeton d'API dans le champ de la fenêtre contextuelle, cliquez sur *Autoriser*, puis cliquez sur *Fermer*.</block>
   <block id="d77956bf312c489126fb210ac26e1560" category="list-text">Faites défiler la page vers le bas et ouvrez l'appel d'API souhaité.</block>
   <block id="640c9068a50bdac21a3ada93c538c020" category="list-text">Cliquez avec le bouton droit de la souris sur *essayez-le*.</block>
-  <block id="faa896405f051eeeb846ead40d365dcf" category="list-text">Faites défiler vers le bas dans le même appel d'API et cliquez sur *Execute*.</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Résultat</block>
   <block id="5a698356ed60cc238c0048ecf6f15037" category="paragraph">L'appel API est exécuté et le code d'état HTTP s'affiche.</block>
   <block id="e90840c9e835dabec4f6627d0ccddef2" category="paragraph">Vous avez besoin de identifiants pour vous connecter à l'interface utilisateur web d'Astra pour votre déploiement. La procédure d'accès à la documentation de référence est la même pour Astra Control Service et Astra Control Center. Seule l'URL est différente. Un jeton API n'est pas nécessaire pour accéder au document de référence et l'afficher</block>
@@ -1235,4 +1234,5 @@
   <block id="3987948e759f27889fb63521255c084f" category="inline-link">Documentation d'Astra Control Service 23.06</block>
   <block id="8de8be2639041c77c0c0e3c2870c7446" category="list-text"><block ref="8de8be2639041c77c0c0e3c2870c7446" category="inline-link-rx"></block></block>
   <block id="529552afdc21e1a01b8e807df92fe719" category="admonition">Il n'y a pas de nouveaux problèmes connus avec la version 23.06 de l'API REST d'Astra Control. Tout problème décrit ci-dessous a été découvert dans les versions précédentes et s'applique toujours à la version actuelle.</block>
+  <block id="db21e6fd52879394e8294f15387580ad" category="list-text">Faites défiler vers le bas dans le même appel d'API. Indiquez les valeurs de paramètres requises et cliquez sur *Execute* pour émettre l'appel.</block>
 </blocks>
