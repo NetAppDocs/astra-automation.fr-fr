@@ -18,6 +18,34 @@ NetApp met régulièrement à jour l'API REST Astra Control pour vous apporter d
 
 
 
+== 27 juillet 2023 (23.07)
+
+Cette version inclut des améliorations sélectives de l'API REST. ASTRA Control Service et Astra Control Center ont tous deux été mis à jour avec la version 23.07.
+
+
+
+=== Opérations de clonage et de réplication
+
+L'opération de clonage ne prend désormais en charge que les clones dynamiques (état actuel de l'application gérée). Pour cloner à partir d'un instantané ou d'une sauvegarde, vous devez utiliser l'opération de restauration. Par ailleurs, les applications peuvent désormais être répliquées entre les systèmes de stockage ONTAP back-end au sein du même cluster Kubernetes.
+
+
+
+=== Extension des systèmes back-end de stockage
+
+Vous pouvez désormais utiliser des systèmes back-end de stockage supplémentaires avec Astra Control Center, notamment :
+
+* NetApp MetroCluster dans une configuration étendue
+* https://longhorn.io/["Longhorn"^] 1.5.0 et versions ultérieures
+
+
+
+
+=== Nouveau type de crochet d'exécution
+
+Le nouveau type de crochet d'exécution *post-failover* est disponible avec Astra Control Center.
+
+
+
 == 27 juin 2023 (23.06)
 
 Cette version inclut des mises à jour sélectives de l'API REST.
