@@ -1,6 +1,6 @@
 ---
 section: additional
-title: Autres considérations d'utilisation
+title: Autres considérations
 entries:
 - title: Sécurité RBAC
   url: "/additional/rbac.html"

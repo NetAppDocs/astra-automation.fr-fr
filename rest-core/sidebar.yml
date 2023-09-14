@@ -1,6 +1,6 @@
 ---
 section: rest-core
-title: Implémentation DE l'APPLICATION REST de cœur
+title: Conception centrale
 entries:
 - title: Services web REST
   url: "/rest-core/rest_web_services.html"

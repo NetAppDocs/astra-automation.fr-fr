@@ -18,7 +18,7 @@ Vous devez obtenir un jeton API Astra pour utiliser l'API REST Astra Control.
 
 
 
-== Introduction
+== Présentation
 
 Un jeton API identifie l'appelant auprès d'Astra et doit être inclus avec chaque appel d'API REST.
 
