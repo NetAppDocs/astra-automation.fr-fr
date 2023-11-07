@@ -68,10 +68,10 @@ Les terminaux de ressources de base fournissent les services de base nécessaire
 | Source du crochet | 21.12 | Les ressources de la source de hook représentent le code source réel utilisé avec un crochet d'exécution. La séparation du code source et du contrôle d'exécution présente plusieurs avantages, tels que la possibilité de partager les scripts. 
 
 
-| Groupe LDAP | *22.11* | Vous pouvez lister les groupes au sein du serveur LDAP configuré. L'accès aux groupes LDAP est en lecture seule. 
+| Groupe LDAP | 22.1 | Vous pouvez lister les groupes au sein du serveur LDAP configuré. L'accès aux groupes LDAP est en lecture seule. 
 
 
-| Utilisateur LDAP | *22.11* | Vous pouvez lister les utilisateurs au sein du serveur LDAP configuré. L'accès aux utilisateurs LDAP est en lecture seule. 
+| Utilisateur LDAP | 22.11 | Vous pouvez lister les utilisateurs au sein du serveur LDAP configuré. L'accès aux utilisateurs LDAP est en lecture seule. 
 
 
 | Licence | 21.08 | Les ressources de licence représentent les licences disponibles pour un compte Astra. 
@@ -83,6 +83,12 @@ Les terminaux de ressources de base fournissent les services de base nécessaire
 | Création de package | 22.04 | Les ressources du package fournissent l'enregistrement et l'accès aux définitions de package. Les logiciels sont constitués de divers composants, notamment des fichiers, des images et d'autres artefacts. 
 
 
+| Autorisations | 23.06 | Les ressources d'autorisation représentent les autorisations liées aux opérations au sein du système. L'API fournit un accès en lecture seule aux autorisations. 
+
+
+| Rôle | 23.06 | Les ressources de rôle représentent les rôles disponibles dans le système. L'API fournit un accès en lecture seule aux rôles. 
+
+
 | Liaison de rôles | 21.04 | Les ressources liées au rôle représentent les relations entre des paires spécifiques d'utilisateurs et de comptes. En plus du lien entre les deux, un ensemble d'autorisations est spécifié pour chaque à l'aide d'un rôle spécifique. 
 
 
@@ -92,7 +98,7 @@ Les terminaux de ressources de base fournissent les services de base nécessaire
 | Abonnement | 21.08 | Les ressources d'abonnement représentent les abonnements actifs pour un compte Astra. 
 
 
-| Tâche | *22.11* | Les ressources de tâche fournissent un accès en lecture seule à la tâche gérée et peuvent être utilisées pour afficher l'état des tâches internes longues. 
+| Tâche | 22.11 | Les ressources de tâche fournissent un accès en lecture seule à la tâche gérée et peuvent être utilisées pour afficher l'état des tâches internes longues. 
 
 
 | Jeton | 21.04 | Les ressources de token représentent les jetons disponibles pour accéder par programmation à l'API REST Astra Control. 
@@ -142,7 +148,7 @@ Les points de terminaison de ressource de topologie fournissent un accès aux ap
 | Ressource | Relâchez | Description 
 
 
-| Ressource API | *22.11* | Les terminaux de ressource API fournissent un accès en lecture seule aux ressources Kubernetes dans un cluster géré spécifique. 
+| Ressource API | 22.11 | Les terminaux de ressource API fournissent un accès en lecture seule aux ressources Kubernetes dans un cluster géré spécifique. 
 
 
 | Appli | 21.04 | Les ressources d'application représentent toutes les applications Kubernetes, y compris celles qui ne sont pas gérées par Astra. 

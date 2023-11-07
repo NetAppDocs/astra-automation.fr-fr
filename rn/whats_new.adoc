@@ -18,6 +18,30 @@ NetApp met régulièrement à jour l'API REST Astra Control pour vous apporter d
 
 
 
+== 7 novembre 2023 (23.10)
+
+ASTRA Control Service et Astra Control Center ont tous deux été mis à jour avec la version 23.10. Certaines améliorations de l'API REST permettent de prendre en charge les nouvelles fonctionnalités.
+
+
+
+=== Extension des systèmes back-end de stockage
+
+Vous pouvez activer les opérations de sauvegarde et de restauration pour `ontap-nas-economy` systèmes back-end.
+
+
+
+=== Sauvegardes immuables
+
+ASTRA Control prend désormais en charge les sauvegardes inaltérables et en lecture seule en tant que couche de sécurité supplémentaire contre les malwares et autres menaces.
+
+
+
+=== Contrôle amélioré des crochets d'exécution
+
+À partir de cette version, la fonctionnalité des crochets d'exécution peut être activée ou désactivée pour une sécurité supplémentaire (elle est désactivée par défaut). Si vous n'avez pas encore créé de crochets d'exécution à utiliser avec Astra Control, vous devez activer la fonction crochets d'exécution pour commencer à créer des crochets. Si vous avez créé des crochets d'exécution avant cette version, la fonctionnalité crochets d'exécution reste activée et vous pouvez utiliser des crochets comme vous le feriez normalement.
+
+
+
 == 27 juillet 2023 (23.07)
 
 Cette version inclut des améliorations sélectives de l'API REST. ASTRA Control Service et Astra Control Center ont tous deux été mis à jour avec la version 23.07.
