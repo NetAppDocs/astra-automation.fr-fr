@@ -18,6 +18,24 @@ NetApp met régulièrement à jour l'API REST Astra Control pour vous apporter d
 
 
 
+== 14 mars 2024 (24.02)
+
+ASTRA Control Service et Astra Control Center ont tous deux été mis à jour avec la version 24.02.
+
+
+
+=== Corrections mineures de bogues
+
+La version 24.02 se concentre principalement sur la résolution de nombreux bogues mineurs. Aucun nouveau type de ressource n'a été ajouté à l'API Astra Control.
+
+
+
+=== Préversion technique : workflows Kubernetes déclaratifs
+
+ASTRA Control Center 24.02 inclut une fonctionnalité Kubernetes déclarative qui vous permet d'effectuer une gestion des données à partir d'une ressource personnalisée Kubernetes native. Cette fonction n'est pas encore disponible. Voir https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center : les nouveautés"^] pour plus d'informations, si nécessaire.
+
+
+
 == 7 novembre 2023 (23.10)
 
 ASTRA Control Service et Astra Control Center ont tous deux été mis à jour avec la version 23.10. Certaines améliorations de l'API REST permettent de prendre en charge les nouvelles fonctionnalités.
