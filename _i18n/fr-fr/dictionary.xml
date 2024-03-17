@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
-  <block id="1a0ca7f0a5aea880c24d544b4655d6ed" category="doc">Documentation relative à Astra Control Automation</block>
   <block id="31862872c35b9509755103831963a7ff" category="summary">Vous trouverez des ressources d'aide supplémentaires sur les services cloud et le support NetApp, ainsi que des informations générales sur REST et cloud.</block>
   <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="doc">Ressources supplémentaires</block>
   <block id="3cce5f3eaf76e098ba8e28f7bbba3f92" category="section-title">Astra</block>
@@ -1264,4 +1263,5 @@
   <block id="ad688d9042062312f59460f99f7f7881" category="list-text"><block ref="ad688d9042062312f59460f99f7f7881" category="inline-link-rx"></block></block>
   <block id="2ce5679e796a226301682da2e8eb77f6" category="inline-link">Documentation d'Astra Control Automation 23.10</block>
   <block id="b59949e755b5f42564828ce536cb3b96" category="list-text"><block ref="b59949e755b5f42564828ce536cb3b96" category="inline-link-rx"></block></block>
+  <block id="0b11ef934b0c996ff94917743f4e7c1c" category="doc">Documentation d'Astra Control Automation 24.02</block>
 </blocks>
