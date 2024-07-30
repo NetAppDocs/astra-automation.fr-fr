@@ -16,11 +16,10 @@ summary: 'Vous pouvez lister les applications actuellement gérées par Astra. P
 [role="lead"]
 Vous pouvez lister les applications actuellement gérées par Astra. Pour rechercher des snapshots ou des sauvegardes d'une application spécifique, vous pouvez effectuer cette opération.
 
-
-
-=== 1. Dressez la liste des applications
-
 Effectuez l'appel de l'API REST suivant.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -29,10 +28,7 @@ Effectuez l'appel de l'API REST suivant.
 
 | OBTENEZ | /account/{account_id}/k8s/v2/apps 
 |===
-
-
-===== Paramètres d'entrée supplémentaires
-
+.Paramètres d'entrée supplémentaires
 Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
 
 [cols="25,10,10,55"]
@@ -42,27 +38,26 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
 
 | inclure | Requête | Non | Sélectionner éventuellement les valeurs que vous souhaitez renvoyer dans la réponse. 
 |===
-
-
-===== Exemple de curl : renvoie toutes les données de toutes les applications
-
+.Exemple de curl : renvoie toutes les données de toutes les applications
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Exemple de curl : renvoie le nom, l'ID et l'état de toutes les applications
-
+.Exemple de curl : renvoie le nom, l'ID et l'état de toutes les applications
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps?include=name,id,state' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps?include=name,id,state" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Exemple de sortie JSON
-
-[source, json]
+.Exemple de sortie JSON
+[listing]
 ----
 {
     "items": [

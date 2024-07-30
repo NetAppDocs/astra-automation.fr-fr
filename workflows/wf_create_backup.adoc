@@ -18,15 +18,18 @@ Vous pouvez créer une sauvegarde pour une application spécifique, puis utilise
 
 
 
-=== Avant de commencer
+== Avant de commencer
 
 Vous devez avoir l'ID de l'application que vous souhaitez sauvegarder. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_man_apps.html["Répertorier les applications"] pour localiser l'application.
 
 
 
-=== 1. Créez une sauvegarde
+== Créer une sauvegarde
 
 Effectuez l'appel de l'API REST suivant.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ Effectuez l'appel de l'API REST suivant.
 
 | POST | /Accounts/{account_ID}/k8s/v1/apps/{app_ID}/appBackups 
 |===
-
-
-===== Paramètres d'entrée supplémentaires
-
+.Paramètres d'entrée supplémentaires
 Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
 
 [cols="25,10,10,55"]
@@ -51,10 +51,18 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
 
 | JSON | Corps | Oui. | Fournit les paramètres de la sauvegarde. Voir l'exemple ci-dessous. 
 |===
-
-
-===== Exemple d'entrée JSON
-
+.Exemple Curl : créez une sauvegarde pour l'application
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups" \
+--include \
+--header "Content-Type: application/astra-appBackup+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Exemple d'entrée JSON
 [source, json]
 ----
 {
@@ -62,12 +70,4 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
   "version": "1.1",
   "name": "backup-david-1"
 }
-----
-
-
-===== Exemple Curl : créez une sauvegarde pour l'application
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups' --header 'Content-Type: application/astra-appBackup+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

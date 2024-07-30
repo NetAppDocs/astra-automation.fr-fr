@@ -4,7 +4,7 @@ permalink: workflows_infra/workflows_infra_before.html
 keywords: workflows, infrastructure workflows, preparation 
 summary: 'Vous pouvez utiliser ces workflows pour créer et entretenir l"infrastructure utilisée avec un déploiement d"Astra Control Center. Dans de nombreux cas, les flux de travail peuvent également être utilisés avec le service Astra Control.' 
 ---
-= Avant de commencer
+= Préparez-vous à utiliser les workflows d'infrastructure
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

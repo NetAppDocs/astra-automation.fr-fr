@@ -16,11 +16,10 @@ summary: Vous pouvez afficher la liste des compartiments S3 définis pour un com
 [role="lead"]
 Vous pouvez afficher la liste des compartiments S3 définis pour un compte Astra spécifique.
 
-
-
-=== 1. Dressez la liste des compartiments
-
 Effectuez l'appel suivant de l'API REST pour afficher la liste des compartiments.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -29,11 +28,12 @@ Effectuez l'appel suivant de l'API REST pour afficher la liste des compartiments
 
 | OBTENEZ | /accounts/{account_id}/topologique/v1/seaux 
 |===
-
-
-===== Exemple de gondolage : renvoie toutes les données de tous les compartiments
-
+.Exemple de gondolage : renvoie toutes les données de tous les compartiments
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/buckets' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/buckets" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

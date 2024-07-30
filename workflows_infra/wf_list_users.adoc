@@ -16,11 +16,8 @@ summary: Vous pouvez lister les utilisateurs définis pour un compte Astra spéc
 [role="lead"]
 Vous pouvez lister les utilisateurs définis pour un compte Astra spécifique.
 
-
-
-=== 1. Dressez la liste des utilisateurs
-
-Effectuez l'appel de l'API REST suivant.
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -29,10 +26,7 @@ Effectuez l'appel de l'API REST suivant.
 
 | OBTENEZ | /accounts/{account_id}/core/v1/users 
 |===
-
-
-===== Paramètres d'entrée supplémentaires
-
+.Paramètres d'entrée supplémentaires
 Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
 
 [cols="25,10,10,55"]
@@ -42,27 +36,26 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
 
 | inclure | Requête | Non | Sélectionner éventuellement les valeurs que vous souhaitez renvoyer dans la réponse. 
 |===
-
-
-===== Exemple Curl : renvoie toutes les données pour tous les utilisateurs
-
+.Exemple Curl : renvoie toutes les données pour tous les utilisateurs
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/users" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Exemple Curl : renvoie le prénom, le nom et l'ID de tous les utilisateurs
-
+.Exemple curl : renvoie le prénom, le nom et l'ID de tous les utilisateurs
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users?include=firstName,lastName,id' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/users?include=firstName,lastName,id" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Exemple de sortie JSON
-
-[source, curl]
+.Exemple de sortie JSON
+[listing]
 ----
 {
   "items": [

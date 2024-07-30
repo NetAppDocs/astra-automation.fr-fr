@@ -16,11 +16,10 @@ summary: Vous pouvez lister les clusters Kubernetes actuellement gérés par Ast
 [role="lead"]
 Vous pouvez lister les clusters Kubernetes actuellement gérés par Astra.
 
-
-
-=== 1. Dressez la liste des clusters gérés
-
 Effectuez l'appel de l'API REST suivant.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="1,6"]
 |===
@@ -29,11 +28,12 @@ Effectuez l'appel de l'API REST suivant.
 
 | OBTENEZ | /Accounts/{account_ID}/topologique/v1/managedclusters 
 |===
-
-
-===== Exemple Curl : renvoie toutes les données de tous les clusters
-
+.Exemple Curl : renvoie toutes les données de tous les clusters
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/managedClusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/managedClusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

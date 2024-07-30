@@ -16,11 +16,10 @@ summary: Vous pouvez répertorier les nuages définis et disponibles un compte A
 [role="lead"]
 Vous pouvez répertorier les nuages définis et disponibles un compte Astra spécifique.
 
-
-
-=== 1. Dresser la liste des clouds
-
 Effectuez l'appel d'API REST suivant pour répertorier les clouds.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -29,11 +28,12 @@ Effectuez l'appel d'API REST suivant pour répertorier les clouds.
 
 | OBTENEZ | /accounts/{account_id}/topologique/v1/clouds 
 |===
-
-
-===== Exemple de curl : retournez toutes les données de tous les clouds
-
+.Exemple de curl : retournez toutes les données de tous les clouds
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

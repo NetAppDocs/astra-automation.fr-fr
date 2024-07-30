@@ -4,7 +4,7 @@ permalink: workflows/workflows_before.html
 keywords: workflows, management workflows, preparation 
 summary: 'Vous pouvez utiliser ces flux de travail dans le cadre de l"administration des applications dans un cluster géré Astra.' 
 ---
-= Avant de commencer
+= Préparez-vous à utiliser les workflows de gestion
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

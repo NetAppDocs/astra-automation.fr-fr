@@ -21,12 +21,15 @@ NOTE: Les pools ANF dynamiques sont une fonctionnalité des applications gérée
 
 
 
-=== 1. Ajoutez l'identifiant d'abonnement Azure
+== Étape 1 : ajoutez l'identifiant de l'abonnement Azure
 
 Effectuez l'appel de l'API REST suivant.
 
 
 NOTE: Vous devez mettre à jour l'exemple d'entrée JSON en fonction de votre environnement, y compris l'ID d'abonnement et la valeur base64 du principal de service.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="1,6"]
 |===
@@ -35,6 +38,17 @@ NOTE: Vous devez mettre à jour l'exemple d'entrée JSON en fonction de votre en
 
 | POST | /accounts/{account_id}/core/v1/credentials 
 |===
+.Exemple de boucle
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Content-Type: application/astra-credential+json"
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
 .Exemple d'entrée JSON
 [source, json]
 ----
@@ -65,25 +79,20 @@ NOTE: Vous devez mettre à jour l'exemple d'entrée JSON en fonction de votre en
   }
 }
 ----
-.Exemple de boucle
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --header 'Content-Type: application/astra-credential+json'
-----
 
 
-=== 2. Ajouter un seau si nécessaire
+== Étape 2 : ajoutez un seau si nécessaire
 
 Si nécessaire, vous devez ajouter un compartiment à l'application gérée.
 
 
 
-=== 3. Sauvegardez l'application gérée
+== Étape 3 : effectuez une sauvegarde de l'application gérée
 
 Exécutez le flux de travail link:../workflows/wf_create_backup.html["Créez une sauvegarde pour une application"]. Le pool de capacité sur lequel se trouve le volume persistant d'origine se développe et diminue automatiquement.
 
 
 
-=== 4. Consultez le journal des événements
+== Étape 4 : consultez le journal des événements
 
 Les événements d'activité sont consignés pendant la sauvegarde. Exécutez le flux de travail link:../workflows/wf_list_notifications.html["Dressez la liste des notifications"] pour afficher les messages.

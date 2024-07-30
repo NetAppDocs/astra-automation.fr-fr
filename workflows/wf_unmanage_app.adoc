@@ -18,7 +18,7 @@ Vous pouvez supprimer une application gérée lorsqu'elle n'est plus nécessaire
 
 
 
-=== Avant de commencer
+== Avant de commencer
 
 Vous devez avoir l'ID de l'application que vous souhaitez annuler la gestion. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_man_apps.html["Répertorier les applications"] pour localiser l'application.
 
@@ -26,9 +26,12 @@ Les sauvegardes et snapshots de l'application ne sont pas automatiquement suppri
 
 
 
-=== 1. Non géré de l'application
+== Annulez la gestion de l'application
 
 Effectuez l'appel suivant de l'API REST pour supprimer l'application.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -37,10 +40,7 @@ Effectuez l'appel suivant de l'API REST pour supprimer l'application.
 
 | SUPPRIMER | /account/{account_id}/k8s/v2/apps/{app_id} 
 |===
-
-
-===== Paramètres d'entrée supplémentaires
-
+.Paramètres d'entrée supplémentaires
 Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
 
 [cols="25,10,10,55"]
@@ -50,11 +50,12 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
 
 | id de l'application | Chemin | Oui. | Identifie l'application à supprimer. 
 |===
-
-
-===== Exemple de curl : supprimez une application gérée
-
+.Exemple de curl : supprimez une application gérée
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps/<APP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request DELETE \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps/$APP_ID" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

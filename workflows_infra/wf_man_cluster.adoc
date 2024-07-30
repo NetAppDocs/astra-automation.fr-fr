@@ -18,13 +18,13 @@ Vous pouvez gérer un cluster Kubernetes afin d'assurer la protection des donné
 
 
 
-=== 1. Sélectionnez le cluster à gérer
+== Étape 1 : sélectionnez le cluster à gérer
 
 Exécutez le flux de travail link:../workflows_infra/wf_list_clusters.html["Lister les clusters"] et sélectionnez le cluster souhaité. La propriété `managedState` du cluster doit être `unmanaged`.
 
 
 
-=== 2. Sélectionnez éventuellement la classe de stockage
+== Étape 2 : sélectionnez éventuellement la classe de stockage
 
 Éventuellement, exécutez le flux de travail link:../workflows_infra/wf_list_storage_classes.html["Répertorier les classes de stockage"] et sélectionnez la classe de stockage souhaitée.
 
@@ -33,9 +33,12 @@ NOTE: Si vous ne fournissez pas de classe de stockage à l'appel pour gérer le 
 
 
 
-=== 3. Gérez le cluster
+== Étape 3 : gérer le cluster
 
 Effectuez l'appel d'API REST suivant pour gérer le cluster.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="1,6"]
 |===
@@ -44,10 +47,17 @@ Effectuez l'appel d'API REST suivant pour gérer le cluster.
 
 | POST | /Accounts/{account_ID}/topologique/v1/managedclusters 
 |===
-
-
-===== Exemple d'entrée JSON
-
+.Exemple de boucle
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/managedClusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Exemple d'entrée JSON
 [source, json]
 ----
 {
@@ -55,12 +65,4 @@ Effectuez l'appel d'API REST suivant pour gérer le cluster.
   "version": "1.0",
   "id": "d0fdf455-4330-476d-bb5d-4d109714e07d"
 }
-----
-
-
-===== Exemple de boucle
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/managedClusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

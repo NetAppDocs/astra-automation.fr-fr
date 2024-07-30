@@ -18,15 +18,18 @@ Vous pouvez créer un instantané pour une application spécifique.
 
 
 
-=== Avant de commencer
+== Avant de commencer
 
 Vous devez avoir l'ID de l'application pour laquelle vous souhaitez créer un snapshot. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_man_apps.html["Répertorier les applications"] pour localiser l'application.
 
 
 
-=== 1. Créer un snapshot
+== Créer un snapshot
 
 Effectuez l'appel de l'API REST suivant.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ Effectuez l'appel de l'API REST suivant.
 
 | POST | /Accounts/{account_ID}/k8s/v1/apps/{app_ID}/appSnaps 
 |===
-
-
-===== Paramètres d'entrée supplémentaires
-
+.Paramètres d'entrée supplémentaires
 Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
 
 [cols="25,10,10,55"]
@@ -51,10 +51,18 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
 
 | JSON | Corps | Oui. | Fournit les paramètres de l'instantané. Voir l'exemple ci-dessous. 
 |===
-
-
-===== Exemple d'entrée JSON
-
+.Exemple de curl : créez un snapshot pour l'application
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps" \
+--include \
+--header "Content-Type: application/astra-appSnap+jso" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Exemple d'entrée JSON
 [source, json]
 ----
 {
@@ -62,12 +70,4 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
   "version": "1.1",
   "name": "snapshot-david-1"
 }
-----
-
-
-===== Exemple de curl : créez un snapshot pour l'application
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Content-Type: application/astra-appSnap+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

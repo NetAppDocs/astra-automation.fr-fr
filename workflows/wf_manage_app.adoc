@@ -18,21 +18,24 @@ Vous pouvez créer une application gérée basée sur une application déjà con
 
 
 
-=== 1. Sélectionnez l'espace de noms
+== Étape 1 : sélectionnez l'espace de noms
 
 Exécutez le flux de travail link:../workflows/wf_list_namespaces.html["Lister les espaces de noms"] et sélectionnez l'espace de noms.
 
 
 
-=== 2. Sélectionnez le cluster
+== Étape 2 : sélectionnez le cluster
 
 Exécutez le flux de travail link:../workflows_infra/wf_list_clusters.html["Lister les clusters"] et sélectionnez le cluster.
 
 
 
-=== 3. Gérer l'application
+== Étape 3 : gérer l'application
 
 Effectuez l'appel suivant de l'API REST pour gérer l'application.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -41,10 +44,7 @@ Effectuez l'appel suivant de l'API REST pour gérer l'application.
 
 | POST | /accounts/{account_id}/k8s/v2/apps 
 |===
-
-
-===== Paramètres d'entrée supplémentaires
-
+.Paramètres d'entrée supplémentaires
 Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
 
 [cols="25,10,10,55"]
@@ -54,10 +54,18 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
 
 | JSON | Corps | Oui. | Fournit les paramètres nécessaires à l'identification de l'application à gérer. Voir l'exemple ci-dessous. 
 |===
-
-
-===== Exemple d'entrée JSON
-
+.Exemple de curl : gérer une application
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps" \
+--include \
+--header "Content-Type: application/astra-app+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data @JSONinput
+----
+.Exemple d'entrée JSON
 [source, json]
 ----
 {
@@ -67,12 +75,4 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
   "type": "application/astra-app",
   "version": "2.0"
 }
-----
-
-
-===== Exemple de curl : gérer une application
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'  --data @JSONinput
 ----

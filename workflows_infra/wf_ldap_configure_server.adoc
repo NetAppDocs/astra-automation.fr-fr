@@ -18,12 +18,15 @@ Vous devez sélectionner un serveur LDAP et configurer Astra pour qu'il utilise 
 
 
 
-=== 1. Ajoutez un certificat CA
+== Étape 1 : ajout d'un certificat d'autorité de certification
 
 Effectuez l'appel d'API REST suivant pour ajouter un certificat d'autorité de certification à Astra.
 
 
 NOTE: Cette étape est facultative et requise uniquement si vous voulez qu'Astra et le LDAP communiquent via un canal sécurisé à l'aide de LDAPS.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="1,6"]
 |===
@@ -32,10 +35,18 @@ NOTE: Cette étape est facultative et requise uniquement si vous voulez qu'Astra
 
 | POST | /accounts/{account_id}/core/v1/certificats 
 |===
-
-
-===== Exemple d'entrée JSON
-
+.Exemple de boucle
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/certificates" \
+--include \
+--header "Content-Type: application/astra-certificate+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Exemple d'entrée JSON
 [source, json]
 ----
 {
@@ -52,19 +63,8 @@ Notez les informations suivantes concernant les paramètres d'entrée :
 * `isSelfSigned` doit être réglé sur `true` si le certificat est auto-signé. La valeur par défaut est `false`.
 
 
-
-
-===== Exemple de boucle
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/certificates' --header 'Content-Type: application/astra-certificate+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== Exemple de réponse JSON
-
-[source, json]
+.Exemple de sortie JSON
+[listing]
 ----
 {
   "type": "application/astra-certificate",
@@ -112,9 +112,12 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
-=== 2. Ajoutez les informations d'identification de liaison
+== Étape 2 : ajoutez les informations d'identification de liaison
 
 Effectuez l'appel d'API REST suivant pour ajouter les informations d'identification de liaison.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="1,6"]
 |===
@@ -123,10 +126,18 @@ Effectuez l'appel d'API REST suivant pour ajouter les informations d'identificat
 
 | POST | /accounts/{account_id}/core/v1/credentials 
 |===
-
-
-===== Exemple d'entrée JSON
-
+.Exemple de boucle
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Content-Type: application/astra-certificate+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Exemple d'entrée JSON
 [source, json]
 ----
 {
@@ -144,19 +155,8 @@ Notez les informations suivantes concernant les paramètres d'entrée :
 *  `bindDn` et `password` Sont les informations d'identification de liaison codées en base64 de l'utilisateur admin LDAP qui peut se connecter et rechercher dans le répertoire LDAP. `bindDn` Est l'adresse e-mail de l'utilisateur LDAP.
 
 
-
-
-===== Exemple de boucle
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Content-Type: application/astra-credential+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== Exemple de réponse JSON
-
-[source, json]
+.Exemple de sortie JSON
+[listing]
 ----
 {
     "type": "application/astra-credential",
@@ -177,12 +177,15 @@ Noter les paramètres de réponse suivants :
 
 
 
-=== 3. Récupérez l'UUID du paramètre LDAP
+== Etape 3 : récupération de l'UUID du paramètre LDAP
 
 Exécutez l'appel de l'API REST suivant pour récupérer l'UUID du `astra.account.ldap` Réglage inclus avec le centre de contrôle Astra.
 
 
 NOTE: L'exemple curl ci-dessous utilise un paramètre de requête pour filtrer la collection de paramètres. Vous pouvez à la place supprimer le filtre pour obtenir tous les paramètres, puis rechercher `astra.account.ldap`.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="1,6"]
 |===
@@ -191,19 +194,17 @@ NOTE: L'exemple curl ci-dessous utilise un paramètre de requête pour filtrer l
 
 | OBTENEZ | /accounts/{account_id}/core/v1/settings 
 |===
-
-
-===== Exemple de boucle
-
+.Exemple de boucle
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings?filter=name%20eq%20'astra.account.ldap'&include=name,id' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/settings?filter=name%20eq%20'astra.account.ldap'&include=name,id" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
 ----
-
-
-===== Exemple de réponse JSON
-
-[source, json]
+.Exemple de sortie JSON
+[listing]
 ----
 {
   "items": [
@@ -216,12 +217,15 @@ curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID
 ----
 
 
-=== 4. Mettez à jour le paramètre LDAP
+== Étape 4 : mettez à jour le paramètre LDAP
 
 Effectuez l'appel d'API REST suivant pour mettre à jour le paramètre LDAP et terminer la configuration. Utilisez le `id` Valeur de l'appel API précédent pour le `<SETTING_ID>` Valeur dans le chemin d'accès à l'URL ci-dessous.
 
 
 NOTE: Vous pouvez d'abord lancer une demande GET pour le paramètre spécifique afin de voir le schéma de configuration. Ceci fournira plus d'informations sur les champs requis dans la configuration.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="1,6"]
 |===
@@ -230,10 +234,18 @@ NOTE: Vous pouvez d'abord lancer une demande GET pour le paramètre spécifique 
 
 | EN | /accounts/{account_id}/core/v1/settings/{setting_id} 
 |===
-
-
-===== Exemple d'entrée JSON
-
+.Exemple de boucle
+[source, curl]
+----
+curl --request PUT \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/settings/<SETTING_ID>" \
+--include \
+--header "Content-Type: application/astra-setting+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data @JSONinput
+----
+.Exemple d'entrée JSON
 [source, json]
 ----
 {
@@ -260,21 +272,16 @@ Notez les informations suivantes concernant les paramètres d'entrée :
 * Seul Active Directory est pris en charge en tant que fournisseur.
 
 
-
-
-===== Exemple de boucle
-
-[source, curl]
-----
-curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
 Si l'appel a réussi, la réponse HTTP 204 est renvoyée.
 
 
 
-=== 5. Récupérez le paramètre LDAP
+== Étape 5 : récupération du paramètre LDAP
 
 Vous pouvez éventuellement effectuer l'appel d'API REST suivant pour récupérer les paramètres LDAP et confirmer la mise à jour.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="1,6"]
 |===
@@ -283,19 +290,17 @@ Vous pouvez éventuellement effectuer l'appel d'API REST suivant pour récupére
 
 | OBTENEZ | /accounts/{account_id}/core/v1/settings/{setting_id} 
 |===
-
-
-===== Exemple de boucle
-
+.Exemple de boucle
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "'https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/settings/<SETTING_ID>" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Exemple de réponse JSON
-
-[source, json]
+.Exemple de sortie JSON
+[listing]
 ----
 {
   "items": [

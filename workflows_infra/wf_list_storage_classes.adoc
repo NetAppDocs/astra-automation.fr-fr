@@ -18,21 +18,24 @@ Vous pouvez afficher la liste des classes de stockage disponibles.
 
 
 
-=== 1. Sélectionnez le nuage
+== Étape 1 : sélectionnez le nuage
 
 Exécutez le flux de travail link:../workflows_infra/wf_list_clouds.html["Lister les clouds"] et choisissez le cloud dans lequel vous travaillez.
 
 
 
-=== 2. Sélectionnez le cluster
+== Étape 2 : sélectionnez le cluster
 
 Exécutez le flux de travail link:../workflows_infra/wf_list_clusters.html["Lister les clusters"] et sélectionnez le cluster.
 
 
 
-=== 3. Énumérez les classes de stockage d'un cluster spécifique
+== Étape 3 : répertorier les classes de stockage d'un cluster spécifique
 
 Effectuez l'appel d'API REST suivant pour répertorier les classes de stockage d'un cluster et d'un cloud spécifiques.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="1,6"]
 |===
@@ -41,19 +44,17 @@ Effectuez l'appel d'API REST suivant pour répertorier les classes de stockage d
 
 | OBTENEZ | /Accounts/{account_ID}/topologique/v1/nuages/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageclasses 
 |===
-
-
-===== Exemple Curl : renvoie toutes les données de toutes les classes de stockage
-
+.Exemple Curl : renvoie toutes les données de toutes les classes de stockage
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageClasses' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageClasses" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Exemple de sortie JSON
-
-[source, json]
+.Exemple de sortie JSON
+[listing]
 ----
 {
     "items": [

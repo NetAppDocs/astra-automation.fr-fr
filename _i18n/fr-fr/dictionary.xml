@@ -43,7 +43,6 @@
   <block id="16cec7fbd9ab597f4db09dbf853b7ceb" category="list-text"><block ref="16cec7fbd9ab597f4db09dbf853b7ceb" category="inline-link-macro-rx"></block></block>
   <block id="e99b81ee58ab09acce5c0fbc08127e13" category="admonition">Les informations d'identification LDAP se présentent sous la forme d'un nom d'utilisateur sous la forme d'une adresse e-mail et du mot de passe LDAP associé.</block>
   <block id="362b4b17b5ad67c04eaf618b3c217139" category="paragraph">Vous pouvez attribuer un rôle à chaque utilisateur Astra qui est utilisé après l'authentification LDAP. Ceci est approprié lorsqu'il y a un petit nombre d'utilisateurs et que chacun peut avoir des caractéristiques administratives différentes.</block>
-  <block id="7250e7ffd1bdbfad9824adacd3541cb3" category="section-title">1. Ajoutez un utilisateur</block>
   <block id="80429b74c4df5ad07a23ce4efb1b2faa" category="paragraph">Effectuez l'appel d'API REST suivant pour ajouter un utilisateur à Astra et indiquer que LDAP est le fournisseur d'authentification.</block>
   <block id="3ded167f4ad4afb85c6ace5862e27ba0" category="cell">Méthode HTTP</block>
   <block id="ac70412e939d72a9234cdebb1af5867b" category="cell">Chemin</block>
@@ -59,21 +58,17 @@
   <block id="97c54ae5385dfb0bfaf0ebfe82486c53" category="paragraph">Si le<block ref="0c83f57c786a0b4a39efab23731c7ebc" prefix=" " category="inline-code"></block> La valeur n'est pas unique, une erreur se produit et un code d'état HTTP 409 est renvoyé dans la réponse.</block>
   <block id="e0da47631d6f2648f3a36bde7e269c3b" category="section-title">Exemple de boucle</block>
   <block id="d6c64252b8ce71696a41d941f4cab6e6" category="section-title">Exemple de réponse JSON</block>
-  <block id="73ae336a1bcf7abf02f83c9d961066d2" category="section-title">2. Ajoutez une liaison de rôle pour l'utilisateur</block>
   <block id="f82c041e2677cb63989e7061882203bc" category="paragraph">Effectuez l'appel de l'API REST suivant pour lier l'utilisateur à un rôle spécifique. Vous devez créer l'UUID de l'utilisateur à l'étape précédente.</block>
   <block id="afeef4481e8f77ed56c4383e82369e67" category="list-text">Valeur utilisée ci-dessus pour<block ref="4fe22a948503c3fe556cc6f6831342a9" prefix=" " category="inline-code"></block> Est la seule option disponible pour la version actuelle d'Astra. Il indique que l'utilisateur n'est pas limité à un ensemble limité d'espaces de noms et peut y accéder tous.</block>
   <block id="0622cb2fb15cd9db10328e2ba1d3e821" category="paragraph">Noter les éléments suivants concernant les paramètres de réponse :</block>
   <block id="ac7d66f43ecf3e035bc9139997762243" category="list-text">La valeur<block ref="ee11cbb19052e40b07aac0ca060c23ee" prefix=" " category="inline-code"></block> pour le<block ref="463fafd3510d11b15f43ef6174576d16" prefix=" " category="inline-code"></block> champ indique que la liaison du rôle a été ajoutée pour un utilisateur (et non pour un groupe).</block>
   <block id="1cce2e3f66074da3b3746e8ff32e3fa7" category="paragraph">Vous pouvez affecter un rôle à un groupe Astra qui est utilisé après l'authentification LDAP. Ceci est approprié lorsqu'il y a un grand nombre d'utilisateurs et que chacun peut avoir des caractéristiques administratives similaires.</block>
-  <block id="92c4973d42b7f8c2b77e4ecde1fb1110" category="section-title">1. Ajoutez un groupe</block>
   <block id="c0ad03b2572c4c7580edf10837ea5620" category="paragraph">Effectuez l'appel d'API REST suivant pour ajouter un groupe à Astra et indiquer que LDAP est le fournisseur d'authentification.</block>
-  <block id="d951c83a74c1539e200b4b2a6abc7a9d" category="section-title">2. Ajoutez une liaison de rôle pour le groupe</block>
   <block id="a5a9025a2565e62426d0d6fa46ca4e54" category="paragraph">Effectuez l'appel d'API REST suivant pour lier le groupe à un rôle spécifique. Vous devez créer l'UUID du groupe à l'étape précédente. Les utilisateurs qui sont membres du groupe pourront se connecter à Astra une fois que LDAP aura effectué l'authentification.</block>
   <block id="3f78918ffaed6aa648fbf481030b078e" category="list-text">Valeur utilisée ci-dessus pour<block ref="4fe22a948503c3fe556cc6f6831342a9" prefix=" " category="inline-code"></block> Est la seule option disponible pour la version actuelle d'Astra. Il indique que l'utilisateur n'est pas limité à certains espaces de noms et peut y accéder tous.</block>
   <block id="535f31c0d94d3cf84629bee7a5935c63" category="list-text">La valeur<block ref="db0f6f37ebeb6ea09489124345af2a45" prefix=" " category="inline-code"></block> pour le<block ref="463fafd3510d11b15f43ef6174576d16" prefix=" " category="inline-code"></block> champ indique que la liaison de rôle a été ajoutée pour un groupe (et non pour un utilisateur).</block>
   <block id="f923f903857a5387d3db70494e074632" category="doc">Répertorier les utilisateurs</block>
   <block id="4c7aee6e8d40dfdf7713e4a924264d5a" category="paragraph">Vous pouvez lister les utilisateurs définis pour un compte Astra spécifique.</block>
-  <block id="908398b479e9327ae04f2325e64e79ad" category="section-title">1. Dressez la liste des utilisateurs</block>
   <block id="0ded27ebd95eb2dcf0ec2ac7f61b926c" category="paragraph">Effectuez l'appel de l'API REST suivant.</block>
   <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="cell">OBTENEZ</block>
   <block id="c24b0224d3b54e6b4e908019f2447f30" category="section-title">Paramètres d'entrée supplémentaires</block>
@@ -87,29 +82,23 @@
   <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">Non</block>
   <block id="17539f6f1332e8e1eec67098e0601a06" category="cell">Sélectionner éventuellement les valeurs que vous souhaitez renvoyer dans la réponse.</block>
   <block id="d5eaca06185acdad8b69d18d2b7d8a07" category="section-title">Exemple Curl : renvoie toutes les données pour tous les utilisateurs</block>
-  <block id="6f0f5a995f8609d334baee54a5b0c773" category="section-title">Exemple Curl : renvoie le prénom, le nom et l'ID de tous les utilisateurs</block>
   <block id="bff6b273561ec6570215c14bdba13a26" category="section-title">Exemple de sortie JSON</block>
   <block id="5b11110b9a97c66915e86bcba53ee809" category="summary">Vous pouvez répertorier les nuages définis et disponibles un compte Astra spécifique.</block>
   <block id="aef02d026fec2eb688571bfa2422be3a" category="doc">Lister les clouds</block>
-  <block id="1b6ac21e78d44a219b6937e90879165d" category="section-title">1. Dresser la liste des clouds</block>
   <block id="095599abd98771dd2c043675b15cd910" category="paragraph">Effectuez l'appel d'API REST suivant pour répertorier les clouds.</block>
   <block id="e660247893e67f2eed38a94a3b63cd22" category="section-title">Exemple de curl : retournez toutes les données de tous les clouds</block>
   <block id="5eb4ace08e506648d2ccc5e95a6d5d96" category="doc">Configurez Astra pour qu'il utilise un serveur LDAP</block>
   <block id="a4cce93638d786143ceaec53646fcbd0" category="paragraph">Vous devez sélectionner un serveur LDAP et configurer Astra pour qu'il utilise le serveur en tant que fournisseur d'authentification. La tâche de configuration comprend les étapes décrites ci-dessous. Chaque étape inclut un appel d'API REST unique.</block>
-  <block id="b05f354eda3398ade96e9055b0305ee6" category="section-title">1. Ajoutez un certificat CA</block>
   <block id="468c35b0a371a6568ff7d068ff72eeea" category="paragraph">Effectuez l'appel d'API REST suivant pour ajouter un certificat d'autorité de certification à Astra.</block>
   <block id="073d8b65fb7ecf85a06f38d463b9fdd1" category="admonition">Cette étape est facultative et requise uniquement si vous voulez qu'Astra et le LDAP communiquent via un canal sécurisé à l'aide de LDAPS.</block>
   <block id="7557b2b9d5bb2e98944494352545b875" category="list-text"><block ref="b6ba9fa6ea18201bf39ea635ecca9f13" prefix="" category="inline-code"></block> Est une chaîne JSON contenant un certificat au format PKCS-11 codé en base64 (codé PEM).</block>
   <block id="6387f0ce5ee860358d87cf0c10e51883" category="list-text"><block ref="90cfc6da5652d21260206e3e7b812234" prefix="" category="inline-code"></block> doit être réglé sur<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> si le certificat est auto-signé. La valeur par défaut est<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>.</block>
-  <block id="d18a6eed5380b79bc54e2eb6e4de5506" category="section-title">2. Ajoutez les informations d'identification de liaison</block>
   <block id="9beb1432cc918de4d5a2f634c78b257d" category="paragraph">Effectuez l'appel d'API REST suivant pour ajouter les informations d'identification de liaison.</block>
   <block id="ae15f0c9912e2e37b3523e7e2e9f84ee" category="list-text"><block ref="e28922e50817cf44dfc07d9869ad3c81" prefix="" category="inline-code"></block> et<block ref="5f4dcc3b5aa765d61d8327deb882cf99" prefix=" " category="inline-code"></block> Sont les informations d'identification de liaison codées en base64 de l'utilisateur admin LDAP qui peut se connecter et rechercher dans le répertoire LDAP.<block ref="e28922e50817cf44dfc07d9869ad3c81" prefix=" " category="inline-code"></block> Est l'adresse e-mail de l'utilisateur LDAP.</block>
   <block id="bc1e18d5941e02ad1eb5530ea712bf97" category="paragraph">Noter les paramètres de réponse suivants :</block>
   <block id="7650c05d04a1e9ff8418e0b2c4d3117a" category="list-text">Le<block ref="b80bb7740288fda1f201890375a60c8f" prefix=" " category="inline-code"></block> des informations d'identification sont utilisées dans les étapes suivantes du flux de travail.</block>
-  <block id="be0de023c657d3318fab7db4965e926d" category="section-title">3. Récupérez l'UUID du paramètre LDAP</block>
   <block id="bdf56457fecf48ce12cedd63e4baec6a" category="paragraph">Exécutez l'appel de l'API REST suivant pour récupérer l'UUID du<block ref="3940413bb3049c60c5e6b30073232b82" prefix=" " category="inline-code"></block> Réglage inclus avec le centre de contrôle Astra.</block>
   <block id="9a7c85ed5d7349bb01adfea8e76844c3" category="admonition">L'exemple curl ci-dessous utilise un paramètre de requête pour filtrer la collection de paramètres. Vous pouvez à la place supprimer le filtre pour obtenir tous les paramètres, puis rechercher<block ref="3940413bb3049c60c5e6b30073232b82" prefix=" " category="inline-code"></block>.</block>
-  <block id="a04f6fc98905b19569e98c821652785c" category="section-title">4. Mettez à jour le paramètre LDAP</block>
   <block id="c74075f7ca4f004176562adafe18dc7f" category="paragraph">Effectuez l'appel d'API REST suivant pour mettre à jour le paramètre LDAP et terminer la configuration. Utilisez le<block ref="b80bb7740288fda1f201890375a60c8f" prefix=" " category="inline-code"></block> Valeur de l'appel API précédent pour le<block ref="7ea6634ba39c1f0d96a6fb712db84dee" prefix=" " category="inline-code"></block> Valeur dans le chemin d'accès à l'URL ci-dessous.</block>
   <block id="0634ea9e84d965a9b2b7b53435251582" category="admonition">Vous pouvez d'abord lancer une demande GET pour le paramètre spécifique afin de voir le schéma de configuration. Ceci fournira plus d'informations sur les champs requis dans la configuration.</block>
   <block id="3e75383a5992a6d15fb81e872e46e256" category="cell">EN</block>
@@ -118,7 +107,6 @@
   <block id="91977da3ac4942f4a1225522ce4a5c8d" category="list-text"><block ref="2596a2b64637696b3703150219e9b695" prefix="" category="inline-code"></block> doit être réglé sur<block ref="2363dee608bcd9f6ce7f980bfdad5789" prefix=" " category="inline-code"></block> ou<block ref="298fcfb5d2eed57aee2342417e0ee046" prefix=" " category="inline-code"></block> en fonction de votre configuration à l'étape précédente.</block>
   <block id="760e899cc5769c0faca3e4d9e4a5fe50" category="list-text">Seul Active Directory est pris en charge en tant que fournisseur.</block>
   <block id="c7d952ff6c857d0f8f2f2361f8599340" category="paragraph">Si l'appel a réussi, la réponse HTTP 204 est renvoyée.</block>
-  <block id="da31a4db41ccdf3dc0b4203a87c48c02" category="section-title">5. Récupérez le paramètre LDAP</block>
   <block id="49776a9f5739155239c8bae279694c8f" category="paragraph">Vous pouvez éventuellement effectuer l'appel d'API REST suivant pour récupérer les paramètres LDAP et confirmer la mise à jour.</block>
   <block id="88b81844873daf6f3107692fe9afb47e" category="paragraph">Localisez le<block ref="9ed39e2ea931586b6a985a6942ef573e" prefix=" " category="inline-code"></block> champ de la réponse qui contient l'une des valeurs du tableau ci-dessous.</block>
   <block id="46a2a41cc6e552044816a2d04634545d" category="cell">État</block>
@@ -130,22 +118,17 @@
   <block id="d6b82591a59dcebabe58a580017b8eb7" category="cell">Le processus de configuration LDAP a échoué.</block>
   <block id="846402b8c9f043783b1fea0eaa5d5e3a" category="summary">Vous pouvez afficher la liste des compartiments S3 définis pour un compte Astra spécifique.</block>
   <block id="69e44482660be2fd1013a46b8f354ef2" category="doc">Répertorier les rubriques</block>
-  <block id="9117feaebfa26145178f03156c040dec" category="section-title">1. Dressez la liste des compartiments</block>
   <block id="4609424b2fcb4eca19af08e562b2f818" category="paragraph">Effectuez l'appel suivant de l'API REST pour afficher la liste des compartiments.</block>
   <block id="cfafa44c04121f529847f5cd8be51756" category="section-title">Exemple de gondolage : renvoie toutes les données de tous les compartiments</block>
   <block id="9b419681cf780fc8739ee91b14338a6d" category="summary">Vous pouvez afficher la liste des classes de stockage disponibles.</block>
   <block id="a2e45d2c4126abee2b89f161a0a3a50f" category="doc">Répertorier les classes de stockage</block>
-  <block id="daaec12836753c1aad81b32a5a058476" category="section-title">1. Sélectionnez le nuage</block>
   <block id="0d3339545a3c8c350c171199c6549779" category="paragraph">Exécutez le flux de travail <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> et choisissez le cloud dans lequel vous travaillez.</block>
-  <block id="cb1d8fe3c0fa41d5a40e80cca7f91ff2" category="section-title">2. Sélectionnez le cluster</block>
   <block id="1a26d4a9628f05c630331939becee5ab" category="inline-link-macro">Lister les clusters</block>
   <block id="4c52978a3e6a86d17e5ea3080d73c1d4" category="paragraph">Exécutez le flux de travail <block ref="23d58ac86c4531c319d79804ab05ca2c" category="inline-link-macro-rx"></block> et sélectionnez le cluster.</block>
-  <block id="0555a951c447a0cbe3807de815a06d5d" category="section-title">3. Énumérez les classes de stockage d'un cluster spécifique</block>
   <block id="646ae38688e5af41b737db05fd5a5cdb" category="paragraph">Effectuez l'appel d'API REST suivant pour répertorier les classes de stockage d'un cluster et d'un cloud spécifiques.</block>
   <block id="55d1071fe1b5a920cb319a5cdd834452" category="section-title">Exemple Curl : renvoie toutes les données de toutes les classes de stockage</block>
   <block id="a70539afac49ca03ebbf1219df791a81" category="paragraph">Vous pouvez afficher la liste des clusters disponibles dans un cloud spécifique.</block>
   <block id="6e7a5e444e17b81da2d35e5e7b5fb7ea" category="paragraph">Exécutez le flux de travail <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> et sélectionnez le cloud contenant les clusters.</block>
-  <block id="4a8c29c133faeda5a63e72796ed312c8" category="section-title">2. Dressez la liste des clusters</block>
   <block id="279e904c662f9babe50ce81e0df24ea5" category="paragraph">Effectuez l'appel d'API REST suivant pour répertorier les clusters dans un cloud spécifique.</block>
   <block id="6ff447fbf69dd4070e63e99da1dde7b0" category="section-title">Exemple Curl : renvoie toutes les données de tous les clusters</block>
   <block id="bec9f16b8e469e038cb36941a7f49a27" category="summary">Vous pouvez utiliser ces workflows pour créer et entretenir l'infrastructure utilisée avec un déploiement d'Astra Control Center. Dans de nombreux cas, les flux de travail peuvent également être utilisés avec le service Astra Control.</block>
@@ -220,11 +203,9 @@
   <block id="6fde5ce7c3e78a7b80189e22926ce1a9" category="paragraph">Si l'appel a réussi, le<block ref="57bec28586ffcd6cb601b3992f95c356" prefix=" " category="inline-code"></block> la réponse est renvoyée. Vous pouvez éventuellement récupérer à nouveau la configuration pour confirmer la modification.</block>
   <block id="99a4fd4c49fccb599a3b4d33e4b37909" category="doc">Liste des systèmes back-end</block>
   <block id="c3a6f95958616037be5bc621e7f71032" category="paragraph">Vous pouvez lister les systèmes back-end disponibles.</block>
-  <block id="be1dcc1afbc1a43cd23e6374cd48ad18" category="section-title">1. Dressez la liste des systèmes back-end</block>
   <block id="97d6ce33b116e0cdc883be2e518a550e" category="section-title">Exemple de curl : renvoie toutes les données pour tous les systèmes back-end</block>
   <block id="49d7482cad2dac48b0f0e77473d3a249" category="doc">Répertorier les clusters gérés</block>
   <block id="1b382a88a3817dcba16a81ec9e5cf1c5" category="paragraph">Vous pouvez lister les clusters Kubernetes actuellement gérés par Astra.</block>
-  <block id="fa52d266bf5c95bd5d51a11ed63c7fa3" category="section-title">1. Dressez la liste des clusters gérés</block>
   <block id="4086ad8bc58a79384e2abed3e4c7b4f1" category="summary">Plusieurs concepts Kubernetes sont pertinents pour l'utilisation de l'API REST d'Astra.</block>
   <block id="35e431c9f5b342b3021d74196ba6d0ca" category="doc">Concepts de base de Kubernetes</block>
   <block id="c8308b1eba7ba926a61b8fd802194386" category="section-title">Objets</block>
@@ -264,19 +245,14 @@
   <block id="ae8a59dcfdfdb01ea66130c76c50f0a7" category="list-text">Aucune valeur n'est perdue car les paramètres d'origine ne peuvent pas être copiés et utilisés avec un déploiement réel.</block>
   <block id="a5fa758a804c6e775ad8c0643a197329" category="paragraph">Voici quelques-uns des mots-clés réservés communs utilisés dans les exemples curl. Cette liste n'est pas exhaustive et des mots-clés supplémentaires sont utilisés au besoin. Leur signification devrait être évidente sur la base du contexte.</block>
   <block id="220f3d3750583b9db48568a0b5b9a5f1" category="cell">Mot-clé</block>
-  <block id="901931235afef62a62e9ee2657e55eaf" category="cell">&lt;ID_COMPTE&gt;</block>
   <block id="7b5c2e331dadd94a7f2f3c331d308424" category="cell">Valeur UUIDv4 identifiant le compte sur lequel l'opération API s'exécute.</block>
-  <block id="4a66fdca0794b65eaa799aa5ead36fb1" category="cell">&lt;API_TOKEN&gt;</block>
   <block id="bf50d5e661106d0abe925af3c2e6f7e7" category="cell">En-tête</block>
   <block id="14ce98600753e7afda082ba76ce94155" category="cell">Le jeton porteur identifiant et autorise l'appelant.</block>
-  <block id="8aaca9da7a2057e6c3482b19683ee3b0" category="cell">&lt;ID_APP&gt;</block>
   <block id="f5a4b32e77235d71cac07525901e432b" category="cell">Valeur UUIDv4 identifiant l'application pour l'appel d'API.</block>
   <block id="20d2410ae6d60054698fdb2241648ec0" category="paragraph">Selon votre modèle de déploiement, vous pouvez consulter deux catégories de workflows Astra, Si vous utilisez Astra Control Center, vous devez d'abord les workflows d'infrastructure, puis passer aux workflows de gestion. Avec Astra Control Service, vous pouvez généralement accéder directement aux workflows de gestion.</block>
-  <block id="3968c3333db40e7d3ec4d8fb2fc30853" category="admonition">Les exemples de boucles des flux de travail utilisent l'URL du service de contrôle Astra. Vous devez modifier l'URL lorsque vous utilisez le centre de contrôle Astra sur site en fonction de votre environnement.</block>
   <block id="3037de0d7a975b284e2a80d0ff32a9cc" category="section-title">Workflows d'infrastructure</block>
   <block id="23f646b4da04b69e64a7e464ec005504" category="paragraph">Ces workflows sont associés à l'infrastructure Astra, notamment les identifiants, les compartiments et les systèmes de stockage back-end. Elles sont nécessaires avec le centre de contrôle Astra, mais dans la plupart des cas peuvent également être utilisées avec le service de contrôle Astra. Les flux de travail se concentrent sur les tâches requises pour établir et gérer un cluster géré par Astra.</block>
   <block id="a0aa3c13c7e155cdac2e684ed97bd329" category="section-title">Flux de travail de gestion</block>
-  <block id="ead63516b6f8d40a5195059120a34741" category="paragraph">Vous pouvez utiliser ces flux de travail une fois que vous avez un cluster géré. Les workflows sont axés sur la protection des applications, ainsi que sur les opérations de prise en charge, comme la sauvegarde, la restauration et le clonage d'une application.</block>
   <block id="f2082cbd04c532123c4a60b265595268" category="summary">Vous devez obtenir un jeton API Astra pour utiliser l'API REST Astra Control.</block>
   <block id="e18812059a8d09f0f17ebcad797930df" category="paragraph">Un jeton API identifie l'appelant auprès d'Astra et doit être inclus avec chaque appel d'API REST.</block>
   <block id="80c4d1da0ffc63fa594010f5c5541b4b" category="list-text">Le jeton doit être inclus dans le<block ref="9cd8a2455b1839ff98ef70c05b9b5983" prefix=" " category="inline-code"></block> En-tête de requête HTTP.</block>
@@ -301,8 +277,6 @@
   <block id="0c59027cf761af16d5101de509ed5ef7" category="paragraph">Assurez-vous de passer en revue <block ref="533ba43849291e761802432633424684" category="inline-link-macro-rx"></block> Pour plus d'informations sur les concepts DE REPOS et les détails concernant la conception de l'API REST Astra Control.</block>
   <block id="1975d27c17bd745494bde5176f3687d2" category="paragraph">Vous devez connaître les ressources d'information supplémentaires, comme le suggère le <block ref="d9232e9ba333ee728d29f8228e038c57" category="inline-link-macro-rx"></block>.</block>
   <block id="2d388ce46646f517f31092dee87e1af6" category="summary">Vous pouvez lancer une commande curl simple sur la CLI de votre station de travail pour commencer à utiliser l'API REST Astra Control et confirmer sa disponibilité.</block>
-  <block id="9b355d9a0df5a5e777f4cd881f971a4e" category="paragraph">L'utilitaire Curl doit être disponible sur votre poste de travail local. Vous devez également disposer d'un jeton API et de l'identifiant de compte associé. Voir <block ref="67af9ad396391bc7ade4b472f0b4f030" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
-  <block id="cbd2fd368381db0d8cdbdead253cf132" category="paragraph">La commande Curl suivante récupère la liste des utilisateurs Astra. Fournissez les &lt;ACCOUNT_ID&gt; et &lt;API_TOKEN&gt; appropriés comme indiqué.</block>
   <block id="e14d216616a4529ca008fe30d48b4bda" category="summary">Astra Control Center et Astra Control Service fournissent une API REST commune que vous pouvez accéder directement via un langage de programmation ou un utilitaire tel que Curl. L'API présente plusieurs avantages et points forts majeurs.</block>
   <block id="48f085a79b3bd49f8180067c06092213" category="doc">Présentation des fonctionnalités et avantages</block>
   <block id="640575a1239211b2cdac8d24cbd8fe4e" category="paragraph">Astra Control Center et Astra Control Service fournissent une API REST commune que vous pouvez accéder directement via un langage de programmation ou un utilitaire tel que Curl. Les principaux points forts et avantages de l'API sont présentés ci-dessous.</block>
@@ -457,7 +431,6 @@
   <block id="80681c9412a27f13b376ee7ffc18f647" category="doc">Créez une sauvegarde pour une application</block>
   <block id="7d45849f0acada4f0f40e1349c847305" category="inline-link-macro">Répertorier les applications</block>
   <block id="e02fd4c0a67641762561c661c332b72d" category="paragraph">Vous devez avoir l'ID de l'application que vous souhaitez sauvegarder. Si nécessaire, vous pouvez utiliser le workflow <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> pour localiser l'application.</block>
-  <block id="15d4d7ada9bf77d46154e409388ea743" category="section-title">1. Créez une sauvegarde</block>
   <block id="96d15410fa829d04096983645e60475b" category="cell">/Accounts/{account_ID}/k8s/v1/apps/{app_ID}/appBackups</block>
   <block id="c9a1712ca7c64da73ff9ce7bc4f48bea" category="cell">id de l'application</block>
   <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">Oui.</block>
@@ -473,9 +446,7 @@
   <block id="8b442400420c3b7121c9e031882bcf48" category="list-text">L'opération de clonage est effectuée au sein du même cluster</block>
   <block id="c92ab9403e09db69311aeb9f72e2e480" category="list-text">La nouvelle application est placée dans un espace de noms différent</block>
   <block id="e1d39bdee6b9663d35dc3845e9dd04e5" category="admonition">Pour cloner une application vers un autre cluster, vous devez mettre à jour le<block ref="792ca1969ece6362fb045f326e3976de" prefix=" " category="inline-code"></block> Paramètre JSON dans l'entrée correspondant à votre environnement.</block>
-  <block id="1db96426d6f4f867edf3cc0ae9e35947" category="section-title">1. Sélectionnez l'application à cloner</block>
   <block id="b46f6842bf882cb490d122382f7a98d5" category="paragraph">Exécutez le flux de travail <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> et sélectionnez l'application à cloner. Plusieurs des valeurs de ressource sont nécessaires pour l'appel REST utilisé pour cloner l'application.</block>
-  <block id="91e9ad87c32b1417c98a1c8a57d14d21" category="section-title">2. Clonez l'application</block>
   <block id="af2926b139e31d88056f28937a9c49b6" category="paragraph">Effectuez l'appel suivant de l'API REST pour cloner l'application.</block>
   <block id="567a9af273a25b92860b783e7f5a7524" category="cell">/account/{account_id}/k8s/v2/apps</block>
   <block id="5a77a315cc422da89819194837af885d" category="cell">Fournit les paramètres de l'application clonée. Voir l'exemple ci-dessous.</block>
@@ -510,39 +481,29 @@
   <block id="7bf69d8a687703afd9b5af54243f143d" category="summary">Vous pouvez créer une nouvelle application en la clonant à partir d'une sauvegarde.</block>
   <block id="879ad4bddb82a977b90643c7b33a4e49" category="doc">Cloner une application à partir d'une sauvegarde</block>
   <block id="6a3f7086385ab02e213a4864a905e1e5" category="list-text">Une sauvegarde d'application est utilisée</block>
-  <block id="a873d81cfc688902e71d08400f93684a" category="section-title">2. Sélectionnez la sauvegarde à utiliser</block>
   <block id="8aa0f7001085d2ffdad3efbc0e9de159" category="inline-link-macro">Répertoriez les sauvegardes</block>
   <block id="d40d66b0e6d970d00db3de547260af68" category="paragraph">Exécutez le flux de travail <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block> et sélectionnez la sauvegarde que vous souhaitez utiliser.</block>
-  <block id="a2e167678135121b44df9d3e6c7a8d2d" category="section-title">3. Clonez l'application</block>
   <block id="b8622ecf971d21371a3ba9d07a233300" category="section-title">Exemple Curl : cloner une application à partir d'une sauvegarde</block>
   <block id="ecf41bcdc089c3b619f5975173077430" category="summary">Vous pouvez afficher la liste des sauvegardes créées pour une application spécifique.</block>
   <block id="dbd2251516ab8d7e1775469c5c1508a3" category="paragraph">Vous devez disposer de l'ID de l'application pour laquelle vous souhaitez répertorier les sauvegardes. Si nécessaire, vous pouvez utiliser le workflow <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> pour localiser l'application.</block>
-  <block id="4cd1e59d794feeee43e7cd32844ec8ec" category="section-title">1. Dressez la liste des sauvegardes</block>
   <block id="0254dd3f84d764f594f8490729e7c196" category="cell">Identifie l'application gérée propriétaire des sauvegardes répertoriées.</block>
   <block id="53c07d76a2f4ca060d727cd96fd24eeb" category="section-title">Exemple Curl : renvoie toutes les sauvegardes de l'application</block>
   <block id="6a94b76b128da4767ce7885cb84ec799" category="doc">Supprimer une application ayant échoué</block>
   <block id="90c78af3e4fa9a4298b9bc66f86d06a6" category="paragraph">Il se peut que vous ne puissiez pas supprimer une application gérée si elle a une sauvegarde ou un snapshot en état d'échec. Dans ce cas, vous pouvez supprimer manuellement l'application à l'aide du workflow décrit ci-dessous.</block>
-  <block id="8b7796198eef86f78d17188652bd8260" category="section-title">1. Sélectionnez l'application à supprimer</block>
   <block id="82029d5fee8f7191d3a021c9db8b43ac" category="paragraph">Exécutez le flux de travail <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> et sélectionnez l'application à supprimer.</block>
-  <block id="c776475c27b1d7a554d7f110559479d9" category="section-title">2. Dressez la liste des sauvegardes existantes de l'application</block>
   <block id="03697ae46f1d2d1002ffcb19e1ebbd04" category="paragraph">Exécutez le flux de travail <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block>.</block>
-  <block id="dcefcc8de5a7541a95d041f4943c300d" category="section-title">3. Supprimez toutes les sauvegardes</block>
   <block id="cb2cecbd9776fc0c17c7929541fe9404" category="inline-link-macro">Supprimer une sauvegarde</block>
   <block id="198a14532624e3324770ded326a70a0d" category="paragraph">Supprimez toutes les sauvegardes de l'application en exécutant le flux de travail <block ref="4f0b12c4d7b6e38cbd2c51245afded1c" category="inline-link-macro-rx"></block> pour chaque sauvegarde de la liste.</block>
-  <block id="dbda08e56067649f1ab59eea05bc44db" category="section-title">4. Dressez la liste des instantanés existants de l'application</block>
   <block id="020ac174aad4268a50eed3705447b327" category="inline-link-macro">Répertorier les snapshots</block>
   <block id="431b5bf2b0c89bff5ce71c6d5a42c4be" category="paragraph">Exécutez le flux de travail <block ref="ec07e92ba8186e37075c19b8ee786603" category="inline-link-macro-rx"></block>.</block>
-  <block id="2d29043fd95ac713b9b4c9b91db9d11b" category="section-title">5. Supprimez tous les instantanés</block>
   <block id="efb44cfe1d5b8d9954ea045385675c66" category="inline-link-macro">Supprime un snapshot</block>
   <block id="97153f849dc1e17ce221b1aecaa1b827" category="paragraph">Exécutez le flux de travail <block ref="9716569143d126579035607ebd1a1120" category="inline-link-macro-rx"></block> à partir de chaque instantané de la liste.</block>
-  <block id="af9ef9bb2e7c334105bad0aa17ad5d28" category="section-title">6. Retirez l'application</block>
   <block id="f33f60a3b5c95e8659ec5a992f0f055c" category="inline-link-macro">Annuler la gestion d'une application</block>
   <block id="08a28b071946cc1515702440ff6582d8" category="paragraph">Exécutez le flux de travail <block ref="a7ef8d5c47daed312bb700c375f9019c" category="inline-link-macro-rx"></block> pour supprimer l'application.</block>
   <block id="5678454487dc87ea3b9a2601e9ecd8e3" category="summary">Vous pouvez supprimer un snapshot associé à une application.</block>
   <block id="a08d0039b6defc60dd0db0aebca289d8" category="paragraph">Vous devez disposer des éléments suivants :</block>
   <block id="057648776a4afb375be6db76fd760748" category="list-text">ID de l'application propriétaire de l'instantané. Si nécessaire, vous pouvez utiliser le workflow <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> pour localiser l'application.</block>
   <block id="8228d21d4972f0a8ed1a2129680b70b2" category="list-text">ID du snapshot à supprimer. Si nécessaire, vous pouvez utiliser le workflow <block ref="ec07e92ba8186e37075c19b8ee786603" category="inline-link-macro-rx"></block> pour localiser l'instantané.</block>
-  <block id="860aa2c08f5183e7dd18366105498ef2" category="section-title">1. Supprimez le snapshot</block>
   <block id="32f68a60cef40faedbc6af20298c1a1e" category="cell">SUPPRIMER</block>
   <block id="c25f938f3e5ab183a0718fbc32b60cce" category="cell">/Accounts/{account_ID}/k8s/v1/apps/{app_ID}/appSnaps/{appSnap_ID}</block>
   <block id="151b82a6507e2eebe2f879130b46a783" category="cell">Identifie l'application gérée propriétaire du snapshot.</block>
@@ -551,17 +512,14 @@
   <block id="c60d917b462a557b73224bd3194b4cf6" category="section-title">Exemple de curl : supprimez un seul snapshot pour l'application</block>
   <block id="44d23b5c3f8571e7bb4294d0b82f7497" category="doc">Gérer une application</block>
   <block id="a9f7d2aed593551dc011220c90a52be3" category="paragraph">Vous pouvez créer une application gérée basée sur une application déjà connue d'Astra dans un espace de noms spécifique. Lorsqu'une application est gérée ou définie par Astra, vous pouvez la protéger en effectuant des sauvegardes et des copies Snapshot.</block>
-  <block id="d801ba89b540c5da0e4f732a81e855fd" category="section-title">1. Sélectionnez l'espace de noms</block>
   <block id="ef1d4c0913b02ff6423ee4d1161fea0b" category="inline-link-macro">Lister les espaces de noms</block>
   <block id="0a94b02b2f35acb72af0ca2e31006abb" category="paragraph">Exécutez le flux de travail <block ref="d14574597a65756c248d691b26627131" category="inline-link-macro-rx"></block> et sélectionnez l'espace de noms.</block>
-  <block id="0c686bb338de3ff0d9a5c7aff0164f66" category="section-title">3. Gérer l'application</block>
   <block id="3c7008ad6fd78ff999655de722126630" category="paragraph">Effectuez l'appel suivant de l'API REST pour gérer l'application.</block>
   <block id="f211caf53405c1c7a730894c76845b78" category="cell">Fournit les paramètres nécessaires à l'identification de l'application à gérer. Voir l'exemple ci-dessous.</block>
   <block id="6a476923d36b27fb8d2ff2da1e18c322" category="section-title">Exemple de curl : gérer une application</block>
   <block id="2b194b9170143eb845c618e13f34e5fb" category="paragraph">Vous pouvez supprimer une application gérée lorsqu'elle n'est plus nécessaire. La suppression d'une application gérée supprime également les planifications associées.</block>
   <block id="a32aff1568b14bb39f1c15ef5e32eb54" category="paragraph">Vous devez avoir l'ID de l'application que vous souhaitez annuler la gestion. Si nécessaire, vous pouvez utiliser le workflow <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> pour localiser l'application.</block>
   <block id="1fa9ca676a71f70d29ff65963febbf34" category="paragraph">Les sauvegardes et snapshots de l'application ne sont pas automatiquement supprimés lorsqu'ils sont supprimés. Si vous n'avez plus besoin des sauvegardes et des snapshots, vous devez les supprimer avant de supprimer l'application.</block>
-  <block id="ba058813d4014443679bdc5bad08e6da" category="section-title">1. Non géré de l'application</block>
   <block id="cc627e860ccc11393d4a5fb9a37cf9a7" category="paragraph">Effectuez l'appel suivant de l'API REST pour supprimer l'application.</block>
   <block id="f6ae66a627b9c3047f8f88beffc23cd7" category="cell">/account/{account_id}/k8s/v2/apps/{app_id}</block>
   <block id="58e5b159105a6ed936549bb5a1695ea7" category="cell">Identifie l'application à supprimer.</block>
@@ -569,7 +527,6 @@
   <block id="596763b84eac1a557d6c2b19a508c915" category="summary">Vous pouvez supprimer une sauvegarde associée à une application.</block>
   <block id="9a7affff9968bb03650e50fa108c3fa7" category="list-text">ID de l'application propriétaire de la sauvegarde. Si nécessaire, vous pouvez utiliser le workflow <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> pour localiser l'application.</block>
   <block id="9332cf683c594f797fdb3d0a19819c01" category="list-text">ID de la sauvegarde à supprimer. Si nécessaire, vous pouvez utiliser le workflow <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block> pour localiser l'instantané.</block>
-  <block id="9764b72f7f4c0e5ee3e7e8350c8ccd00" category="section-title">1. Supprimez la sauvegarde</block>
   <block id="e6c08d334ddcc8f5824e2eb3371f9b4f" category="admonition">Vous pouvez forcer la suppression d'une sauvegarde ayant échoué à l'aide de l'en-tête de demande facultatif comme décrit ci-dessous.</block>
   <block id="907cc0ef4298a38b7fa096493c7684a0" category="cell">/Accounts/{account_ID}/k8s/v1/apps/{app_ID}/appBackups/{appBackup_ID}</block>
   <block id="bd5f8c5e1797c9b7450b0fcd4de20d28" category="cell">Identifie l'application gérée propriétaire de la sauvegarde.</block>
@@ -581,7 +538,6 @@
   <block id="58f00e9fb9c0fb6247e6c188b96d901b" category="section-title">Exemple de curl : supprimez une sauvegarde unique pour l'application avec l'option forcer</block>
   <block id="1003e23b805c899981a7d5126ccc0378" category="summary">Vous pouvez afficher la liste des instantanés pris pour une application spécifique.</block>
   <block id="9abace8c90645d3ee8eec992f42d897a" category="paragraph">Vous devez disposer de l'ID de l'application pour laquelle vous souhaitez répertorier les instantanés. Si nécessaire, vous pouvez utiliser le workflow <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> pour localiser l'application.</block>
-  <block id="f09394ee48f57bbe80f0a951776c3439" category="section-title">1. Dressez la liste des instantanés</block>
   <block id="02b00e5480497e1586ce1bf62bf8184a" category="paragraph">Effectuez l'appel suivant de l'API REST pour afficher la liste des snapshots.</block>
   <block id="250f359ba7b762da3435baba160a6f1b" category="cell">/Accounts/{account_ID}/k8s/v1/apps/{app_ID}/appSnaps</block>
   <block id="f38ae0e099fa484b915fa7bab67ac4b2" category="cell">Identifie l'application propriétaire des snapshots répertoriés.</block>
@@ -592,19 +548,15 @@
   <block id="0388f8ab481ed6c7aef94777258ef378" category="summary">Vous pouvez récupérer toutes les variables de ressource décrivant une seule application.</block>
   <block id="61b98994206e2a99e823ca136bdf24a1" category="doc">Obtenir une application</block>
   <block id="c2e04773cf7cf8f91a4a9a351b03c32f" category="paragraph">Vous devez avoir l'ID de l'application que vous souhaitez récupérer. Si nécessaire, vous pouvez utiliser le workflow <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> pour localiser l'application.</block>
-  <block id="d822b85cd89777748e1bd6b0a8fd0a46" category="section-title">1. Obtenez l'application</block>
   <block id="6bb9953a8e27258bd16ce65f51b81000" category="cell">Valeur ID de l'application à récupérer.</block>
   <block id="036e9ec4ee01123ffae8afd3dab3ff9f" category="section-title">Exemple de curl : renvoie toutes les données de l'application</block>
   <block id="bfdba4e9998c294b1a4016914698c099" category="summary">Vous pouvez restaurer une application en créant une nouvelle application à partir d'une sauvegarde.</block>
   <block id="dc299aaf3e84eb3627f50d2d2484cf17" category="doc">Restaurez une application à partir d'une sauvegarde</block>
-  <block id="14e236ddabe391b8a0496211807ab78b" category="section-title">1. Sélectionnez l'application à restaurer</block>
   <block id="7a217d2f25d9076086e8f01a3a0e198d" category="paragraph">Exécutez le flux de travail <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> et sélectionnez l'application à cloner. Plusieurs des valeurs de ressources sont nécessaires pour l'appel DE REPOS utilisé pour restaurer l'application.</block>
-  <block id="dac907b900763815cd0dab3692a0ccb9" category="section-title">3. Restaurez l'application</block>
   <block id="08d7f360c94a906d3639173599184943" category="paragraph">Effectuez l'appel de l'API REST suivant. Vous devez fournir l'ID d'une sauvegarde (comme indiqué ci-dessous) ou d'un instantané.</block>
   <block id="a477f086784d869d73c5ae084b145ca8" category="section-title">Exemple Curl : restaurez une application à partir d'une sauvegarde</block>
   <block id="a6fe5f717c07a456c15f8f2af8c1c7b7" category="doc">Dressez la liste des notifications</block>
   <block id="28e5da4816b7e4821438045e6ed86d2b" category="paragraph">Vous pouvez lister les notifications d'un compte Astra spécifique. Vous pouvez le faire dans le cadre de la surveillance de l'activité du système ou du débogage d'un problème.</block>
-  <block id="9d9ee088d3dd8f7e21041745a8cf259f" category="section-title">1. Dressez la liste des notifications</block>
   <block id="b2c97ae425dd751b0e48a3acae79cf4a" category="cell">filtre</block>
   <block id="0aaaa617845874504df6c76a750325da" category="cell">Vous pouvez éventuellement filtrer les notifications que vous souhaitez renvoyer dans la réponse.</block>
   <block id="f921030431759c9c846d8a3fd7d84ca2" category="section-title">Exemple de boucle : renvoie toutes les notifications</block>
@@ -612,22 +564,18 @@
   <block id="55c34d696f9301dcae31350ec87093ac" category="summary">Vous pouvez créer une nouvelle application en la clonant à partir d'un snapshot.</block>
   <block id="6c2edaf69733280351ebbe36a83562ae" category="doc">Cloner une application à partir d'un snapshot</block>
   <block id="38395f100e712c841ca6c8a613f86abc" category="list-text">Un snapshot d'application est utilisé</block>
-  <block id="da88fe405a2037d8a9476bbfc8f6cf7f" category="section-title">2. Sélectionnez le snapshot à utiliser</block>
   <block id="176ae10d2b65c2e741fef4d23fc66fe5" category="paragraph">Exécutez le flux de travail <block ref="ec07e92ba8186e37075c19b8ee786603" category="inline-link-macro-rx"></block> et sélectionnez le snapshot que vous souhaitez utiliser.</block>
   <block id="601c2032f11a3d99c3889b1faf260874" category="section-title">Exemple de curl : cloner une application à partir d'un snapshot</block>
   <block id="29fd28138191fbfa1b58ba0623d40105" category="summary">Vous pouvez créer un instantané pour une application spécifique.</block>
   <block id="be48e6237dab1df212834256a63ceb44" category="doc">Créer un instantané pour une application</block>
   <block id="e32d1c8a20aafa5c39c1d3b2c3875f36" category="paragraph">Vous devez avoir l'ID de l'application pour laquelle vous souhaitez créer un snapshot. Si nécessaire, vous pouvez utiliser le workflow <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> pour localiser l'application.</block>
-  <block id="18c7420f03313eb33044afb6b943cb43" category="section-title">1. Créer un snapshot</block>
   <block id="ca88d296d98d8a63f103fe3b0b63d819" category="cell">Identifie l'application gérée où le snapshot sera créé.</block>
   <block id="97edc5e90d2062e191a3eae330d2afa0" category="cell">Fournit les paramètres de l'instantané. Voir l'exemple ci-dessous.</block>
   <block id="c681a34970e8e1b61eddc5718f0627e9" category="section-title">Exemple de curl : créez un snapshot pour l'application</block>
   <block id="82d9e1423b1fe50e0e9afcb47255d25a" category="summary">Vous pouvez lister les applications actuellement gérées par Astra. Pour rechercher des snapshots ou des sauvegardes d'une application spécifique, vous pouvez effectuer cette opération.</block>
-  <block id="48db3210f5486202c6926aa7551be0bd" category="section-title">1. Dressez la liste des applications</block>
   <block id="6ca58aed53ac62d5749597600edbbdff" category="section-title">Exemple de curl : renvoie toutes les données de toutes les applications</block>
   <block id="68c53a357a1ff35f5aa8ba654aab4362" category="section-title">Exemple de curl : renvoie le nom, l'ID et l'état de toutes les applications</block>
   <block id="c9ed41c2c3fbdd3ab2809e8a19fa57ee" category="summary">Vous pouvez lister les espaces de noms disponibles.</block>
-  <block id="2a983bbf122e057a73bf1870cf2ea2db" category="section-title">1. Dressez la liste des espaces de noms</block>
   <block id="c42968dfccb26ee2ef5912aaf9ee50ed" category="paragraph">Exécutez l'appel d'API REST suivant pour afficher la liste des namespaces.</block>
   <block id="55b85a82f8838ea89842d9ebe5cbe0d6" category="section-title">Exemple Curl : renvoie toutes les données de tous les espaces de noms</block>
   <block id="f06023f42f86a62fda5cde9e1ca56143" category="section-title">Exemple Curl : nom, état et ID de cluster pour tous les namespaces</block>
@@ -970,44 +918,31 @@
   <block id="38a0f81608bad4301a7bd0c62937c7a0" category="summary">Vous pouvez ajouter un cluster pour qu'il soit géré par Astra.</block>
   <block id="617a1e32f2d409a9c77e56b76a744edc" category="doc">Ajouter un cluster à l'aide des informations d'identification</block>
   <block id="ec1064b7d3d701d90bcd843f62de2199" category="admonition">L'ajout d'un cluster n'est pas nécessaire lors de l'utilisation d'un service Kubernetes depuis l'un des principaux fournisseurs cloud (AKS, EKS, GKE).</block>
-  <block id="9a7df7f9a0a709d54e5600f10282be3c" category="section-title">1. Procurez-vous le fichier kubeconfig</block>
   <block id="0f9d366662bdbaac5e7e94b497107f97" category="paragraph">Vous devez obtenir une copie du fichier *kubconfig* auprès de votre administrateur ou service Kubernetes.</block>
-  <block id="4213c71e0f3bf4e29d847ed32a86c256" category="section-title">2. Préparez le fichier kubeconfig</block>
   <block id="2f01fc21d4fc91a63d214e05b58d1ae3" category="paragraph">Avant d'utiliser le fichier *kubeconfig*, vous devez effectuer les opérations suivantes :</block>
   <block id="4439d3db8fedf30a9f782857c3ba84c1" category="paragraph">Si vous recevez le fichier kubeconfig formaté en YAML, vous devez le convertir au format JSON.</block>
   <block id="9413bfba8f719cfbad604b6dc31a25c7" category="paragraph"><block ref="c4fe76de412e2e8e625be88a4c8c0409" prefix="" category="inline-code"></block></block>
-  <block id="179dae9c1238082df51d848f55149f2b" category="section-title">3. Sélectionnez le Cloud</block>
   <block id="a334c61bdbeeba71f0e5b3f6261056cf" category="paragraph">Exécutez le flux de travail <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> et sélectionnez le cloud dans lequel le cluster sera ajouté.</block>
   <block id="adaaed5dfdf88205bfc2a19f52977915" category="admonition">Le seul cloud que vous pouvez sélectionner est le *cloud privé*.</block>
-  <block id="0da20235e02091f71130fe02f554db86" category="section-title">4. Créez une information d'identification</block>
   <block id="9309ae9888680ed2a9bdac6c4088fda7" category="paragraph">Effectuez l'appel de l'API REST suivant pour créer des informations d'identification à l'aide du fichier kubeconfig.</block>
-  <block id="eeb0a36c0a2afb32d05402176c5257dc" category="section-title">5. Ajoutez le cluster</block>
   <block id="6cfceed1b9ea5b28883e844012ce6f31" category="paragraph">Effectuez l'appel d'API REST suivant pour ajouter le cluster au cloud. La valeur du<block ref="5f2852e58e87847c0c9324d5a8954ae2" prefix=" " category="inline-code"></block> Le champ de saisie est obtenu à partir de l'appel d'API REST à l'étape précédente.</block>
   <block id="dd8bce8e0fdc7bda8fad7990aa89d570" category="cell">/accounts/{account_id}/topologique/v1/nuages/{cloud_id}/clusters</block>
   <block id="96e8b262ac53bb3f01457c0c38ed44d1" category="summary">Vous pouvez gérer un cluster Kubernetes afin d'effectuer des opérations de protection des données.</block>
   <block id="b07c44c21401db918cbbe0f16f65f02d" category="doc">Gérer un cluster</block>
   <block id="46443fe8f8a5e981e03dc9c27f667bba" category="paragraph">Vous pouvez gérer un cluster Kubernetes afin d'assurer la protection des données.</block>
-  <block id="7f8edbfa07fdddc2b36b6ef33b38eb6d" category="section-title">1. Sélectionnez le cluster à gérer</block>
   <block id="c34eca2cd66003553184da76495d4c73" category="paragraph">Exécutez le flux de travail <block ref="43eeb3a6199b799839a97c97fac67885" category="inline-link-macro-rx"></block> et sélectionnez le cluster souhaité. La propriété<block ref="1454762565548055b90a7701d83300db" prefix=" " category="inline-code"></block> du cluster doit être<block ref="a4078d5d3c7b4099b0e6e6cc3ac7d2cd" prefix=" " category="inline-code"></block>.</block>
-  <block id="57c02db141949f6cd9bc959185c1549c" category="section-title">2. Sélectionnez éventuellement la classe de stockage</block>
   <block id="ce44453b1a2349be569ca70117dc0084" category="paragraph">Éventuellement, exécutez le flux de travail <block ref="884c867cca3f28784b93799b7c1af829" category="inline-link-macro-rx"></block> et sélectionnez la classe de stockage souhaitée.</block>
   <block id="4b5051ec9f46833b1124a6c78b91ce7c" category="admonition">Si vous ne fournissez pas de classe de stockage à l'appel pour gérer le cluster, votre classe de stockage par défaut sera utilisée.</block>
-  <block id="51c65ac5f91c0fe025d2538bb5501fea" category="section-title">3. Gérez le cluster</block>
   <block id="34d1129bcb3e6d80617b667f0ab676ac" category="paragraph">Effectuez l'appel d'API REST suivant pour gérer le cluster.</block>
   <block id="e58ad16d27f6c2bc0d209139b5397dce" category="cell">/Accounts/{account_ID}/topologique/v1/managedclusters</block>
   <block id="440c9ff0e7eba386ee5e844a6dc1d5c3" category="paragraph">La version actuelle d'Astra Control Center prend en charge la configuration de l'authentification LDAP à l'aide de l'API REST Astra Control et de l'interface utilisateur Web Astra.</block>
   <block id="1c66273c79676c96af07f60339276e5e" category="cell">/Accounts/{account_ID}/topologique/v1/storageBackends</block>
   <block id="10a1bf46a85da0a993b0bdc9671634b9" category="summary">Vous pouvez créer un utilisateur avec des informations d'identification spécifiques et un rôle prédéfini. Vous pouvez également restreindre l'accès de l'utilisateur à des espaces de noms spécifiques.</block>
   <block id="5fed933898706fd78ac043eef2dcc541" category="doc">Créer un utilisateur</block>
-  <block id="e4349772cddf8d27148f14bb1c090bc5" category="section-title">1. Sélectionnez un nom d'utilisateur</block>
   <block id="bf579e87389753dc6d0b880128602f3e" category="paragraph">Exécutez le flux de travail <block ref="803a43b46c084c148a870ad78dfe7497" category="inline-link-macro-rx"></block> et sélectionnez un nom disponible qui n'est pas actuellement utilisé.</block>
-  <block id="7656639cc81b8de453d75419028ba7bb" category="section-title">2. Créez l'utilisateur</block>
   <block id="35586540b5807703d873e9f863008b67" category="paragraph">Effectuez l'appel de l'API REST suivant pour créer un utilisateur. Une fois l'appel terminé, le nouvel utilisateur ne sera pas encore utilisable.</block>
-  <block id="f8bd80db3c02397ae8e40a4e6de0b758" category="section-title">3. Sélectionner éventuellement les espaces de noms autorisés</block>
   <block id="21e83956b83b77c2e3a07a7483b69661" category="paragraph">Exécutez le flux de travail <block ref="d14574597a65756c248d691b26627131" category="inline-link-macro-rx"></block> et sélectionnez les espaces de noms auxquels vous souhaitez limiter l'accès.</block>
-  <block id="cadba72d8e514fc5b8a0e60e624ac9a9" category="section-title">4. Lier l'utilisateur à un rôle</block>
   <block id="d792a9c3d9a5eeca78d6128f5cc15afd" category="paragraph">Exécutez l'appel d'API REST suivant pour lier l'utilisateur à un rôle. L'exemple ci-dessous n'impose aucune restriction sur l'accès à l'espace de noms. Voir <block ref="d5f96da881f3bbb1f2ce5df565a9eaea" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
-  <block id="abfd7bd655e908837e751c0d0f89aebf" category="section-title">5. Créez une information d'identification</block>
   <block id="b8f71e8040a8090368e4c50131b50bb5" category="paragraph">Effectuez l'appel de l'API REST suivant pour créer un identifiant et l'associer à l'utilisateur. Dans cet exemple, un mot de passe est fourni sous la forme d'une valeur base64. Le<block ref="b068931cc450442b63f5b3d276ea4297" prefix=" " category="inline-code"></block> La propriété doit contenir l'ID de l'utilisateur renvoyé à l'étape précédente. La propriété d'entrée<block ref="eb399bcaca686f8609137153307eecf1" prefix=" " category="inline-code"></block> doit également être encodé en base64 et déterminer si l'utilisateur doit modifier son mot de passe lors de la première connexion <block ref="b326b5062b2f0e69046810717534cb09" prefix="(" category="inline-code"></block> ou<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>).</block>
   <block id="b5c7506e2454fbc7d8931d71087f0f8c" category="admonition">Cette étape est uniquement requise avec les déploiements Astra Control Center utilisant l'authentification locale. Il n'est pas nécessaire de déployer Astra Control Center avec LDAP ou avec Astra Control Service.</block>
   <block id="88e25761f6eadcead9ced5f76a00e95c" category="doc">Votre premier appel API</block>
@@ -1025,9 +960,7 @@
   <block id="e13362bfbdde066993001bf62101c347" category="summary">Il se peut que vous ne puissiez pas supprimer une application gérée si elle a une sauvegarde ou un snapshot en état d'échec. Dans ce cas, vous pouvez supprimer manuellement l'application.</block>
   <block id="36698dfb0401a82ae4a38d7a89d2f6ac" category="summary">Vous pouvez créer une règle de protection des données basée sur une ou plusieurs planifications.</block>
   <block id="37a344179b5428c5bfd29a3e5ebc4386" category="doc">Création d'une règle de protection des données</block>
-  <block id="d60248c3a037c50b4fab1b40e42d382b" category="section-title">1. Sélectionnez l'application</block>
   <block id="3617b7e17906ff769522250249891768" category="paragraph">Exécutez le flux de travail <block ref="c7a76b5950dd1b7839ca89fdcde3242a" category="inline-link-macro-rx"></block> et sélectionnez l'application souhaitée.</block>
-  <block id="6e1fa1e618821080db74d32c83305ac0" category="section-title">2. Créer la protection</block>
   <block id="984ccae8e91a0f8522083819554ac899" category="paragraph">Effectuez l'appel d'API REST suivant pour créer une stratégie de protection pour une application spécifique.</block>
   <block id="84fe78ce214ed629070f9fc2c47da727" category="cell">/accounts/{account_id}/k8s/v1/apps/{app_id}/programmations</block>
   <block id="2d548fd4304c3df5c7e5211c43482750" category="cell">/accounts/{account_id}/core/v1/notifications</block>
@@ -1099,8 +1032,6 @@
   <block id="197a73ee4a006ef52c4fbd2b948357d6" category="paragraph-title">Synchronisation périodique du compte</block>
   <block id="70d08db9e31d103a9a98ae62d1f934cd" category="paragraph-title">Désactivation et réinitialisation de la configuration LDAP</block>
   <block id="19050c1d965285490381eed739648de9" category="paragraph-title">Paramètres de l'API REST</block>
-  <block id="0e20371f2b50c1982ba88634480d8036" category="paragraph-title">Convertir le fichier du format YAML au format JSON</block>
-  <block id="fb08278d28a518a351675c5e1706ae41" category="paragraph-title">Codage JSON en base64</block>
   <block id="305f82eee427805e1142e3f58b3e6aff" category="paragraph-title">Basée sur la technologie REST</block>
   <block id="9f58c2cc1c4a1a9d30320aec8702f1e5" category="paragraph-title">Prise en charge des deux modèles de déploiement Astra Control</block>
   <block id="308e494b1e26dffecccd3503e87801ab" category="paragraph-title">Effacez le mappage entre les ressources du terminal REST et le modèle d'objet</block>
@@ -1180,13 +1111,9 @@
   <block id="2d895ac3837ac459cbcdcd76339d84cd" category="doc">Activez des pools ANF dynamiques pour les clusters autogérés</block>
   <block id="5eb0c12811f3c807e7fa3fce6fb5b38d" category="inline-link">Sauvegardes d'applications Azure</block>
   <block id="d2f8ee1082b8b805ab4862d852412403" category="admonition">Les pools ANF dynamiques sont une fonctionnalité des applications gérées par Astra qui utilisent un système back-end de stockage Azure NetApp Files (ANF). Lors de la sauvegarde de ces applications, Astra multiplie et réduit automatiquement les pools de capacité auxquels les volumes persistants appartiennent par 1.5. Cela permet de s'assurer que l'espace disponible pour la sauvegarde est suffisant sans frais permanents supplémentaires. Voir<block ref="e77f243482d8cab01f119049bce61a15" category="inline-link-rx"></block> pour en savoir plus.</block>
-  <block id="7d1e075c0879d28eb6f2e0dc2ca0c95d" category="section-title">1. Ajoutez l'identifiant d'abonnement Azure</block>
   <block id="842df53ed4115db6639f801f88098d30" category="admonition">Vous devez mettre à jour l'exemple d'entrée JSON en fonction de votre environnement, y compris l'ID d'abonnement et la valeur base64 du principal de service.</block>
-  <block id="e740ac68beb1aec839dcd6ebdf75bf51" category="section-title">2. Ajouter un seau si nécessaire</block>
   <block id="efdbcac27db1bf42436b1e2e15d5d0e5" category="paragraph">Si nécessaire, vous devez ajouter un compartiment à l'application gérée.</block>
-  <block id="31858496f01db3c4c122cda1f4614893" category="section-title">3. Sauvegardez l'application gérée</block>
   <block id="25e18fd10fb78e25d46577d809123272" category="paragraph">Exécutez le flux de travail <block ref="531c5c815f0a3a3ceb921ff9baf4d1b9" category="inline-link-macro-rx"></block>. Le pool de capacité sur lequel se trouve le volume persistant d'origine se développe et diminue automatiquement.</block>
-  <block id="96422ff09af7e6fad796f820c7b0e17c" category="section-title">4. Consultez le journal des événements</block>
   <block id="5212b6690e36338eb93a0191226877d7" category="paragraph">Les événements d'activité sont consignés pendant la sauvegarde. Exécutez le flux de travail <block ref="0828f7558c056f6ee4409551e28d3465" category="inline-link-macro-rx"></block> pour afficher les messages.</block>
   <block id="162c594ec970f3cd4eb2f6d6d2311381" category="section-title">30 mai 2023 (23.05)</block>
   <block id="3ecf6cf3aaad58d22b055973cbbae0d4" category="paragraph">Vous pouvez sélectionner la classe de stockage de destination pendant les opérations de restauration ou de clonage.</block>
@@ -1272,4 +1199,83 @@
   <block id="9a5f09cf66e692efdae493ce4c9aa64f" category="sidebar">Préparation</block>
   <block id="a7f5f35426b927411fc9231b56382173" category="sidebar">Python</block>
   <block id="ea1c0b8e4018f75659e26eb720b206e5" category="sidebar">Utiliser Python en natif</block>
+  <block id="523a1cfb3b4256bbe5311726ee36f696" category="paragraph">L'utilitaire curl doit être disponible sur votre poste de travail local. Vous devez également disposer d'un jeton API et de l'identifiant de compte associé. Voir <block ref="67af9ad396391bc7ade4b472f0b4f030" category="inline-link-macro-rx"></block> pour plus d'informations.</block>
+  <block id="f299b0f6fdbc34ea3d794597ba73c9ec" category="paragraph">La commande curl suivante récupère une liste d'utilisateurs d'Astra. Fournissez les $ACCOUNT_ID et $API_TOKEN appropriés, comme indiqué.</block>
+  <block id="4a2dafab48196ce861e90a0907c73127" category="admonition">Un flux de travail ne peut contenir qu'une seule étape. Le format de ces flux de travail à une étape est légèrement différent de celui des flux de travail contenant plusieurs étapes. Par exemple, le nom explicite de l'étape est supprimé. L'action ou l'opération doit être claire en fonction du titre du flux de travail.</block>
+  <block id="5405c26aee0953a9b08923bc28b809f3" category="admonition">Les exemples de boucles dans les workflows utilisent l'URL d'Astra Control Service. Vous devez modifier l'URL lorsque vous utilisez le centre de contrôle Astra sur site en fonction de votre environnement.</block>
+  <block id="788d16c550305d5cdd6d901e38602c4f" category="paragraph">Vous pouvez utiliser ces flux de travail après avoir configuré un cluster géré. Les workflows de gestion sont axés sur la protection des applications et sur des opérations telles que la sauvegarde, la restauration et le clonage d'une application.</block>
+  <block id="8f22b98753b9a8d986074d99513ea82d" category="paragraph">Les variables sont formatées pour être utilisées dans un environnement shell Bash. Chaque variable commence par un signe dollar et est placée entre guillemets si nécessaire. Cela les rend reconnaissables à Bash. La casse supérieure est toujours utilisée pour les noms.</block>
+  <block id="970f0ff461f24a88893c95d057c3f91a" category="cell">$ACCOUNT_ID</block>
+  <block id="9b797bf1d19d4e2621c60a1a528793bd" category="cell">$API_TOKEN</block>
+  <block id="78f011d2c3c145e1d8df351c66fdcf84" category="cell">$APP_ID</block>
+  <block id="12c6401fb02cab85d072b4b981f50e87" category="section-title">En utilisant les exemples avec Bash</block>
+  <block id="4e663cee8de7cfcd12693277d7261dd0" category="paragraph">Si vous utilisez directement les exemples de boucles de flux de travail, vous devez mettre à jour les variables qu'ils contiennent avec les valeurs appropriées à votre environnement. Vous pouvez modifier manuellement les exemples ou vous appuyer sur le shell de hachage pour effectuer la substitution, comme décrit ci-dessous.</block>
+  <block id="f2e6cc557c48559ec2b9ae2a12ddd1c6" category="admonition">L'un des avantages de Bash est que vous pouvez définir les valeurs de variable une fois dans une session shell au lieu d'une fois par commande curl.</block>
+  <block id="1e5ad8f157b0c54185ce7c5af4fe8bbd" category="list-text">Ouvrez le shell Bash fourni avec Linux ou un système d'exploitation similaire.</block>
+  <block id="cb607a6c7e4c50ffa4ecc75254227d82" category="list-text">Définissez les valeurs variables incluses dans l'exemple de boucle que vous souhaitez exécuter. Par exemple :</block>
+  <block id="1bf91cbd146b9cbe376f76b20aa28a58" category="paragraph"><block ref="4b75e3bfad4e9874b694b1af5271a20e" prefix="" category="inline-code"></block></block>
+  <block id="a76ad0ce3b4ce85c64bbc3d3cd25bdd2" category="list-text">Copiez l'exemple de boucle depuis la page de flux de travail et collez-le dans le terminal shell.</block>
+  <block id="50f5e9afe70053510216546ebb7b3c89" category="list-text">Appuyez sur *ENTER* pour effectuer les tâches suivantes :</block>
+  <block id="d39d8df6cc6b6690437657a67b14b44c" category="list-text">Remplacez les valeurs de variable que vous avez définies.</block>
+  <block id="1b816384befdca88f399e4ba1d8d4510" category="list-text">Exécutez la commande curl.</block>
+  <block id="26d71a26023b960adecf980acb1b09a4" category="section-title">Étape 1 : sélectionnez l'application à cloner</block>
+  <block id="831c3d6874c26ae3b603eb386a68c7e7" category="section-title">Étape 2 : cloner l'application</block>
+  <block id="aeeec844965e3df4410c1eb088d94a03" category="paragraph-title">Méthode HTTP et noeud final</block>
+  <block id="0b0231c1815d06ad4701a091ce91a740" category="paragraph">Cet appel d'API REST utilise la méthode et le point de terminaison suivants.</block>
+  <block id="6a8d4bb4089035fd968556a67bb5d221" category="section-title">Étape 2 : sélectionnez la sauvegarde à utiliser</block>
+  <block id="adf0fd686c4102d59d11f2d0dcdf398a" category="section-title">Étape 3 : cloner l'application</block>
+  <block id="b32caa55ac8df979135c737a27fc2079" category="section-title">Étape 2 : sélectionnez l'instantané à utiliser</block>
+  <block id="f99b69945a176ffbedac86a22cf6c413" category="section-title">Créer une sauvegarde</block>
+  <block id="6aa9029b6977fa721b34d2406dfc4521" category="section-title">Étape 1 : sélectionnez l'application</block>
+  <block id="ef597d1d2964ff7f19397916ec8a7c5b" category="section-title">Étape 2 : création de la protection</block>
+  <block id="af9c364e0933200b7b8c1e7e13947ccf" category="section-title">Créer un snapshot</block>
+  <block id="0e33237b8aefb402a3309a57e55b946a" category="section-title">Supprimez la sauvegarde</block>
+  <block id="7e062944baeabb6f3489fafa43b50d34" category="section-title">Étape 1 : sélectionnez l'application à supprimer</block>
+  <block id="8bc874cef59e76875fb8d69d77f9ab06" category="section-title">Étape 2 : répertorier les sauvegardes existantes pour l'application</block>
+  <block id="a0658c0f3d22c9292ce6d9a8992b138b" category="section-title">Étape 3 : supprimez toutes les sauvegardes</block>
+  <block id="abd13ae640ca6baadd3662cf90572826" category="section-title">Étape 4 : répertoriez les instantanés existants de l'application</block>
+  <block id="771eb3fc4f75030247a65e1fc19823cb" category="section-title">Étape 5 : supprimez tous les snapshots</block>
+  <block id="2b441e5745e992dacb6396716af36085" category="section-title">Étape 6 : supprimez l'application</block>
+  <block id="fe660bb8d946c61245b96e164bac89dd" category="section-title">Supprimez le snapshot</block>
+  <block id="470606db3314867beffec97198174fab" category="section-title">Étape 1 : obtenir l'application</block>
+  <block id="83211b51a299c7e00941e0e68f5e1aa0" category="section-title">Étape 1 : sélectionnez l'espace de noms</block>
+  <block id="4f227403463a55591f80d6047724e30f" category="section-title">Étape 2 : sélectionnez le cluster</block>
+  <block id="0b741e00aac1537f8f2fb54fb86c353a" category="section-title">Étape 3 : gérer l'application</block>
+  <block id="81ebad3a1612a35641aba3076fab140a" category="section-title">Étape 1 : sélectionnez l'application à restaurer</block>
+  <block id="aadc9b3845dc364b58f5da855ae92141" category="section-title">Étape 3 : restaurez l'application</block>
+  <block id="661fe6993f73c7ce8d5ad4b777e91b12" category="section-title">Annulez la gestion de l'application</block>
+  <block id="3d8ffdc021ffd43ad74e3d6f519722a8" category="doc">Préparez-vous à utiliser les workflows de gestion</block>
+  <block id="3e23114f69d603af9b389f390d1d792c" category="section-title">Étape 1 : procurez-vous le fichier kubeconfig</block>
+  <block id="fb178ee98879cf10394c3fcc1e9cfe3b" category="section-title">Étape 2 : préparez le fichier kubeconfig</block>
+  <block id="49fcb7da740fd696b93ed531cf2522bf" category="list-text">Convertir le fichier du format YAML au format JSON :</block>
+  <block id="04915ca9374f9360174c5bb822d62952" category="list-text">Encoder JSON en base64 :</block>
+  <block id="94d01a1376d270947b45780d48f1adb0" category="section-title">Étape 3 : sélectionnez le nuage</block>
+  <block id="f77352c420ac351bac23422e82905baf" category="section-title">Étape 4 : création d'une information d'identification</block>
+  <block id="aa47cd065ccbbefd08a6328ed9e779c4" category="section-title">Étape 5 : ajoutez le cluster</block>
+  <block id="8b097b2280e9b5ac412b3c18f56ef5a9" category="section-title">Étape 1 : sélectionnez un nom d'utilisateur</block>
+  <block id="9a4401607f289467156272185387ce84" category="section-title">Étape 2 : créez l'utilisateur</block>
+  <block id="a55b6678b9bfa39f05fbb875b2e65cc8" category="section-title">Étape 3 : sélectionnez éventuellement les espaces de noms autorisés</block>
+  <block id="b0aa935b55f5415b326911a80ea6ec55" category="section-title">Étape 4 : associez l'utilisateur à un rôle</block>
+  <block id="da900c773a61192cea343bbe892a8ae8" category="section-title">Étape 5 : création d'une information d'identification</block>
+  <block id="51678b1087926261039ec3b5589aed07" category="section-title">Étape 1 : ajoutez l'identifiant de l'abonnement Azure</block>
+  <block id="3cbe83c82d94dc509761c4f24bfbdb8a" category="section-title">Étape 2 : ajoutez un seau si nécessaire</block>
+  <block id="9228519267884c86287fce3da18f54fa" category="section-title">Étape 3 : effectuez une sauvegarde de l'application gérée</block>
+  <block id="abfda017d96afa83e37da2abd6358a28" category="section-title">Étape 4 : consultez le journal des événements</block>
+  <block id="9c1df6d1e26209d3fa67de90d73265f3" category="section-title">Étape 1 : ajouter un utilisateur</block>
+  <block id="723721d98c017af00675af2fca6d4fa7" category="section-title">Étape 2 : ajoutez une liaison de rôle pour l'utilisateur</block>
+  <block id="b53c4a885c58765a35e13bfd940ab8a9" category="section-title">Étape 1 : ajouter un groupe</block>
+  <block id="8222df3702e992109ddcb77ba542cc90" category="section-title">Étape 2 : ajoutez une liaison de rôle pour le groupe</block>
+  <block id="f6c25fbe4a988311f3605f656a9a4af4" category="section-title">Étape 1 : ajout d'un certificat d'autorité de certification</block>
+  <block id="4a71332192146eda4a814b5aeeb3d11d" category="section-title">Étape 2 : ajoutez les informations d'identification de liaison</block>
+  <block id="401e75ec18c40153f3cc32c6fb14d303" category="section-title">Etape 3 : récupération de l'UUID du paramètre LDAP</block>
+  <block id="679e8523a1ac3ecf0472684a2cf25224" category="section-title">Étape 4 : mettez à jour le paramètre LDAP</block>
+  <block id="7cfd5cf5b29a4d7d255c81bac6fb1654" category="section-title">Étape 5 : récupération du paramètre LDAP</block>
+  <block id="3cf330d77199a0200d9c86e28e8b4133" category="section-title">Étape 1 : sélectionnez le nuage</block>
+  <block id="700310349d59d4d2d9201ecb37d5ad6f" category="section-title">Étape 2 : répertorier les clusters</block>
+  <block id="265d87ecadd8f805dbc0fb9fc9d0669a" category="section-title">Étape 3 : répertorier les classes de stockage d'un cluster spécifique</block>
+  <block id="faae4ffdb14c7efde6acb709e7e0a804" category="listing-title">Exemple curl : renvoie le prénom, le nom et l'ID de tous les utilisateurs</block>
+  <block id="c17e12b2f9bed3b70d0e8ed1fa90ff42" category="section-title">Étape 1 : sélectionnez le cluster à gérer</block>
+  <block id="f3ce982ad9387cf7c9ddd68f1e127726" category="section-title">Étape 2 : sélectionnez éventuellement la classe de stockage</block>
+  <block id="b50a5e66f115ae19653182ad262cdc3a" category="section-title">Étape 3 : gérer le cluster</block>
+  <block id="9eddc2012ee6ec370149202882b1432b" category="doc">Préparez-vous à utiliser les workflows d'infrastructure</block>
 </blocks>

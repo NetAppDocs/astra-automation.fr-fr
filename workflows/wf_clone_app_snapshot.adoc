@@ -18,7 +18,7 @@ Vous pouvez créer une nouvelle application en la clonant à partir d'un snapsho
 
 
 
-=== Avant de commencer
+== Avant de commencer
 
 Notez les éléments suivants concernant ce flux de travail :
 
@@ -31,21 +31,24 @@ NOTE: Pour cloner une application vers un autre cluster, vous devez mettre à jo
 
 
 
-=== 1. Sélectionnez l'application à cloner
+== Étape 1 : sélectionnez l'application à cloner
 
 Exécutez le flux de travail link:wf_list_man_apps.html["Répertorier les applications"] et sélectionnez l'application à cloner. Plusieurs des valeurs de ressource sont nécessaires pour l'appel REST utilisé pour cloner l'application.
 
 
 
-=== 2. Sélectionnez le snapshot à utiliser
+== Étape 2 : sélectionnez l'instantané à utiliser
 
 Exécutez le flux de travail link:wf_list_snapshots.html["Répertorier les snapshots"] et sélectionnez le snapshot que vous souhaitez utiliser.
 
 
 
-=== 3. Clonez l'application
+== Étape 3 : cloner l'application
 
 Effectuez l'appel de l'API REST suivant.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -54,10 +57,7 @@ Effectuez l'appel de l'API REST suivant.
 
 | POST | /accounts/{account_id}/k8s/v2/apps 
 |===
-
-
-===== Paramètres d'entrée supplémentaires
-
+.Paramètres d'entrée supplémentaires
 Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
 
 [cols="25,10,10,55"]
@@ -67,10 +67,18 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
 
 | JSON | Corps | Oui. | Fournit les paramètres de l'application clonée. Voir l'exemple ci-dessous. 
 |===
-
-
-===== Exemple d'entrée JSON
-
+.Exemple de curl : cloner une application à partir d'un snapshot
+[source, curl]
+----
+curl --request POST \
+--location "'https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps" \
+--include \
+--header "Content-Type: application/astra-app+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Exemple d'entrée JSON
 [source, json]
 ----
 {
@@ -82,12 +90,4 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
   "namespace": "mysql",
   "snapshotID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
 }
-----
-
-
-===== Exemple de curl : cloner une application à partir d'un snapshot
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

@@ -18,15 +18,18 @@ Vous pouvez créer une règle de protection des données basée sur une ou plusi
 
 
 
-=== 1. Sélectionnez l'application
+== Étape 1 : sélectionnez l'application
 
 Exécutez le flux de travail link:../workflows/wf_list_man_apps.html["Répertorier les applications"] et sélectionnez l'application souhaitée.
 
 
 
-=== 2. Créer la protection
+== Étape 2 : création de la protection
 
 Effectuez l'appel d'API REST suivant pour créer une stratégie de protection pour une application spécifique.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="1,6"]
 |===
@@ -35,10 +38,17 @@ Effectuez l'appel d'API REST suivant pour créer une stratégie de protection po
 
 | POST | /accounts/{account_id}/k8s/v1/apps/{app_id}/programmations 
 |===
-
-
-===== Exemple d'entrée JSON
-
+.Exemple de boucle
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/schedules" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Exemple d'entrée JSON
 [source, json]
 ----
 {
@@ -53,12 +63,4 @@ Effectuez l'appel d'API REST suivant pour créer une stratégie de protection po
   "snapshotRetention": "12",
   "backupRetention": "12"
 }
-----
-
-
-===== Exemple de boucle
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/schedules' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

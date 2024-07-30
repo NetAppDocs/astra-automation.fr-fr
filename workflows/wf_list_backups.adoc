@@ -18,15 +18,18 @@ Vous pouvez afficher la liste des sauvegardes créées pour une application spé
 
 
 
-=== Avant de commencer
+== Avant de commencer
 
 Vous devez disposer de l'ID de l'application pour laquelle vous souhaitez répertorier les sauvegardes. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_man_apps.html["Répertorier les applications"] pour localiser l'application.
 
 
 
-=== 1. Dressez la liste des sauvegardes
+== Répertoriez les sauvegardes
 
 Effectuez l'appel de l'API REST suivant.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ Effectuez l'appel de l'API REST suivant.
 
 | OBTENEZ | /Accounts/{account_ID}/k8s/v1/apps/{app_ID}/appBackups 
 |===
-
-
-===== Paramètres d'entrée supplémentaires
-
+.Paramètres d'entrée supplémentaires
 Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
 
 [cols="25,10,10,55"]
@@ -48,19 +48,17 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
 
 | id de l'application | Chemin | Oui. | Identifie l'application gérée propriétaire des sauvegardes répertoriées. 
 |===
-
-
-===== Exemple Curl : renvoie toutes les sauvegardes de l'application
-
+.Exemple Curl : renvoie toutes les sauvegardes de l'application
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups" \
+--include  \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Exemple de sortie JSON
-
-[source, json]
+.Exemple de sortie JSON
+[listing]
 ----
 {
     "items": [

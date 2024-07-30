@@ -16,11 +16,10 @@ summary: 'Vous pouvez lister les notifications d"un compte Astra spécifique. Vo
 [role="lead"]
 Vous pouvez lister les notifications d'un compte Astra spécifique. Vous pouvez le faire dans le cadre de la surveillance de l'activité du système ou du débogage d'un problème.
 
-
-
-=== 1. Dressez la liste des notifications
-
 Effectuez l'appel de l'API REST suivant.
+
+.Méthode HTTP et noeud final
+Cet appel d'API REST utilise la méthode et le point de terminaison suivants.
 
 [cols="25,75"]
 |===
@@ -29,10 +28,7 @@ Effectuez l'appel de l'API REST suivant.
 
 | OBTENEZ | /accounts/{account_id}/core/v1/notifications 
 |===
-
-
-===== Paramètres d'entrée supplémentaires
-
+.Paramètres d'entrée supplémentaires
 Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
 
 [cols="25,10,10,55"]
@@ -45,27 +41,26 @@ Outre les paramètres communs à tous les appels API REST, les paramètres suiva
 
 | inclure | Requête | Non | Sélectionner éventuellement les valeurs que vous souhaitez renvoyer dans la réponse. 
 |===
-
-
-===== Exemple de boucle : renvoie toutes les notifications
-
+.Exemple de boucle : renvoie toutes les notifications
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/notifications' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/notifications" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Exemple Curl : renvoie la description des notifications avec gravité d'avertissement
-
+.Exemple Curl : renvoie la description des notifications avec gravité d'avertissement
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/notifications?filter=severity%20eq%20'warning'&include=description' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/notifications?filter=severity%20eq%20'warning'&include=description" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Exemple de sortie JSON
-
-[source, json]
+.Exemple de sortie JSON
+[listing]
 ----
 {
   "items": [

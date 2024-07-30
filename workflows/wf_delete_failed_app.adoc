@@ -18,36 +18,36 @@ Il se peut que vous ne puissiez pas supprimer une application gérée si elle a 
 
 
 
-=== 1. Sélectionnez l'application à supprimer
+== Étape 1 : sélectionnez l'application à supprimer
 
 Exécutez le flux de travail link:wf_list_man_apps.html["Répertorier les applications"] et sélectionnez l'application à supprimer.
 
 
 
-=== 2. Dressez la liste des sauvegardes existantes de l'application
+== Étape 2 : répertorier les sauvegardes existantes pour l'application
 
 Exécutez le flux de travail link:wf_list_backups.html["Répertoriez les sauvegardes"].
 
 
 
-=== 3. Supprimez toutes les sauvegardes
+== Étape 3 : supprimez toutes les sauvegardes
 
 Supprimez toutes les sauvegardes de l'application en exécutant le flux de travail link:wf_delete_backup.html["Supprimer une sauvegarde"] pour chaque sauvegarde de la liste.
 
 
 
-=== 4. Dressez la liste des instantanés existants de l'application
+== Étape 4 : répertoriez les instantanés existants de l'application
 
 Exécutez le flux de travail link:wf_list_snapshots.html["Répertorier les snapshots"].
 
 
 
-=== 5. Supprimez tous les instantanés
+== Étape 5 : supprimez tous les snapshots
 
 Exécutez le flux de travail link:wf_delete_snapshot.html["Supprime un snapshot"] à partir de chaque instantané de la liste.
 
 
 
-=== 6. Retirez l'application
+== Étape 6 : supprimez l'application
 
 Exécutez le flux de travail link:wf_unmanage_app.html["Annuler la gestion d'une application"] pour supprimer l'application.
