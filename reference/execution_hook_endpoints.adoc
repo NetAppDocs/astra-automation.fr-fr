@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/execution_hook_endpoints.html 
+summary: 'Points de terminaison d"exécution de l"API Astra (ACC)' 
+---
+= Points de terminaison d'exécution de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Execution Hook permet une gestion simplifiée des hooks d'exécution. Les hooks d'exécution contiennent une configuration supplémentaire et des références à une ressource source de hook.

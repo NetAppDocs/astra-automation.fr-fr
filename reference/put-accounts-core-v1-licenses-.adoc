@@ -1,0 +1,588 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-licenses-.html 
+summary: Modifier une licence 
+---
+= Modifier une licence
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses/{license_id}`#
+
+Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
+
+*Effets secondaires*
+
+* Les droits d'accès sont recalculés pour ajouter ou fusionner les droits de licence visibles via l'API d'entitlement.
+
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| identifiant_de_licence | chaîne | chemin | Vrai  a| 
+ID de la collection de licences à lister
+
+|===
+
+
+== Corps de la requête
+
+Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
+
+*Effets secondaires*
+
+* Les droits d'accès sont recalculés pour ajouter ou fusionner les droits de licence visibles via l'API d'entitlement.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-license"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+
+
+
+
+| id | chaîne | Faux  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| allocation | chaîne | Faux  a| 
+Chaîne JSON contenant un identifiant indiquant à quoi la licence est attribuée. Présent uniquement lorsque la licence est attribuée. Pour les licences Astra Control Center, ce champ doit être renseigné avec l'identifiant du compte et doit correspondre à l'identifiant du compte spécifié dans l'URI POST. Valeurs définies :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| ID hôte | chaîne | Faux  a| 
+Chaîne JSON contenant un identifiant d'hôte auquel une licence est associée. Présente uniquement si la licence est liée à un hôte. Valeurs définies :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| identifiant d’identification de l’appareil | chaîne | Faux  a| 
+Chaîne JSON contenant l'identifiant du deviceCredential associé à l'API Credential. Présente uniquement pour les licences Astra Data Store. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| isEvaluation | chaîne | Faux  a| 
+Chaîne JSON indiquant si la licence est une licence d'évaluation. Les valeurs définies sont :
+
+* "true"
+* "false"
+
+
+
+
+| licenseProtocol | chaîne | Faux  a| 
+Chaîne JSON contenant le protocole de licence extrait de la licence. Les valeurs définies sont :
+
+* Contenu de chaîne non validé par le schéma
+
+
+
+
+| licenseText | chaîne | Faux  a| 
+Chaîne JSON contenant une représentation encodée en base64 du JSON de la licence, telle qu'obtenue auprès du système de licences NetApp. Cette chaîne doit être fournie dans l'ordre d'octets d'origine pour permettre la vérification de la signature. Les valeurs définies sont :
+
+* Conforme au schéma de données encodées en base64
+
+
+
+
+| validFromTimestamp | chaîne | Faux  a| 
+Chaîne JSON contenant un horodatage indiquant quand la licence devient valide. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| validUntilTimestamp | chaîne | Faux  a| 
+Chaîne JSON contenant un horodatage indiquant quand la licence n'est plus valide. Valeurs définies :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| produit | chaîne | Faux  a| 
+Chaîne JSON contenant la chaîne de produit extraite de la licence. Les valeurs définies sont :
+
+* Contenu de chaîne non validé par le schéma
+
+
+
+
+| productVersion | chaîne | Faux  a| 
+Chaîne JSON contenant la chaîne de version extraite de la licence. Les valeurs définies sont :
+
+* Contenu de chaîne non validé par le schéma
+
+
+
+
+| productSN | chaîne | Faux  a| 
+Chaîne JSON contenant le numéro de série extrait de la licence. Les valeurs définies sont :
+
+* Contenu de chaîne non validé par le schéma
+
+
+
+
+| caractéristiques | chaîne | Faux  a| 
+Chaîne JSON contenant la valeur du package extraite de la licence. Les valeurs définies sont :
+
+* Contenu de chaîne non validé par le schéma
+
+
+
+
+| capacité | chaîne | Faux  a| 
+Chaîne JSON contenant la capacité extraite de la licence.
+
+
+
+| capacity2 | chaîne | Faux  a| 
+Chaîne JSON contenant la capacité secondaire extraite de la licence.
+
+
+
+| modules complémentaires | tableau[link:#addons["modules complémentaires"]] | Faux  a| 
+Tableau JSON d'objets JSON contenant la liste des add-ons de la licence. Un add-on correspond à une modification de la licence pouvant intervenir à une date ultérieure.
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Faux  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de requête
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-license",
+  "version": "1.0",
+  "allocation": "4185d09b-6687-4801-a832-c005a9d94f41",
+  "licenseText": "ewogICAic3RhdHVzUmVzcCI6ewogMTYwNzAwIgp9"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 204, Indicates if the license resource was updated.
+----
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+modules complémentaires
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| startDate | chaîne | Faux  a| 
+Chaîne JSON contenant un horodatage indiquant quand cette extension devient valide. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| endDate | chaîne | Faux  a| 
+Chaîne JSON contenant un horodatage indiquant la date à laquelle ce module complémentaire n'est plus valide. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| caractéristiques | chaîne | Faux  a| 
+Chaîne JSON contenant la liste des fonctionnalités associées à ce module complémentaire. Les valeurs définies sont :
+
+* Contenu de la chaîne non validé par le schéma.
+
+
+
+
+| capacité | chaîne | Faux  a| 
+Chaîne JSON contenant la capacité extraite du module complémentaire. Les valeurs définies sont :
+
+* Contenu de chaîne non validé par le schéma
+
+
+
+
+| licenseProtocol | chaîne | Faux  a| 
+Chaîne JSON contenant le protocole de licence associé à ce module complémentaire. Les valeurs définies sont :
+
+* Contenu de chaîne non validé par le schéma
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du champ invalide du corps de la requête
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le champ du corps de la requête est invalide
+
+|===
+====

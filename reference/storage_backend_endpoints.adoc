@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/storage_backend_endpoints.html 
+summary: 'Points de terminaison du backend de stockage de l"API Astra (ACC)' 
+---
+= Points de terminaison du backend de stockage de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Storage Backend permet d'accéder aux représentations des fournisseurs de services de stockage (storage backends) qui peuvent être utilisées par les clusters et applications gérés.

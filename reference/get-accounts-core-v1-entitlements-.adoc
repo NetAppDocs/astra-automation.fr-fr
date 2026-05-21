@@ -1,0 +1,425 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-entitlements-.html 
+summary: Récupérer un droit 
+---
+= Récupérer un droit
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/entitlements/{entitlement_id}`#
+
+Renvoie la ressource d'API Entitlement stockée dans le corps de la réponse JSON.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| identifiant_droit | chaîne | chemin | Vrai  a| 
+Identifiant de la collection de droits à lister
+
+|===
+
+
+== Réponse
+
+[source]
+----
+Status: 200, Returns the stored Entitlement API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-entitlement"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| allocation | chaîne | Faux  a| 
+Chaîne JSON contenant l'identifiant de l'objet auquel le droit est attribué. Présente uniquement lorsque le droit est attribué. Le contenu de la chaîne n'est pas validé par le schéma.
+
+
+
+| produit | chaîne | Faux  a| 
+Chaîne JSON contenant la chaîne de produit extraite de la licence ou de l'abonnement. Contenu de la chaîne non validé par le schéma.
+
+
+
+| productVersion | chaîne | Faux  a| 
+Chaîne JSON contenant la chaîne de version extraite de la licence ou de l'abonnement. Contenu de la chaîne non validé par le schéma.
+
+
+
+| entitlementType | chaîne | Vrai  a| 
+Chaîne JSON contenant le type de droit. Cette information est extraite de la licence ou de l'abonnement. Le contenu de la chaîne n'est pas validé par le schéma.
+
+
+
+| entitlementValue | chaîne | Vrai  a| 
+Chaîne JSON contenant la capacité associée au droit. Contenu de la chaîne non validé par le schéma.
+
+
+
+| entitlementConsumption | chaîne | Faux  a| 
+Chaîne JSON contenant la quantité de capacité associée au droit actuellement utilisée. Le contenu de cette chaîne n'est pas validé par le schéma.
+
+
+
+| sourceLicense | chaîne | Faux  a| 
+Chaîne JSON contenant l'identifiant de l'objet de licence dont provient le droit d'utilisation. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| sourceSubscription | chaîne | Faux  a| 
+Chaîne JSON contenant l'ID de l'objet d'abonnement dont provient le droit. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| validFromTimestamp | chaîne | Faux  a| 
+Chaîne JSON contenant un horodatage indiquant quand le droit devient valide. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| validUntilTimestamp | chaîne | Faux  a| 
+Chaîne JSON contenant un horodatage indiquant la date à laquelle le droit n'est plus valide. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| les métadonnées | link:#type_astra_metadata["type_astra_metadata"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-entitlement",
+  "version": "1.0",
+  "id": "8bdafc19-bde6-5f45-9808-4893c845c9f5",
+  "product": "Astra SDS",
+  "productVersion": "1.0",
+  "entitlementType": "capacity",
+  "entitlementValue": "2",
+  "entitlementConsumption": "1",
+  "sourceLicense": "c8aa757a-5318-489f-8134-a2a1a6956a3e",
+  "validFromTimestamp": "2020-08-06T00:00:00.000000Z",
+  "validUntilTimestamp": "2021-08-06T00:00:00.000000Z",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidParams | tableau[link:#invalidParams["invalidParams"]] | Faux  a| 
+Liste des paramètres de requête invalides
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Vrai  a| 
+
+
+
+| CréationTimestamp | chaîne | Vrai  a| 
+
+
+
+| ModificationTimestamp | chaîne | Vrai  a| 
+
+
+
+| CreatedBy | chaîne | Vrai  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+====

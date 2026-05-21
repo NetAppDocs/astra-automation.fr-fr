@@ -1,0 +1,316 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/delete-accounts-topology-v1-clouds-.html 
+summary: Supprimer un cloud 
+---
+= Supprimer un cloud
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
+
+Supprime l'instance cloud demandée ainsi que tous les clusters et volumes non gérés associés à ce cloud spécifique.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| cloud_id | chaîne | chemin | Vrai  a| 
+ID de la collection cloud à lister
+
+|===
+
+
+== Réponse
+
+[source]
+----
+Status: 204, Indicates if the cloud resource was deleted.
+----
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/141",
+  "title": "Action blocked: Delete cloud instance",
+  "detail": "The cloud instance wasn't deleted because there are managed clusters associated with this cloud instance.",
+  "status": "409"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du champ invalide du corps de la requête
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le champ du corps de la requête est invalide
+
+|===
+====

@@ -1,0 +1,512 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: true 
+permalink: reference/post-accounts-core-v1-groups-users-tokens.html 
+summary: Créer un nouveau jeton pour un utilisateur dans un groupe 
+---
+= Créer un nouveau jeton pour un utilisateur dans un groupe
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens`#
+
+Indique les valeurs souhaitées pour la ressource Token API à créer.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| group_id | chaîne | chemin | Vrai  a| 
+ID de la ressource de groupe conteneur
+
+
+
+| ID de l'utilisateur | chaîne | chemin | Vrai  a| 
+ID de la ressource utilisateur contenant
+
+|===
+
+
+== Corps de la requête
+
+Indique les valeurs souhaitées pour la ressource Token API à créer.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-token"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant le nom d'un jeton. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL.
+
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Faux  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de requête
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-token",
+  "version": "1.0",
+  "name": "Snapshot Script"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 201, Returns the newly created token resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-token"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant le nom d'un jeton. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL.
+
+
+
+
+| ID de l'utilisateur | chaîne | Vrai  a| 
+Chaîne JSON contenant l'UUID de l'utilisateur auquel le jeton est associé. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| jeton | chaîne | Vrai  a| 
+Chaîne JSON contenant un jeton d'API généré par le système et encodé en base64. Les valeurs définies sont :
+
+* Conforme au schéma de données encodées en base64
+
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-token",
+  "version": "1.0",
+  "id": "822fab12-c224-5d1f-8118-5fb5d2def8b9",
+  "name": "Snapshot Script",
+  "userID": "09f8933c-ad74-4f4e-8ef5-1ffaa0fb8e9b",
+  "token": "QSBKV1QgVG9rZW4gd291bGQgZ28gaGVyZS4=",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du champ invalide du corps de la requête
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le champ du corps de la requête est invalide
+
+|===
+====

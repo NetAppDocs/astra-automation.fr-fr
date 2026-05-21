@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/notification_endpoints.html 
+summary: 'Points de terminaison de notification de l"API Astra (ACC)' 
+---
+= Points de terminaison de notification de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API de notification fournit un accès par utilisateur aux événements avec une destination de notification.

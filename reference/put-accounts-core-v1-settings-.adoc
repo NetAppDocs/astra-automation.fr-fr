@@ -1,0 +1,559 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-settings-.html 
+summary: Modifier un paramètre 
+---
+= Modifier un paramètre
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| id_paramètre | chaîne | chemin | Vrai  a| 
+ID de la collection de paramètres à lister
+
+|===
+
+
+== Corps de la requête
+
+Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-setting"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | chaîne | Faux  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| nom | chaîne | Faux  a| 
+Chaîne JSON contenant le nom du paramètre, au format hiérarchique pointé (.). Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoires et d'injection SQL. Cette valeur est définie par la configmap chargée à l'exécution et ne peut pas être modifiée par l'utilisateur.
+
+
+
+
+| currentConfig | link:#type_json["type_json"] | Faux  a| 
+Objet JSON contenant les clés et les valeurs qui constituent la configuration actuelle de ce paramètre. Le contenu de cet objet doit être conforme au schéma JSON contenu dans le champ configSchema. Les valeurs par défaut sont fournies par le configmap. Après modification des valeurs par défaut par l'utilisateur, elles ne seront pas écrasées.
+
+
+
+| desiredConfig | link:#type_json["type_json"] | Faux  a| 
+Objet JSON contenant les clés et les valeurs qui composent la configuration demandée pour ce paramètre. Le contenu de cet objet doit être conforme au schéma JSON contenu dans le champ configSchema. L'objet n'existe pas tant qu'il n'est pas spécifié. Lorsqu'il est spécifié, cela déclenche le service de fonctionnalités pour notifier le service correspondant afin de demander que la configuration souhaitée puisse être appliquée. Le service correspondant peut alors effectuer la validation et appliquer la configuration souhaitée à la configuration actuelle.
+
+
+
+| configSchema | link:#type_json_schema["type_json_schema"] | Faux  a| 
+Objet JSON contenant le schéma JSON de la propriété config dans cette ressource. Doit être conforme au brouillon 7 du schéma JSON. Si des valeurs de config sont présentes dans la ressource, la validation par rapport au configSchema indiqué est obligatoire. Par convention courante, il est recommandé que les configurations comportent un champ « isEnabled », lorsque cela est approprié. Le champ « isEnabled » contient une valeur indiquant si le paramètre est activé (« true ») ou désactivé (« false »).
+
+
+
+| État | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état opérationnel de l'application. Les valeurs définies sont :
+
+* « valide » - La configuration actuelle correspond à la configuration souhaitée.
+* « En attente » - La configuration souhaitée est en cours d'application.
+* "erreur" - La configuration souhaitée ne peut pas être appliquée.
+
+
+
+
+| stateUnready | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes JSON, chacune indiquant une raison pour laquelle le paramètre n'a pas pu être appliqué. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 127
+
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Faux  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si non spécifié lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de requête
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.1",
+  "desiredConfig": {
+    "credential": "e3d2ea77-398e-49be-85fd-ec66d9426a06",
+    "port": 587,
+    "relayServer": "link:http://smtp.sendgrid.net[smtp.sendgrid.net]",
+    "isEnabled": "true"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 204, Indicates if the setting resource was updated.
+----
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_json
+
+Objet JSON contenant les clés et les valeurs qui constituent la configuration actuelle de ce paramètre. Le contenu de cet objet doit être conforme au schéma JSON contenu dans le champ configSchema. Les valeurs par défaut sont fournies par le configmap. Après modification des valeurs par défaut par l'utilisateur, elles ne seront pas écrasées.
+
+[role="api-collapsible-fifth-title"]
+type_json
+
+Objet JSON contenant les clés et les valeurs qui composent la configuration demandée pour ce paramètre. Le contenu de cet objet doit être conforme au schéma JSON contenu dans le champ configSchema. L'objet n'existe pas tant qu'il n'est pas spécifié. Lorsqu'il est spécifié, cela déclenche le service de fonctionnalités pour notifier le service correspondant afin de demander que la configuration souhaitée puisse être appliquée. Le service correspondant peut alors effectuer la validation et appliquer la configuration souhaitée à la configuration actuelle.
+
+[role="api-collapsible-fifth-title"]
+propriétés
+
+[role="api-collapsible-fifth-title"]
+type_json_schema
+
+Objet JSON contenant le schéma JSON de la propriété config dans cette ressource. Doit être conforme au brouillon 7 du schéma JSON. Si des valeurs de config sont présentes dans la ressource, la validation par rapport au configSchema indiqué est obligatoire. Par convention courante, il est recommandé que les configurations comportent un champ « isEnabled », lorsque cela est approprié. Le champ « isEnabled » contient une valeur indiquant si le paramètre est activé (« true ») ou désactivé (« false »).
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| $schema | chaîne | Vrai  a| 
+
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| propriétés | link:#properties["propriétés"] | Vrai  a| 
+
+
+
+| additionalProperties | booléen | Vrai  a| 
+
+
+
+| requis | tableau[chaîne] | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si non spécifié lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du champ invalide du corps de la requête
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le champ du corps de la requête est invalide
+
+|===
+====

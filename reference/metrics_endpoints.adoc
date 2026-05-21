@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/metrics_endpoints.html 
+summary: 'Points de terminaison des métriques de l"API Astra (ACC)' 
+---
+= Points de terminaison des métriques de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Metrics représente les indicateurs associés à un compte donné.

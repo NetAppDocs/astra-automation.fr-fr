@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cluster_endpoints.html 
+summary: 'Points de terminaison du cluster de l"API Astra (ACC)' 
+---
+= Points de terminaison du cluster de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Cluster représente les clusters Kubernetes non gérés.

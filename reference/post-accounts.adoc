@@ -1,0 +1,628 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts.html 
+summary: Créer un nouveau compte 
+---
+= Créer un nouveau compte
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts`#
+
+Indique les valeurs souhaitées pour la ressource API Account à créer.
+
+
+
+== Corps de la requête
+
+Indique les valeurs souhaitées pour la ressource API Account à créer.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-account"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant un nom pour le compte. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL.
+
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Faux  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de requête
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-account",
+  "version": "1.0",
+  "name": "Testing 123"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 201, Returns the newly created account resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-account"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant un nom pour le compte. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL.
+
+
+
+
+| État | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant l'état opérationnel du compte. Les valeurs définies sont :
+
+* « pending » - Les modifications ne peuvent être apportées qu'aux ressources utilisateur et de rôle du compte (valeur par défaut)
+* « actif » : des modifications peuvent être apportées à n’importe quelle ressource du compte
+* "deletePending" - Les utilisateurs ne peuvent pas se connecter, les opérations de protection des données sont suspendues, les frais ne sont plus facturés
+
+
+
+
+| isEnabled | chaîne | Vrai  a| 
+Chaîne JSON indiquant que le compte est activé. Les valeurs définies sont :
+
+* "false" - Les utilisateurs ne sont pas autorisés à utiliser ce compte
+* « true » - Les utilisateurs sont autorisés à utiliser ce compte
+
+
+
+
+| enabledTimestamp | chaîne | Faux  a| 
+Chaîne JSON contenant l'horodatage indiquant quand le compte a été activé pour la dernière fois. Si le compte n'a jamais été activé, ce champ est absent. Valeurs définies :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| accountContact | link:#accountContact["accountContact"] | Faux  a| 
+Objet JSON contenant les informations de contact de l'utilisateur permettant de créer un utilisateur propriétaire lors de l'activation du compte.
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-account",
+  "version": "1.0",
+  "id": "666a3f38-d4fa-5b62-a391-a69029758d32",
+  "name": "fraught-pines",
+  "state": "pending",
+  "isEnabled": "false",
+  "enabledTimestamp": "2020-08-06T12:24:52.256624Z",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+postalAddress
+
+Objet JSON contenant une collection de chaînes JSON spécifiant une adresse. Si cette clé est absente, cela indique qu'une adresse n'a pas été fournie. Si cette clé existe, les six chaînes JSON incluses seront toutes présentes. Si vous ne fournissez rien, la chaîne sera vide.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| addressCountry | chaîne | Vrai  a| 
+Chaîne JSON contenant le nom ou le code pays associé à l'adresse postale, conformément à la norme ISO 3166 Alpha-2. Les valeurs définies sont :
+
+* Longueur minimale : 2
+* Longueur maximale : 2
+
+
+
+
+| addressLocality | chaîne | Vrai  a| 
+Chaîne JSON contenant la localité (par exemple, la ville) associée à l'adresse postale. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| addressRegion | chaîne | Vrai  a| 
+Chaîne JSON contenant la région (par exemple, l'État) associée à l'adresse postale. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| postalCode | chaîne | Vrai  a| 
+Chaîne JSON contenant le code postal associé à l'adresse postale. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 31
+
+
+
+
+| streetAddress1 | chaîne | Vrai  a| 
+Chaîne JSON contenant l'adresse de rue associée à l'adresse postale. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| streetAddress2 | chaîne | Faux  a| 
+Chaîne JSON contenant des informations complémentaires facultatives telles que l'adresse de rue, la boîte postale, et plus encore. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+accountContact
+
+Objet JSON contenant les informations de contact de l'utilisateur permettant de créer un utilisateur propriétaire lors de l'activation du compte.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| firstName | chaîne | Vrai  a| 
+Chaîne JSON contenant le prénom long spécifié par l'utilisateur. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL.
+
+
+
+
+| lastName | chaîne | Vrai  a| 
+Chaîne JSON contenant un nom de famille long spécifié par l'utilisateur. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL.
+
+
+
+
+| companyName | chaîne | Faux  a| 
+Chaîne JSON contenant le nom de l'entreprise associée à l'utilisateur. Si cette clé n'existe pas, cela indique qu'un nom d'entreprise n'a pas été fourni. Valeurs définies :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL.
+
+
+
+
+| e-mail | chaîne | Vrai  a| 
+Chaînes JSON contenant une adresse e-mail spécifiée par l'utilisateur. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| téléphone | chaîne | Faux  a| 
+Chaîne JSON contenant le numéro de téléphone de l'utilisateur. Si cette clé n'existe pas, cela indique qu'un numéro de téléphone n'a pas été fourni. Valeurs définies :
+
+* Longueur minimale : 1
+* Longueur maximale : 31
+
+
+
+
+| postalAddress | link:#postalAddress["postalAddress"] | Vrai  a| 
+Objet JSON contenant une collection de chaînes JSON spécifiant une adresse. Si cette clé est absente, cela indique qu'une adresse n'a pas été fournie. Si cette clé existe, les six chaînes JSON incluses seront toutes présentes. Si vous ne fournissez rien, la chaîne sera vide.
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du champ invalide du corps de la requête
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le champ du corps de la requête est invalide
+
+|===
+====

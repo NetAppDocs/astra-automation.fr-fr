@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/ldap_user_endpoints.html 
+summary: 'Points de terminaison utilisateur LDAP de l"API Astra (ACC)' 
+---
+= Points de terminaison utilisateur LDAP de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API utilisateur LDAP offre un accès en lecture seule aux utilisateurs LDAP au sein du serveur LDAP configuré.

@@ -1,0 +1,729 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-events.html 
+summary: Lister tous les événements 
+---
+= Lister tous les événements
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/events`#
+
+Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| inclure | chaîne | requête | Faux  a| 
+Indique les champs qui doivent être renvoyés lors de l’énumération d’une collection.
+
+Exemples d'URL : « include=id », « include=id,name »
+
+Exemples OpenAPI : « id »
+
+* Exemple : id, summary
+
+
+
+
+| limite | chaîne | requête | Faux  a| 
+Indique le nombre maximal de ressources à renvoyer lors de l’énumération d’une collection.
+
+Exemples d'URL : « limit=2 »
+
+Exemples OpenAPI : « 2 »
+
+
+
+| filtre | chaîne | requête | Faux  a| 
+Indique les champs qui doivent être mis en correspondance pour renvoyer une ressource lors du listage d'une collection.
+
+Les opérateurs pris en charge sont :
+
+* eq - Égalité
+* lt/gt - Inférieur à/Supérieur à
+* LTE/GTE - Inférieur ou égal à/Supérieur ou égal à
+
+
+Exemple d'URL : « filter=field%20eq%20%27value%27 »
+
+Exemples OpenAPI : « field eq 'value' »
+
+
+
+| Orderby | chaîne | requête | Faux  a| 
+Indique l'ordre de tri des ressources lors de l'affichage d'une collection.
+
+Exemples d'URL : « orderBy=name », « orderBy=name%20desc »
+
+Exemples OpenAPI : « name desc »
+
+
+
+| ignorer | chaîne | requête | Faux  a| 
+Indique le nombre de ressources à ignorer lors de l'énumération d'une collection.
+
+Exemples d'URL : « skip=1 »
+
+Exemples OpenAPI : « 1 »
+
+
+
+| nombre | chaîne | requête | Faux  a| 
+Indique si le nombre total de ressources doit être renvoyé dans l'objet métadonnées.
+
+Exemples d'URL : « count=true »
+
+Exemples OpenAPI : "true"
+
+
+
+| continuer |  | requête | Faux  a| 
+Indique le jeton à partir duquel reprendre la liste.
+
+Exemples d'URL : « continue=+++<continue token="" from="" collection="" metadata="">+++ »+++</continue>+++
+
+Exemples OpenAPI : "+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++</continue>
+
+|===
+
+
+== Réponse
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| articles | tableau[N'importe lequel de : link:#event_1_4_get_response_body["event_1.4_get_response_body"], tableau[]] | Vrai  a| 
+
+
+
+| les métadonnées | link:#type_astra_metadata_list["type_astra_metadata_list"] | Vrai  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-events",
+  "version": "1.4",
+  "items": [
+    [
+      "4f8273ee-883d-47f0-a512-9e27b6285f20",
+      "Discovering Applications in Cluster"
+    ],
+    [
+      "1cdd26dc-5eb0-4cf4-a0c1-39a9b83720e1",
+      "Application Discovered"
+    ],
+    [
+      "2064d1c1-4bc6-466e-9c30-b941a11be16a",
+      "Application Discovery Failed"
+    ],
+    [
+      "4325f971-ca9c-4a52-bc9a-da6ec62e6bfe",
+      "Application Discovered"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidParams | tableau[link:#invalidParams["invalidParams"]] | Faux  a| 
+Liste des paramètres de requête invalides
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+données
+
+Objet JSON contenant des informations supplémentaires spécifiques à l'événement.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| ttl | nombre | Faux  a| 
+Nombre JSON indiquant le nombre de secondes (depuis le eventTime) pendant lesquelles l'événement sera conservé. Ce champ est uniquement inclus lorsque l'événement est automatiquement supprimé après le nombre de secondes spécifié. Lors de la suppression, si l'événement a une destination de notification, toutes les notifications associées sont également supprimées. Lors de la suppression, si l'événement a une destination de bannière, la bannière est également supprimée. L'absence de ce champ (ou une valeur de « 0 ») signifie qu'un événement ne sera pas automatiquement supprimé.
+
+
+
+| isAcknowledgeable | chaîne | Faux  a| 
+Chaîne JSON indiquant si la bannière peut être masquée. Les valeurs possibles sont :
+
+* "true" - La bannière est escamotable
+* « false » - La bannière ne peut pas être supprimée
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Vrai  a| 
+
+
+
+| CréationTimestamp | chaîne | Vrai  a| 
+
+
+
+| ModificationTimestamp | chaîne | Vrai  a| 
+
+
+
+| CreatedBy | chaîne | Vrai  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+event_1.4_get_response_body
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-event"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+* "1,4"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant un nom hiérarchique pour l'événement en notation point (.). Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 127
+* L'expression régulière définie est : "^(([a-z])_(\.))_([a-z])+$"
+
+
+
+
+| sequenceCount | nombre | Vrai  a| 
+Numéro JSON contenant un compteur de séquence. Le numéro est incrémenté par le système à chaque fois qu’un nouvel événement est reçu.
+
+
+
+| résumé | chaîne | Vrai  a| 
+Chaîne JSON contenant le résumé abrégé (moins de 40 caractères) de l'événement. Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 79
+
+
+
+
+| eventTime | chaîne | Vrai  a| 
+Chaîne JSON contenant un horodatage indiquant le moment où un événement s'est produit. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| source | chaîne | Vrai  a| 
+Chaîne JSON contenant le nom en minuscules du service générant un événement. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 19
+* L'expression régulière définie est : "^([a-z-])*$"
+
+
+
+
+| identifiant de ressource | chaîne | Vrai  a| 
+Chaîne JSON contenant l'identifiant de la ressource associée à un événement. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| identifiants de ressources supplémentaires | tableau[chaîne] | Vrai  a| 
+Tableau JSON de chaînes JSON, chacune contenant un identifiant de ressource supplémentaire associée à l'événement. Alors que le champ « resourceID » contient la ressource principale associée à cet événement, ce champ contient n'importe quel nombre d'identifiants de ressources supplémentaires à associer aux mêmes événements. Si aucune ressource supplémentaire n'est associée à l'événement, le tableau sera vide. Valeurs définies :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| resourceType | chaîne | Vrai  a| 
+Chaîne JSON contenant le type de média de la ressource associée à un événement. Les valeurs définies sont :
+
+* Longueur minimale : 4
+* Longueur maximale : 79
+* L'expression régulière définie est : "^application\/astra-([a-zA-Z])+$"
+
+
+
+
+| identifiant de corrélation | chaîne | Vrai  a| 
+Chaîne JSON contenant un identifiant de corrélation UUIDv4 permettant de regrouper les événements associés. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| gravité | chaîne | Vrai  a| 
+Chaîne JSON contenant l'une des valeurs suivantes indiquant la gravité d'un événement. Les valeurs définies sont :
+
+* « cleared » : indique qu’un événement précédemment signalé décrivant une condition n’est plus actif. Un événement dont la gravité est « cleared » conservera le même résumé et le même identifiant de corrélation pour permettre son association.
+* « indeterminate » – Indique que la gravité ne peut pas être déterminée.
+* « informationnel » - Indique un changement d'état à la fois attendu et normal (non défini dans X.733).
+* « warning » : Indique la détection d’un défaut potentiel ou imminent affectant le service avant que des effets significatifs ne se fassent sentir.
+* « critical » : Indique qu’un incident affectant le service s’est produit et qu’une action corrective immédiate est requise. Les définitions de « cleared », « indeterminate », « warning » et « critical » sont basées sur les définitions de la clause 8.1.2.3 du CCITT X.733.
+
+
+
+
+| classe | chaîne | Vrai  a| 
+Chaîne JSON contenant l'une des valeurs suivantes indiquant la classe de l'événement. Les valeurs définies sont :
+
+* « système » - L'événement est lié à un événement ou une requête interne.
+* « utilisateur » - L'événement est lié à une action ou une requête initiée par l'utilisateur.
+* « sécurité » - L'événement est lié à un problème de sécurité.
+
+
+
+
+| description | chaîne | Vrai  a| 
+Chaîne JSON contenant un texte descriptif long concernant l'événement. Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 1023
+
+
+
+
+| URL de description | chaîne | Faux  a| 
+Chaîne JSON contenant l'URL qui active et lie un bouton de la bannière à la documentation externe. Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 4095
+
+
+
+
+| correctiveAction | chaîne | Faux  a| 
+Chaîne JSON contenant un texte descriptif détaillé sur les mesures correctives à prendre suite à l'événement. Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 1023
+
+
+
+
+| URL de l'action corrective | chaîne | Faux  a| 
+Chaîne JSON contenant l'URL qui relie un bouton de la bannière à une page de l'interface utilisateur permettant de résoudre le problème. Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 4095
+
+
+
+
+| visibilité | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes JSON, chacune indiquant un rôle RBAC autorisé à consulter l'événement. Les rôles sont définis par un OU logique. Facultatif. Si omis, un utilisateur disposant de n'importe quel rôle RBAC peut consulter l'événement. Valeurs définies :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| destinations | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes de caractères JSON, chacune indiquant une destination supplémentaire pour l'événement. Ces chaînes permettent à un service de fournir des indications sur la destination d'un événement en complément du journal d'activité. Facultatif. Valeurs définies :
+
+* « notification » - L'événement est marqué comme une notification et sera accessible via le point de terminaison de l'API de notifications.
+* "bannière" - L'événement est marqué comme une bannière.
+* « support » - L'événement est marqué comme un événement lié au support.
+
+
+
+
+| URI de ressource | chaîne | Faux  a| 
+Chaîne JSON contenant l'URI associée à l'événement. Uniquement incluse pour les événements liés aux opérations d'API. Valeurs définies :
+
+* Longueur minimale : 3
+* Longueur maximale : 4095
+
+
+
+
+| URL de la collection de ressources | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes JSON, chacune indiquant l'URL d'accès complète de la ressource associée à l'événement. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 1023
+
+
+
+
+| resourceMethod | chaîne | Faux  a| 
+Chaîne JSON contenant la méthode HTTP appelée. Uniquement incluse pour les événements liés aux opérations d'API. Valeurs définies :
+
+* "options" - Opération de l'API OPTIONS
+* "post" - Opération API POST
+* "get" - Opération API GET
+* « put » - Opération d'API PUT
+* « supprimer » - Opération d'API DELETE
+
+
+
+
+| resourceMethodResult | chaîne | Faux  a| 
+Chaîne JSON contenant le résultat de la méthode HTTP appelée. Uniquement incluse pour les événements liés aux opérations de l'API. Valeurs définies :
+
+* L'expression régulière définie est : "^[1-5][0-9]{2}$"
+
+
+
+
+| ID de l'utilisateur | chaîne | Faux  a| 
+Chaîne JSON contenant l'identifiant utilisateur associé à un événement. Uniquement inclus pour les événements liés à des actions initiées par l'utilisateur. Valeurs définies :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| identifiant de compte | chaîne | Faux  a| 
+Chaîne JSON contenant l'identifiant du compte associé à un événement. Uniquement inclus pour les événements associés à un compte. Valeurs définies :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| données | link:#data["données"] | Faux  a| 
+Objet JSON contenant des informations supplémentaires spécifiques à l'événement.
+
+
+
+| les métadonnées | link:#type_astra_metadata["type_astra_metadata"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| continuer | chaîne | Faux  a| 
+
+
+
+| nombre | nombre | Faux  a| 
+
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+====

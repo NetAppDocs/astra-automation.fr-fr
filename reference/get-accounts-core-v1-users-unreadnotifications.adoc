@@ -1,0 +1,521 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-users-unreadnotifications.html 
+summary: 'Afficher les notifications non lues d"un utilisateur' 
+---
+= Afficher les notifications non lues d'un utilisateur
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/unreadNotifications`#
+
+Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| ID de l'utilisateur | chaîne | chemin | Vrai  a| 
+ID de la ressource utilisateur contenant
+
+
+
+| inclure | chaîne | requête | Faux  a| 
+Indique les champs qui doivent être renvoyés lors de l’énumération d’une collection.
+
+Exemples d'URL : « include=id », « include=id,name »
+
+Exemples OpenAPI : « id »
+
+* exemple : notificationID,sequenceCount
+
+
+
+
+| limite | chaîne | requête | Faux  a| 
+Indique le nombre maximal de ressources à renvoyer lors de l’énumération d’une collection.
+
+Exemples d'URL : « limit=2 »
+
+Exemples OpenAPI : « 2 »
+
+* exemple: 2
+
+
+
+
+| filtre | chaîne | requête | Faux  a| 
+Indique les champs qui doivent être mis en correspondance pour renvoyer une ressource lors du listage d'une collection.
+
+Les opérateurs pris en charge sont :
+
+* eq - Égalité
+* lt/gt - Inférieur à/Supérieur à
+* LTE/GTE - Inférieur ou égal à/Supérieur ou égal à
+
+
+Exemple d'URL : « filter=field%20eq%20%27value%27 »
+
+Exemples OpenAPI : « field eq 'value' »
+
+
+
+| Orderby | chaîne | requête | Faux  a| 
+Indique l'ordre de tri des ressources lors de l'affichage d'une collection.
+
+Exemples d'URL : « orderBy=name », « orderBy=name%20desc »
+
+Exemples OpenAPI : « name desc »
+
+* exemple: count%20desc
+
+
+
+
+| ignorer | chaîne | requête | Faux  a| 
+Indique le nombre de ressources à ignorer lors de l'énumération d'une collection.
+
+Exemples d'URL : « skip=1 »
+
+Exemples OpenAPI : « 1 »
+
+
+
+| nombre | chaîne | requête | Faux  a| 
+Indique si le nombre total de ressources doit être renvoyé dans l'objet métadonnées.
+
+Exemples d'URL : « count=true »
+
+Exemples OpenAPI : "true"
+
+* exemple: vrai
+
+
+
+
+| continuer |  | requête | Faux  a| 
+Indique le jeton à partir duquel reprendre la liste.
+
+Exemples d'URL : « continue=+++<continue token="" from="" collection="" metadata="">+++ »+++</continue>+++
+
+Exemples OpenAPI : "+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++</continue>
+
+|===
+
+
+== Réponse
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| articles | tableau[N'importe lequel de : link:#unreadNotification_1_0_get_response_body["unreadNotification_1.0_get_response_body"], tableau[]] | Vrai  a| 
+
+
+
+| les métadonnées | link:#type_astra_metadata_list["type_astra_metadata_list"] | Vrai  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-unreadNotifications",
+  "version": "1.0",
+  "items": [
+    [
+      "4080cf5f-2261-4130-b8fb-8432e2e553e6",
+      48923
+    ],
+    [
+      "1b4e89f1-2e70-4a08-a015-e7064b0fb703",
+      47345
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidParams | tableau[link:#invalidParams["invalidParams"]] | Faux  a| 
+Liste des paramètres de requête invalides
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Vrai  a| 
+
+
+
+| CréationTimestamp | chaîne | Vrai  a| 
+
+
+
+| ModificationTimestamp | chaîne | Vrai  a| 
+
+
+
+| CreatedBy | chaîne | Vrai  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+unreadNotification_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-unreadNotification"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| ID de notification | chaîne | Vrai  a| 
+Chaîne JSON contenant un identifiant de notification à marquer comme lue par l'utilisateur créant le marquage. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| sequenceCount | nombre | Vrai  a| 
+Numéro JSON contenant un nombre de séquences associé à la notification spécifiée par l’ID de notification.
+
+
+
+| gravité | chaîne | Vrai  a| 
+Chaîne JSON contenant l'une des valeurs suivantes indiquant la gravité de l'événement. Les valeurs définies sont :
+
+* « Résolu » : indique qu’un événement précédemment signalé décrivant une condition n’est plus actif. Un événement dont la gravité est « Résolu » utilisera le même résumé et le même identifiant de corrélation pour permettre son association.
+* « Indéterminé » - Indique que la gravité ne peut être déterminée
+* « informationnel » - Indique un changement d'état à la fois attendu et normal (non défini dans X.733)
+* « warning » : indique la détection d’un défaut potentiel ou imminent susceptible d’affecter le service avant que des effets significatifs ne se fassent sentir
+* « critical » - Indique qu’un problème affectant le service s’est produit et qu’une action corrective immédiate est requise
+
+
+
+
+| les métadonnées | link:#type_astra_metadata["type_astra_metadata"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| continuer | chaîne | Faux  a| 
+
+
+
+| nombre | nombre | Faux  a| 
+
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+====

@@ -1,0 +1,627 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-clouds-clusters-namespaces.html 
+summary: 'Lister les espaces de noms d"un cloud' 
+---
+= Lister les espaces de noms d'un cloud
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/namespaces`#
+
+Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| cloud_id | chaîne | chemin | Vrai  a| 
+ID de la ressource cloud
+
+
+
+| cluster_id | chaîne | chemin | Vrai  a| 
+ID de la ressource de cluster contenant
+
+
+
+| inclure | chaîne | requête | Faux  a| 
+Indique les champs qui doivent être renvoyés lors de l’énumération d’une collection.
+
+Exemples d'URL : « include=id », « include=id,name »
+
+Exemples OpenAPI : « id »
+
+* exemple : id, nom,kubernetesLabels
+
+
+
+
+| limite | chaîne | requête | Faux  a| 
+Indique le nombre maximal de ressources à renvoyer lors de l’énumération d’une collection.
+
+Exemples d'URL : « limit=2 »
+
+Exemples OpenAPI : « 2 »
+
+
+
+| filtre | chaîne | requête | Faux  a| 
+Indique les champs qui doivent être mis en correspondance pour renvoyer une ressource lors du listage d'une collection.
+
+Les opérateurs pris en charge sont :
+
+* eq - Égalité
+* lt/gt - Inférieur à/Supérieur à
+* LTE/GTE - Inférieur ou égal à/Supérieur ou égal à
+
+
+Exemple d'URL : « filter=field%20eq%20%27value%27 »
+
+Exemples OpenAPI : « field eq 'value' »
+
+|===
+
+
+== Réponse
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| articles | tableau[N'importe lequel de : link:#namespace_1_2_get_response_body["namespace_1.2_get_response_body"], tableau[]] | Vrai  a| 
+
+
+
+| les métadonnées | link:#type_astra_metadata_list["type_astra_metadata_list"] | Vrai  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-namespaces",
+  "version": "1.2",
+  "items": [
+    [
+      "7d451d2f-196e-4234-aee9-7e2376047e63",
+      "kube-system",
+      [
+        {
+          "name": "app.kubernetes.io/environment",
+          "value": "dev"
+        }
+      ]
+    ],
+    [
+      "66b0873b-214f-4ac7-89d8-922432f941eb",
+      "jenkins",
+      [
+        {
+          "name": "app.kubernetes.io/environment",
+          "value": "dev"
+        }
+      ]
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidParams | tableau[link:#invalidParams["invalidParams"]] | Faux  a| 
+Liste des paramètres de requête invalides
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+targetSchema
+
+[role="api-collapsible-fifth-title"]
+accept-post
+
+[role="api-collapsible-fifth-title"]
+accepter-put
+
+[role="api-collapsible-fifth-title"]
+indices
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| statut | chaîne | Faux  a| 
+
+
+
+| permettre | tableau[chaîne] | Faux  a| 
+
+
+
+| accept-post | link:#accept-post["accept-post"] | Faux  a| 
+
+
+
+| autorisations | tableau[chaîne] | Faux  a| 
+
+
+
+| accepter-put | link:#accept-put["accepter-put"] | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_link
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| rel | chaîne | Vrai  a| 
+
+
+
+| href | chaîne | Vrai  a| 
+
+
+
+| type | chaîne | Faux  a| 
+
+
+
+| targetSchema | link:#targetSchema["targetSchema"] | Faux  a| 
+
+
+
+| titre | chaîne | Faux  a| 
+
+
+
+| indices | link:#hints["indices"] | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Vrai  a| 
+
+
+
+| CréationTimestamp | chaîne | Vrai  a| 
+
+
+
+| ModificationTimestamp | chaîne | Vrai  a| 
+
+
+
+| CreatedBy | chaîne | Vrai  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+namespace_1.2_get_response_body
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-namespace"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+* "1,2"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| liens | tableau[link:#type_astra_link["type_astra_link"]] | Vrai  a| 
+Liens décrivant les opérations prises en charge sur la ressource.
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant le nom de l'espace de noms. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 255
+
+
+
+
+| namespaceState | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant l'état de l'espace de noms. Les valeurs définies sont :
+
+* « découvert » - L'espace de noms a été trouvé dans le cluster
+* « supprimé » - L'espace de noms a été supprimé du cluster, ou le cluster n'est pas géré mais il peut exister des ressources faisant référence à l'espace de noms
+
+
+
+
+| namespaceStateDetails | tableau[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vrai  a| 
+Tableau JSON d'objets JSON contenant des informations supplémentaires sur la raison de la transition de l'état « state » vers « state a », « state b » ou « state c ». Si aucune information n'est disponible, ce tableau sera vide. Valeurs possibles :
+
+* Nombre minimum d’articles : 0
+
+
+
+
+| kubernetesLabels | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+Tableau JSON d'objets JSON, chacun contenant une étiquette Kubernetes associée à l'espace de noms. Les valeurs définies sont :
+
+* Conforme au schéma de tableau d'étiquettes Kubernetes
+
+
+
+
+| kubernetesUID | chaîne | Vrai  a| 
+Chaîne JSON contenant l'UID généré par Kubernetes de la ressource d'espace de noms
+
+
+
+| clusterID | chaîne | Vrai  a| 
+Chaîne JSON contenant un identifiant unique global du cluster dans lequel se trouve l'espace de noms. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| systemType | chaîne | Faux  a| 
+Chaîne JSON indiquant que l'espace de noms est un type d'espace de noms système. Ce champ identifie le type d'espace de noms système, le cas échéant (version 1.1 uniquement). Valeurs définies :
+
+* « kubernetes » - Un espace de noms système Kubernetes (K8s) générique, par exemple « kube-system »
+* « netapp » - Un espace de noms système NetApp, par exemple « trident » ou « netapp-monitoring »
+* « openshift » - Un espace de noms système OpenShift, par exemple, « openshift-monitoring »
+* "rke" - Un espace de noms Rancher, par exemple "cattle-logging"
+* « autres » - Espaces de noms système courants qui ne correspondent pas nécessairement à d'autres catégories, par exemple « ingress-nginx », « tekton-system »
+
+
+
+
+| les métadonnées | link:#type_astra_metadata["type_astra_metadata"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| continuer | chaîne | Faux  a| 
+
+
+
+| nombre | nombre | Faux  a| 
+
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+====

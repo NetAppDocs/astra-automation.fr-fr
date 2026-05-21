@@ -1,0 +1,542 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-upgrades-.html 
+summary: Modifier une mise à niveau 
+---
+= Modifier une mise à niveau
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/upgrades/{upgrade_id}`#
+
+Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
+
+*Effets secondaires*
+
+* Les mises à niveau sont planifiées ou exécutées en fonction de l'état souhaité.
+
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| id_mise_à_niveau | chaîne | chemin | Vrai  a| 
+ID de la collection de mise à niveau à lister
+
+|===
+
+
+== Corps de la requête
+
+Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
+
+*Effets secondaires*
+
+* Les mises à niveau sont planifiées ou exécutées en fonction de l'état souhaité.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-upgrade"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | chaîne | Faux  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| componentName | chaîne | Faux  a| 
+Chaîne JSON contenant le nom du type de logiciel pouvant être mis à niveau. Les valeurs définies sont :
+
+* "acc"
+* "acs"
+* "Trident"
+* "kubernetes"
+
+
+
+
+| componentInstance | chaîne | Faux  a| 
+Chaîne JSON contenant l'URI du composant pouvant être mis à niveau. Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 4095
+
+
+
+
+| ID de composant | chaîne | Faux  a| 
+Chaîne JSON contenant un identifiant unique global du composant pouvant être mis à niveau. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| upgradeVersion | chaîne | Faux  a| 
+Chaîne JSON contenant le SemVer du fichier image logiciel vers lequel la mise à niveau peut être effectuée. Les valeurs définies sont :
+
+* Conforme au schéma SemVer
+
+
+
+
+| currentVersion | chaîne | Faux  a| 
+Chaîne JSON contenant le SemVer actuel de l'entité à mettre à niveau. Les valeurs définies sont :
+
+* Conforme au schéma SemVer
+
+
+
+
+| dépendances | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes JSON, chacune contenant l'UUID d'une mise à niveau qui doit être terminée avant que cette mise à niveau puisse se poursuivre. Permet de déterminer les mises à niveau qui seront effectuées comme prérequis et dans quel ordre. Valeurs définies :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| État | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état opérationnel de la mise à niveau. Si la mise à niveau automatique est activée, les mises à niveau démarreront à l'état "scheduled". Sinon, les mises à niveau démarreront à l'état "proposed". Valeurs définies :
+
+* « Indisponible » - La mise à niveau n'est pas disponible pour le moment
+* « proposed » - La mise à niveau est proposée mais ne sera pas exécutée automatiquement tant qu'elle n'aura pas été approuvée
+* « scheduled » : La mise à niveau est approuvée, mais n’est pas prête à être installée en raison de dépendances, de fenêtres temporelles ou de ressources disponibles
+* « running » - La mise à niveau est en cours
+* « complete » - La mise à niveau est terminée
+* « failed » - La mise à niveau n'a pas été terminée
+
+
+
+
+| stateDesired | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état souhaité pour « state ». Ce champ est inclus uniquement lorsque l'utilisateur peut directement demander une modification de l'état de la ressource. Les valeurs définies sont :
+
+* « Proposée » - La mise à niveau n'est pas approuvée et ne doit pas être effectuée
+* « scheduled » : La mise à niveau est approuvée et doit être effectuée dans le délai imparti
+* « En cours » - La mise à niveau doit être effectuée immédiatement, indépendamment du délai imparti
+
+
+
+
+| stateDetails | tableau[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Faux  a| 
+Tableau JSON d'objets JSON répertoriant des détails supplémentaires sur l'« état » actuel. Si aucun détail n'est disponible, ce tableau sera vide.
+
+* Nombre minimum d'articles : 0
+
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Faux  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si non spécifié lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de requête
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-upgrade",
+  "version": "1.1",
+  "stateDesired": "running"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 204, Indicates if the upgrade resource was updated.
+----
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si non spécifié lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du champ invalide du corps de la requête
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le champ du corps de la requête est invalide
+
+|===
+====

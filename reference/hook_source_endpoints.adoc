@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/hook_source_endpoints.html 
+summary: 'Points de terminaison sources du hook de l"API Astra (ACC)' 
+---
+= Points de terminaison sources du hook de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Hook Source permet une gestion simplifiée des sources de hooks, indépendante de celle des ressources de hooks d'exécution. Par exemple, une même source de hook peut être référencée par plusieurs hooks d'exécution afin d'éviter les doublons et de permettre la mise à jour d'une source de hook par un simple appel d'API, même si elle est utilisée par plusieurs ressources de hooks d'exécution.

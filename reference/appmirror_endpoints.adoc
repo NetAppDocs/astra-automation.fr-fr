@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/appmirror_endpoints.html 
+summary: 'Points de terminaison de l"API Astra (ACC) AppMirror' 
+---
+= Points de terminaison de l'API Astra (ACC) AppMirror
+:allow-uri-read: 
+
+
+L'AppMirror API permet la gestion des AppMirror relations.

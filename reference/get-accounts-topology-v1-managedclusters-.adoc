@@ -1,0 +1,704 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-managedclusters-.html 
+summary: Récupérer un cluster géré 
+---
+= Récupérer un cluster géré
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}`#
+
+Renvoie la ressource API Managed Cluster stockée dans le corps de la réponse JSON.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| id_cluster_géré | chaîne | chemin | Vrai  a| 
+ID de la collection managedCluster à lister
+
+|===
+
+
+== Réponse
+
+[source]
+----
+Status: 200, Returns the stored Managed Cluster API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-managedCluster"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+* "1,4"
+* "1,5"
+* "1,6"
+* "1,7"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant un nom pour le cluster. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL.
+
+
+
+
+| État | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant l'état opérationnel du cluster. Les valeurs définies sont :
+
+* « En attente » - Le cluster est programmé pour la découverte
+* « discovering » - Le cluster est en cours de découverte
+* « Provisionnement » - Le cluster est en cours de provisionnement
+* « running » - Le cluster fonctionne normalement
+* « Échec » - Le cluster est dans un état d'échec permanent
+* « supprimé » - Le cluster n'est actuellement pas accessible
+* « inconnu » - L'état du cluster ne peut être déterminé
+
+
+
+
+| restoreTargetSupported | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant la capacité du cluster géré à être une  des opérations de gestion des données d'application. Les valeurs définies sont :
+
+* « true » - Le cluster est une cible éligible pour les opérations de gestion des données d'application.
+* « false » - Le cluster n'est _pas_ une cible éligible pour les opérations de gestion des données d'application.
+
+
+
+
+| snapshotSupported | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant la capacité du cluster géré à effectuer des opérations de gestion des données de type sauvegarde pour les applications. Les valeurs définies sont :
+
+* « true » - Le cluster est éligible pour effectuer des opérations de gestion des données d'application.
+* « false » - Le cluster n'est _pas_ éligible pour effectuer des opérations de gestion des données d'application.
+
+
+
+
+| stateUnready | tableau[chaîne] | Vrai  a| 
+Tableau JSON de chaînes JSON, chacune indiquant une raison pour laquelle le cluster ne peut pas passer à l'état « running », lorsqu'il y a des problèmes à l'état « running », ou pourquoi il est passé à l'état « failed » ou « removed ». Valeurs définies :
+
+* Longueur minimale : 1
+* Longueur maximale : 127
+
+
+
+
+| managedState | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant l'état de gestion du cluster. Les valeurs définies sont :
+
+* « pending » - Le cluster est programmé pour être découvert ou ajouté
+* « Inéligible » : le cluster est en cours d’exécution, n’est pas sous gestion et n’est pas éligible à la gestion. La ou les raisons de cette inéligibilité sont indiquées dans la valeur de la clé « unready ».
+* « Suppression » - Le cluster est en cours de suppression
+* « unmanaged » : le cluster est en état « running » ou « failed », n’est pas sous gestion et est éligible à la gestion
+* « managing » - Le cluster est à l'état « running » et est en cours de gestion
+* « Géré » : le cluster est dans un état « en cours d’exécution », « en panne » ou « supprimé » et est sous gestion
+
+
+
+
+| managedStateDetails | tableau[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Faux  a| 
+Tableau JSON d'objets JSON répertoriant des détails supplémentaires sur l'état actuel, notamment la raison pour laquelle cet état a été atteint. Si aucun détail n'est disponible, ce tableau sera vide. Valeurs définies :
+
+* Nombre minimum d'articles : 0
+
+
+
+
+| protectionState | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant l'état de protection du cluster. Les valeurs définies sont :
+
+* « complet » - la classe de stockage par défaut du cluster prend en charge les instantanés
+* « partiel » - Le cluster ne comporte que des classes de stockage qui ne prennent pas en charge les instantanés
+* "atRisk" - La classe de stockage par défaut du cluster ne prend pas en charge les instantanés
+
+
+
+
+| protectionStateDetails | tableau[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vrai  a| 
+Tableau JSON d'objets JSON répertoriant des détails supplémentaires sur l'état de protection actuel, notamment la raison pour laquelle cet état a été atteint. Si aucun détail n'est disponible, ce tableau sera vide. Valeurs définies :
+
+* Nombre minimum d'articles : 0
+
+
+
+
+| managedStateUnready | tableau[chaîne] | Vrai  a| 
+Tableau JSON de chaînes JSON, chacune indiquant une raison pour laquelle le cluster ne peut être géré. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 127
+
+
+
+
+| managedTimestamp | chaîne | Vrai  a| 
+Chaîne JSON contenant l'horodatage indiquant la date et l'heure de mise sous gestion du cluster. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601. Cette clé n'est renvoyée que lorsqu'un cluster a un managedState de « managed ».
+
+
+
+
+| tridentVersion | chaîne | Faux  a| 
+Chaîne JSON contenant la version de Trident installée sur le cluster. Les valeurs définies sont :
+
+* Conforme au schéma de version du logiciel
+
+
+
+
+| acpVersion | chaîne | Faux  a| 
+Chaîne JSON contenant la version d'Astra Control Provisioner installée sur le cluster. Les valeurs définies sont :
+
+* Conforme au schéma de version du logiciel
+
+
+
+
+| tridentManagedState | chaîne | Faux  a| 
+Chaîne JSON contenant l'une des valeurs énumérées indiquant l'état de gestion de Trident sur ce cluster. Les valeurs définies sont :
+
+* « managed » - L'instance Trident sur le cluster est gérée par Astra
+* « unmanaged » - L'instance Trident sur le cluster n'est pas gérée par Astra
+
+
+
+
+| tridentManagedStateDesired | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état de gestion souhaité pour Trident. Les valeurs définies sont :
+
+* « géré » - Gérer Trident sur ce cluster
+* « non géré » - Ne pas gérer Trident sur ce cluster
+
+
+
+
+| tridentManagedStateDetails | tableau[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Faux  a| 
+Tableau JSON d'objets JSON répertoriant des détails supplémentaires sur la raison du passage de l'état « state » à « managed » ou « unmanaged ». + Si aucun détail n'est disponible, ce tableau sera vide.
+
+* Nombre minimum d'articles : 0
+
+
+
+
+| tridentManagedStateAllowed | tableau[chaîne] | Faux  a| 
+États pouvant être demandés dans un tridentManagedState donné. Les états suivants peuvent être demandés dans chaque état défini :
+
+* "géré": "géré"
+* "non géré": "non géré"
+
+
+
+
+| inUse | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant si le cluster possède des applications gérées et ne peut donc pas être supprimé. Les valeurs définies sont :
+
+* « false » - Le cluster n’est pas géré, ou il est géré mais aucune application gérée n’y est associée
+* « true » – Le cluster est géré et possède des applications gérées qui lui sont associées
+
+
+
+
+| accHost | chaîne | Faux  a| 
+Chaîne JSON indiquant que ce cluster héberge l'instance d'Astra Control Center actuellement utilisée. Les valeurs définies sont :
+
+* « true » - Ce cluster héberge l'instance d'Astra Control Center actuellement utilisée.
+
+
+
+
+| clusterType | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant le type de cluster. Les valeurs définies sont :
+
+* "gke" - Kubernetes hébergé sur Google Kubernetes Engine
+* "aks" - Kubernetes hébergé sur Microsoft Azure Kubernetes Service
+* "eks" - Kubernetes hébergé sur Amazon Elastic Kubernetes Service
+* "rke" - Le cluster est de type Rancher
+* « tanzu » - Le cluster est de type Tanzu Kubernetes Grid
+* « openshift » - Le cluster est de type OpenShift
+* "anthos" - Le cluster est de type GKE Anthos
+* "kubernetes" - Le cluster est un cluster Kubernetes générique
+
+
+
+
+| clusterVersion | chaîne | Vrai  a| 
+Chaîne JSON contenant la représentation sémantique du versionnage de l'environnement du cluster. Pour les clusters Kubernetes, il s'agit de la version Kubernetes. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 31
+
+
+
+
+| clusterVersionString | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant les informations de version étendues pour l'environnement du cluster. Pour les clusters Kubernetes, il s'agit de la version complète de Kubernetes. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 31
+
+
+
+
+| clusterCreationTimestamp | chaîne | Faux  a| 
+Chaîne JSON contenant l'horodatage indiquant la date et l'heure de création initiale du cluster. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| espaces de noms | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes JSON, chacune indiquant un espace de noms au sein du cluster. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 253
+
+
+
+
+| defaultStorageClass | chaîne | Faux  a| 
+Chaîne JSON contenant un ID de classe de stockage correspondant à la classe de stockage par défaut, comme défini dans Kubernetes. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiants Astra. S'il n'est pas inclus, il n'a pas encore été découvert.
+
+
+
+
+| cloudID | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant l'ID du cloud sur lequel le cluster s'exécute. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| identifiant | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'ID de l'identifiant qui contient le fichier kubeconfig du cluster. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| emplacement | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur fournie par le cloud sur lequel le cluster s'exécute, indiquant l'emplacement spécifique du cluster dans ce cloud. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| isMultizonal | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur fournie par le cloud sur lequel le cluster s'exécute, indiquant si le cluster s'étend sur deux zones de disponibilité ou plus. Les valeurs définies sont :
+
+* « true » - Le cluster s'étend sur deux zones de disponibilité ou plus
+* « false » - Le cluster est entièrement situé dans une seule zone de disponibilité
+
+
+
+
+| ID de route privée | chaîne | Faux  a| 
+Chaîne JSON contenant le locationID pour les clusters privés.
+
+* Longueur minimale : 1
+* Longueur maximale : 255
+
+
+
+
+| ID de service d'API | chaîne | Faux  a| 
+Chaîne JSON contenant l'UUID de l'objet de service de l'API Kubernetes (k8s). Utilisée pour identifier un cluster de manière unique.
+
+
+
+| ID de compartiment par défaut | chaîne | Faux  a| 
+Chaîne JSON contenant l'identifiant du compartiment qui sera utilisé par défaut pour la persistance des métadonnées d'application d'un cluster Neptune géré. Si aucun compartiment par défaut n'est spécifié sur le cluster, le compartiment par défaut du cloud correspondant sera utilisé.
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-managedCluster",
+  "version": "1.7",
+  "id": "241e9d94-eb8b-5c25-ba20-9292baac2396",
+  "name": "GKE-22",
+  "state": "running",
+  "stateUnready": [],
+  "managedState": "managed",
+  "managedStateUnready": [],
+  "managedTimestamp": "2020-08-06T12:24:52.256624Z",
+  "protectionState": "full",
+  "protectionStateDetails": [],
+  "tridentVersion": "23.10.0",
+  "acpVersion": "23.10.0",
+  "tridentManagedState": "managed",
+  "tridentManagedStateDesired": "managed",
+  "tridentManagedStateDetails": [],
+  "inUse": "true",
+  "clusterType": "kubernetes",
+  "clusterVersion": "1.91.1",
+  "clusterVersionString": "1.19.1",
+  "clusterCreationTimestamp": "2020-08-06T12:24:52.256624Z",
+  "namespaces": [
+    "kube-system",
+    "kube-public",
+    "my-app-1"
+  ],
+  "defaultStorageClass": "e280ff62-be35-4f31-a31b-a210a1ad1b33",
+  "cloudID": "548bdc1f-f00e-4a23-a062-83265d224d46",
+  "credentialID": "055e365a-2215-40de-aecb-a4070a7e6f1e",
+  "location": "europe-west4",
+  "isMultizonal": "false",
+  "apiServiceID": "6bf33af2-872a-4553-a891-26b510c3edbe",
+  "defaultBucketID": "a549b757-2be1-494f-aafa-4ee399ca3f00",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidParams | tableau[link:#invalidParams["invalidParams"]] | Faux  a| 
+Liste des paramètres de requête invalides
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+====

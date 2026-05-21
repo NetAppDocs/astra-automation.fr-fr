@@ -1,0 +1,692 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts-k8s-v1-apps-schedules.html 
+summary: Créer un nouveau planning pour une application 
+---
+= Créer un nouveau planning pour une application
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules`#
+
+Indique les valeurs souhaitées pour la ressource API Schedule à créer.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| app_id | chaîne | chemin | Vrai  a| 
+ID de la ressource d'application contenant
+
+|===
+
+
+== Corps de la requête
+
+Indique les valeurs souhaitées pour la ressource API Schedule à créer.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-schedule"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant le nom du planning. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| activé | chaîne | Faux  a| 
+Chaîne JSON indiquant si une planification est active. Les valeurs définies sont :
+
+* "true" - Le calendrier est actif
+* « false » - La planification n'est pas active Si elle n'est pas spécifiée, la valeur par défaut est « true ».
+
+
+
+
+| granularité | chaîne | Vrai  a| 
+Chaîne JSON indiquant la granularité de la planification. Les valeurs définies sont :
+
+* « horaire »
+* "tous les jours"
+* "hebdomadaire"
+* "mensuel"
+* "personnalisé"
+
+
+
+
+| minute | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur numérique indiquant la minute de l'heure (0 - 59) à laquelle exécuter la planification. Les valeurs définies sont :
+
+* L'expression régulière définie est : « ^[0-9]|[1-5][0-9]$ ». Ce champ est présent si la granularité est définie sur « hourly », « daily », « weekly » ou « monthly ». Il sera renvoyé avec la valeur « 0 » pour les planifications personnalisées.
+
+
+
+
+| heure | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur numérique indiquant l'heure de la journée (0 - 23) à laquelle exécuter la planification. Les valeurs définies sont :
+
+* L'expression régulière définie est : "^[0-9]|[1][0-9]|[2][0-3]$" Ce champ est présent si la granularité est définie sur "daily", "weekly" ou "monthly".
+
+
+
+
+| dayOfWeek | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur numérique indiquant le jour de la semaine (0-7) pour exécuter la planification. Les valeurs définies sont :
+
+* L'expression régulière définie est : "^[0-7]$" Ce champ n'est présent que si la granularité est définie sur "weekly".
+
+
+
+
+| dayOfMonth | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur numérique indiquant le jour du mois (1-31) pour exécuter la planification. Les valeurs définies sont :
+
+* L'expression régulière définie est : "^[1-9]|[1-2][0-9]|[3][0-1]$" Ce champ n'est présent que si granularité est définie sur "monthly".
+
+
+
+
+| recurrenceRule | chaîne | Faux  a| 
+Chaîne JSON contenant une RFC-5545 section 3.8.5.3. Règle de récurrence. Pour le paramètre DTSTART, seuls les horodatages UTC (indiqués par le suffixe « Z ») sont pris en charge, et seuls les horodatages antérieurs à l'heure actuelle sont pris en charge. Pour les parties de la règle RECUR, « FREQ » et « INTERVAL » sont les seules parties de règle prises en charge. Pour la partie de règle FREQ, « MINUTELY » et « HOURLY » sont les seules valeurs prises en charge. Ce champ est présent uniquement si granularité est définie sur « custom ».
+
+
+
+| snapshotRetention | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur numérique positive indiquant combien d'instantanés conserver. Zéro indique que les instantanés doivent être supprimés après la sauvegarde. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* L'expression régulière définie est : "^(0|([1-9][0-9]*))$"
+
+
+
+
+| backupRetention | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur numérique positive indiquant combien de sauvegardes doivent être conservées. Zéro indique qu'aucune sauvegarde ne doit être créée. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* L'expression régulière définie est : "^(0|([1-9][0-9]*))$"
+
+
+
+
+| ID de compartiment | chaîne | Faux  a| 
+Chaîne JSON contenant un ID de compartiment optionnel indiquant où la sauvegarde doit être stockée lors de la création. Si non spécifié, un compartiment sélectionné par le système sera utilisé. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| répliquer | chaîne | Faux  a| 
+Chaîne JSON indiquant si la planification déclenche la réplication AppMirror pour chaque instantané. Ne prend effet que si l'application a une relation AppMirror définie. Les valeurs définies sont :
+
+* « vrai » - La planification déclenche la réplication AppMirror
+* « false » - La planification ne déclenche pas la réplication AppMirror. Si cette valeur n'est pas spécifiée, la valeur par défaut est « false ».
+
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Faux  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de requête
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-schedule",
+  "version": "1.3",
+  "name": "Backup Schedule",
+  "enabled": "true",
+  "granularity": "monthly",
+  "minute": "0",
+  "hour": "0",
+  "dayOfMonth": "1",
+  "snapshotRetention": "12",
+  "backupRetention": "12"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 201, Returns the newly created schedule resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-schedule"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant le nom du planning. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| activé | chaîne | Vrai  a| 
+Chaîne JSON indiquant si une planification est active. Les valeurs définies sont :
+
+* "true" - Le calendrier est actif
+* « false » - La planification n'est pas active Si elle n'est pas spécifiée, la valeur par défaut est « true ».
+
+
+
+
+| granularité | chaîne | Vrai  a| 
+Chaîne JSON indiquant la granularité de la planification. Les valeurs définies sont :
+
+* « horaire »
+* "tous les jours"
+* "hebdomadaire"
+* "mensuel"
+* "personnalisé"
+
+
+
+
+| minute | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur numérique indiquant la minute de l'heure (0 - 59) à laquelle exécuter la planification. Les valeurs définies sont :
+
+* L'expression régulière définie est : « ^[0-9]|[1-5][0-9]$ ». Ce champ est présent si la granularité est définie sur « hourly », « daily », « weekly » ou « monthly ». Il sera renvoyé avec la valeur « 0 » pour les planifications personnalisées.
+
+
+
+
+| heure | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur numérique indiquant l'heure de la journée (0 - 23) à laquelle exécuter la planification. Les valeurs définies sont :
+
+* L'expression régulière définie est : "^[0-9]|[1][0-9]|[2][0-3]$" Ce champ est présent si la granularité est définie sur "daily", "weekly" ou "monthly".
+
+
+
+
+| dayOfWeek | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur numérique indiquant le jour de la semaine (0-7) pour exécuter la planification. Les valeurs définies sont :
+
+* L'expression régulière définie est : "^[0-7]$" Ce champ n'est présent que si la granularité est définie sur "weekly".
+
+
+
+
+| dayOfMonth | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur numérique indiquant le jour du mois (1-31) pour exécuter la planification. Les valeurs définies sont :
+
+* L'expression régulière définie est : "^[1-9]|[1-2][0-9]|[3][0-1]$" Ce champ n'est présent que si granularité est définie sur "monthly".
+
+
+
+
+| recurrenceRule | chaîne | Faux  a| 
+Chaîne JSON contenant une RFC-5545 section 3.8.5.3. Règle de récurrence. Pour le paramètre DTSTART, seuls les horodatages UTC (indiqués par le suffixe « Z ») sont pris en charge, et seuls les horodatages antérieurs à l'heure actuelle sont pris en charge. Pour les parties de la règle RECUR, « FREQ » et « INTERVAL » sont les seules parties de règle prises en charge. Pour la partie de règle FREQ, « MINUTELY » et « HOURLY » sont les seules valeurs prises en charge. Ce champ est présent uniquement si granularité est définie sur « custom ».
+
+
+
+| snapshotRetention | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur numérique positive indiquant combien d'instantanés conserver. Zéro indique que les instantanés doivent être supprimés après la sauvegarde. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* L'expression régulière définie est : "^(0|([1-9][0-9]*))$"
+
+
+
+
+| backupRetention | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur numérique positive indiquant combien de sauvegardes doivent être conservées. Zéro indique qu'aucune sauvegarde ne doit être créée. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* L'expression régulière définie est : "^(0|([1-9][0-9]*))$"
+
+
+
+
+| ID de compartiment | chaîne | Faux  a| 
+Chaîne JSON contenant un ID de compartiment optionnel indiquant où la sauvegarde doit être stockée lors de la création. Si non spécifié, un compartiment sélectionné par le système sera utilisé. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| répliquer | chaîne | Faux  a| 
+Chaîne JSON indiquant si la planification déclenche la réplication AppMirror pour chaque instantané. Ne prend effet que si l'application a une relation AppMirror définie. Les valeurs définies sont :
+
+* « vrai » - La planification déclenche la réplication AppMirror
+* « false » - La planification ne déclenche pas la réplication AppMirror. Si cette valeur n'est pas spécifiée, la valeur par défaut est « false ».
+
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-schedule",
+  "version": "1.3",
+  "id": "49cbc480-5f7d-51e2-8f30-52b9a83a03b1",
+  "name": "Backup Schedule",
+  "enabled": "true",
+  "granularity": "monthly",
+  "minute": "0",
+  "hour": "0",
+  "dayOfMonth": "1",
+  "snapshotRetention": "12",
+  "backupRetention": "12",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du champ invalide du corps de la requête
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le champ du corps de la requête est invalide
+
+|===
+====

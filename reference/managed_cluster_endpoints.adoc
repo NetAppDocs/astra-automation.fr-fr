@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/managed_cluster_endpoints.html 
+summary: 'Points de terminaison de cluster gérés par l"API Astra (ACC)' 
+---
+= Points de terminaison de cluster gérés par l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Managed Cluster représente les clusters Kubernetes gérés.

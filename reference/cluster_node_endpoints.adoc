@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cluster_node_endpoints.html 
+summary: 'Points de terminaison des nœuds de cluster de l"API Astra (ACC)' 
+---
+= Points de terminaison des nœuds de cluster de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Cluster Node permet d'accéder aux nœuds associés à un cluster.

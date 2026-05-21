@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cloud_endpoints.html 
+summary: 'Points de terminaison cloud de l"API Astra (ACC)' 
+---
+= Points de terminaison cloud de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Cloud fournit un accès aux ressources cloud pour permettre aux clients de se connecter à des clouds spécifiques afin de gérer des clusters et des applications.

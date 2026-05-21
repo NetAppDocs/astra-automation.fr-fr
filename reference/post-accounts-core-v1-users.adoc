@@ -1,0 +1,716 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts-core-v1-users.html 
+summary: Créer un nouvel utilisateur 
+---
+= Créer un nouvel utilisateur
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users`#
+
+Indique les valeurs souhaitées pour la ressource API utilisateur à créer.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+|===
+
+
+== Corps de la requête
+
+Indique les valeurs souhaitées pour la ressource API utilisateur à créer.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-user"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+* "1,2"
+
+
+
+
+| authID | chaîne | Faux  a| 
+Chaîne JSON contenant l'identifiant associé à un fournisseur d'identité externe. Le contenu de cette chaîne dépend du authProvider spécifié. Pour un utilisateur avec « authProvider » défini sur « local », « authID » est défini sur la valeur de « email ». Pour un utilisateur avec « authProvider » défini sur « ldap », « authID » est défini sur son nom distinctif (DN) provenant du serveur LDAP.
+
+
+
+| authProvider | chaîne | Faux  a| 
+Chaîne JSON indiquant le contexte de l'idAuth identifiant. Les valeurs définies sont :
+
+* « cloud-central » - L'authentification des utilisateurs provient du service NetApp Cloud Central
+* « local » - L'authentification de l'utilisateur provient du magasin local d'utilisateur/mot de passe
+* "ldap" - L'authentification utilisateur provient d'un serveur LDAP externe. Dans Astra Control Center, tous les utilisateurs doivent avoir une valeur de "local" ou "ldap". Si une valeur n'est pas spécifiée, une valeur par défaut de "local" est choisie. Dans Astra Control Service, "authProvider" avec "local" ou "ldap" n'est pas pris en charge. Si une valeur n'est pas spécifiée, la valeur par défaut sera "cloud-central".
+
+
+
+
+| firstName | chaîne | Faux  a| 
+Chaîne JSON contenant un prénom long spécifié par l'utilisateur. Les valeurs définies sont :
+
+* Longueur minimale : 0
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL
+
+
+
+
+| lastName | chaîne | Faux  a| 
+Chaîne JSON contenant un nom de famille long spécifié par l'utilisateur. Les valeurs définies sont :
+
+* Longueur minimale : 0
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL
+
+
+
+
+| companyName | chaîne | Faux  a| 
+Chaîne JSON contenant le nom de l'entreprise associée à l'utilisateur. Si cette clé n'existe pas, cela indique qu'un nom d'entreprise n'a pas été fourni. Valeurs définies :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL
+
+
+
+
+| e-mail | chaîne | Vrai  a| 
+Chaînes JSON contenant une adresse électronique spécifiée par l'utilisateur.
+
+
+
+| téléphone | chaîne | Faux  a| 
+Chaîne JSON contenant le numéro de téléphone de l'utilisateur. Si cette clé n'existe pas, cela indique qu'un numéro de téléphone n'a pas été fourni.
+
+
+
+| postalAddress | link:#postalAddress["postalAddress"] | Faux  a| 
+Objet JSON contenant une collection de champs qui spécifie une adresse. Si cette clé n'existe pas, cela indique qu'aucune adresse n'a été fournie. Si cette clé existe, les six champs qu'elle contient seront tous présents. Si rien n'a été fourni par l'utilisateur, la chaîne sera vide.
+
+
+
+| sendWelcomeEmail | chaîne | Faux  a| 
+Chaîne JSON indiquant si un e-mail de bienvenue sera envoyé après validation. Si cette valeur n'est pas spécifiée lors de la création, elle sera définie sur "true" pour ACS et sur "false" pour Astra Control Center. Les valeurs possibles sont :
+
+* « true » - un e-mail de bienvenue sera envoyé ; valeur par défaut lors de la création
+* "false" - Aucun e-mail de bienvenue ne sera envoyé. Pour un utilisateur avec "authProvider" comme "local" ou "ldap", cette valeur est ignorée et définie sur "false".
+
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Faux  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de requête
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-user",
+  "version": "1.2",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "jdoe@example.com"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 201, Returns the newly created user resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-user"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+* "1,2"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| État | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant l'état opérationnel de l'utilisateur. Les valeurs définies sont :
+
+* « En attente » - Le compte utilisateur est en cours de création. L'utilisateur peut uniquement lire et modifier la ressource utilisateur (valeur par défaut).
+* Cet état n'est pas valide pour un utilisateur avec « authProvider » défini sur « local »
+* « actif » - Le compte utilisateur est opérationnel (L'utilisateur peut se connecter si le paramètre de compte «isEnabled» est « true »).
+* Il s'agit de la valeur par défaut pour un utilisateur avec « authProvider » défini sur « local »
+* « suspendu » - Le compte utilisateur est suspendu (L'utilisateur ne peut pas se connecter quel que soit le paramètre de compte "isEnabled").
+
+
+
+
+| isEnabled | chaîne | Vrai  a| 
+Chaîne JSON indiquant si l'utilisateur est autorisé à se connecter. Les valeurs possibles sont :
+
+* « true » - L'utilisateur est autorisé à se connecter ; valeur par défaut lors de la création.
+* "false" - L'utilisateur n'est pas autorisé à se connecter.
+
+
+
+
+| authID | chaîne | Faux  a| 
+Chaîne JSON contenant l'identifiant associé à un fournisseur d'identité externe. Le contenu de cette chaîne dépend du authProvider spécifié. Pour un utilisateur avec « authProvider » défini sur « local », « authID » est défini sur la valeur de « email ». Pour un utilisateur avec « authProvider » défini sur « ldap », « authID » est défini sur son nom distinctif (DN) provenant du serveur LDAP.
+
+
+
+| authProvider | chaîne | Faux  a| 
+Chaîne JSON indiquant le contexte de l'idAuth identifiant. Les valeurs définies sont :
+
+* « cloud-central » - L'authentification des utilisateurs provient du service NetApp Cloud Central
+* « local » - L'authentification de l'utilisateur provient du magasin local d'utilisateur/mot de passe
+* "ldap" - L'authentification utilisateur provient d'un serveur LDAP externe. Dans Astra Control Center, tous les utilisateurs doivent avoir une valeur de "local" ou "ldap". Si une valeur n'est pas spécifiée, une valeur par défaut de "local" est choisie. Dans Astra Control Service, "authProvider" avec "local" ou "ldap" n'est pas pris en charge. Si une valeur n'est pas spécifiée, la valeur par défaut sera "cloud-central".
+
+
+
+
+| firstName | chaîne | Vrai  a| 
+Chaîne JSON contenant un prénom long spécifié par l'utilisateur. Les valeurs définies sont :
+
+* Longueur minimale : 0
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL
+
+
+
+
+| lastName | chaîne | Vrai  a| 
+Chaîne JSON contenant un nom de famille long spécifié par l'utilisateur. Les valeurs définies sont :
+
+* Longueur minimale : 0
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL
+
+
+
+
+| companyName | chaîne | Faux  a| 
+Chaîne JSON contenant le nom de l'entreprise associée à l'utilisateur. Si cette clé n'existe pas, cela indique qu'un nom d'entreprise n'a pas été fourni. Valeurs définies :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Cette chaîne de caractères est validée en interne afin de prévenir les attaques XSS, Unicode, de traversée de répertoire et d'injection SQL
+
+
+
+
+| e-mail | chaîne | Vrai  a| 
+Chaînes JSON contenant une adresse électronique spécifiée par l'utilisateur.
+
+
+
+| téléphone | chaîne | Faux  a| 
+Chaîne JSON contenant le numéro de téléphone de l'utilisateur. Si cette clé n'existe pas, cela indique qu'un numéro de téléphone n'a pas été fourni.
+
+
+
+| postalAddress | link:#postalAddress["postalAddress"] | Faux  a| 
+Objet JSON contenant une collection de champs qui spécifie une adresse. Si cette clé n'existe pas, cela indique qu'aucune adresse n'a été fournie. Si cette clé existe, les six champs qu'elle contient seront tous présents. Si rien n'a été fourni par l'utilisateur, la chaîne sera vide.
+
+
+
+| sendWelcomeEmail | chaîne | Vrai  a| 
+Chaîne JSON indiquant si un e-mail de bienvenue sera envoyé après validation. Si cette valeur n'est pas spécifiée lors de la création, elle sera définie sur "true" pour ACS et sur "false" pour Astra Control Center. Les valeurs possibles sont :
+
+* « true » - un e-mail de bienvenue sera envoyé ; valeur par défaut lors de la création
+* "false" - Aucun e-mail de bienvenue ne sera envoyé. Pour un utilisateur avec "authProvider" comme "local" ou "ldap", cette valeur est ignorée et définie sur "false".
+
+
+
+
+| enableTimestamp | chaîne | Faux  a| 
+Chaîne JSON contenant un horodatage au format ISO-8601 indiquant la dernière activation de l'utilisateur. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| lastActTimestamp | chaîne | Faux  a| 
+Chaîne JSON contenant un horodatage au format ISO-8601 indiquant la dernière utilisation de l'API d'identité pour le compte de cet utilisateur. (Remarque : cette opération est coûteuse.) Valeurs définies :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-user",
+  "version": "1.2",
+  "id": "5bad8e04-e2fd-5c43-98d7-300580993f49",
+  "state": "pending",
+  "isEnabled": "true",
+  "authID": "HteLK3hk28sdbDLKHReB",
+  "authProvider": "cloud-central",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "jdoe@example.com",
+  "sendWelcomeEmail": "true",
+  "lastActTimestamp": "2020-08-05T14:24:54.128427Z",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+postalAddress
+
+Objet JSON contenant une collection de champs qui spécifie une adresse. Si cette clé n'existe pas, cela indique qu'aucune adresse n'a été fournie. Si cette clé existe, les six champs qu'elle contient seront tous présents. Si rien n'a été fourni par l'utilisateur, la chaîne sera vide.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| addressCountry | chaîne | Vrai  a| 
+Chaîne JSON contenant le nom ou le code pays associé à l'adresse postale, conformément à la norme ISO 3166 Alpha-2. Les valeurs définies sont :
+
+* Longueur minimale : 2
+* Longueur maximale : 2
+
+
+
+
+| addressLocality | chaîne | Vrai  a| 
+Chaîne JSON contenant la localité (par exemple, la ville) associée à l'adresse postale. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| addressRegion | chaîne | Vrai  a| 
+Chaîne JSON contenant la région (par exemple, l'État) associée à l'adresse postale. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| postalCode | chaîne | Vrai  a| 
+Chaîne JSON contenant le code postal associé à l'adresse postale. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| streetAddress1 | chaîne | Vrai  a| 
+Chaîne JSON contenant l'adresse de rue associée à l'adresse postale. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| streetAddress2 | chaîne | Faux  a| 
+Chaîne JSON contenant des informations complémentaires facultatives telles que l'adresse de rue, la boîte postale, etc. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du champ invalide du corps de la requête
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le champ du corps de la requête est invalide
+
+|===
+====

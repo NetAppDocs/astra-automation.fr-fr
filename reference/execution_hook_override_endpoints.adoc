@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/execution_hook_override_endpoints.html 
+summary: 'Points de terminaison de remplacement du hook d"exécution de l"API Astra (ACC)' 
+---
+= Points de terminaison de remplacement du hook d'exécution de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API de remplacement des hooks d'exécution permet à un utilisateur de désactiver les hooks d'exécution « netapp » préchargés pour une application spécifique. (*VOIR CI-DESSOUS LES DÉPRÉCIATIONS DE L'API*)

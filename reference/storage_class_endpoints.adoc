@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/storage_class_endpoints.html 
+summary: 'Points de terminaison de classe de stockage de l"API Astra (ACC)' 
+---
+= Points de terminaison de classe de stockage de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Storage Class décrit les classes de stockage connues d'un cluster donné.

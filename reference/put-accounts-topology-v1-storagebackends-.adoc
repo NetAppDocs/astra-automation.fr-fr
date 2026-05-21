@@ -1,0 +1,602 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-topology-v1-storagebackends-.html 
+summary: Modifier un backend de stockage 
+---
+= Modifier un backend de stockage
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends/{storageBackend_id}`#
+
+Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
+
+*Effets secondaires*
+
+* Spécifier une version de configuration entraîne l'application de modifications de configuration spécifiques au type de stockage backend, ce qui peut inclure l'installation initiale d'un stockage backend.
+* Spécifier une version de configuration peut entraîner l'ajout, la modification ou la suppression de ressources storageClass.
+
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| storageBackend_id | chaîne | chemin | Vrai  a| 
+ID de la collection storageBackend à lister
+
+|===
+
+
+== Corps de la requête
+
+Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
+
+*Effets secondaires*
+
+* Spécifier une version de configuration entraîne l'application de modifications de configuration spécifiques au type de stockage backend, ce qui peut inclure l'installation initiale d'un stockage backend.
+* Spécifier une version de configuration peut entraîner l'ajout, la modification ou la suppression de ressources storageClass.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-storageBackend"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+
+
+
+
+| id | chaîne | Faux  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| backendName | chaîne | Faux  a| 
+Chaîne JSON contenant un nom spécifié par l'utilisateur pour le stockage backend. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| backendType | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant le type de système de stockage utilisé. Les valeurs possibles sont :
+
+* « ontap » - Le backend de stockage représente un système NetApp ONTAP
+* enum : ["ontap"]
+* exemple : ontap
+
+
+
+
+| backendVersion | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant la version du système de stockage utilisé. Les valeurs possibles sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| backendCredentialsName | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant le nom d’un ou plusieurs identifiants utilisés pour le backend de stockage. Permet la rotation des identifiants lorsque plusieurs objets d’identifiant portent le même nom. Valeurs définies :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| configVersion | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant la configuration active à utiliser par le stockage backend. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+
+
+
+
+| État | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état opérationnel du stockage backend. Les valeurs définies sont :
+
+* « découvert » - Le stockage backend a été découvert à partir d'un cluster géré
+* « running » - Le système de stockage fonctionne normalement
+* « inconnu » - L'état du stockage backend ne peut pas être déterminé
+* « Échec » - Le système de stockage principal est dans un état indisponible
+
+
+
+
+| stateDesired | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état opérationnel souhaité du stockage backend. Les valeurs définies sont :
+
+* « running » - Le système de stockage sera dans un état de fonctionnement normal
+
+
+
+
+| stateUnready | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes JSON, chacune indiquant la raison pour laquelle un système de stockage ne peut pas passer à l'état « en cours d'exécution », est passé à l'état « en échec » ou « inconnu », et/ou risque de passer à l'état « en échec ». Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 127
+
+
+
+
+| managedState | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état de gestion du stockage backend. Les valeurs définies sont :
+
+* « pending » - Le stockage backend est programmé pour être découvert ou ajouté
+* « unmanaged » : le système de stockage est à l’état « discovered », n’est pas géré et peut être géré.
+* « Géré » - Le système de stockage est dans un état « en cours d'exécution » ou « inconnu » et est sous gestion
+
+
+
+
+| managedStateUnready | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes JSON, chacune indiquant une raison pour laquelle le système de stockage n'est pas éligible à être géré. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 127
+
+
+
+
+| healthState | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état de santé du stockage backend. Les valeurs définies sont :
+
+* « Indéterminé » - L'état de la ressource ne peut être déterminé (par exemple, en raison d'un manque de connectivité)
+* « Normal » - La ressource ne présente aucun problème connu et peut fournir des services conformément aux spécifications de l'interface
+* « warning » : La ressource présente des problèmes connus qui ne l’empêchent pas de fournir des services conformément aux spécifications de l’interface.
+* « critical » : La ressource présente des problèmes connus qui l’empêchent de fournir des services conformément aux spécifications de l’interface
+
+
+
+
+| healthStateUnready | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes JSON, chacune indiquant une raison pour laquelle un système de stockage n'est pas dans un état de santé normal. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 127
+
+
+
+
+| protectionState | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état de protection du stockage backend. "unknown" pour ONTAP. Les valeurs définies sont :
+
+* « protégé » - Le stockage backend possède une politique de protection définie et est conforme à cette politique
+* « Partiel » - Le stockage backend possède une politique de protection définie, mais n'est pas conforme à cette politique
+* « none » - Le système de stockage n'est pas protégé
+* « unknown » - La conformité de la politique de protection du stockage backend ne peut pas être déterminée
+* énum : ["protected", "partial", "none", "unknown"]
+* exemple: protégé
+
+
+
+
+| protectionStateUnready | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes JSON, chacune indiquant une raison pour laquelle une politique de protection n'est pas conforme. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 127
+
+
+
+
+| ONTAP | link:#ontap["ONTAP"] | Faux  a| 
+Objet JSON contenant des informations spécifiques relatives aux clusters ONTAP.
+
+* additionalProperties : false
+
+
+
+
+| les métadonnées | link:#type_astra_metadata_update["type_astra_metadata_update"] | Faux  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+|===
+.Exemple de requête
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-storageBackend",
+  "version": "1.3",
+  "backendName": "st1-46"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 204, Indicates if the storageBackend resource was updated.
+----
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+ONTAP
+
+Objet JSON contenant des informations spécifiques relatives aux clusters ONTAP.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| Adresse IP de gestion du backend | chaîne | Faux  a| 
+Chaîne JSON contenant l'adresse IP utilisée pour se connecter à ce cluster ONTAP.
+
+
+
+| adresses IP de gestion | tableau[chaîne] | Faux  a| 
+Tableau JSON de chaînes JSON contenant la liste de toutes les adresses IP de gestion possibles utilisées pour se connecter à ce cluster ONTAP. Ceci est utilisé pour faire correspondre les backends détectés via Trident et les backends de stockage dans Astra.
+
+* uniqueItems : 1
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette. Si aucune étiquette n'est spécifiée lors de la mise à jour, les étiquettes de l'objet de métadonnées, creationTimestamp et createdBy, seront conservées sans modification.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Faux  a| 
+
+
+
+| CréationTimestamp | chaîne | Faux  a| 
+
+
+
+| ModificationTimestamp | chaîne | Faux  a| 
+
+
+
+| CreatedBy | chaîne | Faux  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du champ invalide du corps de la requête
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le champ du corps de la requête est invalide
+
+|===
+====

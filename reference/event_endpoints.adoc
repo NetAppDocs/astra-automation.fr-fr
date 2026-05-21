@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/event_endpoints.html 
+summary: 'Points de terminaison d"événements de l"API Astra (ACC)' 
+---
+= Points de terminaison d'événements de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Event permet d'accéder aux événements qui se produisent dans le système.

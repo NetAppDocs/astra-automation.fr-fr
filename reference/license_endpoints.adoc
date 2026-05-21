@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/license_endpoints.html 
+summary: 'Points de terminaison de licence de l"API Astra (ACC)' 
+---
+= Points de terminaison de licence de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API de licences représente les licences chargées dans le compte.

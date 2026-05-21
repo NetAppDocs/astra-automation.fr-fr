@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/subscription_endpoints.html 
+summary: 'Points de terminaison d"abonnement à l"API Astra (ACC)' 
+---
+= Points de terminaison d'abonnement à l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API d'abonnement permet d'accéder aux ressources d'abonnement afin de représenter les abonnements actifs.

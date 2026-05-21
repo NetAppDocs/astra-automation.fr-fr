@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/unread_notification_endpoints.html 
+summary: 'Points de terminaison de notification non lue de l"API Astra (ACC)' 
+---
+= Points de terminaison de notification non lue de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API de notifications non lues fournit des informations sur les notifications qui n'ont pas été lues par un utilisateur donné et permet de les marquer comme lues.

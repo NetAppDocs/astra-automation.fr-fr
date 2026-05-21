@@ -1,0 +1,515 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: true 
+permalink: reference/get-accounts-k8s-v1-apps-appbackups-appassets-.html 
+summary: 'Récupérer une ressource d"application à partir d"une sauvegarde d"application pour une application' 
+---
+= Récupérer une ressource d'application à partir d'une sauvegarde d'application pour une application
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}/appAssets/{appAsset_id}`#
+
+Renvoie la ressource API Application Asset stockée dans le corps de la réponse JSON.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| app_id | chaîne | chemin | Vrai  a| 
+ID de la ressource d'application contenant
+
+
+
+| appBackup_id | chaîne | chemin | Vrai  a| 
+ID de la ressource appBackup conteneur
+
+
+
+| appAsset_id | chaîne | chemin | Vrai  a| 
+ID de la appAsset collection à lister
+
+|===
+
+
+== Réponse
+
+[source]
+----
+Status: 200, Returns the stored Application Asset API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-appAsset"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| assetType | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant le type de ressource décrite, obtenue depuis Kubernetes. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 254
+
+
+
+
+| CréationTimestamp | chaîne | Vrai  a| 
+Chaîne JSON contenant un horodatage indiquant la date de création des métadonnées Kubernetes. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| GVK | link:#GVK["GVK"] | Vrai  a| 
+Objet JSON contenant un groupe/une version/un type Kubernetes.
+
+
+
+| ressource | link:#type_json["type_json"] | Faux  a| 
+Objet JSON contenant l'intégralité du contenu de la définition de ressource Kubernetes.
+
+
+
+| identifiant de l'actif | chaîne | Vrai  a| 
+Chaîne JSON contenant un identifiant attribué par Kubernetes. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| étiquettes | tableau[link:#labels["étiquettes"]] | Vrai  a| 
+Tableau JSON d'objets JSON, chacun contenant une étiquette Kubernetes associée à la ressource. Si aucune information n'est disponible, ce tableau sera vide.
+
+* Nombre minimum d’articles : 0
+
+
+
+
+| assetName | chaîne | Vrai  a| 
+Chaîne JSON contenant un nom attribué par Kubernetes. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 254
+
+
+
+
+| espace de noms | chaîne | Faux  a| 
+Chaîne JSON contenant un espace de noms attribué par Kubernetes. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 254
+
+
+
+
+| les métadonnées | link:#type_astra_metadata["type_astra_metadata"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appAsset",
+  "version": "1.1",
+  "id": "6415e851-b820-553b-9432-ebd057d1917d",
+  "assetType": "Pod",
+  "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+  "GVK": {
+    "group": "apps",
+    "kind": "Pod",
+    "version": "v1"
+  },
+  "assetID": "93ec0c61-d993-4aa1-bb08-f4dcdd5e97f6",
+  "labels": [
+    {
+      "name": "app",
+      "value": "mediawiki"
+    },
+    {
+      "name": "pod-template-hash",
+      "value": "69c6fcf864"
+    }
+  ],
+  "assetName": "mediawiki-69c6fcf864-2wx6l",
+  "namespace": "wiki",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidParams | tableau[link:#invalidParams["invalidParams"]] | Faux  a| 
+Liste des paramètres de requête invalides
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+GVK
+
+Objet JSON contenant un groupe/une version/un type Kubernetes.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| groupe | chaîne | Faux  a| 
+Chaîne JSON contenant un identifiant de groupe attribué par Kubernetes. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 254
+
+
+
+
+| type | chaîne | Faux  a| 
+Chaîne JSON contenant un identifiant de type attribué par Kubernetes. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 254
+
+
+
+
+| version | chaîne | Faux  a| 
+Chaîne JSON contenant un identifiant de version attribué par Kubernetes. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 254
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_json
+
+Objet JSON contenant l'intégralité du contenu de la définition de ressource Kubernetes.
+
+[role="api-collapsible-fifth-title"]
+étiquettes
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant le nom de l'étiquette Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* L'expression régulière définie est : "^([\S.]{1,253}\/)?([a-z0-9A-Z_.-]){1,63}$"
+
+
+
+
+| valeur | chaîne | Vrai  a| 
+Chaîne JSON contenant la valeur de l'étiquette Defined values are :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* L'expression régulière définie est : "^([a-z0-9A-Z_.-]){1,63}$"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Vrai  a| 
+
+
+
+| CréationTimestamp | chaîne | Vrai  a| 
+
+
+
+| ModificationTimestamp | chaîne | Vrai  a| 
+
+
+
+| CreatedBy | chaîne | Vrai  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+====

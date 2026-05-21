@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/role_binding_endpoints.html 
+summary: 'Points de terminaison de liaison de rôle de l"API Astra (ACC)' 
+---
+= Points de terminaison de liaison de rôle de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API de liaison des rôles décrit les relations entre les paires utilisateur-compte ou groupe-compte, ainsi que les ensembles d'autorisations qui leur sont accordés (rôles).

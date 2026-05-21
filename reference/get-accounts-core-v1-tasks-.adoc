@@ -1,0 +1,578 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-tasks-.html 
+summary: Récupérer une tâche 
+---
+= Récupérer une tâche
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/tasks/{task_id}`#
+
+Renvoie la ressource d'API Task stockée dans le corps de la réponse JSON.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| identifiant_de_tâche | chaîne | chemin | Vrai  a| 
+ID de la collection de tâches à lister
+
+|===
+
+
+== Réponse
+
+[source]
+----
+Status: 200, Returns the stored Task API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-task"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant un nom hiérarchique pour la tâche en notation point (.). Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 127
+* L'expression régulière définie est : "^(([a-z])_(\.))_([a-z])+$"
+
+
+
+
+| résumé | chaîne | Vrai  a| 
+Chaîne JSON contenant le résumé court de la tâche. Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 63
+
+
+
+
+| description | chaîne | Vrai  a| 
+Chaîne JSON contenant une description de la tâche. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 511
+
+
+
+
+| service | chaîne | Faux  a| 
+Chaîne JSON contenant le nom du service qui gère la tâche. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 31
+
+
+
+
+| parentTaskID | chaîne | Faux  a| 
+Chaîne JSON contenant un identifiant unique global de la tâche parente de la tâche. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| ID de l'utilisateur | chaîne | Faux  a| 
+Chaîne JSON contenant l'identifiant utilisateur associé à une tâche. Uniquement incluse pour les tâches associées à des actions initiées par l'utilisateur. Valeurs définies :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| identifiant de ressource | chaîne | Vrai  a| 
+Chaîne JSON contenant un identifiant unique global de la ressource associée à la tâche. Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| URI de ressource | chaîne | Vrai  a| 
+Chaîne JSON contenant l'URI associée à la tâche. Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 4095
+
+
+
+
+| URI de la collection de ressources | tableau[chaîne] | Vrai  a| 
+Tableau JSON de chaînes JSON, chacune indiquant l'URL d'accès complète de la ressource associée à la tâche. Les valeurs définies sont :
+
+* Longueur minimale : 3
+* Longueur maximale : 4095
+
+
+
+
+| État | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant l'état opérationnel de la tâche. Les valeurs définies sont :
+
+* "notStarted" - La tâche n'a pas commencé à s'exécuter.
+* "en cours d'exécution" - La tâche est en cours d'exécution.
+* « completed » - La tâche est terminée.
+* "pausing" - La tâche a été mise en pause.
+* "en pause" - La tâche est en pause.
+* « Annulation » - L'annulation de la tâche a été demandée.
+* « Annulé » - La tâche est annulée.
+* « failed » - La tâche a échoué.
+* Longueur minimale : 1
+* Longueur maximale : 31
+
+
+
+
+| stateTransitions | tableau[link:#type_astra_stateTransition["type_astra_stateTransition"]] | Vrai  a| 
+Tableau JSON d'objets JSON, chacun représentant l'ensemble des transitions d'état autorisées à partir d'un état donné. Chaque objet JSON contient les champs « from » et « to », où la valeur de « from » correspond au nom d'un état et celle de « to » à un tableau d'états de destination autorisés.
+
+* Longueur minimale : 1
+* Longueur maximale : 31 Par exemple : «stateTransitions» : [ { "from": "running", "to": ["paused", "cancelled"] }, { "from": "paused", "to": ["running", "cancelled"] }, ]
+
+
+
+
+| stateDetails | tableau[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vrai  a| 
+Tableau JSON d'objets JSON contenant des informations supplémentaires sur l'état actuel. Ce champ indique lorsqu'il existe des conditions ou des erreurs qui empêchent l'état réel de correspondre à l'état souhaité. Si aucun détail n'est disponible, ce tableau sera vide.
+
+* Nombre minimum d'articles : 0
+
+
+
+
+| orderHint | nombre | Faux  a| 
+Numéro JSON représentant l'ordre des sous-tâches. Ce champ peut être utilisé par le client pour trier les sous-tâches de la plus petite à la plus grande.
+
+
+
+| percentDone | nombre | Faux  a| 
+Nombre JSON contenant le pourcentage d'avancement d'une tâche en cours. Lorsque la tâche est terminée, ce nombre est défini sur "100".
+
+
+
+| startTime | chaîne | Faux  a| 
+Chaîne JSON contenant l'horodatage indiquant quand la tâche a commencé. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| endTime | chaîne | Faux  a| 
+Chaîne JSON contenant l'horodatage indiquant quand la tâche s'est terminée. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| cancelTime | chaîne | Faux  a| 
+Chaîne JSON contenant l'horodatage indiquant le moment où la tâche a été annulée. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| les métadonnées | link:#type_astra_metadata["type_astra_metadata"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-task",
+  "version": "1.1",
+  "id": "26e8e8ef-5549-5928-98dd-2c3d43a608e8",
+  "name": "astra.backup.prep",
+  "summary": "Backup preparation",
+  "description": "Task to prepare for the application backup",
+  "service": "nautilus",
+  "userID": "abda967f-cd2c-4237-908e-99266648c553",
+  "parentTaskID": "9cc8c321-6af1-406c-8158-2c6582c247f8",
+  "resourceID": "626a0978-d55f-4841-8b7c-dc0c0f592c6f",
+  "resourceURI": "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/k8s/v1/apps/7c8bef49-697e-4fb4-810c-675cef4cf6c9/appSnaps/2b6dafc3-2172-4431-a482-6306b2703130",
+  "resourceCollectionURI": [
+    "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/f8b58091-4b9c-4c64-9b40-018dbaf7c5de/apps/f670bf11-8850-44bd-b330-815af6186a06/appSnaps/2b6dafc3-2172-4431-a482-6306b2703130",
+    "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/923708f8-0435-45b5-8c00-fbdef3ffaf25/apps/f670bf11-8850-44bd-b330-815af6186a06/appSnaps/2b6dafc3-2172-4431-a482-6306b2703130"
+  ],
+  "state": "running",
+  "stateTransitions": [
+    {
+      "from": "running",
+      "to": [
+        "paused",
+        "cancelled"
+      ]
+    },
+    {
+      "from": "paused",
+      "to": [
+        "running",
+        "cancelled"
+      ]
+    }
+  ],
+  "stateDetails": [],
+  "orderHint": 0,
+  "percentDone": 20.25,
+  "startTime": "2020-08-06T12:24:52.256624Z",
+  "endTime": "2020-08-06T12:26:52.256624Z",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidParams | tableau[link:#invalidParams["invalidParams"]] | Faux  a| 
+Liste des paramètres de requête invalides
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| depuis | chaîne | Vrai  a| 
+
+
+
+| pour | tableau[chaîne] | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Vrai  a| 
+
+
+
+| CréationTimestamp | chaîne | Vrai  a| 
+
+
+
+| ModificationTimestamp | chaîne | Vrai  a| 
+
+
+
+| CreatedBy | chaîne | Vrai  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+====

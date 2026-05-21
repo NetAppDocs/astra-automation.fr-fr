@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/namespace_endpoints.html 
+summary: 'Points de terminaison de l"espace de noms de l"API Astra (ACC)' 
+---
+= Points de terminaison de l'espace de noms de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Namespace fournit un accès en lecture seule aux ressources d'espace de noms afin de décrire les espaces de noms associés à un cluster donné.

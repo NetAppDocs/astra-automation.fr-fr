@@ -1,0 +1,595 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts-core-v1-asups.html 
+summary: Créer une nouvelle ressource ASUP 
+---
+= Créer une nouvelle ressource ASUP
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups`#
+
+Indique les valeurs souhaitées pour la ressource API ASUP à créer.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+|===
+
+
+== Corps de la requête
+
+Indique les valeurs souhaitées pour la ressource API ASUP à créer.
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-asup"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+
+
+
+
+| télécharger | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant s'il faut télécharger le bundle AutoSupport après sa création réussie. Les valeurs définies sont :
+
+* "true" - Téléverser le AutoSupport bundle.
+* « faux » - Ne téléchargez pas le AutoSupport bundle.
+
+
+
+
+| dataWindowStart | chaîne | Faux  a| 
+Chaîne JSON contenant un horodatage indiquant l'heure de début de la fenêtre de collecte de données du bundle AutoSupport. Par défaut, cette valeur correspond à 24 heures avant la valeur de la clé « dataWindowEnd ». Elle doit être antérieure à la valeur de la clé « dataWindowEnd ». La durée maximale est de 7 jours avant l'heure actuelle de la requête. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| dataWindowEnd | chaîne | Faux  a| 
+Chaîne JSON contenant un horodatage indiquant l'heure de fin de la fenêtre de collecte de données du paquet AutoSupport. Par défaut, il s'agit de l'heure actuelle de la requête. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| les métadonnées | link:#type_astra_metadata["type_astra_metadata"] | Faux  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette.
+
+
+|===
+.Exemple de requête
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-asup",
+  "version": "1.0",
+  "upload": "true"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 201, Returns the newly created asup resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-asup"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| creationState | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant l'état de création du bundle AutoSupport. Pour les états « terminé » et « partiel », le bundle peut être téléchargé en effectuant une requête GET sur l'URI de la ressource avec un en-tête Accept contenant « _/_ » ou « application/gzip ». Les valeurs définies sont :
+
+* "En cours d'exécution" - AutoSupport bundle la génération s'exécute normalement.
+* "Terminé" - AutoSupport bundle La génération du paquet est terminée.
+* « Partiel » - La génération du bundle AutoSupport est terminée, mais certaines données n'ont pas été incluses dans le bundle.
+* « Échec » - la génération de bundle AutoSupport est dans un état d'échec permanent.
+
+
+
+
+| creationStateDetails | tableau[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vrai  a| 
+Tableau JSON d'objets JSON contenant des informations supplémentaires sur la raison pour laquelle « creationState » est passé à l'état « partial » ou « failed ». Si aucune information n'est disponible, ce tableau sera vide.
+
+* Nombre minimum d’articles : 0
+
+
+
+
+| télécharger | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant s'il faut télécharger le bundle AutoSupport après sa création réussie. Les valeurs définies sont :
+
+* "true" - Téléverser le AutoSupport bundle.
+* « faux » - Ne téléchargez pas le AutoSupport bundle.
+
+
+
+
+| uploadState | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état du AutoSupport bundle upload si celui-ci a été demandé. Les valeurs définies sont :
+
+* "En attente" - le téléchargement du bundle AutoSupport est programmé lorsque la création du bundle AutoSupport est terminée (« creationState » est « running »).
+* "bloqué" - Le téléchargement du bundle AutoSupport n'a pas été tenté car le bundle n'a pas été créé (« creationState » est « échec ») ou le téléchargement a été bloqué faute de licence.
+* "en cours d'exécution" - le chargement du bundle AutoSupport se déroule normalement (« creationState » est « completed » ou « partial »).
+* "Terminé" - AutoSupport bundle upload a été terminé.
+* « Échec » - Le chargement du bundle AutoSupport est dans un état d'échec permanent.
+
+
+
+
+| uploadStateDetails | tableau[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Faux  a| 
+Tableau JSON d'objets JSON répertoriant des détails supplémentaires sur la raison pour laquelle «uploadState» est passé à «failed». Si aucun détail n'est disponible, ce tableau sera vide.
+
+* Nombre minimum d’articles : 0
+
+
+
+
+| triggerType | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant ce qui a déclenché la création de la ressource ASUP. Les valeurs définies sont :
+
+* « manuel » - La ressource ASUP et le bundle AutoSupport associé ont été créés manuellement.
+* « scheduled » - La ressource ASUP et le bundle AutoSupport associé ont été créés selon une planification configurée.
+
+
+
+
+| dataWindowStart | chaîne | Vrai  a| 
+Chaîne JSON contenant un horodatage indiquant l'heure de début de la fenêtre de collecte de données du bundle AutoSupport. Par défaut, cette valeur correspond à 24 heures avant la valeur de la clé « dataWindowEnd ». Elle doit être antérieure à la valeur de la clé « dataWindowEnd ». La durée maximale est de 7 jours avant l'heure actuelle de la requête. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| dataWindowEnd | chaîne | Vrai  a| 
+Chaîne JSON contenant un horodatage indiquant l'heure de fin de la fenêtre de collecte de données du paquet AutoSupport. Par défaut, il s'agit de l'heure actuelle de la requête. Les valeurs définies sont :
+
+* Conforme au schéma de date et d'heure ISO-8601
+
+
+
+
+| les métadonnées | link:#type_astra_metadata["type_astra_metadata"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette.
+
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-asup",
+  "version": "1.0",
+  "id": "9950003f-a1c7-5ca7-8930-06eec25f60aa",
+  "creationState": "running",
+  "creationStateDetails": [],
+  "upload": "true",
+  "uploadState": "pending",
+  "uploadStateDetails": [],
+  "triggerType": "manual",
+  "dataWindowStart": "2020-08-05T12:24:00.000000Z",
+  "dataWindowEnd": "2020-08-06T12:24:52.000000Z",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidFields | tableau[link:#invalidFields["invalidFields"]] | Faux  a| 
+Liste des champs invalides du corps de la requête
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Vrai  a| 
+
+
+
+| CréationTimestamp | chaîne | Vrai  a| 
+
+
+
+| ModificationTimestamp | chaîne | Vrai  a| 
+
+
+
+| CreatedBy | chaîne | Vrai  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du champ invalide du corps de la requête
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le champ du corps de la requête est invalide
+
+|===
+====

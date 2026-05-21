@@ -1,0 +1,477 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-k8s-v1-apps-appsnaps-.html 
+summary: 'Récupérer un instantané de l"application' 
+---
+= Récupérer un instantané de l'application
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps/{appSnap_id}`#
+
+Renvoie la ressource API Application Snapshot stockée dans le corps de la réponse JSON.
+
+
+
+== Paramètres
+
+[cols="5*"]
+|===
+| Nom | Type | Dans | Obligatoire | Description 
+
+
+| identifiant_compte | chaîne | chemin | Vrai  a| 
+ID de la ressource de compte conteneur
+
+* exemple: {{.Account}}
+
+
+
+
+| app_id | chaîne | chemin | Vrai  a| 
+ID de la ressource d'application contenant
+
+
+
+| appSnap_id | chaîne | chemin | Vrai  a| 
+ID de la appSnap collection à lister
+
+|===
+
+
+== Réponse
+
+[source]
+----
+Status: 200, Returns the stored Application Snapshot API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+Type de média de la ressource. Les valeurs définies sont :
+
+* "application/astra-appSnap"
+
+
+
+
+| version | chaîne | Vrai  a| 
+Version de la ressource. Les valeurs définies sont :
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+
+
+
+
+| id | chaîne | Vrai  a| 
+Identifiant unique global de la ressource. Les valeurs définies sont :
+
+* Conforme au schéma UUIDv4
+
+
+
+
+| nom | chaîne | Vrai  a| 
+Chaîne JSON contenant un nom défini par l'utilisateur pour l'instantané. Si aucun nom n'est spécifié, ou lorsque les instantanés sont déclenchés par une planification, le système attribue un nom à l'instantané. Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 63
+* Conforme au schéma d'étiquette DNS 1123
+
+
+
+
+| ID de compartiment | chaîne | Faux  a| 
+Chaîne JSON contenant un ID de compartiment optionnel indiquant l'emplacement de stockage de l'instantané lors de sa création. Si cet ID n'est pas spécifié, le compartiment par défaut du cluster est utilisé. Si aucun compartiment par défaut n'est spécifié sur le cluster, le compartiment par défaut du cloud correspondant est utilisé. Si le compartiment par défaut du cloud n'est pas disponible, une erreur est renvoyée lors de la création. Valeurs définies :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| ID de planification | chaîne | Faux  a| 
+Chaîne JSON contenant un ID de planification facultatif indiquant que l'instantané a été déclenché par une planification et précisant quelle planification a déclenché l'instantané. Présent uniquement pour les instantanés déclenchés par une planification. Valeurs définies :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| snapshotAppAsset | chaîne | Faux  a| 
+Chaîne JSON contenant l'identifiant de la ressource d'application correspondant à l'instantané. Ce champ sera renvoyé lorsque l'état de l'instantané de l'application est « completed ». Les valeurs définies sont :
+
+* Conforme au schéma d'identifiant Astra
+
+
+
+
+| État | chaîne | Vrai  a| 
+Chaîne JSON contenant une valeur indiquant l'état opérationnel de l'instantané. Les valeurs définies sont :
+
+* « En attente » - L’instantané de l’application est programmé pour être découvert
+* « discovering » - L'instantané de l'application est en cours de découverte
+* « running » - L’instantané de l’application fonctionne normalement
+* « completed » - L'instantané de l'application est terminé
+* « Échec » - L’instantané de l’application est dans un état d’échec permanent
+* « Supprimé » - L'instantané de l'application n'est actuellement pas accessible
+* « deleting » - L'instantané de l'application est en cours de suppression
+* « unknown » - L'état de l'instantané de l'application ne peut être déterminé
+
+
+
+
+| stateUnready | tableau[chaîne] | Vrai  a| 
+Tableau JSON de chaînes JSON, chacune indiquant la raison pour laquelle un instantané d'application ne peut pas passer à l'état « en cours d'exécution » ou pourquoi il est passé à l'état « en échec ». Les valeurs définies sont :
+
+* Longueur minimale : 1
+* Longueur maximale : 127
+
+
+
+
+| stateDetails | tableau[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Faux  a| 
+Tableau JSON d'objets JSON répertoriant des détails supplémentaires sur l'état actuel, notamment la raison pour laquelle cet état a été atteint. Si aucun détail n'est disponible, ce tableau sera vide. Valeurs définies :
+
+* Nombre minimum d'articles : 0
+
+
+
+
+| hookState | chaîne | Faux  a| 
+Chaîne JSON contenant une valeur indiquant l'état d'un ou plusieurs hooks d'exécution exécutés dans le cadre d'un instantané. Les valeurs définies sont :
+
+* « failed » - Un ou plusieurs hooks d'exécution ont échoué
+* « succès » - Il y avait zéro ou plusieurs crochets applicables et tous ont réussi
+
+
+
+
+| hookStateDetails | tableau[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Faux  a| 
+Tableau JSON d'objets JSON contenant des détails supplémentaires sur la raison pour laquelle «hookState» est passé à «failed». Si aucun détail n'est disponible, ce tableau sera vide.
+
+* Nombre minimum d’articles : 0
+
+
+
+
+| les métadonnées | link:#type_astra_metadata["type_astra_metadata"] | Vrai  a| 
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette.
+
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appSnap",
+  "version": "1.3",
+  "id": "c2cc5c22-ed0e-5c2b-8b7e-0fb81727f617",
+  "name": "app-name-245",
+  "bucketID": "0afbe357-a717-4c7a-8b3d-d0368959c8de",
+  "scheduleID": "1fe83650-9b3c-41ef-bb25-a2910c19c33e",
+  "state": "pending",
+  "stateUnready": [],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+
+
+| invalidParams | tableau[link:#invalidParams["invalidParams"]] | Faux  a| 
+Liste des paramètres de requête invalides
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Réponse
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erreur
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| statut | chaîne | Vrai  a| 
+
+
+
+| identifiant de corrélation | chaîne | Faux  a| 
+
+|===
+.Exemple de réponse d'erreur
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Définitions
+
+.Voir les définitions
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| type | chaîne | Vrai  a| 
+
+
+
+| titre | chaîne | Vrai  a| 
+
+
+
+| détail | chaîne | Vrai  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+
+
+
+| valeur | chaîne | Vrai  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Métadonnées spécifiques au client et au service associées à la ressource. Les valeurs définies sont :
+
+* Conforme au schéma de métadonnées Astra. Si aucune étiquette n'est spécifiée lors de la création, un objet de métadonnées sera créé sans étiquette.
+
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| étiquettes | tableau[link:#type_astra_label["type_astra_label"]] | Vrai  a| 
+
+
+
+| CréationTimestamp | chaîne | Vrai  a| 
+
+
+
+| ModificationTimestamp | chaîne | Vrai  a| 
+
+
+
+| CreatedBy | chaîne | Vrai  a| 
+
+
+
+| modifiedBy | chaîne | Faux  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nom | Type | Obligatoire | Description 
+
+
+| nom | chaîne | Vrai  a| 
+Nom du paramètre de requête invalide
+
+
+
+| raison | chaîne | Vrai  a| 
+Raison pour laquelle le paramètre de requête est invalide
+
+|===
+====

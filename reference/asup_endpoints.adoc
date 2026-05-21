@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/asup_endpoints.html 
+summary: 'Points de terminaison ASUP de l"API Astra (ACC)' 
+---
+= Points de terminaison ASUP de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API ASUP permet d'accéder aux ressources ASUP afin de créer et, éventuellement, de télécharger les AutoSupport bundles.

@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/package_endpoints.html 
+summary: 'Points de terminaison du package Astra API (ACC)' 
+---
+= Points de terminaison du package Astra API (ACC)
+:allow-uri-read: 
+
+
+L'API Package représente les packages logiciels installables.

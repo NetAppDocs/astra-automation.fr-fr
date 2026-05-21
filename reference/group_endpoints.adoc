@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/group_endpoints.html 
+summary: 'Points de terminaison du groupe Astra API (ACC)' 
+---
+= Points de terminaison du groupe Astra API (ACC)
+:allow-uri-read: 
+
+
+L'API de groupe permet d'accéder aux ressources de groupe Astra.

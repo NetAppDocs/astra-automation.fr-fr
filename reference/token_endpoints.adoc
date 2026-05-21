@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/token_endpoints.html 
+summary: 'Points de terminaison des jetons de l"API Astra (ACC)' 
+---
+= Points de terminaison des jetons de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Token permet aux utilisateurs de créer et de gérer des jetons d'accès API.

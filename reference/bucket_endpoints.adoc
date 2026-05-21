@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/bucket_endpoints.html 
+summary: 'Points de terminaison de compartiment de l"API Astra (ACC)' 
+---
+= Points de terminaison de compartiment de l'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Bucket permet d'accéder aux buckets utilisés pour stocker les sauvegardes d'applications dans Astra.
