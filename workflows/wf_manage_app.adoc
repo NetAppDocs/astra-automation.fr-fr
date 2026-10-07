@@ -18,18 +18,21 @@ Vous pouvez créer une application gérée basée sur une application déjà con
 
 
 
+[[step-1-select-the-namespace]]
 == Étape 1 : sélectionnez l'espace de noms
 
 Exécutez le flux de travail link:../workflows/wf_list_namespaces.html["Lister les espaces de noms"] et sélectionnez l'espace de noms.
 
 
 
+[[step-2-select-the-cluster]]
 == Étape 2 : sélectionnez le cluster
 
 Exécutez le flux de travail link:../workflows_infra/wf_list_clusters.html["Lister les clusters"] et sélectionnez le cluster.
 
 
 
+[[step-3-manage-the-application]]
 == Étape 3 : gérer l'application
 
 Effectuez l'appel suivant de l'API REST pour gérer l'application.

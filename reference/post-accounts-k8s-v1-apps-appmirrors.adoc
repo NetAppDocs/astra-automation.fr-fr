@@ -7,6 +7,7 @@ summary: Créer une nouvelle ressource AppMirror pour une application
 ---
 = Créer une nouvelle ressource AppMirror pour une application
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appMirrors`#
@@ -15,6 +16,7 @@ Indique les valeurs souhaitées pour la ressource API AppMirror à créer.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID de la ressource d'application contenant
 |===
 
 
+[[request-body]]
 == Corps de la requête
 
 Indique les valeurs souhaitées pour la ressource API AppMirror à créer.
@@ -129,6 +132,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -449,6 +453,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -494,6 +499,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -544,6 +550,7 @@ Liste des champs invalides du corps de la requête
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -589,6 +596,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -634,6 +642,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -679,11 +688,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[namespaceMapping]]
 [role="api-collapsible-fifth-title"]
 namespaceMapping
 
@@ -718,6 +729,7 @@ Rôle initial de cette définition d'espace de noms. Ce paramètre est facultati
 
 
 |===
+[[storageClasses]]
 [role="api-collapsible-fifth-title"]
 storageClasses
 
@@ -751,6 +763,7 @@ Rôle initial de cette définition de classe de stockage. Ce paramètre est facu
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -766,6 +779,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -798,6 +812,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -813,9 +828,11 @@ type_astra_stateTransition
 | pour | tableau[chaîne] | Vrai  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -839,6 +856,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -856,6 +874,7 @@ Nom du paramètre de requête invalide
 Raison pour laquelle le paramètre de requête est invalide
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

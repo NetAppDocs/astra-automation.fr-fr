@@ -21,6 +21,7 @@ NOTE: Le format du chemin et de l'URL complète utilisés pour accéder aux ress
 
 
 
+[[summary-of-astra-control-rest-resources]]
 == Résumé des ressources REST d'Astra Control
 
 Les principaux terminaux de ressources de l'API REST Astra Control sont organisés en trois catégories. Chaque ressource est accessible avec l'ensemble complet des opérations CRUD (création, lecture, mise à jour, suppression) sauf mention contraire.
@@ -29,6 +30,7 @@ La colonne *version* indique la version d'Astra lorsque la ressource a été int
 
 
 
+[[core-resources]]
 === Ressources centrales
 
 Les terminaux de ressources de base fournissent les services de base nécessaires pour établir et maintenir l'environnement d'exécution Astra.
@@ -114,6 +116,7 @@ Les terminaux de ressources de base fournissent les services de base nécessaire
 |===
 
 
+[[managed-application-resources]]
 === Ressources applicatives gérées
 
 Les terminaux de ressources d'application gérée permettent d'accéder aux applications Kubernetes gérées.
@@ -139,6 +142,7 @@ Les terminaux de ressources d'application gérée permettent d'accéder aux appl
 |===
 
 
+[[topology-resources]]
 === Ressources de topologie
 
 Les points de terminaison de ressource de topologie fournissent un accès aux applications non gérées et aux ressources de stockage.
@@ -185,6 +189,7 @@ Les points de terminaison de ressource de topologie fournissent un accès aux ap
 |===
 
 
+[[additional-resources-and-endpoints]]
 == Ressources supplémentaires et terminaux
 
 Vous pouvez utiliser plusieurs ressources et terminaux supplémentaires pour prendre en charge un déploiement Astra,

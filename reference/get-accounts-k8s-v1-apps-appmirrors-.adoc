@@ -7,6 +7,7 @@ summary: Récupérer une ressource AppMirror pour une application
 ---
 = Récupérer une ressource AppMirror pour une application
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appMirrors/{appMirror_id}`#
@@ -15,6 +16,7 @@ Renvoie la ressource API AppMirror stockée dans le corps de la réponse JSON.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID de la collection appMirror à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -378,6 +381,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -423,6 +427,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -473,6 +478,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -518,6 +524,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -563,11 +570,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[namespaceMapping]]
 [role="api-collapsible-fifth-title"]
 namespaceMapping
 
@@ -602,6 +611,7 @@ Rôle initial de cette définition d'espace de noms. Ce paramètre est facultati
 
 
 |===
+[[storageClasses]]
 [role="api-collapsible-fifth-title"]
 storageClasses
 
@@ -635,6 +645,7 @@ Rôle initial de cette définition de classe de stockage. Ce paramètre est facu
 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -650,9 +661,11 @@ type_astra_stateTransition
 | pour | tableau[chaîne] | Vrai  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -676,6 +689,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -691,6 +705,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -723,6 +738,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

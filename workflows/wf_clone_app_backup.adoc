@@ -18,6 +18,7 @@ Vous pouvez créer une nouvelle application en la clonant à partir d'une sauveg
 
 
 
+[[before-you-begin]]
 == Avant de commencer
 
 Notez les éléments suivants concernant ce flux de travail :
@@ -31,18 +32,21 @@ NOTE: Pour cloner une application vers un autre cluster, vous devez mettre à jo
 
 
 
+[[step-1-select-the-app-to-clone]]
 == Étape 1 : sélectionnez l'application à cloner
 
 Exécutez le flux de travail link:wf_list_man_apps.html["Répertorier les applications"] et sélectionnez l'application à cloner. Plusieurs des valeurs de ressource sont nécessaires pour l'appel REST utilisé pour cloner l'application.
 
 
 
+[[step-2-select-the-backup-to-use]]
 == Étape 2 : sélectionnez la sauvegarde à utiliser
 
 Exécutez le flux de travail link:wf_list_backups.html["Répertoriez les sauvegardes"] et sélectionnez la sauvegarde que vous souhaitez utiliser.
 
 
 
+[[step-3-clone-the-app]]
 == Étape 3 : cloner l'application
 
 Effectuez l'appel de l'API REST suivant.

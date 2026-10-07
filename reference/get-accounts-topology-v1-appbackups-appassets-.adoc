@@ -7,6 +7,7 @@ summary: 'Récupérer une ressource d"application à partir d"une sauvegarde d"a
 ---
 = Récupérer une ressource d'application à partir d'une sauvegarde d'application
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}/appAssets/{appAsset_id}`#
@@ -15,6 +16,7 @@ Renvoie la ressource API Application Asset stockée dans le corps de la réponse
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID de la appAsset collection à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -185,6 +188,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -230,6 +234,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -280,6 +285,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -325,6 +331,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -370,11 +377,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[GVK]]
 [role="api-collapsible-fifth-title"]
 GVK
 
@@ -411,11 +420,13 @@ Chaîne JSON contenant un identifiant de version attribué par Kubernetes. Les v
 
 
 |===
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 type_json
 
 Objet JSON contenant l'intégralité du contenu de la définition de ressource Kubernetes.
 
+[[labels]]
 [role="api-collapsible-fifth-title"]
 étiquettes
 
@@ -443,6 +454,7 @@ Chaîne JSON contenant la valeur de l'étiquette Defined values are :
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -458,6 +470,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -490,6 +503,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

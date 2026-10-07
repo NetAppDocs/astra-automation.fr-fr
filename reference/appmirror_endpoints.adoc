@@ -7,6 +7,7 @@ summary: 'Points de terminaison de l"API Astra (ACC) AppMirror'
 ---
 = Points de terminaison de l'API Astra (ACC) AppMirror
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'AppMirror API permet la gestion des AppMirror relations.

@@ -7,6 +7,7 @@ summary: Créer un nouveau compartiment
 ---
 = Créer un nouveau compartiment
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets`#
@@ -15,6 +16,7 @@ Indique les valeurs souhaitées pour la ressource d'API Bucket à créer.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID de la ressource de compte conteneur
 |===
 
 
+[[request-body]]
 == Corps de la requête
 
 Indique les valeurs souhaitées pour la ressource d'API Bucket à créer.
@@ -121,6 +124,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -267,6 +271,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -312,6 +317,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -362,6 +368,7 @@ Liste des champs invalides du corps de la requête
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -412,6 +419,7 @@ Liste des champs invalides du corps de la requête
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -457,6 +465,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -502,11 +511,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[s3]]
 [role="api-collapsible-fifth-title"]
 s3
 
@@ -534,6 +545,7 @@ Chaîne JSON contenant le nom du compartiment S3. Les valeurs définies sont :
 
 
 |===
+[[gcp]]
 [role="api-collapsible-fifth-title"]
 gcp
 
@@ -552,6 +564,7 @@ Chaîne JSON contenant le nom du bucket Google Cloud sous-jacent. Les valeurs d�
 
 
 |===
+[[azure]]
 [role="api-collapsible-fifth-title"]
 azure
 
@@ -579,6 +592,7 @@ Chaîne JSON contenant le nom du blob Azure sous-jacent. Les valeurs définies s
 
 
 |===
+[[bucketParameters]]
 [role="api-collapsible-fifth-title"]
 bucketParameters
 
@@ -603,6 +617,7 @@ Objet JSON fournissant les paramètres du protocole Google Cloud.
 Objet JSON fournissant les paramètres du protocole Azure.
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -618,6 +633,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -650,9 +666,11 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -676,6 +694,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -693,6 +712,7 @@ Nom du paramètre de requête invalide
 Raison pour laquelle le paramètre de requête est invalide
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

@@ -7,6 +7,7 @@ summary: 'Points de terminaison d"autorisation de l"API Astra (ACC)'
 ---
 = Points de terminaison d'autorisation de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Entitlement indique quelles fonctionnalités ou capacités sont activées par les licences et les abonnements actifs pour un compte.

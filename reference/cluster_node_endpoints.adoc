@@ -7,6 +7,7 @@ summary: 'Points de terminaison des nœuds de cluster de l"API Astra (ACC)'
 ---
 = Points de terminaison des nœuds de cluster de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Cluster Node permet d'accéder aux nœuds associés à un cluster.

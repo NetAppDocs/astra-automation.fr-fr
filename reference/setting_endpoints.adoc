@@ -7,6 +7,7 @@ summary: 'Points de terminaison de configuration de l"API Astra (ACC)'
 ---
 = Points de terminaison de configuration de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Un paramètre de compte est un ensemble de paires clé/valeur importantes pour une fonctionnalité connue dans un compte Astra. L'API Setting fournit un accès à des informations importantes concernant un paramètre de compte.

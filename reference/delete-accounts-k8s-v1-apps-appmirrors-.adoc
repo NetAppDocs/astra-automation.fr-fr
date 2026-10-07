@@ -7,6 +7,7 @@ summary: Supprimer une ressource AppMirror pour une application
 ---
 = Supprimer une ressource AppMirror pour une application
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appMirrors/{appMirror_id}`#
@@ -24,6 +25,7 @@ Supprime la ressource API AppMirror spécifiée. Lance un processus pour supprim
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -50,6 +52,7 @@ ID de la collection appMirror à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -58,6 +61,7 @@ Status: 204, Indicates if the appMirror resource was deleted.
 ----
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -103,6 +107,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -153,6 +158,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -198,6 +204,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -243,11 +250,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

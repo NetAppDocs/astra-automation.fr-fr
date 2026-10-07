@@ -7,6 +7,7 @@ summary: Lister toutes les licences
 ---
 = Lister toutes les licences
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses`#
@@ -15,6 +16,7 @@ Renvoie un tableau JSON contenant toutes les ressources correspondantes de la co
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -68,6 +70,7 @@ Exemples OpenAPI : « field eq 'value' »
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -115,6 +118,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -160,6 +164,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -210,6 +215,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -255,6 +261,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -300,11 +307,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[addons]]
 [role="api-collapsible-fifth-title"]
 modules complémentaires
 
@@ -352,6 +361,7 @@ Chaîne JSON contenant le protocole de licence associé à ce module complément
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -367,6 +377,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -399,6 +410,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[license_1_0_get_response_body]]
 [role="api-collapsible-fifth-title"]
 licence_1.0_obtenir_corps_de_réponse
 
@@ -551,6 +563,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -586,6 +599,7 @@ type_astra_metadata_list
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

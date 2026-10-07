@@ -18,6 +18,7 @@ Vous pouvez supprimer un snapshot associé à une application.
 
 
 
+[[before-you-begin]]
 == Avant de commencer
 
 Vous devez disposer des éléments suivants :
@@ -28,6 +29,7 @@ Vous devez disposer des éléments suivants :
 
 
 
+[[delete-the-snapshot]]
 == Supprimez le snapshot
 
 Effectuez l'appel de l'API REST suivant.

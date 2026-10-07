@@ -7,6 +7,7 @@ summary: 'Créer une nouvelle sauvegarde d"application pour une application'
 ---
 = Créer une nouvelle sauvegarde d'application pour une application
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups`#
@@ -15,6 +16,7 @@ Indique les valeurs souhaitées pour la ressource d'API de sauvegarde d'applicat
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID de la ressource d'application contenant
 |===
 
 
+[[request-body]]
 == Corps de la requête
 
 Indique les valeurs souhaitées pour la ressource d'API de sauvegarde d'application à créer.
@@ -110,6 +113,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -285,6 +289,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -330,6 +335,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -380,6 +386,7 @@ Liste des champs invalides du corps de la requête
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -425,6 +432,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -470,6 +478,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -515,6 +524,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -560,11 +570,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -580,6 +592,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -612,9 +625,11 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -638,6 +653,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -655,6 +671,7 @@ Nom du paramètre de requête invalide
 Raison pour laquelle le paramètre de requête est invalide
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

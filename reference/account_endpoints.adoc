@@ -7,6 +7,7 @@ summary: 'Points de terminaison de compte de l"API Astra (ACC)'
 ---
 = Points de terminaison de compte de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Account représente des locataires isolés dans un système multilocataire.

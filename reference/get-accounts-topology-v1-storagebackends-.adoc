@@ -7,6 +7,7 @@ summary: Récupérer un backend de stockage
 ---
 = Récupérer un backend de stockage
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends/{storageBackend_id}`#
@@ -15,6 +16,7 @@ Renvoie la ressource API du backend de stockage stockée dans le corps de la ré
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID de la collection storageBackend à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -275,6 +278,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -320,6 +324,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -370,6 +375,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -415,6 +421,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -460,11 +467,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[capabilities]]
 [role="api-collapsible-fifth-title"]
 capacités
 
@@ -489,6 +498,7 @@ Chaîne JSON indiquant si ce backend de stockage prend en charge SnapMirror.
 Chaîne JSON indiquant si ce Storage Backend prend en charge s3.
 
 |===
+[[ontap]]
 [role="api-collapsible-fifth-title"]
 ONTAP
 
@@ -522,6 +532,7 @@ Tableau JSON de chaînes JSON contenant la liste de toutes les adresses IP de ge
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -537,6 +548,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -569,6 +581,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

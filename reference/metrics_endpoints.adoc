@@ -7,6 +7,7 @@ summary: 'Points de terminaison des métriques de l"API Astra (ACC)'
 ---
 = Points de terminaison des métriques de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Metrics représente les indicateurs associés à un compte donné.

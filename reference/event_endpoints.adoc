@@ -7,6 +7,7 @@ summary: 'Points de terminaison d"événements de l"API Astra (ACC)'
 ---
 = Points de terminaison d'événements de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Event permet d'accéder aux événements qui se produisent dans le système.

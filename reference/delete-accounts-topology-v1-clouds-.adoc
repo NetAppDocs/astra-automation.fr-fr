@@ -7,6 +7,7 @@ summary: Supprimer un cloud
 ---
 = Supprimer un cloud
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
@@ -15,6 +16,7 @@ Supprime l'instance cloud demandée ainsi que tous les clusters et volumes non g
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID de la collection cloud à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -44,6 +47,7 @@ Status: 204, Indicates if the cloud resource was deleted.
 ----
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -89,6 +93,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -139,6 +144,7 @@ Liste des champs invalides du corps de la requête
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -184,6 +190,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -229,6 +236,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -274,11 +282,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -296,6 +306,7 @@ Nom du paramètre de requête invalide
 Raison pour laquelle le paramètre de requête est invalide
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

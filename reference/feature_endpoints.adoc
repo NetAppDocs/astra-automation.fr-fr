@@ -7,6 +7,7 @@ summary: 'Points de terminaison de fonctionnalités de l"API Astra (ACC)'
 ---
 = Points de terminaison de fonctionnalités de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Feature offre un accès en lecture seule aux ressources des indicateurs de fonctionnalités afin de déterminer quelles fonctionnalités sont activées ou désactivées dans le système.

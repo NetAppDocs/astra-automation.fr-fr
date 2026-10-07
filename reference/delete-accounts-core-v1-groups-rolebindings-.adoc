@@ -7,6 +7,7 @@ summary: Supprimer une attribution de rôle pour un groupe
 ---
 = Supprimer une attribution de rôle pour un groupe
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings/{roleBinding_id}`#
@@ -20,6 +21,7 @@ Supprime la ressource API de liaison de rôle spécifiée.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -46,6 +48,7 @@ ID de la collection roleBinding à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -54,6 +57,7 @@ Status: 204, Indicates if the roleBinding resource was deleted.
 ----
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -99,6 +103,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -149,6 +154,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -194,6 +200,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -239,11 +246,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

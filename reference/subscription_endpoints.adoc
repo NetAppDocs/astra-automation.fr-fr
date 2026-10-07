@@ -7,6 +7,7 @@ summary: 'Points de terminaison d"abonnement à l"API Astra (ACC)'
 ---
 = Points de terminaison d'abonnement à l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API d'abonnement permet d'accéder aux ressources d'abonnement afin de représenter les abonnements actifs.

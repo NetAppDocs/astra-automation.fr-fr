@@ -7,6 +7,7 @@ summary: Supprimer une source de hook
 ---
 = Supprimer une source de hook
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources/{hookSource_id}`#
@@ -15,6 +16,7 @@ Supprime la ressource API Hook Source spécifiée.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID de la collection hookSource à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -44,6 +47,7 @@ Status: 204, Indicates if the hookSource resource was deleted.
 ----
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -89,6 +93,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -139,6 +144,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -184,6 +190,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -229,11 +236,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

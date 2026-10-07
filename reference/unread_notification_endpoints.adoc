@@ -7,6 +7,7 @@ summary: 'Points de terminaison de notification non lue de l"API Astra (ACC)'
 ---
 = Points de terminaison de notification non lue de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API de notifications non lues fournit des informations sur les notifications qui n'ont pas été lues par un utilisateur donné et permet de les marquer comme lues.

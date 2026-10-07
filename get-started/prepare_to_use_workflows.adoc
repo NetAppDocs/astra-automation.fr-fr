@@ -18,6 +18,7 @@ Vous devez aussi connaître l'entreprise et le format des workflows Astra avant 
 
 
 
+[[introduction]]
 == Introduction
 
 Un _workflow_ est une séquence d'une ou de plusieurs étapes nécessaires à la réalisation d'une tâche ou d'un objectif administratif spécifique. Chaque étape d'un workflow de contrôle Astra est l'une des suivantes :
@@ -34,6 +35,7 @@ NOTE: Un flux de travail ne peut contenir qu'une seule étape. Le format de ces 
 
 
 
+[[workflow-categories]]
 == Catégories de flux de travail
 
 Selon votre modèle de déploiement, vous pouvez consulter deux catégories de workflows Astra, Si vous utilisez Astra Control Center, vous devez d'abord les workflows d'infrastructure, puis passer aux workflows de gestion. Avec Astra Control Service, vous pouvez généralement accéder directement aux workflows de gestion.
@@ -43,18 +45,21 @@ NOTE: Les exemples de boucles dans les workflows utilisent l'URL d'Astra Control
 
 
 
+[[infrastructure-workflows]]
 === Workflows d'infrastructure
 
 Ces workflows sont associés à l'infrastructure Astra, notamment les identifiants, les compartiments et les systèmes de stockage back-end. Elles sont nécessaires avec le centre de contrôle Astra, mais dans la plupart des cas peuvent également être utilisées avec le service de contrôle Astra. Les flux de travail se concentrent sur les tâches requises pour établir et gérer un cluster géré par Astra.
 
 
 
+[[management-workflows]]
 === Flux de travail de gestion
 
 Vous pouvez utiliser ces flux de travail après avoir configuré un cluster géré. Les workflows de gestion sont axés sur la protection des applications et sur des opérations telles que la sauvegarde, la restauration et le clonage d'une application.
 
 
 
+[[common-input-parameters]]
 == Paramètres d'entrée communs
 
 Les paramètres d'entrée décrits ci-dessous sont communs à tous les échantillons curl utilisés pour illustrer un appel API REST.
@@ -64,6 +69,7 @@ NOTE: Comme ces paramètres d'entrée sont universellement requis, ils ne sont p
 
 
 
+[[path-parameters]]
 === Paramètres de chemin
 
 Le chemin du noeud final utilisé avec chaque appel d'API REST inclut les paramètres suivants. Voir aussi link:../rest-core/url_format.html["Format d'URL"] pour en savoir plus.
@@ -73,6 +79,7 @@ ID de compte:: Il s'agit de la valeur UUIDv4 identifiant le compte Astra sur leq
 
 
 
+[[request-headers]]
 === En-têtes de demande
 
 En fonction de l'appel d'API REST, vous devrez peut-être inclure plusieurs en-têtes de requête.
@@ -84,6 +91,7 @@ Accepter:: Vous pouvez déclarer le type de support spécifique du contenu que v
 
 
 
+[[presentation-of-tokens-and-identifiers]]
 == Présentation des jetons et des identificateurs
 
 Le jeton API et les autres valeurs d'ID utilisées avec les exemples de boucles sont opaques sans signification perceptible. Afin d'améliorer la lisibilité des échantillons, les valeurs réelles de jeton et d'ID ne sont pas utilisées. Des mots-clés réservés plus petits sont utilisés, ce qui présente plusieurs avantages :
@@ -112,6 +120,7 @@ Voici quelques-uns des mots-clés réservés communs utilisés dans les exemples
 |===
 
 
+[[using-the-examples-with-bash]]
 == En utilisant les exemples avec Bash
 
 Si vous utilisez directement les exemples de boucles de flux de travail, vous devez mettre à jour les variables qu'ils contiennent avec les valeurs appropriées à votre environnement. Vous pouvez modifier manuellement les exemples ou vous appuyer sur le shell de hachage pour effectuer la substitution, comme décrit ci-dessous.

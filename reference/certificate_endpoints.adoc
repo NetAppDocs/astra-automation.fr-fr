@@ -7,6 +7,7 @@ summary: 'Points de terminaison de certificat de l"API Astra (ACC)'
 ---
 = Points de terminaison de certificat de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Certificate représente les certificats approuvés par l'administrateur qui sont utilisés pour établir des connexions sortantes.

@@ -7,6 +7,7 @@ summary: 'Points de terminaison utilisateur LDAP de l"API Astra (ACC)'
 ---
 = Points de terminaison utilisateur LDAP de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API utilisateur LDAP offre un accès en lecture seule aux utilisateurs LDAP au sein du serveur LDAP configuré.

@@ -7,6 +7,7 @@ summary: Récupérer une classe de stockage pour un cluster
 ---
 = Récupérer une classe de stockage pour un cluster
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/storageClasses/{storageClass_id}`#
@@ -15,6 +16,7 @@ Renvoie la ressource API de classe de stockage stockée dans le corps de la rép
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID de la collection storageClass à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -217,6 +220,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -262,6 +266,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -312,6 +317,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -357,6 +363,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -402,11 +409,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -422,6 +431,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -454,6 +464,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

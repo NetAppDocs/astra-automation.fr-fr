@@ -7,6 +7,7 @@ summary: Lister tous les comptes
 ---
 = Lister tous les comptes
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts`#
@@ -15,6 +16,7 @@ Renvoie un tableau JSON contenant toutes les ressources correspondantes de la co
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -93,6 +95,7 @@ Exemples OpenAPI : "+++<continue token="" from="" collection="" metadata="">+++
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -162,6 +165,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -207,6 +211,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -257,6 +262,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -302,6 +308,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -347,11 +354,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[postalAddress]]
 [role="api-collapsible-fifth-title"]
 postalAddress
 
@@ -415,6 +424,7 @@ Chaîne JSON contenant des informations complémentaires facultatives telles que
 
 
 |===
+[[accountContact]]
 [role="api-collapsible-fifth-title"]
 accountContact
 
@@ -477,6 +487,7 @@ Chaîne JSON contenant le numéro de téléphone de l'utilisateur. Si cette clé
 Objet JSON contenant une collection de chaînes JSON spécifiant une adresse. Si cette clé est absente, cela indique qu'une adresse n'a pas été fournie. Si cette clé existe, les six chaînes JSON incluses seront toutes présentes. Si vous ne fournissez rien, la chaîne sera vide.
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -492,6 +503,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -524,6 +536,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[account_1_0_get_response_body]]
 [role="api-collapsible-fifth-title"]
 corps de réponse account_1.0_get_response_body
 
@@ -605,6 +618,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -640,6 +654,7 @@ type_astra_metadata_list
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -7,6 +7,7 @@ summary: Supprimer un certificat
 ---
 = Supprimer un certificat
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates/{certificate_id}`#
@@ -15,6 +16,7 @@ Supprime la ressource API de certificat spécifiée.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID de la collection de certificats à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -44,6 +47,7 @@ Status: 204, Indicates if the certificate resource was deleted.
 ----
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -89,6 +93,7 @@ Status: 503, Service unavailable
 ====
 
 
+[[error]]
 == Erreur
 
 [source]

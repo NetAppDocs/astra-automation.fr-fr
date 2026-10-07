@@ -18,18 +18,21 @@ Vous pouvez restaurer une application en créant une nouvelle application à par
 
 
 
+[[step-1-select-the-app-to-restore]]
 == Étape 1 : sélectionnez l'application à restaurer
 
 Exécutez le flux de travail link:wf_list_man_apps.html["Répertorier les applications"] et sélectionnez l'application à cloner. Plusieurs des valeurs de ressources sont nécessaires pour l'appel DE REPOS utilisé pour restaurer l'application.
 
 
 
+[[step-2-select-the-backup-to-use]]
 == Étape 2 : sélectionnez la sauvegarde à utiliser
 
 Exécutez le flux de travail link:wf_list_backups.html["Répertoriez les sauvegardes"] et sélectionnez la sauvegarde que vous souhaitez utiliser.
 
 
 
+[[step-3-restore-the-app]]
 == Étape 3 : restaurez l'application
 
 Effectuez l'appel de l'API REST suivant. Vous devez fournir l'ID d'une sauvegarde (comme indiqué ci-dessous) ou d'un instantané.

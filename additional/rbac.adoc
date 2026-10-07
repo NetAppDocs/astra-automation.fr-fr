@@ -18,6 +18,7 @@ L'API REST Astra prend en charge le contrôle d'accès basé sur des rôles (RBA
 
 
 
+[[astra-roles]]
 == Rôles d'Astra
 
 Chaque utilisateur Astra est affecté à un seul rôle qui détermine les actions qui peuvent être exécutées. Les rôles sont classés dans une hiérarchie comme décrit dans le tableau ci-dessous.
@@ -40,6 +41,7 @@ Chaque utilisateur Astra est affecté à un seul rôle qui détermine les action
 |===
 
 
+[[enhanced-rbac-with-namespace-granularity]]
 == RBAC amélioré avec granularité de l'espace de noms
 
 

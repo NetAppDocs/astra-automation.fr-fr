@@ -7,6 +7,7 @@ summary: 'Points de terminaison du backend de stockage de l"API Astra (ACC)'
 ---
 = Points de terminaison du backend de stockage de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Storage Backend permet d'accéder aux représentations des fournisseurs de services de stockage (storage backends) qui peuvent être utilisées par les clusters et applications gérés.

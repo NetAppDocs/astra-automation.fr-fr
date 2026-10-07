@@ -7,6 +7,7 @@ summary: 'Points de terminaison d"exécution de l"API Astra (ACC)'
 ---
 = Points de terminaison d'exécution de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Execution Hook permet une gestion simplifiée des hooks d'exécution. Les hooks d'exécution contiennent une configuration supplémentaire et des références à une ressource source de hook.

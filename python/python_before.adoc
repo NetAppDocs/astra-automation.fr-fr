@@ -21,6 +21,7 @@ NOTE: En plus d'accéder directement à l'API REST Astra Control avec Python, Ne
 
 
 
+[[prepare-the-environment]]
 == Préparation de l'environnement
 
 Les exigences de configuration de base pour exécuter les scripts Python sont décrites ci-dessous.
@@ -39,6 +40,7 @@ Vous avez besoin d'un compte Astra valide avec l'identifiant de compte et le jet
 
 
 
+[[create-the-json-input-files]]
 == Créez les fichiers d'entrée JSON
 
 Les scripts Python s'appuient sur les informations de configuration contenues dans les fichiers d'entrée JSON. Des exemples de fichiers sont fournis ci-dessous.

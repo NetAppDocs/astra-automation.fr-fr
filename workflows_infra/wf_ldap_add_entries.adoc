@@ -27,12 +27,14 @@ NOTE: Les informations d'identification LDAP se présentent sous la forme d'un n
 
 
 
+[[add-and-bind-an-individual-user]]
 == Ajouter et lier un utilisateur individuel
 
 Vous pouvez attribuer un rôle à chaque utilisateur Astra qui est utilisé après l'authentification LDAP. Ceci est approprié lorsqu'il y a un petit nombre d'utilisateurs et que chacun peut avoir des caractéristiques administratives différentes.
 
 
 
+[[step-1-add-a-user]]
 === Étape 1 : ajouter un utilisateur
 
 Effectuez l'appel d'API REST suivant pour ajouter un utilisateur à Astra et indiquer que LDAP est le fournisseur d'authentification.
@@ -123,6 +125,7 @@ Si le `email` La valeur n'est pas unique, une erreur se produit et un code d'ét
 ----
 
 
+[[step-2-add-a-role-binding-for-the-user]]
 === Étape 2 : ajoutez une liaison de rôle pour l'utilisateur
 
 Effectuez l'appel de l'API REST suivant pour lier l'utilisateur à un rôle spécifique. Vous devez créer l'UUID de l'utilisateur à l'étape précédente.
@@ -193,12 +196,14 @@ Noter les éléments suivants concernant les paramètres de réponse :
 
 
 
+[[add-and-bind-a-group]]
 == Ajouter et lier un groupe
 
 Vous pouvez affecter un rôle à un groupe Astra qui est utilisé après l'authentification LDAP. Ceci est approprié lorsqu'il y a un grand nombre d'utilisateurs et que chacun peut avoir des caractéristiques administratives similaires.
 
 
 
+[[step-1-add-a-group]]
 === Étape 1 : ajouter un groupe
 
 Effectuez l'appel d'API REST suivant pour ajouter un groupe à Astra et indiquer que LDAP est le fournisseur d'authentification.
@@ -265,6 +270,7 @@ Notez les informations suivantes concernant les paramètres d'entrée :
 ----
 
 
+[[step-2-add-a-role-binding-for-the-group]]
 === Étape 2 : ajoutez une liaison de rôle pour le groupe
 
 Effectuez l'appel d'API REST suivant pour lier le groupe à un rôle spécifique. Vous devez créer l'UUID du groupe à l'étape précédente. Les utilisateurs qui sont membres du groupe pourront se connecter à Astra une fois que LDAP aura effectué l'authentification.

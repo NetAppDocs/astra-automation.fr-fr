@@ -7,6 +7,7 @@ summary: Supprimer un groupe pour un utilisateur
 ---
 = Supprimer un groupe pour un utilisateur
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}`#
@@ -21,6 +22,7 @@ Supprime la ressource API Group spécifiée.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -47,6 +49,7 @@ ID de la collection de groupes à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -55,6 +58,7 @@ Status: 204, Indicates if the group resource was deleted.
 ----
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -100,6 +104,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -145,6 +150,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -190,11 +196,13 @@ Status: 403, Forbidden
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

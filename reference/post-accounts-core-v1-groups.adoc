@@ -7,6 +7,7 @@ summary: Créer un nouveau groupe
 ---
 = Créer un nouveau groupe
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups`#
@@ -15,6 +16,7 @@ Indique les valeurs souhaitées pour la ressource API de groupe à créer.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID de la ressource de compte conteneur
 |===
 
 
+[[request-body]]
 == Corps de la requête
 
 Indique les valeurs souhaitées pour la ressource API de groupe à créer.
@@ -108,6 +111,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -202,6 +206,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -252,6 +257,7 @@ Liste des champs invalides du corps de la requête
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -297,6 +303,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -342,6 +349,7 @@ Status: 406, Not acceptable
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -387,6 +395,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -437,11 +446,13 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -457,6 +468,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -489,6 +501,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -506,6 +519,7 @@ Nom du paramètre de requête invalide
 Raison pour laquelle le paramètre de requête est invalide
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

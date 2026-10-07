@@ -18,6 +18,7 @@ Vous pouvez supprimer une application gérée lorsqu'elle n'est plus nécessaire
 
 
 
+[[before-you-begin]]
 == Avant de commencer
 
 Vous devez avoir l'ID de l'application que vous souhaitez annuler la gestion. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_man_apps.html["Répertorier les applications"] pour localiser l'application.
@@ -26,6 +27,7 @@ Les sauvegardes et snapshots de l'application ne sont pas automatiquement suppri
 
 
 
+[[unmanage-the-app]]
 == Annulez la gestion de l'application
 
 Effectuez l'appel suivant de l'API REST pour supprimer l'application.

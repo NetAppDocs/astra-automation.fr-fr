@@ -7,6 +7,7 @@ summary: 'Supprimer une ressource de remplacement de hook d"exécution'
 ---
 = Supprimer une ressource de remplacement de hook d'exécution
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
@@ -23,6 +24,7 @@ CAUTION: Cette opération est obsolète.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -49,6 +51,7 @@ ID de la collection executionHookOverride à lister
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -57,6 +60,7 @@ Status: 204, Indicates if the executionHookOverride resource was deleted.
 ----
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -102,6 +106,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -152,6 +157,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -197,6 +203,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -242,11 +249,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

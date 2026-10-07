@@ -7,6 +7,7 @@ summary: 'Points de terminaison de planification de l’API Astra (ACC)'
 ---
 = Points de terminaison de planification de l’API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Schedule permet de définir diverses opérations de protection des données planifiées.

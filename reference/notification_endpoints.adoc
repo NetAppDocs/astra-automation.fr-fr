@@ -7,6 +7,7 @@ summary: 'Points de terminaison de notification de l"API Astra (ACC)'
 ---
 = Points de terminaison de notification de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API de notification fournit un accès par utilisateur aux événements avec une destination de notification.

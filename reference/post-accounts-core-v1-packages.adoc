@@ -7,6 +7,7 @@ summary: Créer un nouveau paquet
 ---
 = Créer un nouveau paquet
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
@@ -15,6 +16,7 @@ Indique les valeurs souhaitées pour la ressource Package API à créer.
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID de la ressource de compte conteneur
 |===
 
 
+[[request-body]]
 == Corps de la requête
 
 Indique les valeurs souhaitées pour la ressource Package API à créer.
@@ -191,6 +194,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -428,6 +432,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -473,6 +478,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -523,6 +529,7 @@ Liste des champs invalides du corps de la requête
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -573,6 +580,7 @@ Liste des champs invalides du corps de la requête
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -618,6 +626,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -663,11 +672,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[dependsOnImages]]
 [role="api-collapsible-fifth-title"]
 dependsOnImages
 
@@ -702,6 +713,7 @@ Chaîne JSON représentant l'étiquette/la version de cette image. Les valeurs d
 
 
 |===
+[[images]]
 [role="api-collapsible-fifth-title"]
 images
 
@@ -749,6 +761,7 @@ Chaîne JSON représentant le condensé de cette image. Les valeurs définies so
 Tableau JSON d'objets JSON décrivant les images nécessaires à l'installation ou à la mise à niveau de l'image actuelle.
 
 |===
+[[dependsOnComponents]]
 [role="api-collapsible-fifth-title"]
 dependsOnComponents
 
@@ -772,6 +785,7 @@ Chaîne JSON décrivant le nom du composant. Les valeurs définies sont :
 Tableau JSON de chaînes JSON définissant la version du composant requise pour installer l'image actuelle.
 
 |===
+[[artifacts]]
 [role="api-collapsible-fifth-title"]
 artefacts
 
@@ -821,6 +835,7 @@ Chaîne JSON contenant la version de cet artefact, si elle est fournie. Les vale
 Tableau JSON d'objets JSON décrivant les composants installés nécessaires à l'installation/mise à niveau de l'image actuelle.
 
 |===
+[[files]]
 [role="api-collapsible-fifth-title"]
 fichiers
 
@@ -863,6 +878,7 @@ Chaîne JSON contenant le contenu du fichier. Les valeurs définies sont :
 
 
 |===
+[[upgradableVersions]]
 [role="api-collapsible-fifth-title"]
 upgradableVersions
 
@@ -888,6 +904,7 @@ Chaîne JSON décrivant la version maximale pouvant être mise à niveau vers la
 
 
 |===
+[[dependencies]]
 [role="api-collapsible-fifth-title"]
 dépendances
 
@@ -922,6 +939,7 @@ Chaîne JSON décrivant la version maximale requise pour ce composant. Les valeu
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -937,6 +955,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -969,6 +988,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -984,9 +1004,11 @@ type_astra_stateTransition
 | pour | tableau[chaîne] | Vrai  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -1010,6 +1032,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -1027,6 +1050,7 @@ Nom du paramètre de requête invalide
 Raison pour laquelle le paramètre de requête est invalide
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

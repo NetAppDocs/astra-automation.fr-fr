@@ -18,12 +18,14 @@ Vous pouvez gérer un cluster Kubernetes afin d'assurer la protection des donné
 
 
 
+[[step-1-select-the-cluster-to-manage]]
 == Étape 1 : sélectionnez le cluster à gérer
 
 Exécutez le flux de travail link:../workflows_infra/wf_list_clusters.html["Lister les clusters"] et sélectionnez le cluster souhaité. La propriété `managedState` du cluster doit être `unmanaged`.
 
 
 
+[[step-2-optionally-select-the-storage-class]]
 == Étape 2 : sélectionnez éventuellement la classe de stockage
 
 Éventuellement, exécutez le flux de travail link:../workflows_infra/wf_list_storage_classes.html["Répertorier les classes de stockage"] et sélectionnez la classe de stockage souhaitée.
@@ -33,6 +35,7 @@ NOTE: Si vous ne fournissez pas de classe de stockage à l'appel pour gérer le 
 
 
 
+[[step-3-manage-the-cluster]]
 == Étape 3 : gérer le cluster
 
 Effectuez l'appel d'API REST suivant pour gérer le cluster.

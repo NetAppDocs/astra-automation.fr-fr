@@ -7,6 +7,7 @@ summary: 'Liste des utilisateurs d"un groupe'
 ---
 = Liste des utilisateurs d'un groupe
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users`#
@@ -15,6 +16,7 @@ Renvoie un tableau JSON contenant toutes les ressources correspondantes de la co
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -109,6 +111,7 @@ Exemples OpenAPI : "+++<continue token="" from="" collection="" metadata="">+++
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -160,6 +163,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -205,6 +209,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -255,6 +260,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -300,6 +306,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -345,11 +352,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[postalAddress]]
 [role="api-collapsible-fifth-title"]
 postalAddress
 
@@ -413,6 +422,7 @@ Chaîne JSON contenant des informations complémentaires facultatives telles que
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -428,6 +438,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -460,6 +471,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[user_1_2_get_response_body]]
 [role="api-collapsible-fifth-title"]
 user_1.2_get_response_body
 
@@ -607,6 +619,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -642,6 +655,7 @@ type_astra_metadata_list
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

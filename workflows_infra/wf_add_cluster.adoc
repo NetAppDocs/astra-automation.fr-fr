@@ -21,12 +21,14 @@ NOTE: L'ajout d'un cluster n'est pas nécessaire lors de l'utilisation d'un serv
 
 
 
+[[step-1-obtain-the-kubeconfig-file]]
 == Étape 1 : procurez-vous le fichier kubeconfig
 
 Vous devez obtenir une copie du fichier *kubconfig* auprès de votre administrateur ou service Kubernetes.
 
 
 
+[[step-2-prepare-the-kubeconfig-file]]
 == Étape 2 : préparez le fichier kubeconfig
 
 Avant d'utiliser le fichier *kubeconfig*, vous devez effectuer les opérations suivantes :
@@ -48,6 +50,7 @@ Voici un exemple de conversion du fichier kubeconfig de YAML au JSON, puis de co
 
 
 
+[[step-3-select-the-cloud]]
 == Étape 3 : sélectionnez le nuage
 
 Exécutez le flux de travail link:../workflows_infra/wf_list_clouds.html["Lister les clouds"] et sélectionnez le cloud dans lequel le cluster sera ajouté.
@@ -57,6 +60,7 @@ NOTE: Le seul cloud que vous pouvez sélectionner est le *cloud privé*.
 
 
 
+[[step-4-create-a-credential]]
 == Étape 4 : création d'une information d'identification
 
 Effectuez l'appel de l'API REST suivant pour créer des informations d'identification à l'aide du fichier kubeconfig.
@@ -97,6 +101,7 @@ curl --request POST \
 ----
 
 
+[[step-5-add-the-cluster]]
 == Étape 5 : ajoutez le cluster
 
 Effectuez l'appel d'API REST suivant pour ajouter le cluster au cloud. La valeur du `credentialID` Le champ de saisie est obtenu à partir de l'appel d'API REST à l'étape précédente.

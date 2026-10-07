@@ -7,6 +7,7 @@ summary: 'Lister les espaces de noms d"un cloud'
 ---
 = Lister les espaces de noms d'un cloud
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/namespaces`#
@@ -15,6 +16,7 @@ Renvoie un tableau JSON contenant toutes les ressources correspondantes de la co
 
 
 
+[[parameters]]
 == Paramètres
 
 [cols="5*"]
@@ -78,6 +80,7 @@ Exemples OpenAPI : « field eq 'value' »
 |===
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -137,6 +140,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -182,6 +186,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -232,6 +237,7 @@ Liste des paramètres de requête invalides
 ====
 
 
+[[response]]
 == Réponse
 
 [source]
@@ -277,6 +283,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erreur
 
 [source]
@@ -322,20 +329,25 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Définitions
 
 .Voir les définitions
 [%collapsible]
 ====
+[[targetSchema]]
 [role="api-collapsible-fifth-title"]
 targetSchema
 
+[[accept-post]]
 [role="api-collapsible-fifth-title"]
 accept-post
 
+[[accept-put]]
 [role="api-collapsible-fifth-title"]
 accepter-put
 
+[[hints]]
 [role="api-collapsible-fifth-title"]
 indices
 
@@ -363,6 +375,7 @@ indices
 | accepter-put | link:#accept-put["accepter-put"] | Faux  a| 
 
 |===
+[[type_astra_link]]
 [role="api-collapsible-fifth-title"]
 type_astra_link
 
@@ -394,9 +407,11 @@ type_astra_link
 | indices | link:#hints["indices"] | Faux  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -420,6 +435,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Faux  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -435,6 +451,7 @@ type_astra_label
 | valeur | chaîne | Vrai  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -467,6 +484,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[namespace_1_2_get_response_body]]
 [role="api-collapsible-fifth-title"]
 namespace_1.2_get_response_body
 
@@ -572,6 +590,7 @@ Métadonnées spécifiques au client et au service associées à la ressource. L
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -607,6 +626,7 @@ type_astra_metadata_list
 | modifiedBy | chaîne | Faux  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -7,6 +7,7 @@ summary: 'Points de terminaison des ressources d"application de l"API Astra (ACC
 ---
 = Points de terminaison des ressources d'application de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Application Asset donne accès aux collections internes d'informations d'état utilisées pour gérer les applications.

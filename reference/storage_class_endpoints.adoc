@@ -7,6 +7,7 @@ summary: 'Points de terminaison de classe de stockage de l"API Astra (ACC)'
 ---
 = Points de terminaison de classe de stockage de l'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Storage Class décrit les classes de stockage connues d'un cluster donné.

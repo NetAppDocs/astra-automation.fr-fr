@@ -18,18 +18,21 @@ Vous pouvez afficher la liste des classes de stockage disponibles.
 
 
 
+[[step-1-select-the-cloud]]
 == Étape 1 : sélectionnez le nuage
 
 Exécutez le flux de travail link:../workflows_infra/wf_list_clouds.html["Lister les clouds"] et choisissez le cloud dans lequel vous travaillez.
 
 
 
+[[step-2-select-the-cluster]]
 == Étape 2 : sélectionnez le cluster
 
 Exécutez le flux de travail link:../workflows_infra/wf_list_clusters.html["Lister les clusters"] et sélectionnez le cluster.
 
 
 
+[[step-3-list-the-storage-classes-for-a-specific-cluster]]
 == Étape 3 : répertorier les classes de stockage d'un cluster spécifique
 
 Effectuez l'appel d'API REST suivant pour répertorier les classes de stockage d'un cluster et d'un cloud spécifiques.

@@ -7,6 +7,7 @@ summary: 'Points de terminaison de ressources de l’API Astra (ACC) Kubernetes'
 ---
 = Points de terminaison de ressources de l’API Astra (ACC) Kubernetes
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Kubernetes API Resource fournit un accès en lecture seule aux ressources de l'API Kubernetes afin de filtrer celles prises en charge par Astra sur un cluster donné.

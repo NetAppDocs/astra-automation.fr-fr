@@ -18,18 +18,21 @@ Plusieurs concepts Kubernetes sont pertinents pour l'utilisation de l'API REST d
 
 
 
+[[objects]]
 == Objets
 
 Les objets gérés dans un environnement Kubernetes sont des entités permanentes qui représentent la configuration du cluster. Ces objets décrivent collectivement l'état du système, y compris la charge de travail du cluster.
 
 
 
+[[namespaces]]
 == Espaces de noms
 
 Les espaces de noms fournissent une technique d'isolement des ressources au sein d'un même cluster. Cette structure organisationnelle est utile pour répartir les types de travail, d'utilisateurs et de ressources. Les objets avec un _namespace scope_ doivent être uniques dans le namespace, tandis que ceux avec un _cluster scope_ doivent être uniques dans tout le cluster.
 
 
 
+[[labels]]
 == Étiquettes
 
 Des étiquettes peuvent être associées aux objets Kubernetes. Ils décrivent les attributs à l'aide de paires de valeurs clés et peuvent appliquer une organisation arbitraire sur le cluster, ce qui peut être utile à une entreprise, mais ne fonctionne pas dans le système Kubernetes de base.

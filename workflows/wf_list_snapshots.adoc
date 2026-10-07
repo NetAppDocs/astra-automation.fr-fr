@@ -18,12 +18,14 @@ Vous pouvez afficher la liste des instantanés pris pour une application spécif
 
 
 
+[[before-you-begin]]
 == Avant de commencer
 
 Vous devez disposer de l'ID de l'application pour laquelle vous souhaitez répertorier les instantanés. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_man_apps.html["Répertorier les applications"] pour localiser l'application.
 
 
 
+[[list-the-snapshots]]
 == Répertorier les snapshots
 
 Effectuez l'appel suivant de l'API REST pour afficher la liste des snapshots.
