@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v2-managedclusters-apps.html 
+keywords: managed clusters,app creation,account resource,app resource,cluster management 
 summary: Créer une nouvelle application pour un cluster géré 
 ---
 = Créer une nouvelle application pour un cluster géré
@@ -10,7 +11,20 @@ summary: Créer une nouvelle application pour un cluster géré
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée une nouvelle application pour un cluster géré, en spécifiant les valeurs souhaitées pour la configuration de la ressource de l'API d'application. Utilisez ce point de terminaison pour lancer des applications au sein de votre environnement de cluster géré.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource API de l'application à créer.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-ldapgroups.html 
+keywords: ldap groups,account resources,list collection,field filter,resource limit 
 summary: Lister tous les groupes LDAP 
 ---
 = Lister tous les groupes LDAP
@@ -10,7 +11,20 @@ summary: Lister tous les groupes LDAP
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une liste de groupes LDAP et fournit un accès aux configurations de groupe à des fins de gestion et d’intégration.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/ldapGroups`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON d'objets JSON contenant les résultats de l'URL de la requête.
 

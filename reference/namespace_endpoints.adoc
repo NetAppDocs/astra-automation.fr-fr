@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/namespace_endpoints.html 
+keywords: namespaces,kubernetes namespaces,cluster namespaces,namespace details,read-only access 
 summary: 'Points de terminaison de l"espace de noms de l"API Astra (ACC)' 
 ---
 = Points de terminaison de l'espace de noms de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Consultez les namespaces appartenant à un cluster. Ces points de terminaison sont en lecture seule.
 
 L'API Namespace fournit un accès en lecture seule aux ressources d'espace de noms afin de décrire les espaces de noms associés à un cluster donné.

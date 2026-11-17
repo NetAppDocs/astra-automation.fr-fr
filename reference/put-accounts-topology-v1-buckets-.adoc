@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v1-buckets-.html 
+keywords: replace resource,bucket management,data storage,account bucket,bucket topology 
 summary: Modifier un compartiment 
 ---
 = Modifier un compartiment
@@ -10,7 +11,20 @@ summary: Modifier un compartiment
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie un compartiment en mettant à jour sa ressource stockée avec le corps de la requête JSON fourni, tout en préservant les valeurs clés essentielles. Utilisez cette fonction pour garantir que la configuration du compartiment corresponde à vos paramètres souhaités tout en maintenant l'intégrité du système.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets/{bucket_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
 

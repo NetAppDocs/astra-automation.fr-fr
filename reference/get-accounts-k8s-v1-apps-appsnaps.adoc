@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appsnaps.html 
+keywords: account resources,k8s apps,app snapshots,collection fields,resource limit 
 summary: Lister les instantanés d’application pour une application 
 ---
 = Lister les instantanés d’application pour une application
@@ -10,7 +11,20 @@ summary: Lister les instantanés d’application pour une application
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les instantanés d'une application, offrant une vue d'ensemble des instantanés disponibles pour vos applications.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

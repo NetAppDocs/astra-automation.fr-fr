@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v2-managedclusters-apps-.html 
+keywords: stored app,app resource,managed cluster,app collection,account resource 
 summary: Récupérer une application pour un cluster géré 
 ---
 = Récupérer une application pour un cluster géré
@@ -10,7 +11,20 @@ summary: Récupérer une application pour un cluster géré
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une application pour un cluster géré, en fournissant les détails stockés de la ressource App API dans le corps de la réponse JSON.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource API de l'application stockée dans le corps de la réponse JSON.
 

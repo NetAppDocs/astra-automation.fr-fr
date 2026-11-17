@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-notifications-.html 
+keywords: notification resource,stored notification,notification retrieval,account notification,notification collection 
 summary: Récupérer une notification 
 ---
 = Récupérer une notification
@@ -10,7 +11,20 @@ summary: Récupérer une notification
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une notification et fournit la ressource de notification stockée dans le corps de la réponse. Utilisez-la pour accéder à des informations détaillées sur des notifications spécifiques au sein du système.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/notifications/{notification_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource Notification API stockée dans le corps de la réponse JSON.
 

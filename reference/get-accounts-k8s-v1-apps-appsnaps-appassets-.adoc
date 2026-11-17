@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-k8s-v1-apps-appsnaps-appassets-.html 
+keywords: application asset,app resource,app snap,app asset,stored asset,k8s application 
 summary: 'Récupérer une ressource d"application pour un instantané d"application et une application' 
 ---
 = Récupérer une ressource d'application pour un instantané d'application et une application
@@ -10,7 +11,20 @@ summary: 'Récupérer une ressource d"application pour un instantané d"applicat
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une ressource applicative pour un instantané d’application et fournit les détails de la ressource stockée dans le corps de la réponse JSON.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps/{appSnap_id}/appAssets/{appAsset_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource API Application Asset stockée dans le corps de la réponse JSON.
 

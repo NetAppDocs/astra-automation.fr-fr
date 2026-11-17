@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-users-groups-rolebindings.html 
+keywords: account resources,role bindings,user groups,resource collection,matching resources 
 summary: Répertorier les liaisons de rôles pour un groupe associé à un utilisateur 
 ---
 = Répertorier les liaisons de rôles pour un groupe associé à un utilisateur
@@ -10,7 +11,20 @@ summary: Répertorier les liaisons de rôles pour un groupe associé à un utili
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les liaisons de rôles d’un groupe associé à un utilisateur, pour vous aider à comprendre les autorisations d’accès attribuées à ce groupe.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

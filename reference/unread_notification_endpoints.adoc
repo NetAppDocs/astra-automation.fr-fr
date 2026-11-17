@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/unread_notification_endpoints.html 
+keywords: unread notifications,notification status,mark as read,user notifications,notification tracking 
 summary: 'Points de terminaison de notification non lue de l"API Astra (ACC)' 
 ---
 = Points de terminaison de notification non lue de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Trouvez les notifications qu'un utilisateur n'a pas encore lues et marquez-les comme lues.
 
 L'API de notifications non lues fournit des informations sur les notifications qui n'ont pas été lues par un utilisateur donné et permet de les marquer comme lues.

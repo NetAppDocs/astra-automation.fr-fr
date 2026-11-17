@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhookoverrides.html 
+keywords: execution hook,resource collection,kubernetes apps,account resources,app resources 
 summary: 'Lister les ressources de remplacement du hook d"exécution pour une application' 
 ---
 = Lister les ressources de remplacement du hook d'exécution pour une application
@@ -10,7 +11,20 @@ summary: 'Lister les ressources de remplacement du hook d"exécution pour une ap
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les ressources de remplacement du hook d'exécution d'une application, offrant un accès aux configurations personnalisées qui modifient le comportement de l'application lors d'opérations spécifiques.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

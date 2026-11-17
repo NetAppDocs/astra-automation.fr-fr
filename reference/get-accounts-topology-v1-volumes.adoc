@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-volumes.html 
+keywords: account topology,volume list,resource collection,field order,account resources 
 summary: Lister tous les volumes 
 ---
 = Lister tous les volumes
@@ -10,7 +11,20 @@ summary: Lister tous les volumes
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une liste de volumes, en fournissant des détails sur chaque volume de la collection. Utilisez cette liste pour consulter des champs spécifiques d'intérêt dans tous les volumes correspondants.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/volumes`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

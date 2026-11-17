@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-users-groups.html 
+keywords: account groups,users groups,user fields,resource collection,matching resources 
 summary: 'Liste des groupes d"un utilisateur' 
 ---
 = Liste des groupes d'un utilisateur
@@ -10,7 +11,20 @@ summary: 'Liste des groupes d"un utilisateur'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une liste des groupes associés à un utilisateur, en fournissant un accès à des informations détaillées sur ces groupes à des fins de gestion ou d'analyse.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

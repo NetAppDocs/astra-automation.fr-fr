@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/metrics_endpoints.html 
+keywords: account metrics,usage metrics,astra control metrics,metrics retrieval,account monitoring 
 summary: 'Points de terminaison des métriques de l"API Astra (ACC)' 
 ---
 = Points de terminaison des métriques de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Récupérez les indicateurs d’un compte Astra Control afin de surveiller son activité et son utilisation des ressources.
 
 L'API Metrics représente les indicateurs associés à un compte donné.

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-executionhooks-.html 
+keywords: execution hook,resource update,account management,application impact,json request 
 summary: 'Modifier un hook d"exécution' 
 ---
 = Modifier un hook d'exécution
@@ -10,7 +11,20 @@ summary: 'Modifier un hook d"exécution'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie un hook d'exécution pour mettre à jour sa ressource stockée avec les nouvelles valeurs de configuration. Utilisez cette fonction pour garantir que les actions futures des applications utilisant le hook d'exécution reflètent les paramètres mis à jour.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
 

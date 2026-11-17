@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-k8s-v1-apps-appsnaps-appassets.html 
+keywords: account resources,app resources,k8s apps,app snapshots,app assets 
 summary: 'Lister les ressources de l"application pour un instantané d"application' 
 ---
 = Lister les ressources de l'application pour un instantané d'application
@@ -10,7 +11,20 @@ summary: 'Lister les ressources de l"application pour un instantané d"applicati
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les ressources de l'application pour un instantané d'application et fournit une vue détaillée des ressources associées à cet instantané.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps/{appSnap_id}/appAssets`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

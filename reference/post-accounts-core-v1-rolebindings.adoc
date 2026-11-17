@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-rolebindings.html 
+keywords: role binding,create role,account role,core role binding,role management 
 summary: Créer une nouvelle liaison de rôle 
 ---
 = Créer une nouvelle liaison de rôle
@@ -10,7 +11,20 @@ summary: Créer une nouvelle liaison de rôle
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée une liaison de rôle dans l'Astra API, en spécifiant les valeurs souhaitées pour la ressource de liaison de rôle. Utilisez-la pour définir les autorisations et le contrôle d'accès des utilisateurs au sein de votre environnement.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/roleBindings`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource d'API de Role Binding à créer.
 

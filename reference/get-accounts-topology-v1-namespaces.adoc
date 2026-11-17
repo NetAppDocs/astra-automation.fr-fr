@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-namespaces.html 
+keywords: account topology,namespaces collection,resource fields,collection limit,field filter 
 summary: Lister tous les espaces de noms 
 ---
 = Lister tous les espaces de noms
@@ -10,7 +11,20 @@ summary: Lister tous les espaces de noms
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère la liste de tous les namespaces de la collection. Utilisez-la pour afficher les namespaces disponibles et leurs configurations.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/namespaces`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

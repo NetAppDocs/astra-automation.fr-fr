@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-certificates.html 
+keywords: certificate creation,account certificate,certificate resource,create certificate,account id 
 summary: Créer un nouveau certificat 
 ---
 = Créer un nouveau certificat
@@ -10,7 +11,20 @@ summary: Créer un nouveau certificat
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée un nouveau certificat pour la ressource de l'API Certificate. Utilisez-le pour spécifier les valeurs souhaitées pour des communications sécurisées.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource API de certificat à créer.
 

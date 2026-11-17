@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/account_endpoints.html 
+keywords: astra accounts,tenant accounts,multitenant,account management,account creation 
 summary: 'Points de terminaison de compte de l"API Astra (ACC)' 
 ---
 = Points de terminaison de compte de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gérez les comptes qui isolent les locataires dans un environnement Astra Control mutualisé.
 
 L'API Account représente des locataires isolés dans un système multilocataire.

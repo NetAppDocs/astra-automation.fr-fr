@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/execution_hook_override_endpoints.html 
+keywords: execution hook override,preloaded hooks,netapp hooks,hook disabling,application hooks,deprecation 
 summary: 'Points de terminaison de remplacement du hook d"exécution de l"API Astra (ACC)' 
 ---
 = Points de terminaison de remplacement du hook d'exécution de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Désactivez les hooks d'exécution NetApp préchargés pour une application spécifique. Consultez les informations de dépréciation sur la page avant d'utiliser ces points de terminaison.
 
 L'API de remplacement des hooks d'exécution permet à un utilisateur de désactiver les hooks d'exécution « netapp » préchargés pour une application spécifique. (*VOIR CI-DESSOUS LES DÉPRÉCIATIONS DE L'API*)

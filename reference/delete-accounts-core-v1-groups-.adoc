@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-groups-.html 
+keywords: remove group,group resource,delete group,role binding removal,group deletion 
 summary: Supprimer un groupe 
 ---
 = Supprimer un groupe
@@ -10,7 +11,20 @@ summary: Supprimer un groupe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Supprime la ressource de groupe spécifiée. Utilisez cette fonction pour supprimer un groupe ainsi que ses liaisons de rôles associées du système.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Supprime la ressource API Group spécifiée.
 

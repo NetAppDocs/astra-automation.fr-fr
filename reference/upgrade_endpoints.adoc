@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/upgrade_endpoints.html 
+keywords: software upgrades,upgrade eligibility,component upgrades,upgrade initiation,upgrade packages 
 summary: 'Points de terminaison de mise à niveau de l"API Astra (ACC)' 
 ---
 = Points de terminaison de mise à niveau de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Identifiez les composants logiciels éligibles à la mise à niveau et lancez les mises à niveau. Les packages que vous enregistrez déterminent les mises à niveau disponibles.
 
 L'API Upgrade App permet d'accéder aux composants logiciels éligibles à la mise à niveau et de lancer des mises à niveau. La disponibilité des mises à niveau est déterminée en fonction des packages enregistrés auprès de l'API Packages.

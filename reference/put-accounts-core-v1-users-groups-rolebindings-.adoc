@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/put-accounts-core-v1-users-groups-rolebindings-.html 
+keywords: replace resource,user groups,role bindings,group roles,resource modification 
 summary: Modifier une attribution de rôle pour un groupe associé à un utilisateur 
 ---
 = Modifier une attribution de rôle pour un groupe associé à un utilisateur
@@ -10,7 +11,20 @@ summary: Modifier une attribution de rôle pour un groupe associé à un utilisa
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie une liaison de rôle pour un groupe associé à un utilisateur. Utilisez cette fonction pour mettre à jour les autorisations d'accès de groupes d'utilisateurs spécifiques.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
 

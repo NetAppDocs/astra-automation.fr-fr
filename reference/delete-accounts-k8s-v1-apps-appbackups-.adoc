@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v1-apps-appbackups-.html 
+keywords: application backup,delete backup,container app,app backup removal,kubernetes app,backup data delete 
 summary: 'Supprimer une sauvegarde d"application pour une application' 
 ---
 = Supprimer une sauvegarde d'application pour une application
@@ -10,7 +11,20 @@ summary: 'Supprimer une sauvegarde d"application pour une application'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Supprime une sauvegarde d'application pour une application. Utilisez ce point de terminaison pour gérer l'espace de stockage en supprimant les sauvegardes inutiles ou obsolètes.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Supprime la ressource API de sauvegarde d'application spécifiée. Les données de sauvegarde en cours seront annulées, puis supprimées.
 

@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/entitlement_endpoints.html 
+keywords: entitlements,licensed features,enabled capacities,active subscriptions,account entitlements 
 summary: 'Points de terminaison d"autorisation de l"API Astra (ACC)' 
 ---
 = Points de terminaison d'autorisation de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Vérifiez quelles fonctionnalités ou capacités vos licences et abonnements actifs activent pour votre compte.
 
 L'API Entitlement indique quelles fonctionnalités ou capacités sont activées par les licences et les abonnements actifs pour un compte.

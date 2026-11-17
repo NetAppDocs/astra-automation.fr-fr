@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-subscriptions-.html 
+keywords: subscription management,account update,resource replacement,status inactive,zuora integration 
 summary: Modifier un abonnement 
 ---
 = Modifier un abonnement
@@ -10,7 +11,20 @@ summary: Modifier un abonnement
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie un abonnement en remplaçant la ressource stockée par le corps de requête JSON fourni, tout en conservant les valeurs clés qui ne peuvent pas être modifiées par les utilisateurs. Utilisez ce point de terminaison si vous devez mettre à jour les détails d'un abonnement tout en garantissant que certaines valeurs restent inchangées.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-users-rolebindings.html 
+keywords: role binding,create role,account role,user role,role management,assign role 
 summary: Créer une nouvelle liaison de rôle pour un utilisateur 
 ---
 = Créer une nouvelle liaison de rôle pour un utilisateur
@@ -10,7 +11,20 @@ summary: Créer une nouvelle liaison de rôle pour un utilisateur
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée une liaison de rôle pour un utilisateur, en spécifiant les valeurs souhaitées pour la ressource API de liaison de rôle. Utilisez cette fonction pour attribuer des rôles et des autorisations spécifiques aux utilisateurs de votre application.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource d'API de Role Binding à créer.
 

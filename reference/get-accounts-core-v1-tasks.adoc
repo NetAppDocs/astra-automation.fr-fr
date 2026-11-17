@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-tasks.html 
+keywords: account tasks,field selection,resource collection,field filter,maximum resources,task list 
 summary: Lister toutes les tâches 
 ---
 = Lister toutes les tâches
@@ -10,7 +11,20 @@ summary: Lister toutes les tâches
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère toutes les tâches de la collection et fournit une vue complète des ressources de tâche disponibles. Utilisez cette fonctionnalité pour identifier et gérer efficacement les tâches de votre flux de travail.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/tasks`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

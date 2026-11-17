@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-hooksources.html 
+keywords: hook source,create resource,account id,core hook,hook values,source creation 
 summary: Créer une nouvelle source de hook 
 ---
 = Créer une nouvelle source de hook
@@ -10,7 +11,20 @@ summary: Créer une nouvelle source de hook
 :imagesdir: ../media/
 
 
+[role="lead"]
+Créez une nouvelle source de hook en spécifiant les valeurs de la ressource API Hook Source pour lancer le processus de création. Utilisez ce point de terminaison lorsque vous devez établir une source de hook pour des tâches d'automatisation ou d'intégration.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource d’API Hook Source à créer.
 

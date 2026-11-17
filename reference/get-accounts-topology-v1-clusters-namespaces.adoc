@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-namespaces.html 
+keywords: cluster topology,namespaces list,resource collection,account cluster,namespaces fields 
 summary: 'Lister les espaces de noms d"un cluster' 
 ---
 = Lister les espaces de noms d'un cluster
@@ -10,7 +11,20 @@ summary: 'Lister les espaces de noms d"un cluster'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les namespaces d'un cluster et fournit une liste de toutes les ressources correspondantes dans la collection. Utilisez cette liste pour afficher les champs spécifiques de chaque ressource selon vos besoins.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/namespaces`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-settings-.html 
+keywords: settings retrieval,account settings,stored settings,setting collection,resource settings 
 summary: Récupérer un paramètre 
 ---
 = Récupérer un paramètre
@@ -10,7 +11,20 @@ summary: Récupérer un paramètre
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère un paramètre, en fournissant les détails de configuration enregistrés afin de les consulter ou de les modifier.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource d'API Setting stockée dans le corps de la réponse JSON.
 

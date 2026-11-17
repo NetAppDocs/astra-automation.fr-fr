@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-executionhookoverrides.html 
+keywords: execution hook,hook override,app resource,account resource,k8s app 
 summary: 'Créer une nouvelle ressource de remplacement de hook d"exécution pour une application' 
 ---
 = Créer une nouvelle ressource de remplacement de hook d'exécution pour une application
@@ -10,7 +11,20 @@ summary: 'Créer une nouvelle ressource de remplacement de hook d"exécution pou
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée une ressource de remplacement de hook d'exécution pour une application, en spécifiant les valeurs souhaitées pour la personnalisation. Utilisez-la pour adapter les hooks d'exécution aux exigences des applications spécifiques.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource d'API de remplacement du hook d'exécution à créer.
 

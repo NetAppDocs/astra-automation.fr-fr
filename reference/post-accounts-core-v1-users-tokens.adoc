@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-users-tokens.html 
+keywords: account token,create token,user token,core token,user identifier,account identifier 
 summary: Créer un nouveau jeton pour un utilisateur 
 ---
 = Créer un nouveau jeton pour un utilisateur
@@ -10,7 +11,20 @@ summary: Créer un nouveau jeton pour un utilisateur
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée un nouveau jeton pour un utilisateur, en spécifiant les valeurs requises pour la ressource Token API. Utilisez cette fonction lorsque vous devez vous authentifier et accéder en toute sécurité aux services Astra API.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource Token API à créer.
 

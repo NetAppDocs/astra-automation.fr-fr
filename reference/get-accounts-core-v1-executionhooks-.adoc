@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-executionhooks-.html 
+keywords: execution hook,execution hook resource,matching containers,matching images,matching criteria,execution hook collection 
 summary: 'Récupérer un hook d"exécution' 
 ---
 = Récupérer un hook d'exécution
@@ -10,7 +11,20 @@ summary: 'Récupérer un hook d"exécution'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère un hook d’exécution, en fournissant les détails des ressources stockées ainsi que les informations correspondantes sur le conteneur et l’image en fonction des critères actuels.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource d'API Execution Hook stockée dans le corps de la réponse JSON. Renseigne également matchingContainers et matchingImages en fonction du matchingCriteria actuel et de l'application définie.
 

@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/role_binding_endpoints.html 
+keywords: role bindings,roles,permissions,access control,user permissions,group permissions 
 summary: 'Points de terminaison de liaison de rôle de l"API Astra (ACC)' 
 ---
 = Points de terminaison de liaison de rôle de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gérez les associations de rôles qui octroient des autorisations aux utilisateurs ou aux groupes d'un compte. Une association de rôle associe un utilisateur ou un groupe à un rôle.
 
 L'API de liaison des rôles décrit les relations entre les paires utilisateur-compte ou groupe-compte, ainsi que les ensembles d'autorisations qui leur sont accordés (rôles).

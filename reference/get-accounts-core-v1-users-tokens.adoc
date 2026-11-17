@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-tokens.html 
+keywords: account tokens,user tokens,resource collection,field filtering,resource sorting,resource pagination 
 summary: 'Lister les jetons d"un utilisateur' 
 ---
 = Lister les jetons d'un utilisateur
@@ -10,7 +11,20 @@ summary: 'Lister les jetons d"un utilisateur'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère la liste des jetons d'un utilisateur, en fournissant les jetons disponibles associés à son compte.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

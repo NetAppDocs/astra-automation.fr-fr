@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-clusternodes.html 
+keywords: cloud topology,cluster nodes,resource collection,matching resources,field request 
 summary: Lister les nœuds du cluster pour un cloud 
 ---
 = Lister les nœuds du cluster pour un cloud
@@ -10,7 +11,20 @@ summary: Lister les nœuds du cluster pour un cloud
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les nœuds de cluster pour un cloud, en fournissant des détails sur les nœuds disponibles dans l'environnement cloud spécifié.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/clusterNodes`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

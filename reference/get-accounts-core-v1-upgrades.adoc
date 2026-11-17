@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-upgrades.html 
+keywords: account upgrades,collection resources,matching resources,resource fields,field order 
 summary: Lister toutes les mises à niveau 
 ---
 = Lister toutes les mises à niveau
@@ -10,7 +11,20 @@ summary: Lister toutes les mises à niveau
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une liste de mises à niveau, en fournissant les détails de toutes les ressources correspondantes dans la collection. Utilisez cette fonction pour accéder aux champs spécifiques de chaque ressource, dans l'ordre indiqué.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/upgrades`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

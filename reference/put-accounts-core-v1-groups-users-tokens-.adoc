@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/put-accounts-core-v1-groups-users-tokens-.html 
+keywords: replace resource,account group,user token,core group,user replace,token id 
 summary: Modifier un jeton pour un utilisateur dans un groupe 
 ---
 = Modifier un jeton pour un utilisateur dans un groupe
@@ -10,7 +11,20 @@ summary: Modifier un jeton pour un utilisateur dans un groupe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie un jeton pour un utilisateur dans un groupe, en mettant à jour la ressource stockée en fonction du corps de la requête JSON fourni.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-buckets.html 
+keywords: account topology,bucket resources,collection fields,resource collection,matching resources 
 summary: Lister tous les compartiments 
 ---
 = Lister tous les compartiments
@@ -10,7 +11,20 @@ summary: Lister tous les compartiments
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère la liste des compartiments, sous forme de tableau JSON contenant toutes les ressources correspondantes dans la collection. Utilisez ce tableau pour examiner les compartiments disponibles et leurs champs spécifiés.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

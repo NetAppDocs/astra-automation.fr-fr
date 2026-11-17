@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/feature_endpoints.html 
+keywords: feature flags,enabled features,disabled features,feature status,feature check 
 summary: 'Points de terminaison de fonctionnalités de l"API Astra (ACC)' 
 ---
 = Points de terminaison de fonctionnalités de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Vérifiez quelles fonctionnalités d'Astra Control sont activées ou désactivées en consultant les indicateurs de fonctionnalités.
 
 L'API Feature offre un accès en lecture seule aux ressources des indicateurs de fonctionnalités afin de déterminer quelles fonctionnalités sont activées ou désactivées dans le système.

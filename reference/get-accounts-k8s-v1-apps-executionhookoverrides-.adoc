@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhookoverrides-.html 
+keywords: execution hook,execution override,execution hook override,k8s apps,account resource,app resource 
 summary: 'Récupérer une ressource de remplacement de hook d"exécution' 
 ---
 = Récupérer une ressource de remplacement de hook d'exécution
@@ -10,7 +11,20 @@ summary: 'Récupérer une ressource de remplacement de hook d"exécution'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une ressource de substitution de hook d’exécution, en fournissant les détails de configuration stockés pour les workflows d’intégration et d’automatisation.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource d'API de remplacement du hook d'exécution stockée dans le corps de la réponse JSON.
 

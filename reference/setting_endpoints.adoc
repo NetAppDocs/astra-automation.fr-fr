@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/setting_endpoints.html 
+keywords: account settings,key value settings,feature settings,setting management,astra configuration 
 summary: 'Points de terminaison de configuration de l"API Astra (ACC)' 
 ---
 = Points de terminaison de configuration de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gérez les paramètres du compte, qui sont des paires clé/valeur permettant de configurer une fonctionnalité dans un compte Astra Control.
 
 Un paramètre de compte est un ensemble de paires clé/valeur importantes pour une fonctionnalité connue dans un compte Astra. L'API Setting fournit un accès à des informations importantes concernant un paramètre de compte.

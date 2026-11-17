@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-k8s-v1-apps-executionhookoverrides-.html 
+keywords: execution hook,hook override,replace resource,app execution,netapp hook,execution enable 
 summary: 'Modifier une ressource de remplacement de crochet d"exécution' 
 ---
 = Modifier une ressource de remplacement de crochet d'exécution
@@ -10,7 +11,20 @@ summary: 'Modifier une ressource de remplacement de crochet d"exécution'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie une ressource de remplacement de hook d'exécution en remplaçant l'intégralité de la ressource stockée par le corps de requête JSON fourni. Utilisez cette opération pour mettre à jour les hooks d'exécution qui s'appliquent à une application spécifique.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
 

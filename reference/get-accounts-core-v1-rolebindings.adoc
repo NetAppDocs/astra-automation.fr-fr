@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-rolebindings.html 
+keywords: role bindings,account resources,resource collection,json array,field matching,sort order 
 summary: Lister toutes les liaisons de rôles 
 ---
 = Lister toutes les liaisons de rôles
@@ -10,7 +11,20 @@ summary: Lister toutes les liaisons de rôles
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère la liste des associations de rôles et fournit les ressources correspondantes dans la collection. Utilisez cette fonction pour afficher les champs spécifiés pour chaque ressource, dans l'ordre demandé.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/roleBindings`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

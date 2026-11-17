@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-.html 
+keywords: account user,account resource,user collection,stored user,core user 
 summary: Récupérer un utilisateur 
 ---
 = Récupérer un utilisateur
@@ -10,7 +11,20 @@ summary: Récupérer un utilisateur
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère un utilisateur et renvoie la ressource API User stockée dans le corps de la réponse JSON. Utilisez-la pour accéder aux informations de l'utilisateur à des fins de gestion et d'intégration.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource API utilisateur stockée dans le corps de la réponse JSON.
 

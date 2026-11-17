@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-hooksources.html 
+keywords: hook sources,resource collection,field filter,field limit,account resource 
 summary: Lister toutes les sources de hooks 
 ---
 = Lister toutes les sources de hooks
@@ -10,7 +11,20 @@ summary: Lister toutes les sources de hooks
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère toutes les sources de hook de la collection. Utilisez cette fonction pour afficher les champs disponibles pour chaque ressource, comme spécifié dans votre requête.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

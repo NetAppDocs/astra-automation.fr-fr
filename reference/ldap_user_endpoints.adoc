@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/ldap_user_endpoints.html 
+keywords: ldap users,directory users,ldap server,read-only access,user lookup 
 summary: 'Points de terminaison utilisateur LDAP de l"API Astra (ACC)' 
 ---
 = Points de terminaison utilisateur LDAP de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Consultez la liste des utilisateurs sur le serveur Lightweight Directory Access Protocol (LDAP) configuré. Ces points de terminaison sont en lecture seule.
 
 L'API utilisateur LDAP offre un accès en lecture seule aux utilisateurs LDAP au sein du serveur LDAP configuré.

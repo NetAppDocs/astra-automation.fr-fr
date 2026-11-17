@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-tokens-.html 
+keywords: remove token,credential removal,delete token,token resource,remove credential 
 summary: Supprimer un jeton 
 ---
 = Supprimer un jeton
@@ -10,7 +11,20 @@ summary: Supprimer un jeton
 :imagesdir: ../media/
 
 
+[role="lead"]
+Supprime un jeton spécifié, en retirant l’identifiant associé du service d’identifiants.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Supprime la ressource API Token spécifiée.
 

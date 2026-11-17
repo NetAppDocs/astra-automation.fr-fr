@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/cluster_endpoints.html 
+keywords: unmanaged clusters,kubernetes clusters,cluster discovery,cluster management,cluster resources 
 summary: 'Points de terminaison du cluster de l"API Astra (ACC)' 
 ---
 = Points de terminaison du cluster de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Travaillez avec les clusters Kubernetes qu'Astra Control ne gère pas encore.
 
 L'API Cluster représente les clusters Kubernetes non gérés.

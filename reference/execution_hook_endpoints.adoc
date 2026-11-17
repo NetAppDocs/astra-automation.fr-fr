@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/execution_hook_endpoints.html 
+keywords: execution hooks,hook configuration,hook sources,application hooks,hook management 
 summary: 'Points de terminaison d"exécution de l"API Astra (ACC)' 
 ---
 = Points de terminaison d'exécution de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Créez et gérez des hooks d’exécution pour vos applications. Chaque hook contient une configuration supplémentaire et fait référence à une source de hook.
 
 L'API Execution Hook permet une gestion simplifiée des hooks d'exécution. Les hooks d'exécution contiennent une configuration supplémentaire et des références à une ressource source de hook.

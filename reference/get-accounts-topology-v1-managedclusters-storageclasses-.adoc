@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-storageclasses-.html 
+keywords: managed clusters,storage class,storage topology,account resource,cluster resource,storage resource 
 summary: Récupérer une classe de stockage pour un cluster géré 
 ---
 = Récupérer une classe de stockage pour un cluster géré
@@ -10,7 +11,20 @@ summary: Récupérer une classe de stockage pour un cluster géré
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une classe de stockage pour un cluster géré, en fournissant des détails sur les configurations stockées pour la gestion des ressources.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/storageClasses/{storageClass_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource API de classe de stockage stockée dans le corps de la réponse JSON.
 

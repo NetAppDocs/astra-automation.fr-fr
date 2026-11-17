@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-tokens.html 
+keywords: account tokens,group users,user tokens,resource collection,field matching,sort order 
 summary: 'Lister les jetons d"un utilisateur dans un groupe' 
 ---
 = Lister les jetons d'un utilisateur dans un groupe
@@ -10,7 +11,20 @@ summary: 'Lister les jetons d"un utilisateur dans un groupe'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les jetons associés à un utilisateur dans un groupe, en fournissant les détails d'accès à des fins d'authentification et d'autorisation.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

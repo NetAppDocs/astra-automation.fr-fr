@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups.html 
+keywords: account groups,resource collection,field filter,sort order,count resources 
 summary: Lister tous les groupes 
 ---
 = Lister tous les groupes
@@ -10,7 +11,20 @@ summary: Lister tous les groupes
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère tous les groupes dans l'Astra API, en fournissant un tableau JSON des ressources correspondantes dans la collection.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

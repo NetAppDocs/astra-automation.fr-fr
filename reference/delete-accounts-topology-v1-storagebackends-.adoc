@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-storagebackends-.html 
+keywords: storage backend,remove storage backend,delete storage backend,backend config removal,backend node removal,remove backend resources 
 summary: Supprimer un backend de stockage 
 ---
 = Supprimer un backend de stockage
@@ -10,7 +11,20 @@ summary: Supprimer un backend de stockage
 :imagesdir: ../media/
 
 
+[role="lead"]
+Supprime un système de stockage. Utilisez cette action pour supprimer toutes les ressources backendConfig et backendNode associées du système.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends/{storageBackend_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Supprime la ressource Storage Backend API spécifiée.
 

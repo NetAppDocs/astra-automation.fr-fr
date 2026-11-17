@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-notifications.html 
+keywords: account notifications,collection resources,field inclusion,resource filtering,sort order 
 summary: Lister toutes les notifications 
 ---
 = Lister toutes les notifications
@@ -10,7 +11,20 @@ summary: Lister toutes les notifications
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une liste de notifications. Utilisez-la pour consulter toutes les alertes et mises à jour pertinentes concernant vos ressources.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/notifications`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-groups-users-.html 
+keywords: remove user,delete user,role bindings,user credentials,notification marks,password hash 
 summary: 'Supprimer un utilisateur d"un groupe' 
 ---
 = Supprimer un utilisateur d'un groupe
@@ -10,7 +11,20 @@ summary: 'Supprimer un utilisateur d"un groupe'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Supprime un utilisateur d'un groupe, en supprimant la ressource API User spécifiée et les ressources associées telles que les marques de notification, les jetons et les liaisons de rôle.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Supprime la ressource API utilisateur spécifiée.
 

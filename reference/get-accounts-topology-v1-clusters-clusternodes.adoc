@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-clusternodes.html 
+keywords: cluster nodes,cluster topology,account id,cluster id,resource collection,fields requested 
 summary: Lister les nœuds de cluster pour un cluster 
 ---
 = Lister les nœuds de cluster pour un cluster
@@ -10,7 +11,20 @@ summary: Lister les nœuds de cluster pour un cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les nœuds d'un cluster. Utilisez cette fonction pour afficher tous les nœuds du cluster spécifié et leurs détails.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/clusterNodes`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

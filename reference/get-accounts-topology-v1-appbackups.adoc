@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-appbackups.html 
+keywords: account topology,backup resources,collection fields,resource limit,account data 
 summary: 'Lister toutes les sauvegardes d"applications' 
 ---
 = Lister toutes les sauvegardes d'applications
@@ -10,7 +11,20 @@ summary: 'Lister toutes les sauvegardes d"applications'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère toutes les sauvegardes d’applications, en fournissant une liste complète des ressources de sauvegarde disponibles dans la collection. Vous pouvez spécifier des champs individuels dans votre requête afin de personnaliser les informations renvoyées.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

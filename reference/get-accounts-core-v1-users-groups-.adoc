@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-users-groups-.html 
+keywords: account resource,user resource,group collection,stored group,group resource 
 summary: Récupérer un groupe pour un utilisateur 
 ---
 = Récupérer un groupe pour un utilisateur
@@ -10,7 +11,20 @@ summary: Récupérer un groupe pour un utilisateur
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère un groupe pour un utilisateur et fournit les informations de groupe stockées dans un format structuré.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource d'API Group stockée dans le corps de la réponse JSON.
 

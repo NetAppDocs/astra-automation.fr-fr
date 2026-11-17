@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-buckets-.html 
+keywords: bucket resource,stored bucket,account bucket,topology bucket,bucket collection 
 summary: Récupérer un compartiment 
 ---
 = Récupérer un compartiment
@@ -10,7 +11,20 @@ summary: Récupérer un compartiment
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère un bucket, en fournissant dans la réponse les détails de configuration du bucket stocké.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets/{bucket_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource API Bucket stockée dans le corps de la réponse JSON.
 

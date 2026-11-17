@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/certificate_endpoints.html 
+keywords: trusted certificates,certificate management,outgoing connections,admin-trusted certificates,secure connections 
 summary: 'Points de terminaison de certificat de l"API Astra (ACC)' 
 ---
 = Points de terminaison de certificat de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gérez les certificats approuvés par l’administrateur qu’Astra Control utilise pour établir des connexions sortantes.
 
 L'API Certificate représente les certificats approuvés par l'administrateur qui sont utilisés pour établir des connexions sortantes.

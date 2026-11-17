@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/post-accounts-core-v1-groups-users-tokens.html 
+keywords: token creation,account token,user token,group token,user management 
 summary: Créer un nouveau jeton pour un utilisateur dans un groupe 
 ---
 = Créer un nouveau jeton pour un utilisateur dans un groupe
@@ -10,7 +11,20 @@ summary: Créer un nouveau jeton pour un utilisateur dans un groupe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée un nouveau jeton pour un utilisateur au sein d'un groupe, en spécifiant les valeurs souhaitées pour l'authentification et l'autorisation des actions du groupe.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource Token API à créer.
 

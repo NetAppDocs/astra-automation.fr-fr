@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts.html 
+keywords: accounts collection,resource listing,json array,resource fields,resource order 
 summary: Lister tous les comptes 
 ---
 = Lister tous les comptes
@@ -10,7 +11,20 @@ summary: Lister tous les comptes
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère tous les comptes dans l'API Astra et renvoie un tableau JSON des ressources correspondantes dans la collection. Utilisez-le pour afficher les détails du compte en fonction des champs spécifiés.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-subscriptions-.html 
+keywords: subscription resource,subscription id,account resource,account id,subscription collection 
 summary: Récupérer un abonnement 
 ---
 = Récupérer un abonnement
@@ -10,7 +11,20 @@ summary: Récupérer un abonnement
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère un abonnement et renvoie la ressource API Subscription stockée à des fins de surveillance ou de gestion.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource d'API d'abonnement stockée dans le corps de la réponse JSON.
 

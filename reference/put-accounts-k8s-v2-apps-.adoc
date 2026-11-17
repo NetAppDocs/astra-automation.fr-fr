@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-k8s-v2-apps-.html 
+keywords: replace resource,app update,k8s app,resource overwrite,account app 
 summary: Modifier une application 
 ---
 = Modifier une application
@@ -10,7 +11,20 @@ summary: Modifier une application
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie une application en remplaçant l'intégralité de la ressource stockée par le corps de la requête JSON fourni.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
 

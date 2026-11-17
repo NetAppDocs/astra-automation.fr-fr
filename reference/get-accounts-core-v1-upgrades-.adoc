@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-upgrades-.html 
+keywords: upgrade resource,upgrade details,upgrade collection,account upgrade,upgrade json 
 summary: Récupérer une mise à niveau 
 ---
 = Récupérer une mise à niveau
@@ -10,7 +11,20 @@ summary: Récupérer une mise à niveau
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une ressource de mise à niveau et fournit la configuration de mise à niveau enregistrée à des fins de consultation ou de gestion.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/upgrades/{upgrade_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource d'API Upgrade stockée dans le corps de la réponse JSON.
 

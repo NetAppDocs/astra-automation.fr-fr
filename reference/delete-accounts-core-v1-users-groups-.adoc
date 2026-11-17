@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-users-groups-.html 
+keywords: remove group,group resource,role bindings,user group,user resource,account resource 
 summary: Supprimer un groupe pour un utilisateur 
 ---
 = Supprimer un groupe pour un utilisateur
@@ -10,7 +11,20 @@ summary: Supprimer un groupe pour un utilisateur
 :imagesdir: ../media/
 
 
+[role="lead"]
+Supprime un groupe pour un utilisateur, en supprimant la ressource API Group spécifiée. Les ressources associées, telles que les liaisons de rôles faisant référence au groupe, sont également supprimées.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Supprime la ressource API Group spécifiée.
 

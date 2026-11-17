@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/token_endpoints.html 
+keywords: api tokens,access tokens,token creation,token management,authentication 
 summary: 'Points de terminaison des jetons de l"API Astra (ACC)' 
 ---
 = Points de terminaison des jetons de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Créez et gérez les jetons d'accès API que vous utilisez pour vous authentifier auprès d'Astra Control.
 
 L'API Token permet aux utilisateurs de créer et de gérer des jetons d'accès API.

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-rolebindings.html 
+keywords: role bindings,resource collection,user role,group resource,account resource 
 summary: Lister les attributions de rôle pour un utilisateur dans un groupe 
 ---
 = Lister les attributions de rôle pour un utilisateur dans un groupe
@@ -10,7 +11,20 @@ summary: Lister les attributions de rôle pour un utilisateur dans un groupe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les liaisons de rôle pour un utilisateur au sein d'un groupe. Utilisez cette fonction pour consulter les rôles attribués à un utilisateur et gérer efficacement ses autorisations d'accès.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

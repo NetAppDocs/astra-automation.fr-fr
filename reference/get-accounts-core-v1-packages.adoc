@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-packages.html 
+keywords: account packages,matching resources,collection fields,resource filter,resource sort order 
 summary: Lister tous les packages 
 ---
 = Lister tous les packages
@@ -10,7 +11,20 @@ summary: Lister tous les packages
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère toutes les ressources de package dans la collection, en fournissant des informations détaillées pour chaque ressource correspondante. Utilisez cette fonction pour consulter des champs spécifiques dans les données renvoyées.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

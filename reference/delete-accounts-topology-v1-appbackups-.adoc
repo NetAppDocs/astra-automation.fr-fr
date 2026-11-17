@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-appbackups-.html 
+keywords: application backup,delete backup,backup removal,backup data delete,delete app backup 
 summary: 'Supprimer une sauvegarde d"application' 
 ---
 = Supprimer une sauvegarde d'application
@@ -10,7 +11,20 @@ summary: 'Supprimer une sauvegarde d"application'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Supprime une sauvegarde d'application, effaçant ainsi la ressource de sauvegarde spécifiée et ses données associées. Utilisez cette fonction pour gérer l'espace de stockage ou supprimer les sauvegardes obsolètes de vos ressources d'application.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Supprime la ressource API de sauvegarde d'application spécifiée. Les données de sauvegarde en cours seront annulées, puis supprimées.
 

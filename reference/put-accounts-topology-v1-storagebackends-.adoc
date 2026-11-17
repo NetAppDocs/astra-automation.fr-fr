@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v1-storagebackends-.html 
+keywords: storage backend,topology storage,configuration version,storage class,resource replacement 
 summary: Modifier un backend de stockage 
 ---
 = Modifier un backend de stockage
@@ -10,7 +11,20 @@ summary: Modifier un backend de stockage
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie un backend de stockage en remplaçant l'intégralité de la ressource stockée par le corps de requête JSON fourni. Cette opération peut entraîner des modifications de configuration spécifiques au type de backend de stockage, y compris l'installation initiale d'un backend de stockage.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends/{storageBackend_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-groups-rolebindings-.html 
+keywords: role binding,remove role,delete role binding,user removal,group resource,account resource 
 summary: Supprimer une attribution de rôle pour un groupe 
 ---
 = Supprimer une attribution de rôle pour un groupe
@@ -10,7 +11,20 @@ summary: Supprimer une attribution de rôle pour un groupe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Supprime une liaison de rôle pour un groupe, supprimant ainsi l'association entre le groupe et le rôle spécifié dans l'environnement de l'API Astra.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Supprime la ressource API de liaison de rôle spécifiée.
 

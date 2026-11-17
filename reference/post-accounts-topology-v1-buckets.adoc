@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v1-buckets.html 
+keywords: bucket creation,topology buckets,account resource,bucket values,ontap endpoint 
 summary: Créer un nouveau compartiment 
 ---
 = Créer un nouveau compartiment
@@ -10,7 +11,20 @@ summary: Créer un nouveau compartiment
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée un nouveau bucket dans l'Astra API, en spécifiant les valeurs souhaitées pour la ressource API Bucket à créer.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource d'API Bucket à créer.
 

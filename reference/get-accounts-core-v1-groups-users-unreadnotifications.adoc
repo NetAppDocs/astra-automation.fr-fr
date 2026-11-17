@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-unreadnotifications.html 
+keywords: unread notifications,user notifications,notification list,resource collection,field filtering 
 summary: Liste des notifications non lues pour un utilisateur dans un groupe 
 ---
 = Liste des notifications non lues pour un utilisateur dans un groupe
@@ -10,7 +11,20 @@ summary: Liste des notifications non lues pour un utilisateur dans un groupe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les notifications non lues d'un utilisateur appartenant à un groupe, en fournissant un tableau JSON des ressources correspondantes.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/unreadNotifications`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

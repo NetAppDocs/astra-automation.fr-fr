@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-volumes.html 
+keywords: account topology,managed cluster volumes,resource collection,volume listing,field inclusion,resource limit 
 summary: 'Lister les volumes d"un cluster géré' 
 ---
 = Lister les volumes d'un cluster géré
@@ -10,7 +11,20 @@ summary: 'Lister les volumes d"un cluster géré'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère la liste des volumes d'un cluster géré. Utilisez cette fonction pour visualiser les ressources de stockage disponibles au sein du cluster.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/volumes`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

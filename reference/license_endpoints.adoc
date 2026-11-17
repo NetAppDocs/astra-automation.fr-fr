@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/license_endpoints.html 
+keywords: licenses,license management,account licenses,load licenses,licensing 
 summary: 'Points de terminaison de licence de l"API Astra (ACC)' 
 ---
 = Points de terminaison de licence de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gérez les licences chargées dans un compte Astra Control.
 
 L'API de licences représente les licences chargées dans le compte.

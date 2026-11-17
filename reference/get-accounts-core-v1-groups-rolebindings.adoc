@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups-rolebindings.html 
+keywords: role bindings,group roles,account resources,collection filters,resource sorting 
 summary: Lister les liaisons de rôle pour un groupe 
 ---
 = Lister les liaisons de rôle pour un groupe
@@ -10,7 +11,20 @@ summary: Lister les liaisons de rôle pour un groupe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les attributions de rôles d'un groupe et fournit une liste des ressources correspondantes dans la collection. Utilisez ceci pour accéder à des informations détaillées sur les attributions de rôles spécifiques associées au groupe.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

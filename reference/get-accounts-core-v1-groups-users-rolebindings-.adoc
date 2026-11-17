@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-rolebindings-.html 
+keywords: role binding,read role binding,group role binding,user role binding,role binding resource,role binding collection 
 summary: Récupérer une association de rôle pour un utilisateur dans un groupe 
 ---
 = Récupérer une association de rôle pour un utilisateur dans un groupe
@@ -10,7 +11,20 @@ summary: Récupérer une association de rôle pour un utilisateur dans un groupe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une liaison de rôle pour un utilisateur dans un groupe, en fournissant les associations de rôles propres au contexte de l’utilisateur ou du groupe. Utilisez cette fonction pour consulter les rôles attribués à un utilisateur ou à un groupe dans votre compte.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource API de liaison de rôle stockée dans le corps de la réponse JSON. Si la requête est adressée à /accounts/{account_id}/core/v1/users/{user_id}/roleBindings, seules les ressources roleBinding dont l’ID utilisateur correspond à l’ID utilisateur dans l’URL de la requête seront autorisées à être lues. Si la requête est adressée à /accounts/{account_id}/core/v1/groups/{group_id}/roleBindings, seules les ressources roleBinding dont l’ID de groupe correspond à l’ID de groupe dans l’URL de la requête seront autorisées à être lues.
 

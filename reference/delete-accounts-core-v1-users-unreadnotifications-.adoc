@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-unreadnotifications-.html 
+keywords: remove unread notification,unread notification delete,delete unread notification,user notification remove,account notification delete 
 summary: Supprimer une notification non lue 
 ---
 = Supprimer une notification non lue
@@ -10,7 +11,20 @@ summary: Supprimer une notification non lue
 :imagesdir: ../media/
 
 
+[role="lead"]
+Supprime une notification non lue, en retirant la ressource de notification spécifiée de votre liste de notifications.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Supprime la ressource API de notification non lue spécifiée.
 

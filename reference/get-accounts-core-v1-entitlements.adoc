@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-entitlements.html 
+keywords: entitlements,account resources,field selection,resource collection,collection filtering,resource sorting 
 summary: Énumérer tous les droits 
 ---
 = Énumérer tous les droits
@@ -10,7 +11,20 @@ summary: Énumérer tous les droits
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une liste de droits, fournissant des informations sur toutes les ressources correspondantes de la collection. Utilisez cette liste pour accéder aux détails spécifiques d'une ressource en fonction des critères de votre demande.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/entitlements`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

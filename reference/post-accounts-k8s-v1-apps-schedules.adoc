@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-schedules.html 
+keywords: account schedule,kubernetes app,app schedule,create schedule,account resource 
 summary: Créer un nouveau planning pour une application 
 ---
 = Créer un nouveau planning pour une application
@@ -10,7 +11,20 @@ summary: Créer un nouveau planning pour une application
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée une nouvelle planification pour une application, en spécifiant les paramètres souhaités pour la planification des tâches ou des événements. Utilisez-la pour automatiser les opérations de l'application selon la planification définie.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource API Schedule à créer.
 

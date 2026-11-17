@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/user_endpoints.html 
+keywords: astra users,user management,user accounts,user creation,user removal 
 summary: 'Points de terminaison utilisateur de l"API Astra (ACC)' 
 ---
 = Points de terminaison utilisateur de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gérer les utilisateurs autorisés à interagir avec Astra Control.
 
 L'API utilisateur représente les utilisateurs capables d'interagir avec le système.

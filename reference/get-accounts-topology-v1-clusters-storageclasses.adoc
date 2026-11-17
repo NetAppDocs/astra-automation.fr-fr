@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-storageclasses.html 
+keywords: storage classes,cluster topology,resource collection,cluster storage,account clusters 
 summary: Lister les classes de stockage pour un cluster 
 ---
 = Lister les classes de stockage pour un cluster
@@ -10,7 +11,20 @@ summary: Lister les classes de stockage pour un cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère les classes de stockage d'un cluster. Utilisez cette fonction pour accéder à des informations détaillées sur les configurations de stockage disponibles au sein du cluster spécifié.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/storageClasses`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

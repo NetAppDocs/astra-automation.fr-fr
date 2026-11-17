@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds.html 
+keywords: account topology,cloud resources,collection fields,resource limit,resource filter 
 summary: Lister tous les clouds 
 ---
 = Lister tous les clouds
@@ -10,7 +11,20 @@ summary: Lister tous les clouds
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une liste de ressources cloud. Utilisez cette option pour afficher les clouds disponibles dans votre environnement.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie un tableau JSON contenant toutes les ressources correspondantes de la collection. Si des champs individuels sont spécifiés dans la requête, le tableau JSON items contiendra les champs demandés pour chaque ressource correspondante dans l'ordre indiqué.
 

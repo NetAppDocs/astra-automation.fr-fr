@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-users-tokens-.html 
+keywords: replace resource,modify token,user resource,account resource,token collection 
 summary: Modifier un jeton 
 ---
 = Modifier un jeton
@@ -10,7 +11,20 @@ summary: Modifier un jeton
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie un jeton en remplaçant la ressource stockée par le corps de la requête JSON fourni, tout en conservant les valeurs clés qui ne sont pas modifiables par l'utilisateur.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
 

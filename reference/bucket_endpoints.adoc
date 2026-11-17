@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/bucket_endpoints.html 
+keywords: backup buckets,object storage buckets,application backups,bucket management,backup storage 
 summary: 'Points de terminaison de compartiment de l"API Astra (ACC)' 
 ---
 = Points de terminaison de compartiment de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gérez les compartiments qu’Astra Control utilise pour stocker les sauvegardes d’applications.
 
 L'API Bucket permet d'accéder aux buckets utilisés pour stocker les sauvegardes d'applications dans Astra.

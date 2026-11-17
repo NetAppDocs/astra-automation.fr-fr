@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-appmirrors.html 
+keywords: app mirror,app creation,container account,kubernetes mirror,k8s app 
 summary: Créer une nouvelle ressource AppMirror 
 ---
 = Créer une nouvelle ressource AppMirror
@@ -10,7 +11,20 @@ summary: Créer une nouvelle ressource AppMirror
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée une nouvelle ressource AppMirror, en spécifiant les valeurs souhaitées pour la réplication et la synchronisation des applications entre les environnements.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/appMirrors`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource API AppMirror à créer.
 

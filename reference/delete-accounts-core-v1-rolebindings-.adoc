@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-rolebindings-.html 
+keywords: role binding,delete role,remove role binding,user deletion,local auth provider,cloud central auth provider 
 summary: Supprimer une liaison de rôle 
 ---
 = Supprimer une liaison de rôle
@@ -10,7 +11,20 @@ summary: Supprimer une liaison de rôle
 :imagesdir: ../media/
 
 
+[role="lead"]
+Supprime une liaison de rôle, retirant ainsi la ressource API spécifiée du système.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-delete]#SUPPRIMER# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Supprime la ressource API de liaison de rôle spécifiée.
 

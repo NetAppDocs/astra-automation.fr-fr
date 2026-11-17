@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-settings-.html 
+keywords: account settings,replace resource,modify settings,stored resource,setting collection 
 summary: Modifier un paramètre 
 ---
 = Modifier un paramètre
@@ -10,7 +11,20 @@ summary: Modifier un paramètre
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie un paramètre en remplaçant la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur. Utilisez ce point de terminaison pour mettre à jour efficacement les paramètres de configuration tout en conservant les paramètres système essentiels.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni, tout en préservant les valeurs clés non modifiables par l'utilisateur.
 

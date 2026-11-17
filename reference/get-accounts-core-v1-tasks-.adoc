@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-tasks-.html 
+keywords: tasks,task resource,account task,task collection,task details 
 summary: Récupérer une tâche 
 ---
 = Récupérer une tâche
@@ -10,7 +11,20 @@ summary: Récupérer une tâche
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une tâche et fournit des détails sur la ressource Task API stockée à des fins de surveillance et de gestion.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/tasks/{task_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource d'API Task stockée dans le corps de la réponse JSON.
 

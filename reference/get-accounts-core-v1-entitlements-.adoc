@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-entitlements-.html 
+keywords: account entitlement,entitlement resource,entitlement collection,account information,stored entitlement 
 summary: Récupérer un droit 
 ---
 = Récupérer un droit
@@ -10,7 +11,20 @@ summary: Récupérer un droit
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère un droit, en fournissant la ressource Entitlement API stockée dans le corps de la réponse JSON.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/entitlements/{entitlement_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource d'API Entitlement stockée dans le corps de la réponse JSON.
 

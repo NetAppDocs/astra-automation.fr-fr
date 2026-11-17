@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-tokens-.html 
+keywords: account resource,group resource,user resource,token collection,stored token 
 summary: Récupérer un jeton pour un utilisateur dans un groupe 
 ---
 = Récupérer un jeton pour un utilisateur dans un groupe
@@ -10,7 +11,20 @@ summary: Récupérer un jeton pour un utilisateur dans un groupe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère un jeton pour un utilisateur appartenant à un groupe et renvoie la ressource de jeton API stockée. Utilisez-le pour vous authentifier et accéder en toute sécurité aux ressources spécifiques au groupe.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource API Token stockée dans le corps de la réponse JSON.
 

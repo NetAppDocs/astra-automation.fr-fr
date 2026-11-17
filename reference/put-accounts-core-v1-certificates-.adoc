@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-certificates-.html 
+keywords: replace certificate,trust store update,self signed certificate,certificate trust,certificate management,certificate update 
 summary: Modifier un certificat 
 ---
 = Modifier un certificat
@@ -10,7 +11,20 @@ summary: Modifier un certificat
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifie un certificat en mettant à jour le magasin de certificats de confiance afin de refléter les changements d'état ou de contenu du certificat. Utilisez ce point de terminaison pour vous assurer que le magasin de certificats de confiance représente correctement les certificats approuvés et non approuvés.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates/{certificate_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Remplace l'intégralité de la ressource stockée par le corps de la requête JSON fourni.
 

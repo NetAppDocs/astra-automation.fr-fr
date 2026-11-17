@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-topology-v1-appbackups-appassets-.html 
+keywords: application asset,app asset,app backup,account resource,app asset collection 
 summary: 'Récupérer une ressource d"application à partir d"une sauvegarde d"application' 
 ---
 = Récupérer une ressource d'application à partir d'une sauvegarde d'application
@@ -10,7 +11,20 @@ summary: 'Récupérer une ressource d"application à partir d"une sauvegarde d"a
 :imagesdir: ../media/
 
 
+[role="lead"]
+Récupère une ressource d’application à partir d’une sauvegarde d’application. Utilisez cette fonction pour accéder à la configuration de la ressource stockée à des fins de récupération ou d’analyse.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}/appAssets/{appAsset_id}`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Renvoie la ressource API Application Asset stockée dans le corps de la réponse JSON.
 

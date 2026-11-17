@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/cloud_endpoints.html 
+keywords: cloud resources,cloud connections,cloud management,managed clusters,cloud configuration 
 summary: 'Points de terminaison cloud de l"API Astra (ACC)' 
 ---
 = Points de terminaison cloud de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gérez les ressources cloud afin de pouvoir vous connecter à des clouds spécifiques et gérer vos clusters et applications dans ceux-ci.
 
 L'API Cloud fournit un accès aux ressources cloud pour permettre aux clients de se connecter à des clouds spécifiques afin de gérer des clusters et des applications.

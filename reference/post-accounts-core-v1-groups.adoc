@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-groups.html 
+keywords: group creation,core groups,account group,group resource,ontap group 
 summary: Créer un nouveau groupe 
 ---
 = Créer un nouveau groupe
@@ -10,7 +11,20 @@ summary: Créer un nouveau groupe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crée un nouveau groupe en définissant les valeurs souhaitées pour la ressource API Group. Utilisez-le pour organiser et gérer efficacement les ressources de votre environnement.
+
+
+
+[[http-method-and-endpoint]]
+== Méthode HTTP et noeud final
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups`#
+
+
+
+[[usage-notes]]
+== Remarques sur l'utilisation
 
 Indique les valeurs souhaitées pour la ressource API de groupe à créer.
 

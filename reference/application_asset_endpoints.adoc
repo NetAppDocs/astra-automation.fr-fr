@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/application_asset_endpoints.html 
+keywords: application assets,application state,state information,managed applications,asset collections 
 summary: 'Points de terminaison des ressources d"application de l"API Astra (ACC)' 
 ---
 = Points de terminaison des ressources d'application de l'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Accédez aux collections internes d’informations d’état qu’Astra Control utilise pour gérer vos applications.
 
 L'API Application Asset donne accès aux collections internes d'informations d'état utilisées pour gérer les applications.
